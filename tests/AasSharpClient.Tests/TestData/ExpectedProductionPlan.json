@@ -1,0 +1,1576 @@
+{
+  "modelType": "Submodel",
+  "kind": "Instance",
+  "semanticId": {
+    "keys": [
+      {
+        "type": "Submodel",
+        "value": "ProductionPlan"
+      },
+      {
+        "type": "Submodel",
+        "value": "ProductionSchedule"
+      },
+      {
+        "type": "Submodel",
+        "value": "https://smartfactory.de/semantics/submodel/ProductionPlan#1/0"
+      }
+    ],
+    "type": "ModelReference"
+  },
+  "id": "https://smartfactory.de/submodels/2ac4b69a-7ceb-4269-9f7e-c340f035968f",
+  "idShort": "ProductionPlan",
+  "submodelElements": [
+    {
+      "modelType": "Property",
+      "semanticId": {
+        "keys": [],
+        "type": "ExternalReference"
+      },
+      "value": "false",
+      "valueType": "xs:string",
+      "idShort": "IsFinished"
+    },
+    {
+      "modelType": "SubmodelElementCollection",
+      "semanticId": {
+        "keys": [],
+        "type": "ExternalReference"
+      },
+      "idShort": "QuantityInformation",
+      "value": [
+        {
+          "modelType": "Property",
+          "semanticId": {
+            "keys": [],
+            "type": "ExternalReference"
+          },
+          "value": "1",
+          "valueType": "xs:integer",
+          "idShort": "TotalNumberOfPieces"
+        }
+      ]
+    },
+    {
+      "modelType": "SubmodelElementCollection",
+      "semanticId": {
+        "keys": [
+          {
+            "type": "GlobalReference",
+            "value": "https://smartfactory.de/semantics/submodel-element/Step"
+          }
+        ],
+        "type": "ExternalReference"
+      },
+      "idShort": "Step0001",
+      "value": [
+        {
+          "modelType": "Property",
+          "semanticId": {
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://smartfactory.de/semantics/submodel-element/Step/StepTitle"
+              }
+            ],
+            "type": "ExternalReference"
+          },
+          "value": "Assembly",
+          "valueType": "xs:string",
+          "idShort": "StepTitle"
+        },
+        {
+          "modelType": "Property",
+          "semanticId": {
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://smartfactory.de/semantics/submodel-element/Step/Status"
+              }
+            ],
+            "type": "ExternalReference"
+          },
+          "value": "open",
+          "valueType": "xs:string",
+          "idShort": "Status"
+        },
+        {
+          "modelType": "SubmodelElementCollection",
+          "semanticId": {
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://smartfactory.de/semantics/submodel-element/Step/Actions"
+              }
+            ],
+            "type": "ExternalReference"
+          },
+          "idShort": "Actions",
+          "value": [
+            {
+              "modelType": "SubmodelElementCollection",
+              "semanticId": {
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://smartfactory.de/semantics/submodel-element/Step/Actions/Action"
+                  }
+                ],
+                "type": "ExternalReference"
+              },
+              "idShort": "Action001",
+              "value": [
+                {
+                  "modelType": "Property",
+                  "semanticId": {
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://smartfactory.de/semantics/submodel-element/Step/Actions/Action/ActionTitle"
+                      }
+                    ],
+                    "type": "ExternalReference"
+                  },
+                  "value": "AssembleProduct",
+                  "valueType": "xs:string",
+                  "idShort": "ActionTitle"
+                },
+                {
+                  "modelType": "Property",
+                  "semanticId": {
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://smartfactory.de/semantics/submodel-element/Step/Actions/Action/Status"
+                      }
+                    ],
+                    "type": "ExternalReference"
+                  },
+                  "value": "open",
+                  "valueType": "xs:string",
+                  "idShort": "Status"
+                },
+                {
+                  "modelType": "SubmodelElementCollection",
+                  "semanticId": {
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://smartfactory.de/semantics/submodel-element/Step/Actions/Action/InputParameters"
+                      }
+                    ],
+                    "type": "ExternalReference"
+                  },
+                  "idShort": "InputParameters",
+                  "value": [
+                    {
+                      "modelType": "Property",
+                      "value": "self,BillOfMaterial/Truck/Semitrailer/Id",
+                      "valueType": "xs:string",
+                      "idShort": "ResourceId1"
+                    },
+                    {
+                      "modelType": "Property",
+                      "value": "self,BillOfMaterial/Truck/Semitrailer_Truck/Id",
+                      "valueType": "xs:string",
+                      "idShort": "ResourceId2"
+                    },
+                    {
+                      "modelType": "Property",
+                      "value": "self,ProductIdentification/Identifier",
+                      "valueType": "xs:string",
+                      "idShort": "ProductID"
+                    }
+                  ]
+                },
+                {
+                  "modelType": "SubmodelElementCollection",
+                  "semanticId": {
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://smartfactory.de/semantics/submodel-element/Step/Actions/Action/FinalResultData"
+                      }
+                    ],
+                    "type": "ExternalReference"
+                  },
+                  "idShort": "FinalResultData",
+                  "value": [
+                    {
+                      "modelType": "Property",
+                      "semanticId": {
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://smartfactory.de/semantics/submodel-element/Step/Actions/Action/FinalResultData/EndTime"
+                          }
+                        ],
+                        "type": "ExternalReference"
+                      },
+                      "value": "2023/12/06 12:02:20",
+                      "valueType": "xs:string",
+                      "idShort": "EndTime"
+                    },
+                    {
+                      "modelType": "Property",
+                      "semanticId": {
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://smartfactory.de/semantics/submodel-element/Step/Actions/Action/FinalResultData/StartTime"
+                          }
+                        ],
+                        "type": "ExternalReference"
+                      },
+                      "value": "2023/12/06 12:01:40",
+                      "valueType": "xs:string",
+                      "idShort": "StartTime"
+                    }
+                  ]
+                },
+                {
+                  "modelType": "SubmodelElementCollection",
+                  "semanticId": {
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://smartfactory.de/semantics/submodel-element/Step/Actions/Action/Preconditions"
+                      }
+                    ],
+                    "type": "ExternalReference"
+                  },
+                  "idShort": "Preconditions",
+                  "value": []
+                },
+                {
+                  "modelType": "ReferenceElement",
+                  "semanticId": {
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://smartfactory.de/semantics/submodel-element/Step/Actions/Action/SkillReference"
+                      }
+                    ],
+                    "type": "ExternalReference"
+                  },
+                  "idShort": "SkillReference",
+                  "value": {
+                    "keys": [
+                      {
+                        "type": "Submodel",
+                        "value": "https://example.com/ids/sm/4510_5181_3022_5180"
+                      },
+                      {
+                        "type": "SubmodelElementCollection",
+                        "value": "Skills"
+                      },
+                      {
+                        "type": "SubmodelElementCollection",
+                        "value": "Skill_0001"
+                      }
+                    ],
+                    "type": "ModelReference"
+                  }
+                },
+                {
+                  "modelType": "SubmodelElementCollection",
+                  "semanticId": {
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://smartfactory.de/semantics/submodel-element/Step/Actions/Action/Effecs"
+                      }
+                    ],
+                    "type": "ExternalReference"
+                  },
+                  "idShort": "Effects",
+                  "value": []
+                },
+                {
+                  "modelType": "Property",
+                  "semanticId": {
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://smartfactory.de/semantics/submodel-element/Step/Actions/Action/MachineName"
+                      }
+                    ],
+                    "type": "ExternalReference"
+                  },
+                  "value": "TSN-Hochzeitsmodul",
+                  "valueType": "xs:string",
+                  "idShort": "MachineName"
+                }
+              ]
+            },
+            {
+              "modelType": "SubmodelElementCollection",
+              "semanticId": {
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://smartfactory.de/semantics/submodel-element/Step/Actions/Action"
+                  }
+                ],
+                "type": "ExternalReference"
+              },
+              "idShort": "Action0002",
+              "value": [
+                {
+                  "modelType": "Property",
+                  "semanticId": {
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://smartfactory.de/semantics/submodel-element/Step/Actions/Action/ActionTitle"
+                      }
+                    ],
+                    "type": "ExternalReference"
+                  },
+                  "value": "LoadCarrierFromAssemblyStationToAxis",
+                  "valueType": "xs:string",
+                  "idShort": "ActionTitle"
+                },
+                {
+                  "modelType": "Property",
+                  "semanticId": {
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://smartfactory.de/semantics/submodel-element/Step/Actions/Action/Status"
+                      }
+                    ],
+                    "type": "ExternalReference"
+                  },
+                  "value": "open",
+                  "valueType": "xs:string",
+                  "idShort": "Status"
+                },
+                {
+                  "modelType": "SubmodelElementCollection",
+                  "semanticId": {
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://smartfactory.de/semantics/submodel-element/Step/Actions/Action/InputParameters"
+                      }
+                    ],
+                    "type": "ExternalReference"
+                  },
+                  "idShort": "InputParameters",
+                  "value": []
+                },
+                {
+                  "modelType": "SubmodelElementCollection",
+                  "semanticId": {
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://smartfactory.de/semantics/submodel-element/Step/Actions/Action/FinalResultData"
+                      }
+                    ],
+                    "type": "ExternalReference"
+                  },
+                  "idShort": "FinalResultData",
+                  "value": [
+                    {
+                      "modelType": "Property",
+                      "semanticId": {
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://smartfactory.de/semantics/submodel-element/Step/Actions/Action/FinalResultData/EndTime"
+                          }
+                        ],
+                        "type": "ExternalReference"
+                      },
+                      "value": "2023/12/06 12:02:20",
+                      "valueType": "xs:string",
+                      "idShort": "EndTime"
+                    },
+                    {
+                      "modelType": "Property",
+                      "semanticId": {
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://smartfactory.de/semantics/submodel-element/Step/Actions/Action/FinalResultData/StartTime"
+                          }
+                        ],
+                        "type": "ExternalReference"
+                      },
+                      "value": "2023/12/06 12:01:40",
+                      "valueType": "xs:string",
+                      "idShort": "StartTime"
+                    }
+                  ]
+                },
+                {
+                  "modelType": "SubmodelElementCollection",
+                  "semanticId": {
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://smartfactory.de/semantics/submodel-element/Step/Actions/Action/Preconditions"
+                      }
+                    ],
+                    "type": "ExternalReference"
+                  },
+                  "idShort": "Preconditions",
+                  "value": []
+                },
+                {
+                  "modelType": "ReferenceElement",
+                  "semanticId": {
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://smartfactory.de/semantics/submodel-element/Step/Actions/Action/SkillReference"
+                      }
+                    ],
+                    "type": "ExternalReference"
+                  },
+                  "idShort": "SkillReference",
+                  "value": {
+                    "keys": [
+                      {
+                        "type": "Submodel",
+                        "value": "https://example.com/ids/sm/4510_5181_3022_5180"
+                      },
+                      {
+                        "type": "SubmodelElementCollection",
+                        "value": "Skills"
+                      },
+                      {
+                        "type": "SubmodelElementCollection",
+                        "value": "Skill_0001"
+                      }
+                    ],
+                    "type": "ModelReference"
+                  }
+                },
+                {
+                  "modelType": "SubmodelElementCollection",
+                  "semanticId": {
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://smartfactory.de/semantics/submodel-element/Step/Actions/Action/Effecs"
+                      }
+                    ],
+                    "type": "ExternalReference"
+                  },
+                  "idShort": "Effects",
+                  "value": []
+                },
+                {
+                  "modelType": "Property",
+                  "semanticId": {
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://smartfactory.de/semantics/submodel-element/Step/Actions/Action/MachineName"
+                      }
+                    ],
+                    "type": "ExternalReference"
+                  },
+                  "value": "TSN-Hochzeitsmodul",
+                  "valueType": "xs:string",
+                  "idShort": "MachineName"
+                }
+              ]
+            },
+            {
+              "modelType": "SubmodelElementCollection",
+              "semanticId": {
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://smartfactory.de/semantics/submodel-element/Step/Actions/Action"
+                  }
+                ],
+                "type": "ExternalReference"
+              },
+              "idShort": "Action0003",
+              "value": [
+                {
+                  "modelType": "Property",
+                  "semanticId": {
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://smartfactory.de/semantics/submodel-element/Step/Actions/Action/ActionTitle"
+                      }
+                    ],
+                    "type": "ExternalReference"
+                  },
+                  "value": "LoadProductToTrack",
+                  "valueType": "xs:string",
+                  "idShort": "ActionTitle"
+                },
+                {
+                  "modelType": "Property",
+                  "semanticId": {
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://smartfactory.de/semantics/submodel-element/Step/Actions/Action/Status"
+                      }
+                    ],
+                    "type": "ExternalReference"
+                  },
+                  "value": "open",
+                  "valueType": "xs:string",
+                  "idShort": "Status"
+                },
+                {
+                  "modelType": "SubmodelElementCollection",
+                  "semanticId": {
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://smartfactory.de/semantics/submodel-element/Step/Actions/Action/InputParameters"
+                      }
+                    ],
+                    "type": "ExternalReference"
+                  },
+                  "idShort": "InputParameters",
+                  "value": []
+                },
+                {
+                  "modelType": "SubmodelElementCollection",
+                  "semanticId": {
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://smartfactory.de/semantics/submodel-element/Step/Actions/Action/FinalResultData"
+                      }
+                    ],
+                    "type": "ExternalReference"
+                  },
+                  "idShort": "FinalResultData",
+                  "value": [
+                    {
+                      "modelType": "Property",
+                      "semanticId": {
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://smartfactory.de/semantics/submodel-element/Step/Actions/Action/FinalResultData/EndTime"
+                          }
+                        ],
+                        "type": "ExternalReference"
+                      },
+                      "value": "2023/12/06 12:02:20",
+                      "valueType": "xs:string",
+                      "idShort": "EndTime"
+                    },
+                    {
+                      "modelType": "Property",
+                      "semanticId": {
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://smartfactory.de/semantics/submodel-element/Step/Actions/Action/FinalResultData/StartTime"
+                          }
+                        ],
+                        "type": "ExternalReference"
+                      },
+                      "value": "2023/12/06 12:01:40",
+                      "valueType": "xs:string",
+                      "idShort": "StartTime"
+                    }
+                  ]
+                },
+                {
+                  "modelType": "SubmodelElementCollection",
+                  "semanticId": {
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://smartfactory.de/semantics/submodel-element/Step/Actions/Action/Preconditions"
+                      }
+                    ],
+                    "type": "ExternalReference"
+                  },
+                  "idShort": "Preconditions",
+                  "value": []
+                },
+                {
+                  "modelType": "ReferenceElement",
+                  "semanticId": {
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://smartfactory.de/semantics/submodel-element/Step/Actions/Action/SkillReference"
+                      }
+                    ],
+                    "type": "ExternalReference"
+                  },
+                  "idShort": "SkillReference",
+                  "value": {
+                    "keys": [
+                      {
+                        "type": "Submodel",
+                        "value": "https://example.com/ids/sm/4510_5181_3022_5180"
+                      },
+                      {
+                        "type": "SubmodelElementCollection",
+                        "value": "Skills"
+                      },
+                      {
+                        "type": "SubmodelElementCollection",
+                        "value": "Skill_0001"
+                      }
+                    ],
+                    "type": "ModelReference"
+                  }
+                },
+                {
+                  "modelType": "SubmodelElementCollection",
+                  "semanticId": {
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://smartfactory.de/semantics/submodel-element/Step/Actions/Action/Effecs"
+                      }
+                    ],
+                    "type": "ExternalReference"
+                  },
+                  "idShort": "Effects",
+                  "value": []
+                },
+                {
+                  "modelType": "Property",
+                  "semanticId": {
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://smartfactory.de/semantics/submodel-element/Step/Actions/Action/MachineName"
+                      }
+                    ],
+                    "type": "ExternalReference"
+                  },
+                  "value": "TSN-Hochzeitsmodul",
+                  "valueType": "xs:string",
+                  "idShort": "MachineName"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "modelType": "Property",
+          "semanticId": {
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://smartfactory.de/semantics/submodel-element/Step/Station"
+              }
+            ],
+            "type": "ExternalReference"
+          },
+          "value": "P13",
+          "valueType": "xs:string",
+          "idShort": "Station"
+        },
+        {
+          "modelType": "SubmodelElementCollection",
+          "semanticId": {
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://smartfactory.de/semantics/submodel-element/Step/InitialState"
+              }
+            ],
+            "type": "ExternalReference"
+          },
+          "idShort": "InitialState",
+          "value": []
+        },
+        {
+          "modelType": "SubmodelElementCollection",
+          "semanticId": {
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://smartfactory.de/semantics/submodel-element/Step/FinalState"
+              }
+            ],
+            "type": "ExternalReference"
+          },
+          "idShort": "FinalState",
+          "value": []
+        },
+        {
+          "modelType": "SubmodelElementCollection",
+          "semanticId": {
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://smartfactory.de/semantics/submodel-element/Step/Scheduling"
+              }
+            ],
+            "type": "ExternalReference"
+          },
+          "idShort": "Scheduling",
+          "value": [
+            {
+              "modelType": "Property",
+              "semanticId": {
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://smartfactory.de/semantics/submodel-element/Scheduling/StartDateTime"
+                  }
+                ],
+                "type": "ExternalReference"
+              },
+              "value": "2025-12-03 00:05:35",
+              "valueType": "xs:string",
+              "idShort": "StartDateTime"
+            },
+            {
+              "modelType": "Property",
+              "semanticId": {
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://smartfactory.de/semantics/submodel-element/Scheduling/EndTime"
+                  }
+                ],
+                "type": "ExternalReference"
+              },
+              "value": "2025-12-03 00:06:55",
+              "valueType": "xs:string",
+              "idShort": "EndDateTime"
+            },
+            {
+              "modelType": "Property",
+              "semanticId": {
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://smartfactory.de/semantics/submodel-element/Scheduling/SetupTime"
+                  }
+                ],
+                "type": "ExternalReference"
+              },
+              "value": "00:00:00",
+              "valueType": "xs:string",
+              "idShort": "SetupTime"
+            },
+            {
+              "modelType": "Property",
+              "semanticId": {
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://smartfactory.de/semantics/submodel-element/Scheduling/CycleTime"
+                  }
+                ],
+                "type": "ExternalReference"
+              },
+              "value": "00:01:20",
+              "valueType": "xs:string",
+              "idShort": "CycleTime"
+            }
+          ]
+        },
+        {
+          "modelType": "Property",
+          "semanticId": {
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://smartfactory.de/semantics/submodel-element/Step/Enterprise"
+              }
+            ],
+            "type": "ExternalReference"
+          },
+          "value": "SmartFactory-KL",
+          "valueType": "xs:string",
+          "idShort": "Enterprise"
+        },
+        {
+          "modelType": "Property",
+          "semanticId": {
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://smartfactory.de/semantics/submodel-element/Step/Workcentre"
+              }
+            ],
+            "type": "ExternalReference"
+          },
+          "value": "_PHUKET",
+          "valueType": "xs:string",
+          "idShort": "Workcentre"
+        }
+      ]
+    },
+    {
+      "modelType": "SubmodelElementCollection",
+      "semanticId": {
+        "keys": [
+          {
+            "type": "GlobalReference",
+            "value": "https://smartfactory.de/semantics/submodel-element/Step"
+          }
+        ],
+        "type": "ExternalReference"
+      },
+      "idShort": "Step0002",
+      "value": [
+        {
+          "modelType": "Property",
+          "semanticId": {
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://smartfactory.de/semantics/submodel-element/Step/StepTitle"
+              }
+            ],
+            "type": "ExternalReference"
+          },
+          "value": "Unload",
+          "valueType": "xs:string",
+          "idShort": "StepTitle"
+        },
+        {
+          "modelType": "Property",
+          "semanticId": {
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://smartfactory.de/semantics/submodel-element/Step/Status"
+              }
+            ],
+            "type": "ExternalReference"
+          },
+          "value": "open",
+          "valueType": "xs:string",
+          "idShort": "Status"
+        },
+        {
+          "modelType": "SubmodelElementCollection",
+          "semanticId": {
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://smartfactory.de/semantics/submodel-element/Step/Actions"
+              }
+            ],
+            "type": "ExternalReference"
+          },
+          "idShort": "Actions",
+          "value": [
+            {
+              "modelType": "SubmodelElementCollection",
+              "semanticId": {
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://smartfactory.de/semantics/submodel-element/Step/Actions/Action"
+                  }
+                ],
+                "type": "ExternalReference"
+              },
+              "idShort": "Action001",
+              "value": [
+                {
+                  "modelType": "Property",
+                  "semanticId": {
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://smartfactory.de/semantics/submodel-element/Step/Actions/Action/ActionTitle"
+                      }
+                    ],
+                    "type": "ExternalReference"
+                  },
+                  "value": "RetrieveFromPortLogisticToAMR",
+                  "valueType": "xs:string",
+                  "idShort": "ActionTitle"
+                },
+                {
+                  "modelType": "Property",
+                  "semanticId": {
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://smartfactory.de/semantics/submodel-element/Step/Actions/Action/Status"
+                      }
+                    ],
+                    "type": "ExternalReference"
+                  },
+                  "value": "open",
+                  "valueType": "xs:string",
+                  "idShort": "Status"
+                },
+                {
+                  "modelType": "SubmodelElementCollection",
+                  "semanticId": {
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://smartfactory.de/semantics/submodel-element/Step/Actions/Action/InputParameters"
+                      }
+                    ],
+                    "type": "ExternalReference"
+                  },
+                  "idShort": "InputParameters",
+                  "value": [
+                    {
+                      "modelType": "Property",
+                      "value": "self,ProductIdentification/ProductName",
+                      "valueType": "xs:string",
+                      "idShort": "ProductType"
+                    },
+                    {
+                      "modelType": "Property",
+                      "value": "self,ProductIdentification/Identifier",
+                      "valueType": "xs:string",
+                      "idShort": "ProductID"
+                    },
+                    {
+                      "modelType": "Property",
+                      "value": "False",
+                      "valueType": "xs:string",
+                      "idShort": "WeighProduct"
+                    }
+                  ]
+                },
+                {
+                  "modelType": "SubmodelElementCollection",
+                  "semanticId": {
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://smartfactory.de/semantics/submodel-element/Step/Actions/Action/FinalResultData"
+                      }
+                    ],
+                    "type": "ExternalReference"
+                  },
+                  "idShort": "FinalResultData",
+                  "value": []
+                },
+                {
+                  "modelType": "SubmodelElementCollection",
+                  "semanticId": {
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://smartfactory.de/semantics/submodel-element/Step/Actions/Action/Preconditions"
+                      }
+                    ],
+                    "type": "ExternalReference"
+                  },
+                  "idShort": "Preconditions",
+                  "value": []
+                },
+                {
+                  "modelType": "ReferenceElement",
+                  "semanticId": {
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://smartfactory.de/semantics/submodel-element/Step/Actions/Action/SkillReference"
+                      }
+                    ],
+                    "type": "ExternalReference"
+                  },
+                  "idShort": "SkillReference",
+                  "value": {
+                    "keys": [
+                      {
+                        "type": "Submodel",
+                        "value": "https://example.com/ids/sm/4510_5181_3022_5180"
+                      },
+                      {
+                        "type": "SubmodelElementCollection",
+                        "value": "Skills"
+                      },
+                      {
+                        "type": "SubmodelElementCollection",
+                        "value": "Skill_0001"
+                      }
+                    ],
+                    "type": "ModelReference"
+                  }
+                },
+                {
+                  "modelType": "SubmodelElementCollection",
+                  "semanticId": {
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://smartfactory.de/semantics/submodel-element/Step/Actions/Action/Effecs"
+                      }
+                    ],
+                    "type": "ExternalReference"
+                  },
+                  "idShort": "Effects",
+                  "value": []
+                },
+                {
+                  "modelType": "Property",
+                  "semanticId": {
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://smartfactory.de/semantics/submodel-element/Step/Actions/Action/MachineName"
+                      }
+                    ],
+                    "type": "ExternalReference"
+                  },
+                  "value": "StorageModule",
+                  "valueType": "xs:string",
+                  "idShort": "MachineName"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "modelType": "Property",
+          "semanticId": {
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://smartfactory.de/semantics/submodel-element/Step/Station"
+              }
+            ],
+            "type": "ExternalReference"
+          },
+          "value": "P24",
+          "valueType": "xs:string",
+          "idShort": "Station"
+        },
+        {
+          "modelType": "SubmodelElementCollection",
+          "semanticId": {
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://smartfactory.de/semantics/submodel-element/Step/InitialState"
+              }
+            ],
+            "type": "ExternalReference"
+          },
+          "idShort": "InitialState",
+          "value": []
+        },
+        {
+          "modelType": "SubmodelElementCollection",
+          "semanticId": {
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://smartfactory.de/semantics/submodel-element/Step/FinalState"
+              }
+            ],
+            "type": "ExternalReference"
+          },
+          "idShort": "FinalState",
+          "value": []
+        },
+        {
+          "modelType": "SubmodelElementCollection",
+          "semanticId": {
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://smartfactory.de/semantics/submodel-element/Step/Scheduling"
+              }
+            ],
+            "type": "ExternalReference"
+          },
+          "idShort": "Scheduling",
+          "value": [
+            {
+              "modelType": "Property",
+              "semanticId": {
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://smartfactory.de/semantics/submodel-element/Scheduling/StartDateTime"
+                  }
+                ],
+                "type": "ExternalReference"
+              },
+              "value": "2025-12-03 00:07:05",
+              "valueType": "xs:string",
+              "idShort": "StartDateTime"
+            },
+            {
+              "modelType": "Property",
+              "semanticId": {
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://smartfactory.de/semantics/submodel-element/Scheduling/EndTime"
+                  }
+                ],
+                "type": "ExternalReference"
+              },
+              "value": "2025-12-03 00:07:55",
+              "valueType": "xs:string",
+              "idShort": "EndDateTime"
+            },
+            {
+              "modelType": "Property",
+              "semanticId": {
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://smartfactory.de/semantics/submodel-element/Scheduling/SetupTime"
+                  }
+                ],
+                "type": "ExternalReference"
+              },
+              "value": "00:00:00",
+              "valueType": "xs:string",
+              "idShort": "SetupTime"
+            },
+            {
+              "modelType": "Property",
+              "semanticId": {
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://smartfactory.de/semantics/submodel-element/Scheduling/CycleTime"
+                  }
+                ],
+                "type": "ExternalReference"
+              },
+              "value": "00:00:50",
+              "valueType": "xs:string",
+              "idShort": "CycleTime"
+            }
+          ]
+        },
+        {
+          "modelType": "Property",
+          "semanticId": {
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://smartfactory.de/semantics/submodel-element/Step/Enterprise"
+              }
+            ],
+            "type": "ExternalReference"
+          },
+          "value": "SmartFactory-KL",
+          "valueType": "xs:string",
+          "idShort": "Enterprise"
+        },
+        {
+          "modelType": "Property",
+          "semanticId": {
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://smartfactory.de/semantics/submodel-element/Step/Workcentre"
+              }
+            ],
+            "type": "ExternalReference"
+          },
+          "value": "_PHUKET",
+          "valueType": "xs:string",
+          "idShort": "Workcentre"
+        }
+      ]
+    },
+    {
+      "modelType": "SubmodelElementCollection",
+      "semanticId": {
+        "keys": [
+          {
+            "type": "GlobalReference",
+            "value": "https://smartfactory.de/semantics/submodel-element/Step"
+          }
+        ],
+        "type": "ExternalReference"
+      },
+      "idShort": "Step0003",
+      "value": [
+        {
+          "modelType": "Property",
+          "semanticId": {
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://smartfactory.de/semantics/submodel-element/Step/StepTitle"
+              }
+            ],
+            "type": "ExternalReference"
+          },
+          "value": "LabelPrint",
+          "valueType": "xs:string",
+          "idShort": "StepTitle"
+        },
+        {
+          "modelType": "Property",
+          "semanticId": {
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://smartfactory.de/semantics/submodel-element/Step/Status"
+              }
+            ],
+            "type": "ExternalReference"
+          },
+          "value": "open",
+          "valueType": "xs:string",
+          "idShort": "Status"
+        },
+        {
+          "modelType": "SubmodelElementCollection",
+          "semanticId": {
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://smartfactory.de/semantics/submodel-element/Step/Actions"
+              }
+            ],
+            "type": "ExternalReference"
+          },
+          "idShort": "Actions",
+          "value": [
+            {
+              "modelType": "SubmodelElementCollection",
+              "semanticId": {
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://smartfactory.de/semantics/submodel-element/Step/Actions/Action"
+                  }
+                ],
+                "type": "ExternalReference"
+              },
+              "idShort": "Action001",
+              "value": [
+                {
+                  "modelType": "Property",
+                  "semanticId": {
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://smartfactory.de/semantics/submodel-element/Step/Actions/Action/ActionTitle"
+                      }
+                    ],
+                    "type": "ExternalReference"
+                  },
+                  "value": "AASLabelPrint",
+                  "valueType": "xs:string",
+                  "idShort": "ActionTitle"
+                },
+                {
+                  "modelType": "Property",
+                  "semanticId": {
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://smartfactory.de/semantics/submodel-element/Step/Actions/Action/Status"
+                      }
+                    ],
+                    "type": "ExternalReference"
+                  },
+                  "value": "open",
+                  "valueType": "xs:string",
+                  "idShort": "Status"
+                },
+                {
+                  "modelType": "SubmodelElementCollection",
+                  "semanticId": {
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://smartfactory.de/semantics/submodel-element/Step/Actions/Action/InputParameters"
+                      }
+                    ],
+                    "type": "ExternalReference"
+                  },
+                  "idShort": "InputParameters",
+                  "value": [
+                    {
+                      "modelType": "Property",
+                      "value": "https://shell-view.smartfactory.de",
+                      "valueType": "xs:string",
+                      "idShort": "ShellURL"
+                    },
+                    {
+                      "modelType": "Property",
+                      "value": "self,ProductIdentification/Identifier",
+                      "valueType": "xs:string",
+                      "idShort": "AAS_ID"
+                    }
+                  ]
+                },
+                {
+                  "modelType": "SubmodelElementCollection",
+                  "semanticId": {
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://smartfactory.de/semantics/submodel-element/Step/Actions/Action/FinalResultData"
+                      }
+                    ],
+                    "type": "ExternalReference"
+                  },
+                  "idShort": "FinalResultData",
+                  "value": [
+                    {
+                      "modelType": "Property",
+                      "semanticId": {
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://smartfactory.de/semantics/submodel-element/Step/Actions/Action/FinalResultData/EndTime"
+                          }
+                        ],
+                        "type": "ExternalReference"
+                      },
+                      "value": "2023/12/06 12:03:33",
+                      "valueType": "xs:string",
+                      "idShort": "EndTime"
+                    },
+                    {
+                      "modelType": "Property",
+                      "semanticId": {
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://smartfactory.de/semantics/submodel-element/Step/Actions/Action/FinalResultData/StartTime"
+                          }
+                        ],
+                        "type": "ExternalReference"
+                      },
+                      "value": "2023/12/06 12:02:54",
+                      "valueType": "xs:string",
+                      "idShort": "StartTime"
+                    }
+                  ]
+                },
+                {
+                  "modelType": "SubmodelElementCollection",
+                  "semanticId": {
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://smartfactory.de/semantics/submodel-element/Step/Actions/Action/Preconditions"
+                      }
+                    ],
+                    "type": "ExternalReference"
+                  },
+                  "idShort": "Preconditions",
+                  "value": []
+                },
+                {
+                  "modelType": "ReferenceElement",
+                  "semanticId": {
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://smartfactory.de/semantics/submodel-element/Step/Actions/Action/SkillReference"
+                      }
+                    ],
+                    "type": "ExternalReference"
+                  },
+                  "idShort": "SkillReference",
+                  "value": {
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "EMPTY"
+                      }
+                    ],
+                    "type": "ExternalReference"
+                  }
+                },
+                {
+                  "modelType": "SubmodelElementCollection",
+                  "semanticId": {
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://smartfactory.de/semantics/submodel-element/Step/Actions/Action/Effecs"
+                      }
+                    ],
+                    "type": "ExternalReference"
+                  },
+                  "idShort": "Effects",
+                  "value": []
+                },
+                {
+                  "modelType": "Property",
+                  "semanticId": {
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://smartfactory.de/semantics/submodel-element/Step/Actions/Action/MachineName"
+                      }
+                    ],
+                    "type": "ExternalReference"
+                  },
+                  "value": "LabelPrinter",
+                  "valueType": "xs:string",
+                  "idShort": "MachineName"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "modelType": "Property",
+          "semanticId": {
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://smartfactory.de/semantics/submodel-element/Step/Station"
+              }
+            ],
+            "type": "ExternalReference"
+          },
+          "value": "P12",
+          "valueType": "xs:string",
+          "idShort": "Station"
+        },
+        {
+          "modelType": "SubmodelElementCollection",
+          "semanticId": {
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://smartfactory.de/semantics/submodel-element/Step/InitialState"
+              }
+            ],
+            "type": "ExternalReference"
+          },
+          "idShort": "InitialState",
+          "value": []
+        },
+        {
+          "modelType": "SubmodelElementCollection",
+          "semanticId": {
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://smartfactory.de/semantics/submodel-element/Step/FinalState"
+              }
+            ],
+            "type": "ExternalReference"
+          },
+          "idShort": "FinalState",
+          "value": []
+        },
+        {
+          "modelType": "SubmodelElementCollection",
+          "semanticId": {
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://smartfactory.de/semantics/submodel-element/Step/Scheduling"
+              }
+            ],
+            "type": "ExternalReference"
+          },
+          "idShort": "Scheduling",
+          "value": [
+            {
+              "modelType": "Property",
+              "semanticId": {
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://smartfactory.de/semantics/submodel-element/Scheduling/StartDateTime"
+                  }
+                ],
+                "type": "ExternalReference"
+              },
+              "value": "2025-12-03 00:08:05",
+              "valueType": "xs:string",
+              "idShort": "StartDateTime"
+            },
+            {
+              "modelType": "Property",
+              "semanticId": {
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://smartfactory.de/semantics/submodel-element/Scheduling/EndTime"
+                  }
+                ],
+                "type": "ExternalReference"
+              },
+              "value": "2025-12-03 00:08:10",
+              "valueType": "xs:string",
+              "idShort": "EndDateTime"
+            },
+            {
+              "modelType": "Property",
+              "semanticId": {
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://smartfactory.de/semantics/submodel-element/Scheduling/SetupTime"
+                  }
+                ],
+                "type": "ExternalReference"
+              },
+              "value": "00:00:00",
+              "valueType": "xs:string",
+              "idShort": "SetupTime"
+            },
+            {
+              "modelType": "Property",
+              "semanticId": {
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://smartfactory.de/semantics/submodel-element/Scheduling/CycleTime"
+                  }
+                ],
+                "type": "ExternalReference"
+              },
+              "value": "00:00:05",
+              "valueType": "xs:string",
+              "idShort": "CycleTime"
+            }
+          ]
+        },
+        {
+          "modelType": "Property",
+          "semanticId": {
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://smartfactory.de/semantics/submodel-element/Step/Enterprise"
+              }
+            ],
+            "type": "ExternalReference"
+          },
+          "value": "SmartFactory-KL",
+          "valueType": "xs:string",
+          "idShort": "Enterprise"
+        },
+        {
+          "modelType": "Property",
+          "semanticId": {
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://smartfactory.de/semantics/submodel-element/Step/Workcentre"
+              }
+            ],
+            "type": "ExternalReference"
+          },
+          "value": "_PHUKET",
+          "valueType": "xs:string",
+          "idShort": "Workcentre"
+        }
+      ]
+    }
+  ]
+}

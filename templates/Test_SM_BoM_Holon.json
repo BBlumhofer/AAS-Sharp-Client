@@ -1,0 +1,514 @@
+
+  {
+    "idShort": "BillOfMaterial",
+    "id": "https://smartfactory.de/submodels/aad41141-0c6f-4699-85aa-a752ca733580",
+    "semanticId": {
+      "type": "ExternalReference",
+      "keys": [
+        {
+          "type": "GlobalReference",
+          "value": "http://example.com/id/type/submodel/BOM/1/1"
+        },
+        {
+          "type": "GlobalReference",
+          "value": "https://smartfactory.de/semantics/submodel/Holon/BillOfMaterial#1/0"
+        }
+      ]
+    },
+    "submodelElements": [
+      {
+        "idShort": "Holon0001",
+        "statements": [
+          {
+            "idShort": "ID",
+            "valueType": "xs:string",
+            "value": "RH2",
+            "modelType": "Property"
+          },
+          {
+            "idShort": "FunctionalityHolon",
+            "valueType": "xs:string",
+            "value": "false",
+            "modelType": "Property"
+          },
+          {
+            "idShort": "Type",
+            "valueType": "xs:string",
+            "value": "Island_ResourceHolon",
+            "modelType": "Property"
+          },
+          {
+            "idShort": "Holon0002",
+            "statements": [
+              {
+                "idShort": "ID",
+                "valueType": "xs:string",
+                "value": "P17",
+                "modelType": "Property"
+              },
+              {
+                "idShort": "Type",
+                "valueType": "xs:string",
+                "value": "CPPM_ResourceHolon",
+                "modelType": "Property"
+              },
+              {
+                "idShort": "FunctionalityHolon",
+                "valueType": "xs:string",
+                "value": "false",
+                "modelType": "Property"
+              },
+              {
+                "idShort": "SpecificHolonReferences",
+                "value": [
+                  {
+                    "idShort": "conntected",
+                    "value": {
+                      "type": "ModelReference",
+                      "keys": [
+                        {
+                          "type": "Submodel",
+                          "value": "https://smartfactory.de/submodels/aad41141-0c6f-4699-85aa-a752ca733580"
+                        },
+                        {
+                          "type": "Entity",
+                          "value": "Holon0001"
+                        },
+                        {
+                          "type": "Entity",
+                          "value": "Holon0005"
+                        }
+                      ]
+                    },
+                    "modelType": "ReferenceElement"
+                  }
+                ],
+                "modelType": "SubmodelElementCollection"
+              },
+              {
+                "idShort": "SubmodelReferences",
+                "typeValueListElement": "ReferenceElement",
+                "value": [
+                  {
+                    "value": {
+                      "type": "ModelReference",
+                      "keys": [
+                        {
+                          "type": "Submodel",
+                          "value": "https://smartfactory.de/submodels/0d9ff8f9-68a2-4bc4-82ed-f8a74558ee57"
+                        }
+                      ]
+                    },
+                    "modelType": "ReferenceElement"
+                  }
+                ],
+                "modelType": "SubmodelElementList"
+              }
+            ],
+            "entityType": "SelfManagedEntity",
+            "globalAssetId": "https://www.smartfactory.de/asset/P17",
+            "modelType": "Entity"
+          },
+          {
+            "idShort": "Holon0003",
+            "statements": [
+              {
+                "idShort": "ID",
+                "valueType": "xs:string",
+                "value": "P24",
+                "modelType": "Property"
+              },
+              {
+                "idShort": "FunctionalityHolon",
+                "valueType": "xs:string",
+                "value": "false",
+                "modelType": "Property"
+              },
+              {
+                "idShort": "Type",
+                "valueType": "xs:string",
+                "value": "CPPM_ResourceHolon",
+                "modelType": "Property"
+              },
+              {
+                "idShort": "SpecificHolonReferences",
+                "value": [
+                  {
+                    "idShort": "conntected",
+                    "value": {
+                      "type": "ModelReference",
+                      "keys": [
+                        {
+                          "type": "Submodel",
+                          "value": "https://smartfactory.de/submodels/aad41141-0c6f-4699-85aa-a752ca733580"
+                        },
+                        {
+                          "type": "Entity",
+                          "value": "Holon0001"
+                        },
+                        {
+                          "type": "Entity",
+                          "value": "Holon0005"
+                        }
+                      ]
+                    },
+                    "modelType": "ReferenceElement"
+                  }
+                ],
+                "modelType": "SubmodelElementCollection"
+              },
+              {
+                "idShort": "SubmodelReferences",
+                "typeValueListElement": "ReferenceElement",
+                "value": [
+                  {
+                    "value": {
+                      "type": "ModelReference",
+                      "keys": [
+                        {
+                          "type": "Submodel",
+                          "value": "https://smartfactory.de/submodels/0d9ff8f9-68a2-4bc4-82ed-f8a74558ee57"
+                        }
+                      ]
+                    },
+                    "modelType": "ReferenceElement"
+                  }
+                ],
+                "modelType": "SubmodelElementList"
+              }
+            ],
+            "entityType": "SelfManagedEntity",
+            "globalAssetId": "https://www.smartfactory.de/asset/P24",
+            "modelType": "Entity"
+          },
+          {
+            "idShort": "Holon0004",
+            "statements": [
+              {
+                "idShort": "ID",
+                "valueType": "xs:string",
+                "value": "P25",
+                "modelType": "Property"
+              },
+              {
+                "idShort": "FunctionalityHolon",
+                "valueType": "xs:string",
+                "value": "false",
+                "modelType": "Property"
+              },
+              {
+                "idShort": "Type",
+                "valueType": "xs:string",
+                "value": "CPPM_ResourceHolon",
+                "modelType": "Property"
+              },
+              {
+                "idShort": "SpecificHolonReferences",
+                "value": [
+                  {
+                    "idShort": "conntected",
+                    "value": {
+                      "type": "ModelReference",
+                      "keys": [
+                        {
+                          "type": "Submodel",
+                          "value": "https://smartfactory.de/submodels/aad41141-0c6f-4699-85aa-a752ca733580"
+                        },
+                        {
+                          "type": "Entity",
+                          "value": "Holon0001"
+                        },
+                        {
+                          "type": "Entity",
+                          "value": "Holon0005"
+                        }
+                      ]
+                    },
+                    "modelType": "ReferenceElement"
+                  }
+                ],
+                "modelType": "SubmodelElementCollection"
+              },
+              {
+                "idShort": "SubmodelReferences",
+                "typeValueListElement": "ReferenceElement",
+                "value": [
+                  {
+                    "value": {
+                      "type": "ModelReference",
+                      "keys": [
+                        {
+                          "type": "Submodel",
+                          "value": "https://smartfactory.de/submodels/0d9ff8f9-68a2-4bc4-82ed-f8a74558ee57"
+                        }
+                      ]
+                    },
+                    "modelType": "ReferenceElement"
+                  }
+                ],
+                "modelType": "SubmodelElementList"
+              }
+            ],
+            "entityType": "SelfManagedEntity",
+            "globalAssetId": "https://www.smartfactory.de/asset/P25",
+            "modelType": "Entity"
+          },
+          {
+            "idShort": "Holon0005",
+            "statements": [
+              {
+                "idShort": "FunctionalityHolon",
+                "valueType": "xs:string",
+                "value": "true",
+                "modelType": "Property"
+              },
+              {
+                "idShort": "ID",
+                "valueType": "xs:string",
+                "value": "P18",
+                "modelType": "Property"
+              },
+              {
+                "idShort": "Type",
+                "valueType": "xs:string",
+                "value": "CPPM_ResourceHolon",
+                "modelType": "Property"
+              },
+              {
+                "idShort": "SubmodelReferences",
+                "typeValueListElement": "ReferenceElement",
+                "value": [
+                  {
+                    "value": {
+                      "type": "ModelReference",
+                      "keys": [
+                        {
+                          "type": "Submodel",
+                          "value": "https://smartfactory.de/submodels/0d9ff8f9-68a2-4bc4-82ed-f8a74558ee57"
+                        }
+                      ]
+                    },
+                    "modelType": "ReferenceElement"
+                  }
+                ],
+                "modelType": "SubmodelElementList"
+              }
+            ],
+            "entityType": "SelfManagedEntity",
+            "globalAssetId": "https://www.smartfactory.de/asset/P18",
+            "modelType": "Entity"
+          }
+        ],
+        "entityType": "SelfManagedEntity",
+        "globalAssetId": "https://www.smartfactory.de/asset/RH2",
+        "modelType": "Entity"
+      },
+      {
+        "idShort": "isPartOf",
+        "typeValueListElement": "RelationshipElement",
+        "valueTypeListElement": "xs:anyURI",
+        "value": [
+          {
+            "first": {
+              "type": "ModelReference",
+              "keys": [
+                {
+                  "type": "Submodel",
+                  "value": "https://smartfactory.de/submodels/aad41141-0c6f-4699-85aa-a752ca733580"
+                },
+                {
+                  "type": "Entity",
+                  "value": "Holon0001"
+                }
+              ]
+            },
+            "second": {
+              "type": "ModelReference",
+              "keys": [
+                {
+                  "type": "Submodel",
+                  "value": "https://smartfactory.de/submodels/aad41141-0c6f-4699-85aa-a752ca733580"
+                },
+                {
+                  "type": "Entity",
+                  "value": "Holon0001"
+                },
+                {
+                  "type": "Entity",
+                  "value": "Holon0002"
+                }
+              ]
+            },
+            "modelType": "RelationshipElement"
+          },
+          {
+            "first": {
+              "type": "ModelReference",
+              "keys": [
+                {
+                  "type": "Submodel",
+                  "value": "https://smartfactory.de/submodels/aad41141-0c6f-4699-85aa-a752ca733580"
+                },
+                {
+                  "type": "Entity",
+                  "value": "Holon0001"
+                }
+              ]
+            },
+            "second": {
+              "type": "ModelReference",
+              "keys": [
+                {
+                  "type": "Submodel",
+                  "value": "https://smartfactory.de/submodels/aad41141-0c6f-4699-85aa-a752ca733580"
+                },
+                {
+                  "type": "Entity",
+                  "value": "Holon0001"
+                },
+                {
+                  "type": "Entity",
+                  "value": "Holon0003"
+                }
+              ]
+            },
+            "modelType": "RelationshipElement"
+          },
+          {
+            "first": {
+              "type": "ModelReference",
+              "keys": [
+                {
+                  "type": "Submodel",
+                  "value": "https://smartfactory.de/submodels/aad41141-0c6f-4699-85aa-a752ca733580"
+                },
+                {
+                  "type": "Entity",
+                  "value": "Holon0001"
+                }
+              ]
+            },
+            "second": {
+              "type": "ModelReference",
+              "keys": [
+                {
+                  "type": "Submodel",
+                  "value": "https://smartfactory.de/submodels/aad41141-0c6f-4699-85aa-a752ca733580"
+                },
+                {
+                  "type": "Entity",
+                  "value": "Holon0001"
+                },
+                {
+                  "type": "Entity",
+                  "value": "Holon0004"
+                }
+              ]
+            },
+            "modelType": "RelationshipElement"
+          },
+          {
+            "first": {
+              "type": "ModelReference",
+              "keys": [
+                {
+                  "type": "Submodel",
+                  "value": "https://smartfactory.de/submodels/aad41141-0c6f-4699-85aa-a752ca733580"
+                },
+                {
+                  "type": "Entity",
+                  "value": "Holon0001"
+                }
+              ]
+            },
+            "second": {
+              "type": "ModelReference",
+              "keys": [
+                {
+                  "type": "Submodel",
+                  "value": "https://smartfactory.de/submodels/aad41141-0c6f-4699-85aa-a752ca733580"
+                },
+                {
+                  "type": "Entity",
+                  "value": "Holon0001"
+                },
+                {
+                  "type": "Entity",
+                  "value": "Holon0005"
+                }
+              ]
+            },
+            "modelType": "RelationshipElement"
+          },
+          {
+            "first": {
+              "type": "ModelReference",
+              "keys": [
+                {
+                  "type": "Submodel",
+                  "value": "https://smartfactory.de/submodels/aad41141-0c6f-4699-85aa-a752ca733580"
+                },
+                {
+                  "type": "Entity",
+                  "value": "Holon0001"
+                }
+              ]
+            },
+            "second": {
+              "type": "ModelReference",
+              "keys": [
+                {
+                  "type": "Submodel",
+                  "value": "https://smartfactory.de/submodels/aad41141-0c6f-4699-85aa-a752ca733580"
+                },
+                {
+                  "type": "Entity",
+                  "value": "Holon0001"
+                },
+                {
+                  "type": "Entity",
+                  "value": "Holon0006"
+                }
+              ]
+            },
+            "modelType": "RelationshipElement"
+          },
+          {
+            "first": {
+              "type": "ModelReference",
+              "keys": [
+                {
+                  "type": "Submodel",
+                  "value": "https://smartfactory.de/submodels/aad41141-0c6f-4699-85aa-a752ca733580"
+                },
+                {
+                  "type": "Entity",
+                  "value": "Holon0001"
+                }
+              ]
+            },
+            "second": {
+              "type": "ModelReference",
+              "keys": [
+                {
+                  "type": "Submodel",
+                  "value": "https://smartfactory.de/submodels/aad41141-0c6f-4699-85aa-a752ca733580"
+                },
+                {
+                  "type": "Entity",
+                  "value": "Holon0001"
+                },
+                {
+                  "type": "Entity",
+                  "value": "Holon0007"
+                }
+              ]
+            },
+            "modelType": "RelationshipElement"
+          }
+        ],
+        "modelType": "SubmodelElementList"
+      }
+    ],
+    "modelType": "Submodel"
+  }

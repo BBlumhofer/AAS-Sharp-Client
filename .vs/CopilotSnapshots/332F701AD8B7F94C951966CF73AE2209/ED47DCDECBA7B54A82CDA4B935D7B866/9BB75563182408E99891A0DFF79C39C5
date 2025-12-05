@@ -1,0 +1,21 @@
+﻿global using SubmodelElement = BaSyx.Models.SubmodelElement;
+global using Property = BaSyx.Models.Property;
+global using SubmodelElementCollection = BaSyx.Models.SubmodelElementCollection;
+
+// This file provides type aliases to the BaSyx.Models types so the rest of the code
+// can refer to `AasSharpClient.Basyx.Property`, `SubmodelElement`, etc.
+// The actual types are provided by the BaSyx.Models NuGet package referenced in the project file.
+
+using BaSyx.Models;
+
+namespace AasSharpClient.Basyx
+{
+    // Lightweight wrapper types that inherit the BaSyx model types.
+    // These allow the rest of the code to reference types in the
+    // `AasSharpClient.Basyx` namespace while using the official BaSyx
+    // implementations underneath.
+
+    public class SubmodelElement : BaSyx.Models.SubmodelElement { }
+    public class Property : BaSyx.Models.Property { }
+    public class SubmodelElementCollection : BaSyx.Models.SubmodelElementCollection { }
+}

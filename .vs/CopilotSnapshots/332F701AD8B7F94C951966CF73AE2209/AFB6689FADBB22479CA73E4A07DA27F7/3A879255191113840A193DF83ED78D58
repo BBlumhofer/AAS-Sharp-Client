@@ -1,0 +1,59 @@
+﻿using System.Collections.Generic;
+using System.Threading.Tasks;
+using BaSyx.Models.AdminShell;
+using AasSharpClient.Adapters;
+
+namespace AasSharpClient.Models
+{
+    // Generated POCO for ProductionPlan submodel using BaSyx models
+    public partial class ProductionPlan
+    {
+        public ISubmodelElementCollection Content { get; set; } = new SubmodelElementCollection();
+
+        public IProperty IsFinished => BrowseProperty("IsFinished");
+
+        public List<Step> Steps { get; set; } = new();
+
+        [System.Text.Json.Serialization.JsonIgnore]
+        public IBasyxAdapter? Adapter { get; set; }
+
+        public ProductionPlan() { }
+
+        public async Task<bool> IsFinishedAsync()
+        {
+            var val = IsFinished.GetValue<string>();
+            return bool.TryParse(val, out var v);
+        }
+
+        public async Task CompleteAsync()
+        {
+            IsFinished.SetValueAsync("true");
+            if (Adapter != null)
+            {
+                await Adapter.UploadPropertyAsync(this.Content, IsFinished.IdShort, "true");
+            }
+        }
+
+        public async Task UploadStepAsync(Step step)
+        {
+            if (Adapter != null)
+            {
+                await Adapter.UploadElementAsync(step.Content);
+            }
+        }
+
+        private IProperty BrowseProperty(string idShort)
+        {
+            foreach (var el in Content.Value)
+            {
+                if (el.IdShort == idShort && el is IProperty p)
+                {
+                    return p;
+                }
+            }
+            var prop = new Property<string>(idShort, "false");
+            Content.Value.Add(prop);
+            return prop;
+        }
+    }
+}

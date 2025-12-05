@@ -1,0 +1,20 @@
+﻿using System.Collections.Generic;
+
+namespace AasSharpClient.Basyx
+{
+    // Local lightweight models to allow compiling the inspector.
+    public class SubmodelElement
+    {
+        public string IdShort { get; set; } = string.Empty;
+    }
+
+    public class Property : SubmodelElement
+    {
+        public string? Value { get; set; }
+    }
+
+    public class SubmodelElementCollection : SubmodelElement
+    {
+        public List<SubmodelElement> Value { get; set; } = new List<SubmodelElement>();
+    }
+}

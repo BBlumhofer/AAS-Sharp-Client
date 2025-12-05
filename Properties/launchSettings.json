@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "AAS Sharp Client": {
+      "commandName": "Project"
+    },
+    "Container (Dockerfile)": {
+      "commandName": "Docker"
+    }
+  }
+}

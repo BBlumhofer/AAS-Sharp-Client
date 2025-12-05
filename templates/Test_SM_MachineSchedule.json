@@ -1,0 +1,49 @@
+{
+  "modelType" : "Submodel",
+  "kind" : "Instance",
+  "semanticId" : {
+    "keys" : [ {
+      "type" : "GlobalReference",
+      "value" : "https://smartfactory.de/semantics/submodel/MachineSchedule#1/0"
+    } ],
+    "type" : "ExternalReference"
+  },
+  "id" : "https://template.smartfactory.de/sm/MachineSchedule",
+  "idShort" : "MachineSchedule",
+  "submodelElements" : [ {
+    "modelType" : "Property",
+    "semanticId" : {
+      "keys" : [ {
+        "type" : "GlobalReference",
+        "value" : "https://smartfactory.de/semantics/submodel-element/MachineSchedule/LastTimeUpdated#1/0"
+      } ],
+      "type" : "ExternalReference"
+    },
+    "valueType" : "xs:dateTime",
+    "idShort" : "LastTimeUpdated"
+  }, {
+    "modelType" : "Property",
+    "semanticId" : {
+      "keys" : [ {
+        "type" : "GlobalReference",
+        "value" : "https://smartfactory.de/semantics/submodel-element/MachineSchedule/HasOpenTasks#1/0"
+      } ],
+      "type" : "ExternalReference"
+    },
+    "value" : "false",
+    "valueType" : "xs:boolean",
+    "idShort" : "HasOpenTasks"
+  }, {
+    "modelType" : "SubmodelElementList",
+    "semanticId" : {
+      "keys" : [ {
+        "type" : "GlobalReference",
+        "value" : "https://smartfactory.de/semantics/submodel-element/MachineSchedule/Schedule#1/0"
+      } ],
+      "type" : "ExternalReference"
+    },
+    "idShort" : "Schedule",
+    "orderRelevant" : true,
+    "typeValueListElement" : "SubmodelElementCollection"
+  } ]
+}

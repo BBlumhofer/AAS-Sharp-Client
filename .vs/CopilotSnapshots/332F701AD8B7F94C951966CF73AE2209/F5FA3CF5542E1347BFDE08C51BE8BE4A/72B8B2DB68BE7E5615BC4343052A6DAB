@@ -1,0 +1,32 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net10.0</TargetFramework>
+    <RootNamespace>AAS_Sharp_Client</RootNamespace>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    <DockerfileContext>.</DockerfileContext>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.23.0" />
+    <PackageReference Include="BaSyx.Models" Version="2.0.24" />
+    <PackageReference Include="BaSyx.Utils" Version="2.0.24" />
+    <PackageReference Include="BaSyx.AAS.Client.Http" Version="1.0.0" />
+    <PackageReference Include="BaSyx.Registry.Client.Http" Version="2.0.24" />
+    <PackageReference Include="BaSyx.API" Version="2.0.24" />
+    <PackageReference Include="BaSyx.Submodel.Client.Http" Version="1.0.0" />
+    <PackageReference Include="BaSyx.Clients.Http" Version="2.0.24" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="AAS Sharp Client\Basyx\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="tests\AasSharpClient.Tests\AasSharpClient.Tests.csproj" />
+  </ItemGroup>
+
+</Project>

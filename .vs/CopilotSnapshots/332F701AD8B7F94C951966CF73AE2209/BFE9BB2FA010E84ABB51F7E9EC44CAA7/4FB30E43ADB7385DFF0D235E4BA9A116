@@ -1,0 +1,44 @@
+﻿using System.Collections.Generic;
+using System.Text.Json.Serialization;
+using System.Threading.Tasks;
+using AasSharpClient.Adapters;
+
+namespace AasSharpClient.Models
+{
+    public partial class Step
+    {
+        [JsonPropertyName("idShort")]
+        public string IdShort { get; set; } = string.Empty;
+
+        [JsonPropertyName("stepTitle")]
+        public string? StepTitle { get; set; }
+
+        [JsonPropertyName("status")]
+        public string? Status { get; set; }
+
+        [JsonPropertyName("station")]
+        public string? Station { get; set; }
+
+        [JsonPropertyName("actions")]
+        public List<Action> Actions { get; set; } = new();
+
+        [JsonIgnore]
+        public IBasyxAdapter? Adapter { get; set; }
+
+        public Step() { }
+
+        public int GetNumber()
+        {
+            var digits = System.Text.RegularExpressions.Regex.Replace(IdShort ?? "", "[^0-9]", "");
+            return int.TryParse(digits, out var n) ? n : 0;
+        }
+
+        public async Task UpdateActionAsync(Action action)
+        {
+            if (Adapter != null)
+            {
+                await Adapter.UploadElementAsync(action);
+            }
+        }
+    }
+}

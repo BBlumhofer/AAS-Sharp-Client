@@ -1,0 +1,21 @@
+﻿using System.Collections.Generic;
+
+namespace AasSharpClient.Basyx
+{
+    // Minimal representation of a SubmodelElement for PoC.
+    public class SubmodelElement
+    {
+        public string IdShort { get; set; } = string.Empty;
+        public string? SemanticId { get; set; }
+    }
+
+    public class Property : SubmodelElement
+    {
+        public string? Value { get; set; }
+    }
+
+    public class SubmodelElementCollection : SubmodelElement
+    {
+        public List<SubmodelElement> Value { get; set; } = new List<SubmodelElement>();
+    }
+}

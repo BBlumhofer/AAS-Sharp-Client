@@ -1,0 +1,651 @@
+{
+    "idShort": "ProcessChain",
+    "id": "https://example/ide320948322",
+    "kind": "Instance",
+    "semanticId": {
+        "keys" : [ {
+        "type" : "Submodel",
+        "value" : "https://smartfactory.de/semantics/submodel/ProcessChain#1/02"
+        } ],
+        "type" : "ExternalReference"
+    },
+    "qualifiers": [
+        {
+            "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                    {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                    }
+                ]
+            },
+            "kind": "TemplateQualifier",
+            "type": "SMT/Cardinality/1",
+            "valueType": "xs:string",
+            "value": "OneToMany",
+            "valueId": {
+                "type": "ModelReference",
+                "keys": [
+                    {
+                        "type": "Submodel",
+                        "value": "https://example/ide320948322"
+                    },
+                    {
+                        "type": "SubmodelElementCollection",
+                        "value": "RequiredCapability"
+                    }
+                ]
+            }
+        }
+    ],
+    "submodelElements": [
+        {
+            "idShort": "RequiredCapabilities",
+            "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                    {
+                        "type": "GlobalReference",
+                        "value": "https://smartfactory.de/aas/submodel/processchain/requiredcapabilities#1/0"
+                    }
+                ]
+            },
+            "orderRelevant": true,
+            "typeValueListElement": "SubmodelElementCollection",
+            "value": [
+                {
+                    "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                            {
+                                "type": "GlobalReference",
+                                "value": "https://smartfactory.de/aas/submodel/processchain/requiredcapability#1/0"
+                            }
+                        ]
+                    },
+                    "qualifiers": [
+                        {
+                            "kind": "ValueQualifier",
+                            "type": "SequenceID",
+                            "valueType": "xs:int",
+                            "value": "1"
+                        },
+                        {
+                            "semanticId": {
+                                "type": "ExternalReference",
+                                "keys": [
+                                    {
+                                        "type": "GlobalReference",
+                                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                    }
+                                ]
+                            },
+                            "kind": "TemplateQualifier",
+                            "type": "SMT/Cardinality/1",
+                            "valueType": "xs:string",
+                            "value": "One",
+                            "valueId": {
+                                "type": "ModelReference",
+                                "keys": [
+                                    {
+                                        "type": "Submodel",
+                                        "value": "https://example/ide320948322"
+                                    },
+                                    {
+                                        "type": "SubmodelElementCollection",
+                                        "value": "RequiredCapability"
+                                    },
+                                    {
+                                        "type": "ReferenceElement",
+                                        "value": "RequiredCapabilityReference"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "semanticId": {
+                                "type": "ExternalReference",
+                                "keys": [
+                                    {
+                                        "type": "GlobalReference",
+                                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                    }
+                                ]
+                            },
+                            "kind": "TemplateQualifier",
+                            "type": "SMT/Cardinality/2",
+                            "valueType": "xs:string",
+                            "value": "OneToMany",
+                            "valueId": {
+                                "type": "ModelReference",
+                                "keys": [
+                                    {
+                                        "type": "Submodel",
+                                        "value": "https://example/ide320948322"
+                                    },
+                                    {
+                                        "type": "SubmodelElementCollection",
+                                        "value": "RequiredCapability"
+                                    },
+                                    {
+                                        "type": "SubmodelElementCollection",
+                                        "value": "OfferedCapability"
+                                    }
+                                ]
+                            }
+                        }
+                    ],
+                    "value": [
+                        {
+                            "category": "PARAMETER",
+                            "idShort": "RequiredCapabilityReference",
+                            "description": [
+                                {
+                                    "language": "en-US",
+                                    "text": "ReferenceElementobject"
+                                },
+                                {
+                                    "language": "de",
+                                    "text": "ReferenceElementElement"
+                                }
+                            ],
+                            "value": {
+                                "type": "ModelReference",
+                                "keys": [
+                                    {
+                                        "type": "Submodel",
+                                        "value": "https://smartfactory.de/aas/P6/submodel/OfferedCapability"
+                                    },
+                                    {
+                                        "type": "SubmodelElementCollection",
+                                        "value": "CapabilitySet"
+                                    },
+                                    {
+                                        "type": "SubmodelElementCollection",
+                                        "value": "ManuallyAssemblyContainer"
+                                    }
+                                ]
+                            },
+                            "modelType": "ReferenceElement"
+                        },
+                        {
+                            "modelType" : "SubmodelElementCollection",
+                            "semanticId" : {
+                                "keys" : [ {
+                                "type" : "GlobalReference",
+                                "value" : "https://smartfactory.de/semantics/submodel-element/Step/Scheduling"
+                                } ],
+                                "type" : "ExternalReference"
+                            },
+                            "idShort" : "InitialPlannedScheduling",
+                            "value" : [ {
+                                "modelType" : "Property",
+                                "semanticId" : {
+                                "keys" : [ {
+                                    "type" : "Property",
+                                    "value" : "https://smartfactory.de/aas/ids/property/StartTime"
+                                } ],
+                                "type" : "ExternalReference"
+                                },
+                                "value" : "2025-05-19 00:00:30",
+                                "valueType" : "xs:string",
+                                "idShort" : "StartDateTime"
+                            }, {
+                                "modelType" : "Property",
+                                "semanticId" : {
+                                "keys" : [ {
+                                    "type" : "Property",
+                                    "value" : "https://smartfactory.de/aas/ids/property/EndTime"
+                                } ],
+                                "type" : "ExternalReference"
+                                },
+                                "value" : "2025-05-19 00:03:45",
+                                "valueType" : "xs:string",
+                                "idShort" : "EndDateTime"
+                            }, {
+                                "modelType" : "Property",
+                                "semanticId" : {
+                                "keys" : [ {
+                                    "type" : "GlobalReference",
+                                    "value" : "https://smartfactory.de/semantics/submodel-element/Step/Scheduling/CycleTime"
+                                } ],
+                                "type" : "ExternalReference"
+                                },
+                                "value" : "00:01:12",
+                                "valueType" : "xs:string",
+                                "idShort" : "CycleTime"
+                            }, {
+                                "modelType" : "Property",
+                                "semanticId" : {
+                                "keys" : [ ],
+                                "type" : "ExternalReference"
+                                },
+                                "value" : "00:00:00",
+                                "valueType" : "xs:string",
+                                "idShort" : "SetupTime"
+                            } ]
+                            },
+                        {
+                            "idShort": "OfferedCapabilities",
+                            "semanticId": {
+                                "type": "ExternalReference",
+                                "keys": [
+                                    {
+                                        "type": "GlobalReference",
+                                        "value": "https://smartfactory.de/aas/submodel/processchain/offeredcapabilities#1/0"
+                                    }
+                                ]
+                            },
+                            "orderRelevant": false,
+                            "typeValueListElement": "SubmodelElementCollection",
+                            "value": [
+                                {
+                                    "semanticId": {
+                                        "type": "ExternalReference",
+                                        "keys": [
+                                            {
+                                                "type": "GlobalReference",
+                                                "value": "https://smartfactory.de/aas/submodel/processchain/offeredcapability#1/0"
+                                            }
+                                        ]
+                                    },
+                                    "qualifiers": [
+                                        {
+                                            "semanticId": {
+                                                "type": "ExternalReference",
+                                                "keys": [
+                                                    {
+                                                        "type": "GlobalReference",
+                                                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                                    }
+                                                ]
+                                            },
+                                            "kind": "TemplateQualifier",
+                                            "type": "SMT/Cardinality/2",
+                                            "valueType": "xs:string",
+                                            "value": "OneToMany",
+                                            "valueId": {
+                                                "type": "ModelReference",
+                                                "keys": [
+                                                    {
+                                                        "type": "Submodel",
+                                                        "value": "https://example/ide320948322"
+                                                    },
+                                                    {
+                                                        "type": "SubmodelElementCollection",
+                                                        "value": "RequiredCapability"
+                                                    },
+                                                    {
+                                                        "type": "SubmodelElementCollection",
+                                                        "value": "OfferedCapability"
+                                                    },
+                                                    {
+                                                        "type": "SubmodelElementCollection",
+                                                        "value": "Skill"
+                                                    }
+                                                ]
+                                            }
+                                        },
+                                        {
+                                            "semanticId": {
+                                                "type": "ExternalReference",
+                                                "keys": [
+                                                    {
+                                                        "type": "GlobalReference",
+                                                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                                    }
+                                                ]
+                                            },
+                                            "kind": "TemplateQualifier",
+                                            "type": "SMT/Cardinality/1",
+                                            "valueType": "xs:string",
+                                            "value": "One",
+                                            "valueId": {
+                                                "type": "ModelReference",
+                                                "keys": [
+                                                    {
+                                                        "type": "Submodel",
+                                                        "value": "https://example/ide320948322"
+                                                    },
+                                                    {
+                                                        "type": "SubmodelElementCollection",
+                                                        "value": "RequiredCapability"
+                                                    },
+                                                    {
+                                                        "type": "SubmodelElementCollection",
+                                                        "value": "OfferedCapability"
+                                                    },
+                                                    {
+                                                        "type": "ReferenceElement",
+                                                        "value": "OfferedCapabilityReference"
+                                                    }
+                                                ]
+                                            }
+                                        }
+                                    ],
+                                    "value": [
+                                        {
+                                            "category": "PARAMETER",
+                                            "idShort": "OfferedCapabilityReference",
+                                            "description": [
+                                                {
+                                                    "language": "en-US",
+                                                    "text": "ReferenceElementobject"
+                                                },
+                                                {
+                                                    "language": "de",
+                                                    "text": "ReferenceElementElement"
+                                                }
+                                            ],
+                                            "value": {
+                                                "type": "ModelReference",
+                                                "keys": [
+                                                    {
+                                                        "type": "Submodel",
+                                                        "value": "https://smartfactory.de/aas/P6/submodel/OfferedCapability"
+                                                    },
+                                                    {
+                                                        "type": "SubmodelElementCollection",
+                                                        "value": "CapabilitySet"
+                                                    },
+                                                    {
+                                                        "type": "SubmodelElementCollection",
+                                                        "value": "ManuallyAssemblyContainer"
+                                                    }
+                                                ]
+                                            },
+                                            "modelType": "ReferenceElement"
+                                        },
+                                         {
+                                            "idShort": "Station",
+                                            "modelType": "Property",
+                                            "value": "P17",
+                                            "valueType": "xs:string"
+                                        },{
+                                            "idShort": "MatchingScore",
+                                            "modelType": "Property",
+                                            "value": "0.0",
+                                            "valueType": "xs:double"
+                                        },{
+                                            "idShort": "InstanceIdentifier",
+                                            "modelType": "Property",
+                                            "value": "f10bd0bf-7d58-4abb-b093-8ef407326a6e",
+                                            "valueType": "xs:double"
+                                        },
+                                        {
+                                            "idShort": "Skills",
+                                            "semanticId": {
+                                                "type": "ExternalReference",
+                                                "keys": [
+                                                    {
+                                                        "type": "GlobalReference",
+                                                        "value": "https://smartfactory.de/aas/submodel/processchain/skills#1/0"
+                                                    }
+                                                ]
+                                            },
+                                            "orderRelevant": true,
+                                            "typeValueListElement": "SubmodelElementCollection",
+                                            "value": [
+                                                {
+                                                    "semanticId": {
+                                                        "type": "ExternalReference",
+                                                        "keys": [
+                                                            {
+                                                                "type": "GlobalReference",
+                                                                "value": "https://smartfactory.de/aas/submodel/processchain/skill#1/0"
+                                                            }
+                                                        ]
+                                                    },
+                                                    "qualifiers": [
+                                                        {
+                                                            "semanticId": {
+                                                                "type": "ExternalReference",
+                                                                "keys": [
+                                                                    {
+                                                                        "type": "GlobalReference",
+                                                                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                                                    }
+                                                                ]
+                                                            },
+                                                            "kind": "TemplateQualifier",
+                                                            "type": "SMT/Cardinality/1",
+                                                            "valueType": "xs:string",
+                                                            "value": "One",
+                                                            "valueId": {
+                                                                "type": "ModelReference",
+                                                                "keys": [
+                                                                    {
+                                                                        "type": "Submodel",
+                                                                        "value": "https://example/ide320948322"
+                                                                    },
+                                                                    {
+                                                                        "type": "SubmodelElementCollection",
+                                                                        "value": "RequiredCapability"
+                                                                    },
+                                                                    {
+                                                                        "type": "SubmodelElementCollection",
+                                                                        "value": "OfferedCapability"
+                                                                    },
+                                                                    {
+                                                                        "type": "SubmodelElementCollection",
+                                                                        "value": "Skill"
+                                                                    },
+                                                                    {
+                                                                        "type": "SubmodelElementCollection",
+                                                                        "value": "FeasibilityCheckData"
+                                                                    }
+                                                                ]
+                                                            }
+                                                        },
+                                                        {
+                                                            "semanticId": {
+                                                                "type": "ExternalReference",
+                                                                "keys": [
+                                                                    {
+                                                                        "type": "GlobalReference",
+                                                                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                                                    }
+                                                                ]
+                                                            },
+                                                            "kind": "TemplateQualifier",
+                                                            "type": "SMT/Cardinality/2",
+                                                            "valueType": "xs:string",
+                                                            "value": "One",
+                                                            "valueId": {
+                                                                "type": "ModelReference",
+                                                                "keys": [
+                                                                    {
+                                                                        "type": "Submodel",
+                                                                        "value": "https://example/ide320948322"
+                                                                    },
+                                                                    {
+                                                                        "type": "SubmodelElementCollection",
+                                                                        "value": "RequiredCapability"
+                                                                    },
+                                                                    {
+                                                                        "type": "SubmodelElementCollection",
+                                                                        "value": "OfferedCapability"
+                                                                    },
+                                                                    {
+                                                                        "type": "SubmodelElementCollection",
+                                                                        "value": "Skill"
+                                                                    },
+                                                                    {
+                                                                        "type": "ReferenceElement",
+                                                                        "value": "SkillReference"
+                                                                    }
+                                                                ]
+                                                            }
+                                                        },
+                                                        {
+                                                            "semanticId": {
+                                                                "type": "ExternalReference",
+                                                                "keys": [
+                                                                    {
+                                                                        "type": "GlobalReference",
+                                                                        "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                                                    }
+                                                                ]
+                                                            },
+                                                            "kind": "TemplateQualifier",
+                                                            "type": "SMT/Cardinality/3",
+                                                            "valueType": "xs:string",
+                                                            "value": "One",
+                                                            "valueId": {
+                                                                "type": "ModelReference",
+                                                                "keys": [
+                                                                    {
+                                                                        "type": "Submodel",
+                                                                        "value": "https://example/ide320948322"
+                                                                    },
+                                                                    {
+                                                                        "type": "SubmodelElementCollection",
+                                                                        "value": "RequiredCapability"
+                                                                    },
+                                                                    {
+                                                                        "type": "SubmodelElementCollection",
+                                                                        "value": "OfferedCapability"
+                                                                    },
+                                                                    {
+                                                                        "type": "SubmodelElementCollection",
+                                                                        "value": "Skill"
+                                                                    },
+                                                                    {
+                                                                        "type": "SubmodelElementCollection",
+                                                                        "value": "Parameters"
+                                                                    }
+                                                                ]
+                                                            }
+                                                        }
+                                                    ],
+                                                    "value": [
+                                                        {
+                                                            "idShort": "FeasibilityCheckData",
+                                                            "semanticId": {
+                                                                "type": "ExternalReference",
+                                                                "keys": [
+                                                                    {
+                                                                        "type": "GlobalReference",
+                                                                        "value": "https://smartfactory.de/aas/submodel/processchain/skill/feasibilitycheckdata#1/0"
+                                                                    }
+                                                                ]
+                                                            },
+                                                            "modelType": "SubmodelElementCollection"
+                                                        },
+                                                        {
+                                                            "category": "PARAMETER",
+                                                            "idShort": "SkillReference",
+                                                            "description": [
+                                                                {
+                                                                    "language": "en-US",
+                                                                    "text": "ReferenceElementobject"
+                                                                },
+                                                                {
+                                                                    "language": "de",
+                                                                    "text": "ReferenceElementElement"
+                                                                }
+                                                            ],
+                                                            "value": {
+                                                                "type": "ModelReference",
+                                                                "keys": [
+                                                                    {
+                                                                        "type": "Submodel",
+                                                                        "value": "https://smartfactory.de/aas/P6/submodel/Skills"
+                                                                    },
+                                                                    {
+                                                                        "type": "SubmodelElementCollection",
+                                                                        "value": "Skill_0001"
+                                                                    }
+                                                                ]
+                                                            },
+                                                            "modelType": "ReferenceElement"
+                                                        },
+                                                        {
+                                                            "idShort": "RequiredInputParameters",
+                                                            "semanticId": {
+                                                                "type": "ExternalReference",
+                                                                "keys": [
+                                                                    {
+                                                                        "type": "GlobalReference",
+                                                                        "value": "https://smartfactory.de/aas/submodel/processchain/skill/parameters#1/0"
+                                                                    }
+                                                                ]
+                                                            },
+                                                            "qualifiers": [
+                                                                {
+                                                                    "semanticId": {
+                                                                        "type": "ExternalReference",
+                                                                        "keys": [
+                                                                            {
+                                                                                "type": "GlobalReference",
+                                                                                "value": "https://admin-shell.io/SubmodelTemplates/Cardinality/1/0"
+                                                                            }
+                                                                        ]
+                                                                    },
+                                                                    "kind": "TemplateQualifier",
+                                                                    "type": "SMT/Cardinality/1",
+                                                                    "valueType": "xs:string",
+                                                                    "value": "OneToMany",
+                                                                    "valueId": {
+                                                                        "type": "ModelReference",
+                                                                        "keys": [
+                                                                            {
+                                                                                "type": "Submodel",
+                                                                                "value": "https://example/ide320948322"
+                                                                            },
+                                                                            {
+                                                                                "type": "SubmodelElementCollection",
+                                                                                "value": "RequiredCapability"
+                                                                            },
+                                                                            {
+                                                                                "type": "SubmodelElementCollection",
+                                                                                "value": "OfferedCapability"
+                                                                            },
+                                                                            {
+                                                                                "type": "SubmodelElementCollection",
+                                                                                "value": "Skill"
+                                                                            },
+                                                                            {
+                                                                                "type": "SubmodelElementCollection",
+                                                                                "value": "Parameters"
+                                                                            },
+                                                                            {
+                                                                                "type": "Property",
+                                                                                "value": "Parameter"
+                                                                            }
+                                                                        ]
+                                                                    }
+                                                                }
+                                                            ],
+                                                            "value": [
+                                                                {
+                                                                    "idShort": "Parameter",
+                                                                    "valueType": "xs:string",
+                                                                    "value": "test",
+                                                                    "modelType": "Property"
+                                                                }
+                                                            ],
+                                                            "modelType": "SubmodelElementCollection"
+                                                        }
+                                                    ],
+                                                    "modelType": "SubmodelElementCollection"
+                                                }
+                                            ],
+                                            "modelType": "SubmodelElementList"
+                                        }
+                                    ],
+                                    "modelType": "SubmodelElementCollection"
+                                }
+                            ],
+                            "modelType": "SubmodelElementList"
+                        }
+                    ],
+                    "modelType": "SubmodelElementCollection"
+                }
+            ],
+            "modelType": "SubmodelElementList"
+        }
+    ],
+    "modelType": "Submodel"
+}

@@ -1,0 +1,93 @@
+﻿using AasSharpClient.Models;
+using AasSharpClient.Tools;
+using BaSyx.Models.AdminShell;
+using BaSyx.Models.Extensions;
+using System.IO;
+using System.Reflection.Metadata;
+using System.Security.AccessControl;
+using System.Text.Json;
+using System.Threading.Tasks;
+using Xunit;
+
+namespace AasSharpClient.Tests
+{
+    public class ProductionPlanTests
+    {
+        [Fact]
+        public async Task TestSMSKills()
+        {
+
+
+            //Create Production Plan Submodel
+            // ModelReferenceEnum: Submodel, SubmodelElementCollection, Property,
+            
+
+            var skill_refence_dict = new Dictionary<object, string>
+            {
+                { ModelReferenceEnum.Submodel, "https://example.com/ids/sm/4510_5181_3022_5180" },
+                { ModelReferenceEnum.SubmodelElementCollection, "Skills" },
+                { ModelReferenceEnum.SubmodelElementCollection, "Skill_0001 " }
+            };
+            SkillReference skill_reference = new SkillReference(skill_refence_dict);
+
+            var final_result_dict = new Dictionary<string, object>
+            {
+                { "StartTime", "2025/12/02 15:59:49" },
+                { "EndTime", "2025/12/02 16:00:29" },
+                { "CarrierID", "WST_A_17 " },
+                { "CarrierType", "ns=0;i=0" },
+                { "ProductType", "ns=6;s=StorageModule.Resources.Semitrailer_Chassis" },
+                { "ElapsedTime", "39.69656538963318" },
+                { "CarrierEmpty", "" },
+                { "ProductID", "" },
+                { "SuccessfulExecutionsCount", 9 }
+            };
+
+
+            var input_param_dict = new Dictionary<string, string>
+            {
+                { "RetrieveByProductType", "true" },
+                { "ProductType", "Semitrailer_Chassis" },
+                { "ProductID", "" }
+            };
+            InputParameters input_params = new InputParameters(input_param_dict);
+            FinalResultData final_result_data = new FinalResultData(final_result_dict);
+            Action action = new Action("Action0001", "RetrieveToPortLogistic", ActionStatusEnum.DONE, input_params, final_result_data, skill_reference, "P24" );// Actionindex, ActionTitle, Status, InputParameters, FinalResultData, SkillReference, MachineName
+            SchedulingContainer scheduling = new SchedulingContainer("2025-12-02 15:58:45", "2025-12-02 15:59:25", "00:00:00", "00:00:40");
+            Step step= new Step("Step0001", "Load", StepStatusEnum.DONE, action, "P24", scheduling, "SmartFactory-KL", "_PHUKET");// StepTitle, Status, Actions, Station, Enterprise, Workcentre
+            QuantityInformation quantityInformation = new QuantityInformation(1, "TotalNumberOfPieces");
+            ProductionPlan production_plan_sm = new ProductionPlan(false,1 , step); //IsFinished, QuantityInformation/Total Number Of Pieces, Steps
+
+
+            var skill_refence_dict_2 = new Dictionary<object, string>
+            {
+                { ModelReferenceEnum.Submodel, "https://example.com/ids/sm/4510_5181_3022_5180" },
+                { ModelReferenceEnum.SubmodelElementCollection, "Skills" },
+                { ModelReferenceEnum.SubmodelElementCollection, "Skill_0001 " }
+            };
+            SkillReference skill_reference_2 = new SkillReference(skill_refence_dict_2);
+
+
+            var input_param_dict_2 = new Dictionary<string, string>
+            {
+                { "ProductType", "self,ProductIdentification/ProductName" },
+                { "ProductID", "self,ProductIdentification/Identifier" }
+            };
+            InputParameters input_params_2 = new InputParameters(input_param_dict_2);
+            FinalResultData final_result_data_2 = new FinalResultData();
+            Action action_2 = new Action("Action0001", "Store", ActionStatusEnum.OPEN, input_params_2, final_result_data_2, skill_reference_2, "P17");// Actionindex, ActionTitle, Status, InputParameters, FinalResultData, SkillReference, MachineName
+            SchedulingContainer scheduling_2 = new SchedulingContainer("2025-12-02 00:03:10", "2025-12-02 00:03:30", "00:00:00", "00:00:20");
+            Step step_2 = new Step("Step0002", "Unload ", StepStatusEnum.OPEN, action_2, "P17", scheduling_2, "SmartFactory-KL", "_PHUKET");// StepTitle, Status, Actions, Station, Enterprise, Workcentre
+            production_plan_sm.append_step(step_2);
+            // Serialize submodel using BaSyx serializer helpers (we'll use System.Text.Json for comparison)
+            var output = production_plan_sm.ToJsonAsync();
+
+            var expected = await File.ReadAllTextAsync("TestData/ExpectedProductionPlan.json");
+
+            Assert.Equal(JsonDocument.Parse(expected).RootElement.ToString(), JsonDocument.Parse(output).RootElement.ToString());
+
+            var input = ProductionPlan(output);
+            List<Step> = input.get_steps(input);
+        }
+    }
+}

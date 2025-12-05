@@ -1,0 +1,2127 @@
+
+  {
+    "idShort": "Skills",
+    "id": "https://smartfactory.de/submodels/b6f0d706-88b7-4ab7-b17b-bdbc7a2ad261",
+    "kind": "Instance",
+    "semanticId": {
+      "type": "ModelReference",
+      "keys": [
+        {
+          "type": "Submodel",
+          "value": "https://smartfactory.de/semantics/submodel/Skills#1/0"
+        }
+      ]
+    },
+    "submodelElements": [
+      {
+        "idShort": "SkillSet",
+        "value": [
+          {
+            "idShort": "Skill_0001",
+            "value": [
+              {
+                "idShort": "Name",
+                "valueType": "xs:string",
+                "value": "Store",
+                "modelType": "Property"
+              },
+              {
+                "idShort": "SkillInterfaceDescription",
+                "value": [
+                  {
+                    "idShort": "RequiredAccessLevel",
+                    "valueType": "xs:integer",
+                    "value": "2",
+                    "modelType": "Property"
+                  },
+                  {
+                    "idShort": "SkillEndpoint",
+                    "valueType": "xs:anyURI",
+                    "value": "opc.tcp://172.17.57.3:4845/ns=6;s=Module.SkillSet.Store",
+                    "modelType": "Property"
+                  },
+                  {
+                    "idShort": "RequiredInputParameters",
+                    "value": [
+                      {
+                        "idShort": "ID",
+                        "valueType": "xs:string",
+                        "value": "",
+                        "modelType": "Property"
+                      },
+                      {
+                        "idShort": "Port",
+                        "valueType": "xs:int",
+                        "value": "0",
+                        "modelType": "Property"
+                      }
+                    ],
+                    "modelType": "SubmodelElementCollection"
+                  },
+                  {
+                    "idShort": "Trigger",
+                    "value": [
+                      {
+                        "idShort": "Start",
+                        "inputVariables": [
+                          {
+                            "value": {
+                              "idShort": "inputVariables",
+                              "valueType": "xs:string",
+                              "modelType": "Property"
+                            }
+                          }
+                        ],
+                        "outputVariables": [
+                          {
+                            "value": {
+                              "idShort": "outputVariables",
+                              "valueType": "xs:string",
+                              "modelType": "Property"
+                            }
+                          }
+                        ],
+                        "inoutputVariables": [
+                          {
+                            "value": {
+                              "idShort": "inoutputVariables",
+                              "valueType": "xs:string",
+                              "modelType": "Property"
+                            }
+                          }
+                        ],
+                        "modelType": "Operation"
+                      },
+                      {
+                        "idShort": "Reset",
+                        "inputVariables": [
+                          {
+                            "value": {
+                              "idShort": "inputVariables",
+                              "valueType": "xs:string",
+                              "modelType": "Property"
+                            }
+                          }
+                        ],
+                        "outputVariables": [
+                          {
+                            "value": {
+                              "idShort": "outputVariables",
+                              "valueType": "xs:string",
+                              "modelType": "Property"
+                            }
+                          }
+                        ],
+                        "inoutputVariables": [
+                          {
+                            "value": {
+                              "idShort": "inoutputVariables",
+                              "valueType": "xs:string",
+                              "modelType": "Property"
+                            }
+                          }
+                        ],
+                        "modelType": "Operation"
+                      },
+                      {
+                        "idShort": "Suspend",
+                        "inputVariables": [
+                          {
+                            "value": {
+                              "idShort": "inputVariables",
+                              "valueType": "xs:string",
+                              "modelType": "Property"
+                            }
+                          }
+                        ],
+                        "outputVariables": [
+                          {
+                            "value": {
+                              "idShort": "outputVariables",
+                              "valueType": "xs:string",
+                              "modelType": "Property"
+                            }
+                          }
+                        ],
+                        "inoutputVariables": [
+                          {
+                            "value": {
+                              "idShort": "inoutputVariables",
+                              "valueType": "xs:string",
+                              "modelType": "Property"
+                            }
+                          }
+                        ],
+                        "modelType": "Operation"
+                      },
+                      {
+                        "idShort": "Halt",
+                        "inputVariables": [
+                          {
+                            "value": {
+                              "idShort": "inputVariables",
+                              "valueType": "xs:string",
+                              "modelType": "Property"
+                            }
+                          }
+                        ],
+                        "outputVariables": [
+                          {
+                            "value": {
+                              "idShort": "outputVariables",
+                              "valueType": "xs:string",
+                              "modelType": "Property"
+                            }
+                          }
+                        ],
+                        "inoutputVariables": [
+                          {
+                            "value": {
+                              "idShort": "inoutputVariables",
+                              "valueType": "xs:string",
+                              "modelType": "Property"
+                            }
+                          }
+                        ],
+                        "modelType": "Operation"
+                      }
+                    ],
+                    "modelType": "SubmodelElementCollection"
+                  },
+                  {
+                    "idShort": "SecurityRequirements",
+                    "value": {
+                      "type": "ModelReference",
+                      "keys": [
+                        {
+                          "type": "Submodel",
+                          "value": "https://smartfactory.de/submodels/a868c959-baad-406c-a5ef-c087a491def8"
+                        },
+                        {
+                          "type": "SubmodelElementCollection",
+                          "value": "Skills"
+                        },
+                        {
+                          "type": "SubmodelElementCollection",
+                          "value": "EndpointMetadata"
+                        },
+                        {
+                          "type": "SubmodelElementCollection",
+                          "value": "securityDefinitions"
+                        },
+                        {
+                          "type": "SubmodelElementCollection",
+                          "value": "basic_sc"
+                        }
+                      ]
+                    },
+                    "modelType": "ReferenceElement"
+                  }
+                ],
+                "modelType": "SubmodelElementCollection"
+              }
+            ],
+            "modelType": "SubmodelElementCollection"
+          },
+          {
+            "idShort": "Skill_0002",
+            "value": [
+              {
+                "idShort": "Name",
+                "valueType": "xs:string",
+                "value": "Retrieve",
+                "modelType": "Property"
+              },
+              {
+                "idShort": "SkillInterfaceDescription",
+                "value": [
+                  {
+                    "idShort": "RequiredAccessLevel",
+                    "valueType": "xs:integer",
+                    "value": "2",
+                    "modelType": "Property"
+                  },
+                  {
+                    "idShort": "SkillEndpoint",
+                    "valueType": "xs:anyURI",
+                    "value": "opc.tcp:/172.17.57.3:4845/ns=6;s=Module.SkillSet.Retrieve",
+                    "modelType": "Property"
+                  },
+                  {
+                    "idShort": "RequiredInputParameters",
+                    "value": [
+                      {
+                        "idShort": "Port",
+                        "valueType": "xs:int",
+                        "value": "0",
+                        "modelType": "Property"
+                      },
+                      {
+                        "idShort": "ID",
+                        "valueType": "xs:string",
+                        "value": "",
+                        "modelType": "Property"
+                      }
+                    ],
+                    "modelType": "SubmodelElementCollection"
+                  },
+                  {
+                    "idShort": "Trigger",
+                    "value": [
+                      {
+                        "idShort": "Start",
+                        "inputVariables": [
+                          {
+                            "value": {
+                              "idShort": "inputVariables",
+                              "valueType": "xs:string",
+                              "modelType": "Property"
+                            }
+                          }
+                        ],
+                        "outputVariables": [
+                          {
+                            "value": {
+                              "idShort": "outputVariables",
+                              "valueType": "xs:string",
+                              "modelType": "Property"
+                            }
+                          }
+                        ],
+                        "inoutputVariables": [
+                          {
+                            "value": {
+                              "idShort": "inoutputVariables",
+                              "valueType": "xs:string",
+                              "modelType": "Property"
+                            }
+                          }
+                        ],
+                        "modelType": "Operation"
+                      },
+                      {
+                        "idShort": "Reset",
+                        "inputVariables": [
+                          {
+                            "value": {
+                              "idShort": "inputVariables",
+                              "valueType": "xs:string",
+                              "modelType": "Property"
+                            }
+                          }
+                        ],
+                        "outputVariables": [
+                          {
+                            "value": {
+                              "idShort": "outputVariables",
+                              "valueType": "xs:string",
+                              "modelType": "Property"
+                            }
+                          }
+                        ],
+                        "inoutputVariables": [
+                          {
+                            "value": {
+                              "idShort": "inoutputVariables",
+                              "valueType": "xs:string",
+                              "modelType": "Property"
+                            }
+                          }
+                        ],
+                        "modelType": "Operation"
+                      },
+                      {
+                        "idShort": "Suspend",
+                        "inputVariables": [
+                          {
+                            "value": {
+                              "idShort": "inputVariables",
+                              "valueType": "xs:string",
+                              "modelType": "Property"
+                            }
+                          }
+                        ],
+                        "outputVariables": [
+                          {
+                            "value": {
+                              "idShort": "outputVariables",
+                              "valueType": "xs:string",
+                              "modelType": "Property"
+                            }
+                          }
+                        ],
+                        "inoutputVariables": [
+                          {
+                            "value": {
+                              "idShort": "inoutputVariables",
+                              "valueType": "xs:string",
+                              "modelType": "Property"
+                            }
+                          }
+                        ],
+                        "modelType": "Operation"
+                      },
+                      {
+                        "idShort": "Halt",
+                        "inputVariables": [
+                          {
+                            "value": {
+                              "idShort": "inputVariables",
+                              "valueType": "xs:string",
+                              "modelType": "Property"
+                            }
+                          }
+                        ],
+                        "outputVariables": [
+                          {
+                            "value": {
+                              "idShort": "outputVariables",
+                              "valueType": "xs:string",
+                              "modelType": "Property"
+                            }
+                          }
+                        ],
+                        "inoutputVariables": [
+                          {
+                            "value": {
+                              "idShort": "inoutputVariables",
+                              "valueType": "xs:string",
+                              "modelType": "Property"
+                            }
+                          }
+                        ],
+                        "modelType": "Operation"
+                      }
+                    ],
+                    "modelType": "SubmodelElementCollection"
+                  },
+                  {
+                    "idShort": "SecurityRequirements",
+                    "value": {
+                      "type": "ModelReference",
+                      "keys": [
+                        {
+                          "type": "Submodel",
+                          "value": "https://smartfactory.de/submodels/a868c959-baad-406c-a5ef-c087a491def8"
+                        },
+                        {
+                          "type": "SubmodelElementCollection",
+                          "value": "Skills"
+                        },
+                        {
+                          "type": "SubmodelElementCollection",
+                          "value": "EndpointMetadata"
+                        },
+                        {
+                          "type": "SubmodelElementCollection",
+                          "value": "securityDefinitions"
+                        },
+                        {
+                          "type": "SubmodelElementCollection",
+                          "value": "basic_sc"
+                        }
+                      ]
+                    },
+                    "modelType": "ReferenceElement"
+                  }
+                ],
+                "modelType": "SubmodelElementCollection"
+              }
+            ],
+            "modelType": "SubmodelElementCollection"
+          },
+          {
+            "idShort": "Skill_0003",
+            "value": [
+              {
+                "idShort": "Name",
+                "valueType": "xs:string",
+                "value": "Arrange",
+                "modelType": "Property"
+              },
+              {
+                "idShort": "SkillInterfaceDescription",
+                "value": [
+                  {
+                    "idShort": "RequiredAccessLevel",
+                    "valueType": "xs:integer",
+                    "value": "2",
+                    "modelType": "Property"
+                  },
+                  {
+                    "idShort": "SkillEndpoint",
+                    "valueType": "xs:anyURI",
+                    "value": "opc.tcp://172.17.57.3:4845/ns=6;s=Module.SkillSet.Arrange",
+                    "modelType": "Property"
+                  },
+                  {
+                    "idShort": "RequiredInputParameters",
+                    "value": [
+                      {
+                        "idShort": "BlockPortAfterExecution",
+                        "valueType": "xs:boolean",
+                        "value": "true",
+                        "modelType": "Property"
+                      },
+                      {
+                        "idShort": "Port",
+                        "valueType": "xs:int",
+                        "value": "0",
+                        "modelType": "Property"
+                      },
+                      {
+                        "idShort": "ID",
+                        "valueType": "xs:string",
+                        "value": "",
+                        "modelType": "Property"
+                      }
+                    ],
+                    "modelType": "SubmodelElementCollection"
+                  },
+                  {
+                    "idShort": "Trigger",
+                    "value": [
+                      {
+                        "idShort": "Start",
+                        "inputVariables": [
+                          {
+                            "value": {
+                              "idShort": "inputVariables",
+                              "valueType": "xs:string",
+                              "modelType": "Property"
+                            }
+                          }
+                        ],
+                        "outputVariables": [
+                          {
+                            "value": {
+                              "idShort": "outputVariables",
+                              "valueType": "xs:string",
+                              "modelType": "Property"
+                            }
+                          }
+                        ],
+                        "inoutputVariables": [
+                          {
+                            "value": {
+                              "idShort": "inoutputVariables",
+                              "valueType": "xs:string",
+                              "modelType": "Property"
+                            }
+                          }
+                        ],
+                        "modelType": "Operation"
+                      },
+                      {
+                        "idShort": "Reset",
+                        "inputVariables": [
+                          {
+                            "value": {
+                              "idShort": "inputVariables",
+                              "valueType": "xs:string",
+                              "modelType": "Property"
+                            }
+                          }
+                        ],
+                        "outputVariables": [
+                          {
+                            "value": {
+                              "idShort": "outputVariables",
+                              "valueType": "xs:string",
+                              "modelType": "Property"
+                            }
+                          }
+                        ],
+                        "inoutputVariables": [
+                          {
+                            "value": {
+                              "idShort": "inoutputVariables",
+                              "valueType": "xs:string",
+                              "modelType": "Property"
+                            }
+                          }
+                        ],
+                        "modelType": "Operation"
+                      },
+                      {
+                        "idShort": "Suspend",
+                        "inputVariables": [
+                          {
+                            "value": {
+                              "idShort": "inputVariables",
+                              "valueType": "xs:string",
+                              "modelType": "Property"
+                            }
+                          }
+                        ],
+                        "outputVariables": [
+                          {
+                            "value": {
+                              "idShort": "outputVariables",
+                              "valueType": "xs:string",
+                              "modelType": "Property"
+                            }
+                          }
+                        ],
+                        "inoutputVariables": [
+                          {
+                            "value": {
+                              "idShort": "inoutputVariables",
+                              "valueType": "xs:string",
+                              "modelType": "Property"
+                            }
+                          }
+                        ],
+                        "modelType": "Operation"
+                      },
+                      {
+                        "idShort": "Halt",
+                        "inputVariables": [
+                          {
+                            "value": {
+                              "idShort": "inputVariables",
+                              "valueType": "xs:string",
+                              "modelType": "Property"
+                            }
+                          }
+                        ],
+                        "outputVariables": [
+                          {
+                            "value": {
+                              "idShort": "outputVariables",
+                              "valueType": "xs:string",
+                              "modelType": "Property"
+                            }
+                          }
+                        ],
+                        "inoutputVariables": [
+                          {
+                            "value": {
+                              "idShort": "inoutputVariables",
+                              "valueType": "xs:string",
+                              "modelType": "Property"
+                            }
+                          }
+                        ],
+                        "modelType": "Operation"
+                      }
+                    ],
+                    "modelType": "SubmodelElementCollection"
+                  },
+                  {
+                    "idShort": "SecurityRequirements",
+                    "value": {
+                      "type": "ModelReference",
+                      "keys": [
+                        {
+                          "type": "Submodel",
+                          "value": "https://smartfactory.de/submodels/a868c959-baad-406c-a5ef-c087a491def8"
+                        },
+                        {
+                          "type": "SubmodelElementCollection",
+                          "value": "Skills"
+                        },
+                        {
+                          "type": "SubmodelElementCollection",
+                          "value": "EndpointMetadata"
+                        },
+                        {
+                          "type": "SubmodelElementCollection",
+                          "value": "securityDefinitions"
+                        },
+                        {
+                          "type": "SubmodelElementCollection",
+                          "value": "basic_sc"
+                        }
+                      ]
+                    },
+                    "modelType": "ReferenceElement"
+                  }
+                ],
+                "modelType": "SubmodelElementCollection"
+              }
+            ],
+            "modelType": "SubmodelElementCollection"
+          },
+          {
+            "idShort": "Skill_0004",
+            "value": [
+              {
+                "idShort": "Name",
+                "valueType": "xs:string",
+                "value": "ReleaseBlockedPort",
+                "modelType": "Property"
+              },
+              {
+                "idShort": "SkillInterfaceDescription",
+                "value": [
+                  {
+                    "idShort": "RequiredAccessLevel",
+                    "valueType": "xs:integer",
+                    "value": "2",
+                    "modelType": "Property"
+                  },
+                  {
+                    "idShort": "SkillEndpoint",
+                    "valueType": "xs:anyURI",
+                    "value": "opc.tcp://172.17.57.3:4845/ns=6;s=Module.SkillSet.ReleaseBlockedPort",
+                    "modelType": "Property"
+                  },
+                  {
+                    "idShort": "RequiredInputParameters",
+                    "value": [
+                      {
+                        "idShort": "Port",
+                        "valueType": "xs:int",
+                        "value": "0",
+                        "modelType": "Property"
+                      },
+                      {
+                        "idShort": "ID",
+                        "valueType": "xs:string",
+                        "value": "",
+                        "modelType": "Property"
+                      }
+                    ],
+                    "modelType": "SubmodelElementCollection"
+                  },
+                  {
+                    "idShort": "Trigger",
+                    "value": [
+                      {
+                        "idShort": "Start",
+                        "inputVariables": [
+                          {
+                            "value": {
+                              "idShort": "inputVariables",
+                              "valueType": "xs:string",
+                              "modelType": "Property"
+                            }
+                          }
+                        ],
+                        "outputVariables": [
+                          {
+                            "value": {
+                              "idShort": "outputVariables",
+                              "valueType": "xs:string",
+                              "modelType": "Property"
+                            }
+                          }
+                        ],
+                        "inoutputVariables": [
+                          {
+                            "value": {
+                              "idShort": "inoutputVariables",
+                              "valueType": "xs:string",
+                              "modelType": "Property"
+                            }
+                          }
+                        ],
+                        "modelType": "Operation"
+                      },
+                      {
+                        "idShort": "Reset",
+                        "inputVariables": [
+                          {
+                            "value": {
+                              "idShort": "inputVariables",
+                              "valueType": "xs:string",
+                              "modelType": "Property"
+                            }
+                          }
+                        ],
+                        "outputVariables": [
+                          {
+                            "value": {
+                              "idShort": "outputVariables",
+                              "valueType": "xs:string",
+                              "modelType": "Property"
+                            }
+                          }
+                        ],
+                        "inoutputVariables": [
+                          {
+                            "value": {
+                              "idShort": "inoutputVariables",
+                              "valueType": "xs:string",
+                              "modelType": "Property"
+                            }
+                          }
+                        ],
+                        "modelType": "Operation"
+                      },
+                      {
+                        "idShort": "Suspend",
+                        "inputVariables": [
+                          {
+                            "value": {
+                              "idShort": "inputVariables",
+                              "valueType": "xs:string",
+                              "modelType": "Property"
+                            }
+                          }
+                        ],
+                        "outputVariables": [
+                          {
+                            "value": {
+                              "idShort": "outputVariables",
+                              "valueType": "xs:string",
+                              "modelType": "Property"
+                            }
+                          }
+                        ],
+                        "inoutputVariables": [
+                          {
+                            "value": {
+                              "idShort": "inoutputVariables",
+                              "valueType": "xs:string",
+                              "modelType": "Property"
+                            }
+                          }
+                        ],
+                        "modelType": "Operation"
+                      },
+                      {
+                        "idShort": "Halt",
+                        "inputVariables": [
+                          {
+                            "value": {
+                              "idShort": "inputVariables",
+                              "valueType": "xs:string",
+                              "modelType": "Property"
+                            }
+                          }
+                        ],
+                        "outputVariables": [
+                          {
+                            "value": {
+                              "idShort": "outputVariables",
+                              "valueType": "xs:string",
+                              "modelType": "Property"
+                            }
+                          }
+                        ],
+                        "inoutputVariables": [
+                          {
+                            "value": {
+                              "idShort": "inoutputVariables",
+                              "valueType": "xs:string",
+                              "modelType": "Property"
+                            }
+                          }
+                        ],
+                        "modelType": "Operation"
+                      }
+                    ],
+                    "modelType": "SubmodelElementCollection"
+                  },
+                  {
+                    "idShort": "SecurityRequirements",
+                    "value": {
+                      "type": "ModelReference",
+                      "keys": [
+                        {
+                          "type": "Submodel",
+                          "value": "https://smartfactory.de/submodels/a868c959-baad-406c-a5ef-c087a491def8"
+                        },
+                        {
+                          "type": "SubmodelElementCollection",
+                          "value": "Skills"
+                        },
+                        {
+                          "type": "SubmodelElementCollection",
+                          "value": "EndpointMetadata"
+                        },
+                        {
+                          "type": "SubmodelElementCollection",
+                          "value": "securityDefinitions"
+                        },
+                        {
+                          "type": "SubmodelElementCollection",
+                          "value": "basic_sc"
+                        }
+                      ]
+                    },
+                    "modelType": "ReferenceElement"
+                  }
+                ],
+                "modelType": "SubmodelElementCollection"
+              }
+            ],
+            "modelType": "SubmodelElementCollection"
+          }
+        ],
+        "modelType": "SubmodelElementCollection"
+      },
+      {
+        "idShort": "EndpointMetadata",
+        "semanticId": {
+          "type": "ExternalReference",
+          "keys": [
+            {
+              "type": "GlobalReference",
+              "value": "https://admin-shell.io/idta/AssetInterfacesDescription/1/0/EndpointMetadata"
+            }
+          ]
+        },
+        "qualifiers": [
+          {
+            "type": "Cardinality",
+            "valueType": "xs:string",
+            "value": "One"
+          }
+        ],
+        "value": [
+          {
+            "idShort": "base",
+            "semanticId": {
+              "type": "ExternalReference",
+              "keys": [
+                {
+                  "type": "GlobalReference",
+                  "value": "https://www.w3.org/2019/wot/td#base"
+                }
+              ]
+            },
+            "qualifiers": [
+              {
+                "type": "Cardinality",
+                "valueType": "xs:string",
+                "value": "One"
+              }
+            ],
+            "valueType": "xs:anyURI",
+            "value": "http://172.17.57.3:4845/",
+            "modelType": "Property"
+          },
+          {
+            "idShort": "scada",
+            "semanticId": {
+              "type": "ExternalReference",
+              "keys": [
+                {
+                  "type": "GlobalReference",
+                  "value": "https://www.w3.org/2019/wot/td#base"
+                }
+              ]
+            },
+            "qualifiers": [
+              {
+                "type": "Cardinality",
+                "valueType": "xs:string",
+                "value": "One"
+              }
+            ],
+            "valueType": "xs:anyURI",
+            "value": "http://172.17.57.3:8000",
+            "modelType": "Property"
+          },
+          {
+            "idShort": "contentType",
+            "semanticId": {
+              "type": "ExternalReference",
+              "keys": [
+                {
+                  "type": "GlobalReference",
+                  "value": "https://www.w3.org/2019/wot/hypermedia#forContentType"
+                }
+              ]
+            },
+            "qualifiers": [
+              {
+                "type": "Cardinality",
+                "valueType": "xs:string",
+                "value": "One"
+              }
+            ],
+            "valueType": "xs:string",
+            "value": "application/json",
+            "modelType": "Property"
+          },
+          {
+            "idShort": "security",
+            "semanticId": {
+              "type": "ExternalReference",
+              "keys": [
+                {
+                  "type": "GlobalReference",
+                  "value": "https://www.w3.org/2019/wot/td#hasSecurityConfiguration"
+                }
+              ]
+            },
+            "qualifiers": [
+              {
+                "type": "Cardinality",
+                "valueType": "xs:string",
+                "value": "One"
+              }
+            ],
+            "typeValueListElement": "ReferenceElement",
+            "value": [
+              {
+                "value": {
+                  "type": "ModelReference",
+                  "keys": [
+                    {
+                      "type": "Submodel",
+                      "value": "https://smartfactory.de/sm/e70c0aa2-2a58-43a9-aa3d-cd81bcbedd3b"
+                    },
+                    {
+                      "type": "SubmodelElementCollection",
+                      "value": "Skills"
+                    },
+                    {
+                      "type": "SubmodelElementCollection",
+                      "value": "EndpointMetadata"
+                    },
+                    {
+                      "type": "SubmodelElementCollection",
+                      "value": "securityDefinitions"
+                    },
+                    {
+                      "type": "SubmodelElementCollection",
+                      "value": "basic_sc"
+                    }
+                  ]
+                },
+                "modelType": "ReferenceElement"
+              }
+            ],
+            "modelType": "SubmodelElementList"
+          },
+          {
+            "idShort": "securityDefinitions",
+            "semanticId": {
+              "type": "ExternalReference",
+              "keys": [
+                {
+                  "type": "GlobalReference",
+                  "value": "https://www.w3.org/2019/wot/td#definesSecurityScheme"
+                }
+              ]
+            },
+            "qualifiers": [
+              {
+                "type": "Cardinality",
+                "valueType": "xs:string",
+                "value": "One"
+              }
+            ],
+            "value": [
+              {
+                "idShort": "nosec_sc",
+                "semanticId": {
+                  "type": "ExternalReference",
+                  "keys": [
+                    {
+                      "type": "GlobalReference",
+                      "value": "https://www.w3.org/2019/wot/security#NoSecurityScheme"
+                    }
+                  ]
+                },
+                "qualifiers": [
+                  {
+                    "type": "Cardinality",
+                    "valueType": "xs:string",
+                    "value": "ZeroToOne"
+                  }
+                ],
+                "value": [
+                  {
+                    "idShort": "scheme",
+                    "semanticId": {
+                      "type": "ExternalReference",
+                      "keys": [
+                        {
+                          "type": "GlobalReference",
+                          "value": "https://www.w3.org/2019/wot/security#SecurityScheme"
+                        }
+                      ]
+                    },
+                    "qualifiers": [
+                      {
+                        "type": "Cardinality",
+                        "valueType": "xs:string",
+                        "value": "One"
+                      }
+                    ],
+                    "valueType": "xs:string",
+                    "value": "nosec",
+                    "modelType": "Property"
+                  }
+                ],
+                "modelType": "SubmodelElementCollection"
+              },
+              {
+                "idShort": "auto_sc",
+                "semanticId": {
+                  "type": "ExternalReference",
+                  "keys": [
+                    {
+                      "type": "GlobalReference",
+                      "value": "https://www.w3.org/2019/wot/security#AutoSecurityScheme"
+                    }
+                  ]
+                },
+                "qualifiers": [
+                  {
+                    "type": "Cardinality",
+                    "valueType": "xs:string",
+                    "value": "ZeroToOne"
+                  }
+                ],
+                "value": [
+                  {
+                    "idShort": "scheme",
+                    "semanticId": {
+                      "type": "ExternalReference",
+                      "keys": [
+                        {
+                          "type": "GlobalReference",
+                          "value": "https://www.w3.org/2019/wot/security#SecurityScheme"
+                        }
+                      ]
+                    },
+                    "qualifiers": [
+                      {
+                        "type": "Cardinality",
+                        "valueType": "xs:string",
+                        "value": "One"
+                      }
+                    ],
+                    "valueType": "xs:string",
+                    "value": "auto",
+                    "modelType": "Property"
+                  },
+                  {
+                    "idShort": "proxy",
+                    "semanticId": {
+                      "type": "ExternalReference",
+                      "keys": [
+                        {
+                          "type": "GlobalReference",
+                          "value": "https://www.w3.org/2019/wot/security#proxy"
+                        }
+                      ]
+                    },
+                    "qualifiers": [
+                      {
+                        "type": "Cardinality",
+                        "valueType": "xs:string",
+                        "value": "ZeroToOne"
+                      }
+                    ],
+                    "valueType": "xs:string",
+                    "modelType": "Property"
+                  }
+                ],
+                "modelType": "SubmodelElementCollection"
+              },
+              {
+                "idShort": "basic_sc",
+                "semanticId": {
+                  "type": "ExternalReference",
+                  "keys": [
+                    {
+                      "type": "GlobalReference",
+                      "value": "https://www.w3.org/2019/wot/security#BasicSecurityScheme"
+                    }
+                  ]
+                },
+                "qualifiers": [
+                  {
+                    "type": "Cardinality",
+                    "valueType": "xs:string",
+                    "value": "ZeroToOne"
+                  }
+                ],
+                "value": [
+                  {
+                    "idShort": "scheme",
+                    "semanticId": {
+                      "type": "ExternalReference",
+                      "keys": [
+                        {
+                          "type": "GlobalReference",
+                          "value": "https://www.w3.org/2019/wot/security#SecurityScheme"
+                        }
+                      ]
+                    },
+                    "qualifiers": [
+                      {
+                        "type": "Cardinality",
+                        "valueType": "xs:string",
+                        "value": "One"
+                      }
+                    ],
+                    "valueType": "xs:string",
+                    "value": "basic",
+                    "modelType": "Property"
+                  },
+                  {
+                    "idShort": "name",
+                    "semanticId": {
+                      "type": "ExternalReference",
+                      "keys": [
+                        {
+                          "type": "GlobalReference",
+                          "value": "https://www.w3.org/2019/wot/security#name"
+                        }
+                      ]
+                    },
+                    "qualifiers": [
+                      {
+                        "type": "Cardinality",
+                        "valueType": "xs:string",
+                        "value": "ZeroToOne"
+                      }
+                    ],
+                    "valueType": "xs:string",
+                    "modelType": "Property"
+                  },
+                  {
+                    "idShort": "in",
+                    "semanticId": {
+                      "type": "ExternalReference",
+                      "keys": [
+                        {
+                          "type": "GlobalReference",
+                          "value": "https://www.w3.org/2019/wot/security#in"
+                        }
+                      ]
+                    },
+                    "qualifiers": [
+                      {
+                        "type": "Cardinality",
+                        "valueType": "xs:string",
+                        "value": "ZeroToOne"
+                      }
+                    ],
+                    "valueType": "xs:string",
+                    "modelType": "Property"
+                  },
+                  {
+                    "idShort": "proxy",
+                    "semanticId": {
+                      "type": "ExternalReference",
+                      "keys": [
+                        {
+                          "type": "GlobalReference",
+                          "value": "https://www.w3.org/2019/wot/security#proxy"
+                        }
+                      ]
+                    },
+                    "qualifiers": [
+                      {
+                        "type": "Cardinality",
+                        "valueType": "xs:string",
+                        "value": "ZeroToOne"
+                      }
+                    ],
+                    "valueType": "xs:string",
+                    "modelType": "Property"
+                  }
+                ],
+                "modelType": "SubmodelElementCollection"
+              },
+              {
+                "idShort": "combo_sc",
+                "semanticId": {
+                  "type": "ExternalReference",
+                  "keys": [
+                    {
+                      "type": "GlobalReference",
+                      "value": "https://www.w3.org/2019/wot/security#ComboSecurityScheme"
+                    }
+                  ]
+                },
+                "qualifiers": [
+                  {
+                    "type": "Cardinality",
+                    "valueType": "xs:string",
+                    "value": "ZeroToOne"
+                  }
+                ],
+                "value": [
+                  {
+                    "idShort": "scheme",
+                    "semanticId": {
+                      "type": "ExternalReference",
+                      "keys": [
+                        {
+                          "type": "GlobalReference",
+                          "value": "https://www.w3.org/2019/wot/security#SecurityScheme"
+                        }
+                      ]
+                    },
+                    "qualifiers": [
+                      {
+                        "type": "Cardinality",
+                        "valueType": "xs:string",
+                        "value": "One"
+                      }
+                    ],
+                    "valueType": "xs:string",
+                    "value": "combo",
+                    "modelType": "Property"
+                  },
+                  {
+                    "idShort": "oneOf",
+                    "semanticId": {
+                      "type": "ExternalReference",
+                      "keys": [
+                        {
+                          "type": "GlobalReference",
+                          "value": "https://www.w3.org/2019/wot/security#oneOf"
+                        }
+                      ]
+                    },
+                    "qualifiers": [
+                      {
+                        "type": "Cardinality",
+                        "valueType": "xs:string",
+                        "value": "One"
+                      }
+                    ],
+                    "typeValueListElement": "SubmodelElement",
+                    "modelType": "SubmodelElementList"
+                  },
+                  {
+                    "idShort": "allOf",
+                    "semanticId": {
+                      "type": "ExternalReference",
+                      "keys": [
+                        {
+                          "type": "GlobalReference",
+                          "value": "https://www.w3.org/2019/wot/security#allOf"
+                        }
+                      ]
+                    },
+                    "qualifiers": [
+                      {
+                        "type": "Cardinality",
+                        "valueType": "xs:string",
+                        "value": "One"
+                      }
+                    ],
+                    "typeValueListElement": "SubmodelElement",
+                    "modelType": "SubmodelElementList"
+                  },
+                  {
+                    "idShort": "proxy",
+                    "semanticId": {
+                      "type": "ExternalReference",
+                      "keys": [
+                        {
+                          "type": "GlobalReference",
+                          "value": "https://www.w3.org/2019/wot/security#proxy"
+                        }
+                      ]
+                    },
+                    "qualifiers": [
+                      {
+                        "type": "Cardinality",
+                        "valueType": "xs:string",
+                        "value": "ZeroToOne"
+                      }
+                    ],
+                    "valueType": "xs:string",
+                    "modelType": "Property"
+                  }
+                ],
+                "modelType": "SubmodelElementCollection"
+              },
+              {
+                "idShort": "apikey_sc",
+                "semanticId": {
+                  "type": "ExternalReference",
+                  "keys": [
+                    {
+                      "type": "GlobalReference",
+                      "value": "https://www.w3.org/2019/wot/security#APIKeySecurityScheme"
+                    }
+                  ]
+                },
+                "qualifiers": [
+                  {
+                    "type": "Cardinality",
+                    "valueType": "xs:string",
+                    "value": "ZeroToOne"
+                  }
+                ],
+                "value": [
+                  {
+                    "idShort": "scheme",
+                    "semanticId": {
+                      "type": "ExternalReference",
+                      "keys": [
+                        {
+                          "type": "GlobalReference",
+                          "value": "https://www.w3.org/2019/wot/security#SecurityScheme"
+                        }
+                      ]
+                    },
+                    "qualifiers": [
+                      {
+                        "type": "Cardinality",
+                        "valueType": "xs:string",
+                        "value": "One"
+                      }
+                    ],
+                    "valueType": "xs:string",
+                    "value": "apikey",
+                    "modelType": "Property"
+                  },
+                  {
+                    "idShort": "name",
+                    "semanticId": {
+                      "type": "ExternalReference",
+                      "keys": [
+                        {
+                          "type": "GlobalReference",
+                          "value": "https://www.w3.org/2019/wot/security#name"
+                        }
+                      ]
+                    },
+                    "qualifiers": [
+                      {
+                        "type": "Cardinality",
+                        "valueType": "xs:string",
+                        "value": "ZeroToOne"
+                      }
+                    ],
+                    "valueType": "xs:string",
+                    "modelType": "Property"
+                  },
+                  {
+                    "idShort": "in",
+                    "semanticId": {
+                      "type": "ExternalReference",
+                      "keys": [
+                        {
+                          "type": "GlobalReference",
+                          "value": "https://www.w3.org/2019/wot/security#in"
+                        }
+                      ]
+                    },
+                    "qualifiers": [
+                      {
+                        "type": "Cardinality",
+                        "valueType": "xs:string",
+                        "value": "ZeroToOne"
+                      }
+                    ],
+                    "valueType": "xs:string",
+                    "modelType": "Property"
+                  },
+                  {
+                    "idShort": "proxy",
+                    "semanticId": {
+                      "type": "ExternalReference",
+                      "keys": [
+                        {
+                          "type": "GlobalReference",
+                          "value": "https://www.w3.org/2019/wot/security#proxy"
+                        }
+                      ]
+                    },
+                    "qualifiers": [
+                      {
+                        "type": "Cardinality",
+                        "valueType": "xs:string",
+                        "value": "ZeroToOne"
+                      }
+                    ],
+                    "valueType": "xs:string",
+                    "modelType": "Property"
+                  }
+                ],
+                "modelType": "SubmodelElementCollection"
+              },
+              {
+                "idShort": "psk_sc",
+                "semanticId": {
+                  "type": "ExternalReference",
+                  "keys": [
+                    {
+                      "type": "GlobalReference",
+                      "value": "https://www.w3.org/2019/wot/security#PSKSecurityScheme"
+                    }
+                  ]
+                },
+                "qualifiers": [
+                  {
+                    "type": "Cardinality",
+                    "valueType": "xs:string",
+                    "value": "ZeroToOne"
+                  }
+                ],
+                "value": [
+                  {
+                    "idShort": "scheme",
+                    "semanticId": {
+                      "type": "ExternalReference",
+                      "keys": [
+                        {
+                          "type": "GlobalReference",
+                          "value": "https://www.w3.org/2019/wot/security#SecurityScheme"
+                        }
+                      ]
+                    },
+                    "qualifiers": [
+                      {
+                        "type": "Cardinality",
+                        "valueType": "xs:string",
+                        "value": "One"
+                      }
+                    ],
+                    "valueType": "xs:string",
+                    "value": "psk",
+                    "modelType": "Property"
+                  },
+                  {
+                    "idShort": "identity",
+                    "semanticId": {
+                      "type": "ExternalReference",
+                      "keys": [
+                        {
+                          "type": "GlobalReference",
+                          "value": "https://www.w3.org/2019/wot/security#identity"
+                        }
+                      ]
+                    },
+                    "qualifiers": [
+                      {
+                        "type": "Cardinality",
+                        "valueType": "xs:string",
+                        "value": "ZeroToOne"
+                      }
+                    ],
+                    "valueType": "xs:string",
+                    "modelType": "Property"
+                  },
+                  {
+                    "idShort": "proxy",
+                    "semanticId": {
+                      "type": "ExternalReference",
+                      "keys": [
+                        {
+                          "type": "GlobalReference",
+                          "value": "https://www.w3.org/2019/wot/security#proxy"
+                        }
+                      ]
+                    },
+                    "qualifiers": [
+                      {
+                        "type": "Cardinality",
+                        "valueType": "xs:string",
+                        "value": "ZeroToOne"
+                      }
+                    ],
+                    "valueType": "xs:string",
+                    "modelType": "Property"
+                  }
+                ],
+                "modelType": "SubmodelElementCollection"
+              },
+              {
+                "idShort": "digest_sc",
+                "semanticId": {
+                  "type": "ExternalReference",
+                  "keys": [
+                    {
+                      "type": "GlobalReference",
+                      "value": "https://www.w3.org/2019/wot/security#DigestSecurityScheme"
+                    }
+                  ]
+                },
+                "qualifiers": [
+                  {
+                    "type": "Cardinality",
+                    "valueType": "xs:string",
+                    "value": "ZeroToOne"
+                  }
+                ],
+                "value": [
+                  {
+                    "idShort": "scheme",
+                    "semanticId": {
+                      "type": "ExternalReference",
+                      "keys": [
+                        {
+                          "type": "GlobalReference",
+                          "value": "https://www.w3.org/2019/wot/security#SecurityScheme"
+                        }
+                      ]
+                    },
+                    "qualifiers": [
+                      {
+                        "type": "Cardinality",
+                        "valueType": "xs:string",
+                        "value": "One"
+                      }
+                    ],
+                    "valueType": "xs:string",
+                    "value": "digest",
+                    "modelType": "Property"
+                  },
+                  {
+                    "idShort": "name",
+                    "semanticId": {
+                      "type": "ExternalReference",
+                      "keys": [
+                        {
+                          "type": "GlobalReference",
+                          "value": "https://www.w3.org/2019/wot/security#name"
+                        }
+                      ]
+                    },
+                    "qualifiers": [
+                      {
+                        "type": "Cardinality",
+                        "valueType": "xs:string",
+                        "value": "ZeroToOne"
+                      }
+                    ],
+                    "valueType": "xs:string",
+                    "modelType": "Property"
+                  },
+                  {
+                    "idShort": "in",
+                    "semanticId": {
+                      "type": "ExternalReference",
+                      "keys": [
+                        {
+                          "type": "GlobalReference",
+                          "value": "https://www.w3.org/2019/wot/security#in"
+                        }
+                      ]
+                    },
+                    "qualifiers": [
+                      {
+                        "type": "Cardinality",
+                        "valueType": "xs:string",
+                        "value": "ZeroToOne"
+                      }
+                    ],
+                    "valueType": "xs:string",
+                    "modelType": "Property"
+                  },
+                  {
+                    "idShort": "qop",
+                    "semanticId": {
+                      "type": "ExternalReference",
+                      "keys": [
+                        {
+                          "type": "GlobalReference",
+                          "value": "https://www.w3.org/2019/wot/security#qop"
+                        }
+                      ]
+                    },
+                    "qualifiers": [
+                      {
+                        "type": "Cardinality",
+                        "valueType": "xs:string",
+                        "value": "ZeroToOne"
+                      }
+                    ],
+                    "valueType": "xs:string",
+                    "modelType": "Property"
+                  },
+                  {
+                    "idShort": "proxy",
+                    "semanticId": {
+                      "type": "ExternalReference",
+                      "keys": [
+                        {
+                          "type": "GlobalReference",
+                          "value": "https://www.w3.org/2019/wot/security#proxy"
+                        }
+                      ]
+                    },
+                    "qualifiers": [
+                      {
+                        "type": "Cardinality",
+                        "valueType": "xs:string",
+                        "value": "ZeroToOne"
+                      }
+                    ],
+                    "valueType": "xs:string",
+                    "modelType": "Property"
+                  }
+                ],
+                "modelType": "SubmodelElementCollection"
+              },
+              {
+                "idShort": "bearer_sc",
+                "semanticId": {
+                  "type": "ExternalReference",
+                  "keys": [
+                    {
+                      "type": "GlobalReference",
+                      "value": "https://www.w3.org/2019/wot/security#BearerSecurityScheme"
+                    }
+                  ]
+                },
+                "qualifiers": [
+                  {
+                    "type": "Cardinality",
+                    "valueType": "xs:string",
+                    "value": "ZeroToOne"
+                  }
+                ],
+                "value": [
+                  {
+                    "idShort": "scheme",
+                    "semanticId": {
+                      "type": "ExternalReference",
+                      "keys": [
+                        {
+                          "type": "GlobalReference",
+                          "value": "https://www.w3.org/2019/wot/security#SecurityScheme"
+                        }
+                      ]
+                    },
+                    "qualifiers": [
+                      {
+                        "type": "Cardinality",
+                        "valueType": "xs:string",
+                        "value": "One"
+                      }
+                    ],
+                    "valueType": "xs:string",
+                    "value": "bearer",
+                    "modelType": "Property"
+                  },
+                  {
+                    "idShort": "name",
+                    "semanticId": {
+                      "type": "ExternalReference",
+                      "keys": [
+                        {
+                          "type": "GlobalReference",
+                          "value": "https://www.w3.org/2019/wot/security#name"
+                        }
+                      ]
+                    },
+                    "qualifiers": [
+                      {
+                        "type": "Cardinality",
+                        "valueType": "xs:string",
+                        "value": "ZeroToOne"
+                      }
+                    ],
+                    "valueType": "xs:string",
+                    "modelType": "Property"
+                  },
+                  {
+                    "idShort": "in",
+                    "semanticId": {
+                      "type": "ExternalReference",
+                      "keys": [
+                        {
+                          "type": "GlobalReference",
+                          "value": "https://www.w3.org/2019/wot/security#in"
+                        }
+                      ]
+                    },
+                    "qualifiers": [
+                      {
+                        "type": "Cardinality",
+                        "valueType": "xs:string",
+                        "value": "ZeroToOne"
+                      }
+                    ],
+                    "valueType": "xs:string",
+                    "modelType": "Property"
+                  },
+                  {
+                    "idShort": "authorization",
+                    "semanticId": {
+                      "type": "ExternalReference",
+                      "keys": [
+                        {
+                          "type": "GlobalReference",
+                          "value": "https://www.w3.org/2019/wot/security#authorization"
+                        }
+                      ]
+                    },
+                    "qualifiers": [
+                      {
+                        "type": "Cardinality",
+                        "valueType": "xs:string",
+                        "value": "ZeroToOne"
+                      }
+                    ],
+                    "valueType": "xs:string",
+                    "modelType": "Property"
+                  },
+                  {
+                    "idShort": "alg",
+                    "semanticId": {
+                      "type": "ExternalReference",
+                      "keys": [
+                        {
+                          "type": "GlobalReference",
+                          "value": "https://www.w3.org/2019/wot/security#alg"
+                        }
+                      ]
+                    },
+                    "qualifiers": [
+                      {
+                        "type": "Cardinality",
+                        "valueType": "xs:string",
+                        "value": "ZeroToOne"
+                      }
+                    ],
+                    "valueType": "xs:string",
+                    "modelType": "Property"
+                  },
+                  {
+                    "idShort": "format",
+                    "semanticId": {
+                      "type": "ExternalReference",
+                      "keys": [
+                        {
+                          "type": "GlobalReference",
+                          "value": "https://www.w3.org/2019/wot/security#format"
+                        }
+                      ]
+                    },
+                    "qualifiers": [
+                      {
+                        "type": "Cardinality",
+                        "valueType": "xs:string",
+                        "value": "ZeroToOne"
+                      }
+                    ],
+                    "valueType": "xs:string",
+                    "modelType": "Property"
+                  },
+                  {
+                    "idShort": "proxy",
+                    "semanticId": {
+                      "type": "ExternalReference",
+                      "keys": [
+                        {
+                          "type": "GlobalReference",
+                          "value": "https://www.w3.org/2019/wot/security#proxy"
+                        }
+                      ]
+                    },
+                    "qualifiers": [
+                      {
+                        "type": "Cardinality",
+                        "valueType": "xs:string",
+                        "value": "ZeroToOne"
+                      }
+                    ],
+                    "valueType": "xs:string",
+                    "modelType": "Property"
+                  }
+                ],
+                "modelType": "SubmodelElementCollection"
+              },
+              {
+                "idShort": "oauth2_sc",
+                "semanticId": {
+                  "type": "ExternalReference",
+                  "keys": [
+                    {
+                      "type": "GlobalReference",
+                      "value": "https://www.w3.org/2019/wot/security#OAuth2SecurityScheme"
+                    }
+                  ]
+                },
+                "qualifiers": [
+                  {
+                    "type": "Cardinality",
+                    "valueType": "xs:string",
+                    "value": "ZeroToOne"
+                  }
+                ],
+                "value": [
+                  {
+                    "idShort": "scheme",
+                    "semanticId": {
+                      "type": "ExternalReference",
+                      "keys": [
+                        {
+                          "type": "GlobalReference",
+                          "value": "https://www.w3.org/2019/wot/security#SecurityScheme"
+                        }
+                      ]
+                    },
+                    "qualifiers": [
+                      {
+                        "type": "Cardinality",
+                        "valueType": "xs:string",
+                        "value": "One"
+                      }
+                    ],
+                    "valueType": "xs:string",
+                    "value": "oauth2",
+                    "modelType": "Property"
+                  },
+                  {
+                    "idShort": "token",
+                    "semanticId": {
+                      "type": "ExternalReference",
+                      "keys": [
+                        {
+                          "type": "GlobalReference",
+                          "value": "https://www.w3.org/2019/wot/security#token"
+                        }
+                      ]
+                    },
+                    "qualifiers": [
+                      {
+                        "type": "Cardinality",
+                        "valueType": "xs:string",
+                        "value": "ZeroToOne"
+                      }
+                    ],
+                    "valueType": "xs:anyURI",
+                    "value": "",
+                    "modelType": "Property"
+                  },
+                  {
+                    "idShort": "refresh",
+                    "semanticId": {
+                      "type": "ExternalReference",
+                      "keys": [
+                        {
+                          "type": "GlobalReference",
+                          "value": "https://www.w3.org/2019/wot/security#refresh"
+                        }
+                      ]
+                    },
+                    "qualifiers": [
+                      {
+                        "type": "Cardinality",
+                        "valueType": "xs:string",
+                        "value": "ZeroToOne"
+                      }
+                    ],
+                    "valueType": "xs:anyURI",
+                    "value": "",
+                    "modelType": "Property"
+                  },
+                  {
+                    "idShort": "authorization",
+                    "semanticId": {
+                      "type": "ExternalReference",
+                      "keys": [
+                        {
+                          "type": "GlobalReference",
+                          "value": "https://www.w3.org/2019/wot/security#authorization"
+                        }
+                      ]
+                    },
+                    "qualifiers": [
+                      {
+                        "type": "Cardinality",
+                        "valueType": "xs:string",
+                        "value": "ZeroToOne"
+                      }
+                    ],
+                    "valueType": "xs:anyURI",
+                    "value": "",
+                    "modelType": "Property"
+                  },
+                  {
+                    "idShort": "scopes",
+                    "semanticId": {
+                      "type": "ExternalReference",
+                      "keys": [
+                        {
+                          "type": "GlobalReference",
+                          "value": "https://www.w3.org/2019/wot/security#scopes"
+                        }
+                      ]
+                    },
+                    "qualifiers": [
+                      {
+                        "type": "Cardinality",
+                        "valueType": "xs:string",
+                        "value": "ZeroToOne"
+                      }
+                    ],
+                    "valueType": "xs:string",
+                    "value": "",
+                    "modelType": "Property"
+                  },
+                  {
+                    "idShort": "flow",
+                    "semanticId": {
+                      "type": "ExternalReference",
+                      "keys": [
+                        {
+                          "type": "GlobalReference",
+                          "value": "https://www.w3.org/2019/wot/security#flow"
+                        }
+                      ]
+                    },
+                    "qualifiers": [
+                      {
+                        "type": "Cardinality",
+                        "valueType": "xs:string",
+                        "value": "ZeroToOne"
+                      }
+                    ],
+                    "valueType": "xs:string",
+                    "value": "code",
+                    "modelType": "Property"
+                  },
+                  {
+                    "idShort": "proxy",
+                    "semanticId": {
+                      "type": "ExternalReference",
+                      "keys": [
+                        {
+                          "type": "GlobalReference",
+                          "value": "https://www.w3.org/2019/wot/security#proxy"
+                        }
+                      ]
+                    },
+                    "qualifiers": [
+                      {
+                        "type": "Cardinality",
+                        "valueType": "xs:string",
+                        "value": "ZeroToOne"
+                      }
+                    ],
+                    "valueType": "xs:anyURI",
+                    "value": "",
+                    "modelType": "Property"
+                  }
+                ],
+                "modelType": "SubmodelElementCollection"
+              }
+            ],
+            "modelType": "SubmodelElementCollection"
+          }
+        ],
+        "modelType": "SubmodelElementCollection"
+      },
+      {
+        "idShort": "SkillMetadata",
+        "semanticId": {
+          "type": "ExternalReference",
+          "keys": [
+            {
+              "type": "GlobalReference",
+              "value": "https://admin-shell.io/idta/AssetInterfacesDescription/1/0/EndpointMetadata"
+            }
+          ]
+        },
+        "qualifiers": [
+          {
+            "type": "Cardinality",
+            "valueType": "xs:string",
+            "value": "One"
+          }
+        ],
+        "value": [
+          {
+            "idShort": "StateMachine",
+            "value": [
+              {
+                "idShort": "TypeOfStateMachine",
+                "valueType": "xs:string",
+                "value": "SmartFactoryKL V4",
+                "modelType": "Property"
+              },
+              {
+                "idShort": "States",
+                "value": [
+                  {
+                    "idShort": "Halted",
+                    "valueType": "xs:string",
+                    "value": "",
+                    "modelType": "Property"
+                  },
+                  {
+                    "idShort": "Ready",
+                    "valueType": "xs:string",
+                    "value": "",
+                    "modelType": "Property"
+                  },
+                  {
+                    "idShort": "Running",
+                    "valueType": "xs:string",
+                    "value": "",
+                    "modelType": "Property"
+                  },
+                  {
+                    "idShort": "Suspended",
+                    "valueType": "xs:string",
+                    "value": "",
+                    "modelType": "Property"
+                  },
+                  {
+                    "idShort": "Completed",
+                    "valueType": "xs:string",
+                    "value": "",
+                    "modelType": "Property"
+                  },
+                  {
+                    "idShort": "Starting",
+                    "valueType": "xs:string",
+                    "modelType": "Property"
+                  },
+                  {
+                    "idShort": "Halting",
+                    "valueType": "xs:string",
+                    "modelType": "Property"
+                  }
+                ],
+                "modelType": "SubmodelElementCollection"
+              },
+              {
+                "idShort": "Transitions",
+                "modelType": "SubmodelElementCollection"
+              },
+              {
+                "idShort": "Trigger",
+                "value": [
+                  {
+                    "idShort": "Start",
+                    "modelType": "ReferenceElement"
+                  },
+                  {
+                    "idShort": "Suspend",
+                    "modelType": "ReferenceElement"
+                  },
+                  {
+                    "idShort": "Halt",
+                    "modelType": "ReferenceElement"
+                  },
+                  {
+                    "idShort": "Reset",
+                    "modelType": "ReferenceElement"
+                  }
+                ],
+                "modelType": "SubmodelElementCollection"
+              }
+            ],
+            "modelType": "SubmodelElementCollection"
+          },
+          {
+            "idShort": "InterfaceConcept",
+            "valueType": "xs:string",
+            "value": "SkillModel_V4",
+            "modelType": "Property"
+          },
+          {
+            "idShort": "InterfaceProtocol",
+            "valueType": "xs:string",
+            "value": "opc.tcp",
+            "modelType": "Property"
+          }
+        ],
+        "modelType": "SubmodelElementCollection"
+      }
+    ],
+    "modelType": "Submodel"
+  }

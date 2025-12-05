@@ -1,0 +1,13 @@
+﻿using System.Threading.Tasks;
+using BaSyx.Models;
+
+namespace AasSharpClient.Adapters
+{
+    // Adapter interface to integrate generated POCOs with BaSyx .NET SDK types.
+    public interface IBasyxAdapter
+    {
+        Task UploadPropertyAsync<T>(SubmodelElement parent, string propertyName, T value);
+        Task UploadElementAsync(SubmodelElement element);
+        Task<object?> InvokeOperationAsync(string operationId, params object[] inputs);
+    }
+}

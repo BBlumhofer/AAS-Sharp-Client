@@ -1,0 +1,126 @@
+{
+  "modelType" : "Submodel",
+  "kind" : "Instance",
+  "semanticId" : {
+    "keys" : [ {
+      "type" : "Submodel",
+      "value" : "https://smartfactory.de/semantics/submodel/ProductIdentification#1/0"
+    } ],
+    "type" : "ExternalReference"
+  },
+  "id" : "https://smartfactory.de/aas/sm/05ae0c14-cbd5-4340-b41b-c11e601165a8",
+  "idShort" : "ProductIdentification",
+  "submodelElements" : [ {
+    "modelType" : "Property",
+    "semanticId" : {
+      "keys" : [ {
+        "type" : "ConceptDescription",
+        "value" : "0112/2///61360_4#ACB025#001"
+      } ],
+      "type" : "ExternalReference"
+    },
+    "value" : "sf_aas_8163_8721_9287_5326",
+    "valueType" : "xs:string",
+    "idShort" : "Identifier"
+  }, {
+    "modelType" : "Property",
+    "semanticId" : {
+      "keys" : [ {
+        "type" : "ConceptDescription",
+        "value" : "0112/2///61360_4#ACB024#002"
+      } ],
+      "type" : "ExternalReference"
+    },
+    "value" : "Battery_Pack",
+    "valueType" : "xs:string",
+    "idShort" : "ProductName"
+  }, {
+    "modelType" : "Property",
+    "semanticId" : {
+      "keys" : [ {
+        "type" : "ConceptDescription",
+        "value" : "0112/2///61360_4#ACB006#001"
+      } ],
+      "type" : "ExternalReference"
+    },
+    "value" : "Battery_Pack",
+    "valueType" : "xs:string",
+    "idShort" : "ProductFamilyName"
+  }, {
+    "modelType" : "Property",
+    "semanticId" : {
+      "keys" : [ {
+        "type" : "ConceptDescription",
+        "value" : "0173-1#02-AAO841#001"
+      } ],
+      "type" : "ExternalReference"
+    },
+    "value" : "GER",
+    "valueType" : "xs:string",
+    "idShort" : "ProductCountryOfOrigin"
+  }, {
+    "modelType" : "Property",
+    "semanticId" : {
+      "keys" : [ {
+        "type" : "ConceptDescription",
+        "value" : "0173-1#02-AAO663#003"
+      } ],
+      "type" : "ExternalReference"
+    },
+    "value" : "sf_order_7osdf9",
+    "valueType" : "xs:string",
+    "idShort" : "OrderNumber"
+  }, {
+    "modelType" : "Property",
+    "semanticId" : {
+      "keys" : [ {
+        "type" : "ConceptDescription",
+        "value" : "0173-1#02-AAO663#003"
+      } ],
+      "type" : "ExternalReference"
+    },
+    "value" : "1701762007560",
+    "valueType" : "xs:integer",
+    "idShort" : "OrderTimestamp"
+  }, {
+    "modelType" : "Property",
+    "semanticId" : {
+      "keys" : [ {
+        "type" : "ConceptDescription",
+        "value" : "0173-1#02-AAO742#002"
+      } ],
+      "type" : "ExternalReference"
+    },
+    "value" : "SmartFactoryKL - Shared Production",
+    "valueType" : "xs:string",
+    "idShort" : "Brand"
+  }, {
+    "modelType" : "Property",
+    "semanticId" : {
+      "keys" : [ {
+        "type" : "ConceptDescription",
+        "value" : "0112/2///61360_4#ACB027#001"
+      } ],
+      "type" : "ExternalReference"
+    },
+    "value" : "01.01.2022",
+    "valueType" : "xs:string",
+    "idShort" : "EffectiveDate"
+  }, {
+    "modelType" : "ReferenceElement",
+    "idShort" : "CargoHazardClass",
+    "value" : {
+      "keys" : [ {
+        "type" : "Submodel",
+        "value" : "https://smartfactory.de/sm/d3833b2a-5503-40c7-a460-53892ffb2784"
+      }, {
+        "type" : "SubmodelElementCollection",
+        "value" : "Class0"
+      }, {
+        "type" : "Property",
+        "value" : "Class0"
+      } ],
+      "type" : "ModelReference"
+    }
+  } ]
+}

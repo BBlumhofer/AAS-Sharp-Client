@@ -1,0 +1,349 @@
+
+  {
+    "idShort": "Nameplate",
+    "description": [
+      {
+        "language": "en",
+        "text": "Contains the nameplate information attached to the product"
+      }
+    ],
+    "administration": {
+      "version": "3",
+      "revision": "0",
+      "templateId": "https://admin-shell.io/IDTA 02006-3-0"
+    },
+    "id": "https://smartfactory.de/submodels/be03fcce-7e76-4758-934d-7dda6c858ff0",
+    "kind": "Instance",
+    "semanticId": {
+      "type": "ExternalReference",
+      "keys": [
+        {
+          "type": "GlobalReference",
+          "value": "https://smartfactory.de/semantics/submodel/Island/Nameplate/#3/0"
+        }
+      ]
+    },
+    "submodelElements": [
+      {
+        "idShort": "URIOfTheManufacturer",
+        "description": [
+          {
+            "language": "en",
+            "text": "Note: see also [IRDI] 0112/2///61987#ABN590#001 URI of product instance "
+          }
+        ],
+        "semanticId": {
+          "type": "ExternalReference",
+          "keys": [
+            {
+              "type": "GlobalReference",
+              "value": "https://smartfactory.de/Productionsinsel_KUBA"
+            }
+          ]
+        },
+        "qualifiers": [
+          {
+            "type": "Multiplicity",
+            "valueType": "xs:string",
+            "value": "One"
+          }
+        ],
+        "valueType": "xs:anyURI",
+        "value": "https://smartfactory.de/Productionsinsel_KUBA",
+        "modelType": "Property"
+      },
+      {
+        "category": "PARAMETER",
+        "idShort": "ManufacturerName",
+        "semanticId": {
+          "type": "ExternalReference",
+          "keys": [
+            {
+              "type": "GlobalReference",
+              "value": "0173-1#02-AAO677#002"
+            }
+          ]
+        },
+        "value": [
+          {
+            "language": "de",
+            "text": "PI_KUBA"
+          }
+        ],
+        "modelType": "MultiLanguageProperty"
+      },
+      {
+        "idShort": "ManufacturerProductDesignation",
+        "semanticId": {
+          "type": "ExternalReference",
+          "keys": [
+            {
+              "type": "GlobalReference",
+              "value": "0112/2///61987#ABA567#009"
+            }
+          ]
+        },
+        "supplementalSemanticIds": [
+          {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "0173-1#02-AAW338#003"
+              }
+            ]
+          }
+        ],
+        "value": [
+          {
+            "language": "en",
+            "text": "\u0022ABC-123\u0022"
+          }
+        ],
+        "modelType": "MultiLanguageProperty"
+      },
+      {
+        "category": "VARIABLE",
+        "idShort": "Addressinformation",
+        "semanticId": {
+          "type": "ExternalReference",
+          "keys": [
+            {
+              "type": "GlobalReference",
+              "value": "0173-1#02-AAQ832#005"
+            }
+          ]
+        },
+        "value": [
+          {
+            "category": "PARAMETER",
+            "idShort": "Street",
+            "semanticId": {
+              "type": "ExternalReference",
+              "keys": [
+                {
+                  "type": "GlobalReference",
+                  "value": "0173-1#02-AAO128#002"
+                }
+              ]
+            },
+            "value": [
+              {
+                "language": "de",
+                "text": "Trippstadterstra\u00DFe 122"
+              }
+            ],
+            "modelType": "MultiLanguageProperty"
+          },
+          {
+            "category": "VARIABLE",
+            "idShort": "Zipcode",
+            "semanticId": {
+              "type": "ExternalReference",
+              "keys": [
+                {
+                  "type": "GlobalReference",
+                  "value": "0173-1#02-AAO129#002"
+                }
+              ]
+            },
+            "value": [
+              {
+                "language": "en",
+                "text": "67663"
+              }
+            ],
+            "modelType": "MultiLanguageProperty"
+          },
+          {
+            "category": "VARIABLE",
+            "idShort": "CityTown",
+            "semanticId": {
+              "type": "ExternalReference",
+              "keys": [
+                {
+                  "type": "GlobalReference",
+                  "value": "0173-1#02-AAO132#002"
+                }
+              ]
+            },
+            "value": [
+              {
+                "language": "de",
+                "text": "Kaiserslautern"
+              }
+            ],
+            "modelType": "MultiLanguageProperty"
+          },
+          {
+            "category": "VARIABLE",
+            "idShort": "StateCounty",
+            "semanticId": {
+              "type": "ExternalReference",
+              "keys": [
+                {
+                  "type": "GlobalReference",
+                  "value": "0173-1#02-AAO133#002"
+                }
+              ]
+            },
+            "value": [
+              {
+                "language": "en",
+                "text": "Germany"
+              }
+            ],
+            "modelType": "MultiLanguageProperty"
+          },
+          {
+            "category": "VARIABLE",
+            "idShort": "NationalCode",
+            "semanticId": {
+              "type": "ExternalReference",
+              "keys": [
+                {
+                  "type": "GlobalReference",
+                  "value": "0173-1#02-AAO134#002"
+                }
+              ]
+            },
+            "value": [
+              {
+                "language": "en",
+                "text": "276"
+              }
+            ],
+            "modelType": "MultiLanguageProperty"
+          },
+          {
+            "category": "VARIABLE",
+            "idShort": "Phone01",
+            "semanticId": {
+              "type": "ExternalReference",
+              "keys": [
+                {
+                  "type": "GlobalReference",
+                  "value": "0173-1#02-AAQ833#005"
+                }
+              ]
+            },
+            "value": [
+              {
+                "category": "VARIABLE",
+                "idShort": "TelephoneNumber",
+                "semanticId": {
+                  "type": "ExternalReference",
+                  "keys": [
+                    {
+                      "type": "GlobalReference",
+                      "value": "0173-1#02-AAO136#002"
+                    }
+                  ]
+                },
+                "value": [
+                  {
+                    "language": "en",
+                    "text": "\u002B49631205753401"
+                  }
+                ],
+                "modelType": "MultiLanguageProperty"
+              },
+              {
+                "category": "VARIABLE",
+                "idShort": "TypeOfTelephone",
+                "semanticId": {
+                  "type": "ExternalReference",
+                  "keys": [
+                    {
+                      "type": "GlobalReference",
+                      "value": "0173-1#02-AAO137#003"
+                    }
+                  ]
+                },
+                "valueType": "xs:string",
+                "value": "",
+                "modelType": "Property"
+              }
+            ],
+            "modelType": "SubmodelElementCollection"
+          },
+          {
+            "category": "VARIABLE",
+            "idShort": "Email01",
+            "semanticId": {
+              "type": "ExternalReference",
+              "keys": [
+                {
+                  "type": "GlobalReference",
+                  "value": "0173-1#02-AAQ836#005"
+                }
+              ]
+            },
+            "value": [
+              {
+                "category": "VARIABLE",
+                "idShort": "EmailAddress",
+                "semanticId": {
+                  "type": "ExternalReference",
+                  "keys": [
+                    {
+                      "type": "GlobalReference",
+                      "value": "0173-1#02-AAO198#002"
+                    }
+                  ]
+                },
+                "valueType": "xs:string",
+                "value": "info@smartfactory.de",
+                "modelType": "Property"
+              },
+              {
+                "category": "VARIABLE",
+                "idShort": "TypeOfEmailAddress",
+                "semanticId": {
+                  "type": "ExternalReference",
+                  "keys": [
+                    {
+                      "type": "GlobalReference",
+                      "value": "0173-1#02-AAO199#003"
+                    }
+                  ]
+                },
+                "valueType": "xs:string",
+                "value": "",
+                "modelType": "Property"
+              }
+            ],
+            "modelType": "SubmodelElementCollection"
+          }
+        ],
+        "modelType": "SubmodelElementCollection"
+      },
+      {
+        "idShort": "OrderCodeOfManufacturer",
+        "semanticId": {
+          "type": "ExternalReference",
+          "keys": [
+            {
+              "type": "GlobalReference",
+              "value": "0112/2///61987#ABA950#008"
+            }
+          ]
+        },
+        "supplementalSemanticIds": [
+          {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "0173-1#02-AAO227#004"
+              }
+            ]
+          }
+        ],
+        "valueType": "xs:string",
+        "value": "FMABC1234",
+        "modelType": "Property"
+      }
+    ],
+    "modelType": "Submodel"
+  }

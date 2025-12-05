@@ -1,0 +1,173 @@
+﻿using System.Collections.Generic;
+using System.Threading.Tasks;
+using BaSyx.Models.AdminShell;
+using BaSyx.Models.Extensions;
+using AasSharpClient.Adapters;
+using AasSharpClient.Tools;
+using System.Text.Json;
+using BaSyx.Utils.Client.Http;
+using BaSyx.Utils.DependencyInjection;
+using BaSyx.Utils;
+using System.Linq;
+
+namespace AasSharpClient.Models
+{
+    // Generated POCO for ProductionPlan submodel using BaSyx models
+    public partial class ProductionPlan
+    {
+        public ISubmodelElementCollection Content { get; set; } = new SubmodelElementCollection("ProductionPlan");
+
+        public IProperty IsFinished => BasyxBrowser.FindProperty(Content, "IsFinished");
+
+        public List<Step> Steps { get; set; } = new();
+
+        [System.Text.Json.Serialization.JsonIgnore]
+        public IBasyxAdapter? Adapter { get; set; }
+
+        public ProductionPlan() { }
+
+        // Domain-friendly constructor used by tests: single Step
+        public ProductionPlan(bool isFinished, int totalPieces, Step initialStep)
+        {
+            Content = new SubmodelElementCollection("ProductionPlan");
+            // normalize boolean casing to lowercase to avoid case-sensitive mismatches
+            Content.Value.Value.Add(new Property<string>("IsFinished", isFinished.ToString().ToLowerInvariant()));
+
+            // add quantity information
+            var quantityColl = new SubmodelElementCollection("QuantityInformation");
+            quantityColl.Value.Value.Add(new Property<string>("TotalNumberOfPieces", totalPieces.ToString()));
+            Content.Value.Value.Add(quantityColl);
+
+            // steps
+            var stepsColl = new SubmodelElementCollection("Steps");
+            if (initialStep != null)
+            {
+                stepsColl.Value.Value.Add(initialStep.Content);
+                Steps.Add(initialStep);
+            }
+            Content.Value.Value.Add(stepsColl);
+        }
+
+        // Domain-friendly constructor used by tests: multiple Steps
+        public ProductionPlan(bool isFinished, int totalPieces, IEnumerable<Step> initialSteps)
+        {
+            Content = new SubmodelElementCollection("ProductionPlan");
+            Content.Value.Value.Add(new Property<string>("IsFinished", isFinished.ToString().ToLowerInvariant()));
+
+            var quantityColl = new SubmodelElementCollection("QuantityInformation");
+            quantityColl.Value.Value.Add(new Property<string>("TotalNumberOfPieces", totalPieces.ToString()));
+            Content.Value.Value.Add(quantityColl);
+
+            var stepsColl = new SubmodelElementCollection("Steps");
+            if (initialSteps != null)
+            {
+                foreach (var s in initialSteps)
+                {
+                    if (s != null)
+                    {
+                        stepsColl.Value.Value.Add(s.Content);
+                        Steps.Add(s);
+                    }
+                }
+            }
+            Content.Value.Value.Add(stepsColl);
+        }
+
+        public async Task<bool> IsFinishedAsync()
+        {
+            var val = await BasyxBrowser.GetPropertyValueAsStringAsync(IsFinished).ConfigureAwait(false);
+            return bool.TryParse(val, out var v);
+        }
+
+        public async Task CompleteAsync()
+        {
+            await BasyxBrowser.SetPropertyValueAsync(IsFinished, "true").ConfigureAwait(false);
+            if (Adapter != null)
+            {
+                await Adapter.UploadPropertyAsync(this.Content, IsFinished.IdShort, "true").ConfigureAwait(false);
+            }
+        }
+
+        public async Task UploadStepAsync(Step step)
+        {
+            if (Adapter != null)
+            {
+                await Adapter.UploadElementAsync(step.Content).ConfigureAwait(false);
+            }
+        }
+
+        public void append_step(Step step)
+        {
+            // add to inner Steps collection and to Steps list
+            var coll = BasyxBrowser.FindCollection(Content, "Steps");
+            if (coll == null)
+            {
+                coll = new SubmodelElementCollection("Steps");
+                Content.Value.Value.Add(coll);
+            }
+            coll.Value.Value.Add(step.Content);
+            Steps.Add(step);
+        }
+
+        public async Task<string> ToJsonAsync()
+        {
+            // Build a BaSyx Submodel and serialize it using the official BaSyx serializer options
+            var submodel = new Submodel(Content.IdShort, new BaSyxSubmodelIdentifier(Content.IdShort, "1.0.0"));
+
+            var elements = new ElementContainer<ISubmodelElement>();
+            foreach (var el in BasyxBrowser.GetElements(Content))
+            {
+                elements.Add(el);
+            }
+            submodel.SubmodelElements = elements;
+
+            var options = new DefaultJsonSerializerOptions();
+            var services = DefaultImplementation.GetStandardServiceCollection();
+            options.AddDependencyInjection(new DependencyInjectionExtension(services));
+            options.AddFullSubmodelElementConverter();
+            var jsonOptions = options.Build();
+
+            var json = JsonSerializer.Serialize(submodel, jsonOptions);
+            return await Task.FromResult(json).ConfigureAwait(false);
+        }
+
+        public static ProductionPlan Parse(string json)
+        {
+            // very small parser for the tests: parse JSON and reconstruct ProductionPlan
+            var doc = JsonDocument.Parse(json);
+            var root = doc.RootElement;
+            var elements = root.GetProperty("submodelElements").EnumerateArray();
+            var isFinished = false;
+            Step firstStep = null;
+            foreach (var el in elements)
+            {
+                var id = el.GetProperty("idShort").GetString();
+                if (id == "IsFinished")
+                {
+                    var val = el.GetProperty("value").GetString();
+                    isFinished = bool.TryParse(val, out var v) && v;
+                }
+                if (id == "Steps")
+                {
+                    var stepsArr = el.GetProperty("value").EnumerateArray();
+                    foreach (var s in stepsArr)
+                    {
+                        var stepElems = s.GetProperty("value").EnumerateArray();
+                        var title = "";
+                        var status = "";
+                        foreach (var se in stepElems)
+                        {
+                            var sid = se.GetProperty("idShort").GetString();
+                            if (sid == "StepTitle") title = se.GetProperty("value").GetString();
+                            if (sid == "Status") status = se.GetProperty("value").GetString();
+                        }
+                        var action = new Action("Action0001", "Imported", ActionStatusEnum.OPEN, new InputParameters(new Dictionary<string,string>()), new FinalResultData(), new SkillReference(new Dictionary<object,string>()), "");
+                        firstStep = new Step("Step0001", title, status == "DONE" ? StepStatusEnum.DONE : StepStatusEnum.OPEN, action, "", null, "", "");
+                    }
+                }
+            }
+
+            return new ProductionPlan(isFinished ? true : false, 0, firstStep);
+        }
+    }
+}

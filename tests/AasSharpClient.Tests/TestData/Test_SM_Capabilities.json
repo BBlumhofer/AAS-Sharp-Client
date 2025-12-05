@@ -1,0 +1,526 @@
+
+  {
+    "idShort": "OfferedCapabilitiyDescription",
+    "id": "https://smartfactory.de/submodels/0fb7f0f5-2eb4-43d1-b7a0-8415d34a41e9",
+    "kind": "Instance",
+    "semanticId": {
+      "type": "ExternalReference",
+      "keys": [
+        {
+          "type": "GlobalReference",
+          "value": "https://smartfactory.de/semantics/submodel/CapabilityDescription#1/0"
+        }
+      ]
+    },
+    "submodelElements": [
+      {
+        "idShort": "CapabilitySet",
+        "semanticId": {
+          "type": "ExternalReference",
+          "keys": [
+            {
+              "type": "GlobalReference",
+              "value": "https://smartfactory.de/aas/submodel/OfferedCapabilitiyDescription/CapabilitySet#1/0"
+            }
+          ]
+        },
+        "value": [
+          {
+            "idShort": "FullyAutomatedAssemblyContainer",
+            "description": [
+              {
+                "language": "en",
+                "text": "Container for one specific capability and its relations and attributes."
+              }
+            ],
+            "semanticId": {
+              "type": "ExternalReference",
+              "keys": [
+                {
+                  "type": "GlobalReference",
+                  "value": "https://smartfactory.de/aas/submodel/OfferedCapabilitiyDescription/CapabilitySet/FullyAutomatedAssemblyContainer#1/0"
+                }
+              ]
+            },
+            "qualifiers": [
+              {
+                "type": "Multiplicity",
+                "valueType": "xs:string",
+                "value": "OneToMany"
+              }
+            ],
+            "value": [
+              {
+                "idShort": "FullyAutomatedAssembly",
+                "semanticId": {
+                  "type": "ExternalReference",
+                  "keys": [
+                    {
+                      "type": "GlobalReference",
+                      "value": "https://wiki.eclipse.org/BaSyx_/_Documentation_/_Submodels_/_Capability#Capability"
+                    }
+                  ]
+                },
+                "qualifiers": [
+                  {
+                    "type": "Multiplicity",
+                    "valueType": "xs:string",
+                    "value": "One"
+                  }
+                ],
+                "modelType": "Capability"
+              },
+              {
+                "idShort": "Comment",
+                "description": [
+                  {
+                    "language": "en",
+                    "text": "Human readable description of the capability."
+                  }
+                ],
+                "qualifiers": [
+                  {
+                    "type": "Multiplicity",
+                    "valueType": "xs:string",
+                    "value": "ZeroToOne"
+                  }
+                ],
+                "value": [
+                  {
+                    "language": "en",
+                    "text": "Capability to fully-automate an assembly of different parts."
+                  }
+                ],
+                "modelType": "MultiLanguageProperty"
+              },
+              {
+                "idShort": "CapabilityRelations",
+                "semanticId": {
+                  "type": "ExternalReference",
+                  "keys": [
+                    {
+                      "type": "GlobalReference",
+                      "value": "https://admin-shell.io/idta/CapabilityDescription/CapabilityRelations/1/0"
+                    }
+                  ]
+                },
+                "value": [
+                  {
+                    "category": "PARAMETER",
+                    "idShort": "CapabilityRealizedBy",
+                    "description": [
+                      {
+                        "language": "en-US",
+                        "text": "Relationship between two elements"
+                      },
+                      {
+                        "language": "de",
+                        "text": "Beziehung zwischen zwei Elementen"
+                      }
+                    ],
+                    "first": {
+                      "type": "ModelReference",
+                      "keys": [
+                        {
+                          "type": "Submodel",
+                          "value": "https://smartfactory.de/submodels/0fb7f0f5-2eb4-43d1-b7a0-8415d34a41e9"
+                        },
+                        {
+                          "type": "SubmodelElementCollection",
+                          "value": "CapabilitySet"
+                        },
+                        {
+                          "type": "SubmodelElementCollection",
+                          "value": "FullyAutomatedAssemblyContainer"
+                        }
+                      ]
+                    },
+                    "second": {
+                      "type": "ModelReference",
+                      "keys": [
+                        {
+                          "type": "Submodel",
+                          "value": "https://smartfactory.de/submodels/1bf3f6ae-6b95-4f2a-8bd2-c7a80eee4608"
+                        },
+                        {
+                          "type": "SubmodelElementCollection",
+                          "value": "SkillSet"
+                        },
+                        {
+                          "type": "SubmodelElementCollection",
+                          "value": "Skill_0001"
+                        }
+                      ]
+                    },
+                    "modelType": "RelationshipElement"
+                  }
+                ],
+                "modelType": "SubmodelElementCollection"
+              },
+              {
+                "idShort": "PropertySet",
+                "semanticId": {
+                  "type": "ExternalReference",
+                  "keys": [
+                    {
+                      "type": "GlobalReference",
+                      "value": "https://smartfactory.de/aas/submodel/OfferedCapabilitiyDescription/CapabilitySet/FullyAutomatedAssemblyContainer/PropertySet#1/0"
+                    }
+                  ]
+                },
+                "qualifiers": [
+                  {
+                    "type": "Multiplicity",
+                    "valueType": "xs:string",
+                    "value": "ZeroToOne"
+                  }
+                ],
+                "value": [
+                  {
+                    "idShort": "PropertyContainer01",
+                    "semanticId": {
+                      "type": "ExternalReference",
+                      "keys": [
+                        {
+                          "type": "GlobalReference",
+                          "value": "https://smartfactory.de/aas/submodel/OfferedCapabilitiyDescription/CapabilitySet/FullyAutomatedAssemblyContainer/PropertySet/HeightOfProduct#1/0"
+                        }
+                      ]
+                    },
+                    "qualifiers": [
+                      {
+                        "type": "Multiplicity",
+                        "valueType": "xs:string",
+                        "value": "OneToMany"
+                      }
+                    ],
+                    "value": [
+                      {
+                        "idShort": "Comment",
+                        "qualifiers": [
+                          {
+                            "type": "Multiplicity",
+                            "valueType": "xs:string",
+                            "value": "ZeroToOne"
+                          }
+                        ],
+                        "value": [
+                          {
+                            "language": "en",
+                            "text": "blank"
+                          }
+                        ],
+                        "modelType": "MultiLanguageProperty"
+                      },
+                      {
+                        "idShort": "HeightOfTheProduct",
+                        "valueType": "xs:double",
+                        "min": "0",
+                        "max": "1000",
+                        "modelType": "Range"
+                      }
+                    ],
+                    "modelType": "SubmodelElementCollection"
+                  },
+                  {
+                    "idShort": "PropertyContainer02",
+                    "semanticId": {
+                      "type": "ExternalReference",
+                      "keys": [
+                        {
+                          "type": "GlobalReference",
+                          "value": "https://smartfactory.de/aas/submodel/OfferedCapabilitiyDescription/CapabilitySet/FullyAutomatedAssemblyContainer/PropertySet/WidthOfProduct#1/0"
+                        }
+                      ]
+                    },
+                    "qualifiers": [
+                      {
+                        "type": "Multiplicity",
+                        "valueType": "xs:string",
+                        "value": "OneToMany"
+                      }
+                    ],
+                    "value": [
+                      {
+                        "idShort": "Comment",
+                        "qualifiers": [
+                          {
+                            "type": "Multiplicity",
+                            "valueType": "xs:string",
+                            "value": "ZeroToOne"
+                          }
+                        ],
+                        "value": [
+                          {
+                            "language": "en",
+                            "text": "blank"
+                          }
+                        ],
+                        "modelType": "MultiLanguageProperty"
+                      },
+                      {
+                        "idShort": "WidthOfTheProduct",
+                        "valueType": "xs:double",
+                        "min": "0",
+                        "max": "1000",
+                        "modelType": "Range"
+                      }
+                    ],
+                    "modelType": "SubmodelElementCollection"
+                  },
+                  {
+                    "idShort": "PropertyContainer03",
+                    "semanticId": {
+                      "type": "ExternalReference",
+                      "keys": [
+                        {
+                          "type": "GlobalReference",
+                          "value": "https://smartfactory.de/aas/submodel/OfferedCapabilitiyDescription/CapabilitySet/FullyAutomatedAssemblyContainer/PropertySet/DepthOfProduct#1/0"
+                        }
+                      ]
+                    },
+                    "qualifiers": [
+                      {
+                        "type": "Multiplicity",
+                        "valueType": "xs:string",
+                        "value": "OneToMany"
+                      }
+                    ],
+                    "value": [
+                      {
+                        "idShort": "Comment",
+                        "qualifiers": [
+                          {
+                            "type": "Multiplicity",
+                            "valueType": "xs:string",
+                            "value": "ZeroToOne"
+                          }
+                        ],
+                        "value": [
+                          {
+                            "language": "en",
+                            "text": "blank"
+                          }
+                        ],
+                        "modelType": "MultiLanguageProperty"
+                      },
+                      {
+                        "idShort": "DepthOfProduct",
+                        "valueType": "xs:double",
+                        "min": "0",
+                        "max": "1000",
+                        "modelType": "Range"
+                      }
+                    ],
+                    "modelType": "SubmodelElementCollection"
+                  },
+                  {
+                    "idShort": "PropertyContainer04",
+                    "semanticId": {
+                      "type": "ExternalReference",
+                      "keys": [
+                        {
+                          "type": "GlobalReference",
+                          "value": "https://smartfactory.de/aas/submodel/OfferedCapabilitiyDescription/CapabilitySet/FullyAutomatedAssemblyContainer/PropertySet/WeightOfProduct#1/0"
+                        }
+                      ]
+                    },
+                    "qualifiers": [
+                      {
+                        "type": "Multiplicity",
+                        "valueType": "xs:string",
+                        "value": "OneToMany"
+                      }
+                    ],
+                    "value": [
+                      {
+                        "idShort": "Comment",
+                        "qualifiers": [
+                          {
+                            "type": "Multiplicity",
+                            "valueType": "xs:string",
+                            "value": "ZeroToOne"
+                          }
+                        ],
+                        "value": [
+                          {
+                            "language": "en",
+                            "text": "blank"
+                          }
+                        ],
+                        "modelType": "MultiLanguageProperty"
+                      },
+                      {
+                        "idShort": "WeightOfProduct",
+                        "valueType": "xs:double",
+                        "min": "0",
+                        "max": "500",
+                        "modelType": "Range"
+                      }
+                    ],
+                    "modelType": "SubmodelElementCollection"
+                  },
+                  {
+                    "idShort": "PropertyContainer05",
+                    "semanticId": {
+                      "type": "ExternalReference",
+                      "keys": [
+                        {
+                          "type": "GlobalReference",
+                          "value": "https://smartfactory.de/aas/submodel/OfferedCapabilitiyDescription/CapabilitySet/FullyAutomatedAssemblyContainer/PropertySet/JoiningTechnique#1/0"
+                        }
+                      ]
+                    },
+                    "qualifiers": [
+                      {
+                        "type": "Multiplicity",
+                        "valueType": "xs:string",
+                        "value": "OneToMany"
+                      }
+                    ],
+                    "value": [
+                      {
+                        "idShort": "Comment",
+                        "qualifiers": [
+                          {
+                            "type": "Multiplicity",
+                            "valueType": "xs:string",
+                            "value": "ZeroToOne"
+                          }
+                        ],
+                        "value": [
+                          {
+                            "language": "en",
+                            "text": "blank"
+                          }
+                        ],
+                        "modelType": "MultiLanguageProperty"
+                      },
+                      {
+                        "idShort": "JoiningTechnique",
+                        "valueType": "xs:string",
+                        "value": "Positive locking connection - detachable",
+                        "modelType": "Property"
+                      }
+                    ],
+                    "modelType": "SubmodelElementCollection"
+                  },
+                  {
+                    "idShort": "PropertyContainer06",
+                    "semanticId": {
+                      "type": "ExternalReference",
+                      "keys": [
+                        {
+                          "type": "GlobalReference",
+                          "value": "https://smartfactory.de/aas/submodel/OfferedCapabilitiyDescription/CapabilitySet/FullyAutomatedAssemblyContainer/PropertySet/ManufacturableShapeOfProduct#1/0"
+                        }
+                      ]
+                    },
+                    "qualifiers": [
+                      {
+                        "type": "Multiplicity",
+                        "valueType": "xs:string",
+                        "value": "OneToMany"
+                      }
+                    ],
+                    "value": [
+                      {
+                        "idShort": "Comment",
+                        "qualifiers": [
+                          {
+                            "type": "Multiplicity",
+                            "valueType": "xs:string",
+                            "value": "ZeroToOne"
+                          }
+                        ],
+                        "value": [
+                          {
+                            "language": "en",
+                            "text": "blank"
+                          }
+                        ],
+                        "modelType": "MultiLanguageProperty"
+                      },
+                      {
+                        "idShort": "ManufacturableShapeOfProduct",
+                        "valueType": "xs:string",
+                        "value": "Cube",
+                        "modelType": "Property"
+                      }
+                    ],
+                    "modelType": "SubmodelElementCollection"
+                  },
+                  {
+                    "idShort": "PropertyContainer07",
+                    "semanticId": {
+                      "type": "ExternalReference",
+                      "keys": [
+                        {
+                          "type": "GlobalReference",
+                          "value": "https://smartfactory.de/aas/submodel/OfferedCapabilitiyDescription/CapabilitySet/FullyAutomatedAssemblyContainer/PropertySet/ManufacturableMaterialOfProduct#1/0"
+                        }
+                      ]
+                    },
+                    "qualifiers": [
+                      {
+                        "type": "Multiplicity",
+                        "valueType": "xs:string",
+                        "value": "OneToMany"
+                      }
+                    ],
+                    "value": [
+                      {
+                        "idShort": "Comment",
+                        "qualifiers": [
+                          {
+                            "type": "Multiplicity",
+                            "valueType": "xs:string",
+                            "value": "ZeroToOne"
+                          }
+                        ],
+                        "value": [
+                          {
+                            "language": "en",
+                            "text": "blank"
+                          }
+                        ],
+                        "modelType": "MultiLanguageProperty"
+                      },
+                      {
+                        "idShort": "ManufacturableMaterialOfProduct",
+                        "typeValueListElement": "Property",
+                        "valueTypeListElement": "xs:string",
+                        "value": [
+                          {
+                            "valueType": "xs:string",
+                            "value": "Metal",
+                            "modelType": "Property"
+                          },
+                          {
+                            "valueType": "xs:string",
+                            "value": "NonMetal",
+                            "modelType": "Property"
+                          },
+                          {
+                            "valueType": "xs:string",
+                            "value": "Composites",
+                            "modelType": "Property"
+                          }
+                        ],
+                        "modelType": "SubmodelElementList"
+                      }
+                    ],
+                    "modelType": "SubmodelElementCollection"
+                  }
+                ],
+                "modelType": "SubmodelElementCollection"
+              }
+            ],
+            "modelType": "SubmodelElementCollection"
+          }
+        ],
+        "modelType": "SubmodelElementCollection"
+      }
+    ],
+    "modelType": "Submodel"
+  }

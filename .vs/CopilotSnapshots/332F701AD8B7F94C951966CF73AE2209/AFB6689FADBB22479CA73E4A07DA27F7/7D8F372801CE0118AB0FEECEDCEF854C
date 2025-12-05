@@ -1,0 +1,62 @@
+﻿using System.Collections.Generic;
+using System.Threading.Tasks;
+using BaSyx.Models.AdminShell;
+using BaSyx.Models.Extensions;
+using AasSharpClient.Adapters;
+
+namespace AasSharpClient.Models
+{
+    // Generated POCO for ProductionPlan submodel using BaSyx models
+    public partial class ProductionPlan
+    {
+        public ISubmodelElementCollection Content { get; set; } = new SubmodelElementCollection("ProductionPlan");
+
+        public IProperty IsFinished => BrowseProperty("IsFinished");
+
+        public List<Step> Steps { get; set; } = new();
+
+        [System.Text.Json.Serialization.JsonIgnore]
+        public IBasyxAdapter? Adapter { get; set; }
+
+        public ProductionPlan() { }
+
+        public async Task<bool> IsFinishedAsync()
+        {
+            var val = await IsFinished.GetValueAsync<string>();
+            return bool.TryParse(val, out var v);
+        }
+
+        public async Task CompleteAsync()
+        {
+            await IsFinished.SetValueAsync("true").ConfigureAwait(false);
+            if (Adapter != null)
+            {
+                await Adapter.UploadPropertyAsync(this.Content, IsFinished.IdShort, "true").ConfigureAwait(false);
+            }
+        }
+
+        public async Task UploadStepAsync(Step step)
+        {
+            if (Adapter != null)
+            {
+                await Adapter.UploadElementAsync(step.Content).ConfigureAwait(false);
+            }
+        }
+
+        private IProperty BrowseProperty(string idShort)
+        {
+            // SubmodelElementCollection.Value is a wrapper; actual list is Value.Value
+            var collectionValue = Content.Value;
+            foreach (var el in collectionValue.Value)
+            {
+                if (el.IdShort == idShort && el is IProperty p)
+                {
+                    return p;
+                }
+            }
+            var prop = new Property<string>(idShort, "false");
+            collectionValue.Value.Add(prop);
+            return prop;
+        }
+    }
+}

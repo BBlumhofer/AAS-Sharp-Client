@@ -1,0 +1,153 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\BenjaminBlumhofer\\source\\repos\\CSharp\\AAS-Sharp-Client\\AAS Sharp Client\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\BenjaminBlumhofer\\source\\repos\\CSharp\\AAS-Sharp-Client\\AAS Sharp Client\\AAS Sharp Client\\Models\\DomainTypes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:AAS Sharp Client\\Models\\DomainTypes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\BenjaminBlumhofer\\source\\repos\\CSharp\\AAS-Sharp-Client\\AAS Sharp Client\\AAS Sharp Client\\Models\\ProductionPlan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:AAS Sharp Client\\Models\\ProductionPlan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\BenjaminBlumhofer\\source\\repos\\CSharp\\AAS-Sharp-Client\\AAS Sharp Client\\tests\\AasSharpClient.Tests\\ProductionPlanTests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:tests\\AasSharpClient.Tests\\ProductionPlanTests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\BenjaminBlumhofer\\source\\repos\\CSharp\\AAS-Sharp-Client\\AAS Sharp Client\\tests\\AasSharpClient.Tests\\TestData\\ExpectedProductionPlan.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:tests\\AasSharpClient.Tests\\TestData\\ExpectedProductionPlan.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\BenjaminBlumhofer\\source\\repos\\CSharp\\AAS-Sharp-Client\\AAS Sharp Client\\tests\\AasSharpClient.Tests\\AasSharpClient.Tests.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:tests\\AasSharpClient.Tests\\AasSharpClient.Tests.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\BenjaminBlumhofer\\source\\repos\\CSharp\\AAS-Sharp-Client\\AAS Sharp Client\\AAS Sharp Client.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:AAS Sharp Client.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\BenjaminBlumhofer\\source\\repos\\CSharp\\AAS-Sharp-Client\\AAS Sharp Client\\AAS Sharp Client\\Tools\\BasyxBrowser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:AAS Sharp Client\\Tools\\BasyxBrowser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 1,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedHeight": 307,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ProductionPlan.cs",
+              "DocumentMoniker": "C:\\Users\\BenjaminBlumhofer\\source\\repos\\CSharp\\AAS-Sharp-Client\\AAS Sharp Client\\AAS Sharp Client\\Models\\ProductionPlan.cs",
+              "RelativeDocumentMoniker": "AAS Sharp Client\\Models\\ProductionPlan.cs",
+              "ToolTip": "C:\\Users\\BenjaminBlumhofer\\source\\repos\\CSharp\\AAS-Sharp-Client\\AAS Sharp Client\\AAS Sharp Client\\Models\\ProductionPlan.cs",
+              "RelativeToolTip": "AAS Sharp Client\\Models\\ProductionPlan.cs",
+              "ViewState": "AgIAAJEAAAAAAAAAAAAMwK0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-03T15:52:56.396Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "DomainTypes.cs",
+              "DocumentMoniker": "C:\\Users\\BenjaminBlumhofer\\source\\repos\\CSharp\\AAS-Sharp-Client\\AAS Sharp Client\\AAS Sharp Client\\Models\\DomainTypes.cs",
+              "RelativeDocumentMoniker": "AAS Sharp Client\\Models\\DomainTypes.cs",
+              "ToolTip": "C:\\Users\\BenjaminBlumhofer\\source\\repos\\CSharp\\AAS-Sharp-Client\\AAS Sharp Client\\AAS Sharp Client\\Models\\DomainTypes.cs",
+              "RelativeToolTip": "AAS Sharp Client\\Models\\DomainTypes.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-03T12:57:33.242Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "BasyxBrowser.cs",
+              "DocumentMoniker": "C:\\Users\\BenjaminBlumhofer\\source\\repos\\CSharp\\AAS-Sharp-Client\\AAS Sharp Client\\AAS Sharp Client\\Tools\\BasyxBrowser.cs",
+              "RelativeDocumentMoniker": "AAS Sharp Client\\Tools\\BasyxBrowser.cs",
+              "ToolTip": "C:\\Users\\BenjaminBlumhofer\\source\\repos\\CSharp\\AAS-Sharp-Client\\AAS Sharp Client\\AAS Sharp Client\\Tools\\BasyxBrowser.cs",
+              "RelativeToolTip": "AAS Sharp Client\\Tools\\BasyxBrowser.cs",
+              "ViewState": "AgIAAM0AAAAAAAAAAEBVwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-03T16:00:42.456Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ExpectedProductionPlan.json",
+              "DocumentMoniker": "C:\\Users\\BenjaminBlumhofer\\source\\repos\\CSharp\\AAS-Sharp-Client\\AAS Sharp Client\\tests\\AasSharpClient.Tests\\TestData\\ExpectedProductionPlan.json",
+              "RelativeDocumentMoniker": "tests\\AasSharpClient.Tests\\TestData\\ExpectedProductionPlan.json",
+              "ToolTip": "C:\\Users\\BenjaminBlumhofer\\source\\repos\\CSharp\\AAS-Sharp-Client\\AAS Sharp Client\\tests\\AasSharpClient.Tests\\TestData\\ExpectedProductionPlan.json",
+              "RelativeToolTip": "tests\\AasSharpClient.Tests\\TestData\\ExpectedProductionPlan.json",
+              "ViewState": "AgIAAC0DAAAAAAAAAAAQwFEDAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-12-03T15:43:20.821Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "AAS Sharp Client.csproj",
+              "DocumentMoniker": "C:\\Users\\BenjaminBlumhofer\\source\\repos\\CSharp\\AAS-Sharp-Client\\AAS Sharp Client\\AAS Sharp Client.csproj",
+              "RelativeDocumentMoniker": "AAS Sharp Client.csproj",
+              "ToolTip": "C:\\Users\\BenjaminBlumhofer\\source\\repos\\CSharp\\AAS-Sharp-Client\\AAS Sharp Client\\AAS Sharp Client.csproj",
+              "RelativeToolTip": "AAS Sharp Client.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-12-03T13:02:57.815Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "AasSharpClient.Tests.csproj",
+              "DocumentMoniker": "C:\\Users\\BenjaminBlumhofer\\source\\repos\\CSharp\\AAS-Sharp-Client\\AAS Sharp Client\\tests\\AasSharpClient.Tests\\AasSharpClient.Tests.csproj",
+              "RelativeDocumentMoniker": "tests\\AasSharpClient.Tests\\AasSharpClient.Tests.csproj",
+              "ToolTip": "C:\\Users\\BenjaminBlumhofer\\source\\repos\\CSharp\\AAS-Sharp-Client\\AAS Sharp Client\\tests\\AasSharpClient.Tests\\AasSharpClient.Tests.csproj",
+              "RelativeToolTip": "tests\\AasSharpClient.Tests\\AasSharpClient.Tests.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-12-03T12:56:02.567Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ProductionPlanTests.cs",
+              "DocumentMoniker": "C:\\Users\\BenjaminBlumhofer\\source\\repos\\CSharp\\AAS-Sharp-Client\\AAS Sharp Client\\tests\\AasSharpClient.Tests\\ProductionPlanTests.cs",
+              "RelativeDocumentMoniker": "tests\\AasSharpClient.Tests\\ProductionPlanTests.cs",
+              "ToolTip": "C:\\Users\\BenjaminBlumhofer\\source\\repos\\CSharp\\AAS-Sharp-Client\\AAS Sharp Client\\tests\\AasSharpClient.Tests\\ProductionPlanTests.cs",
+              "RelativeToolTip": "tests\\AasSharpClient.Tests\\ProductionPlanTests.cs",
+              "ViewState": "AgIAAK8AAAAAAAAAAAAcwFcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-03T12:56:01.676Z",
+              "EditorCaption": ""
+            }
+          ]
+        },
+        {
+          "DockedHeight": 93,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

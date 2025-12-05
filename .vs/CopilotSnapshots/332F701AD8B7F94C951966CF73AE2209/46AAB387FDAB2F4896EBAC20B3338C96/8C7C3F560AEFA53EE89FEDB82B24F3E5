@@ -1,0 +1,144 @@
+﻿using AasSharpClient.Models;
+using AasSharpClient.Tools;
+using BaSyx.Models.AdminShell;
+using BaSyx.Models.Extensions;
+using System.IO;
+using System.Text.Json;
+using System.Threading.Tasks;
+using Xunit;
+using System.Collections.Generic;
+
+// alias to avoid conflict with System.Action delegate
+using ActionModel = AasSharpClient.Models.Action;
+
+namespace AasSharpClient.Tests
+{
+    public class ProductionPlanTests
+    {
+        [Fact]
+        public async Task TestSMSKills()
+        {
+            //Create Production Plan Submodel
+            // ModelReferenceEnum: Submodel, SubmodelElementCollection, Property,
+
+            var skill_refence_dict = new Dictionary<object, string>
+            {
+                { ModelReferenceEnum.Submodel, "https://example.com/ids/sm/4510_5181_3022_5180" },
+                { ModelReferenceEnum.SubmodelElementCollection, "Skills" },
+                { "Skill_0001", "Skill_0001 " }
+            };
+            SkillReference skill_reference = new SkillReference(skill_refence_dict);
+
+            var final_result_dict = new Dictionary<string, object>
+            {
+                { "StartTime", "2025/12/02 15:59:49" },
+                { "EndTime", "2025/12/02 16:00:29" },
+                { "CarrierID", "WST_A_17 " },
+                { "CarrierType", "ns=0;i=0" },
+                { "ProductType", "ns=6;s=StorageModule.Resources.Semitrailer_Chassis" },
+                { "ElapsedTime", "39.69656538963318" },
+                { "CarrierEmpty", "" },
+                { "ProductID", "" },
+                { "SuccessfulExecutionsCount", 9 }
+            };
+
+            var input_param_dict = new Dictionary<string, string>
+            {
+                { "RetrieveByProductType", "true" },
+                { "ProductType", "Semitrailer_Chassis" },
+                { "ProductID", "" }
+            };
+            InputParameters input_params = new InputParameters(input_param_dict);
+            FinalResultData final_result_data = new FinalResultData(final_result_dict);
+            ActionModel action = new ActionModel("Action0001", "RetrieveToPortLogistic", ActionStatusEnum.DONE, input_params, final_result_data, skill_reference, "P24" );// Actionindex, ActionTitle, Status, InputParameters, FinalResultData, SkillReference, MachineName
+            SchedulingContainer scheduling = new SchedulingContainer("2025-12-02 15:58:45", "2025-12-02 15:59:25", "00:00:00", "00:00:40");
+            Step step= new Step("Step0001", "Load", StepStatusEnum.DONE, action, "P24", scheduling, "SmartFactory-KL", "_PHUKET");// StepTitle, Status, Actions, Station, Enterprise, Workcentre
+            QuantityInformation quantityInformation = new QuantityInformation(1, "TotalNumberOfPieces");
+            ProductionPlan production_plan_sm = new ProductionPlan(false,1 , step); //IsFinished, QuantityInformation/Total Number Of Pieces, Steps
+
+            var skill_refence_dict_2 = new Dictionary<object, string>
+            {
+                { ModelReferenceEnum.Submodel, "https://example.com/ids/sm/4510_5181_3022_5180" },
+                { ModelReferenceEnum.SubmodelElementCollection, "Skills" },
+                { "Skill_0001", "Skill_0001 " }
+            };
+            SkillReference skill_reference_2 = new SkillReference(skill_refence_dict_2);
+
+            var input_param_dict_2 = new Dictionary<string, string>
+            {
+                { "ProductType", "self,ProductIdentification/ProductName" },
+                { "ProductID", "self,ProductIdentification/Identifier" }
+            };
+            InputParameters input_params_2 = new InputParameters(input_param_dict_2);
+            FinalResultData final_result_data_2 = new FinalResultData();
+            ActionModel action_2 = new ActionModel("Action0001", "Store", ActionStatusEnum.OPEN, input_params_2, final_result_data_2, skill_reference_2, "P17");// Actionindex, ActionTitle, Status, InputParameters, FinalResultData, SkillReference, MachineName
+            SchedulingContainer scheduling_2 = new SchedulingContainer("2025-12-02 00:03:10", "2025-12-02 00:03:30", "00:00:00", "00:00:20");
+            Step step_2 = new Step("Step0002", "Unload ", StepStatusEnum.OPEN, action_2, "P17", scheduling_2, "SmartFactory-KL", "_PHUKET");// StepTitle, Status, Actions, Station, Enterprise, Workcentre
+            production_plan_sm.append_step(step_2);
+            // Serialize submodel using BaSyx serializer helpers (we'll use System.Text.Json for comparison)
+            var output = await production_plan_sm.ToJsonAsync();
+
+            var expected = await File.ReadAllTextAsync("TestData/ExpectedProductionPlan.json");
+
+            // Compare by key/value pairs: extract idShort -> primitive value mappings from both JSONs
+            var expectedDoc = JsonDocument.Parse(expected);
+            var actualDoc = JsonDocument.Parse(output);
+
+            var expectedMap = new Dictionary<string, string>();
+            var actualMap = new Dictionary<string, string>();
+
+            void ExtractIdShortValues(JsonElement node, Dictionary<string,string> map)
+            {
+                if (node.ValueKind == JsonValueKind.Object)
+                {
+                    string? currentId = null;
+                    if (node.TryGetProperty("idShort", out var idProp) && idProp.ValueKind == JsonValueKind.String)
+                    {
+                        currentId = idProp.GetString();
+                    }
+
+                    if (node.TryGetProperty("value", out var valueProp))
+                    {
+                        // if value is primitive string/number/bool, record it
+                        if (valueProp.ValueKind == JsonValueKind.String || valueProp.ValueKind == JsonValueKind.Number || valueProp.ValueKind == JsonValueKind.True || valueProp.ValueKind == JsonValueKind.False)
+                        {
+                            if (currentId != null)
+                            {
+                                map[currentId] = valueProp.ToString();
+                            }
+                        }
+                        else
+                        {
+                            // value is array or object -> recurse into it
+                            ExtractIdShortValues(valueProp, map);
+                        }
+                    }
+
+                    // recurse into all properties
+                    foreach (var prop in node.EnumerateObject())
+                    {
+                        ExtractIdShortValues(prop.Value, map);
+                    }
+                }
+                else if (node.ValueKind == JsonValueKind.Array)
+                {
+                    foreach (var item in node.EnumerateArray())
+                        ExtractIdShortValues(item, map);
+                }
+            }
+
+            ExtractIdShortValues(expectedDoc.RootElement, expectedMap);
+            ExtractIdShortValues(actualDoc.RootElement, actualMap);
+
+            // Compare maps: keys from expected must exist and values match (actual may contain extras)
+            foreach (var kv in expectedMap)
+            {
+                Assert.True(actualMap.ContainsKey(kv.Key), $"Missing key in actual JSON: {kv.Key}");
+                Assert.Equal(kv.Value, actualMap[kv.Key]);
+            }
+
+            var input = ProductionPlan.Parse(output);
+            var steps = input.Steps;
+        }
+    }
+}

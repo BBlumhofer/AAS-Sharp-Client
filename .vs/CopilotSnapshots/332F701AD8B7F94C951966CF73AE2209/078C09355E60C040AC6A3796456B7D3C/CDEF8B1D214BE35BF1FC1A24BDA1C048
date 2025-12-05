@@ -1,0 +1,23 @@
+﻿using System.Collections.Generic;
+
+namespace AasSharpClient.Basyx
+{
+    // Local lightweight models representing BaSyx AAS model elements for PoC and compilation.
+    // These mirror essential shape used by the generated classes and the adapter.
+
+    public class SubmodelElement
+    {
+        public string IdShort { get; set; } = string.Empty;
+        public string? SemanticId { get; set; }
+    }
+
+    public class Property : SubmodelElement
+    {
+        public string? Value { get; set; }
+    }
+
+    public class SubmodelElementCollection : SubmodelElement
+    {
+        public List<SubmodelElement> Value { get; set; } = new List<SubmodelElement>();
+    }
+}

@@ -1,0 +1,55 @@
+﻿using System.Collections.Generic;
+using System.Text.Json.Serialization;
+using System.Threading.Tasks;
+using AasSharpClient.Adapters;
+
+namespace AasSharpClient.Models
+{
+    public partial class Action
+    {
+        public const string MODELTYPE = "Action";
+        public const string TEMPLATE_ID_SHORT = "Action00";
+
+        [JsonPropertyName("idShort")]
+        public string IdShort { get; set; } = string.Empty;
+
+        [JsonPropertyName("number")]
+        public int Number { get; set; }
+
+        [JsonPropertyName("title")]
+        public string? Title { get; set; }
+
+        [JsonPropertyName("status")]
+        public string? Status { get; set; }
+
+        [JsonPropertyName("params")]
+        public Dictionary<string, object>? Params { get; set; }
+
+        [JsonIgnore]
+        public IBasyxAdapter? Adapter { get; set; }
+
+        public Action() { }
+
+        public async Task SetParamAsync(string key, object value)
+        {
+            if (Params == null) Params = new Dictionary<string, object>();
+            Params[key] = value;
+            if (Adapter != null)
+            {
+                await Adapter.UploadPropertyAsync(this, key, value);
+            }
+        }
+
+        public async Task FillParametersAsync(IEnumerable<System.Func<string, object?, Task>> fillers)
+        {
+            if (Params == null) return;
+            foreach (var kv in Params)
+            {
+                foreach (var f in fillers)
+                {
+                    await f(kv.Key, kv.Value);
+                }
+            }
+        }
+    }
+}

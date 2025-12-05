@@ -1,0 +1,227 @@
+{
+  "modelType" : "Submodel",
+  "kind" : "Instance",
+  "semanticId" : {
+    "keys" : [ {
+      "type" : "Submodel",
+      "value" : "http://example.com/id/type/submodel/BOM/1/1"
+    }, {
+      "type" : "Submodel",
+      "value" : "https://smartfactory.de/semantics/submodel/Truck/BillOfMaterial#1/0"
+    } ],
+    "type" : "ExternalReference"
+  },
+  "id" : "https://smartfactory.de/submodels/35c2e56c-fd97-4bda-8ecd-42ab068f66db",
+  "idShort" : "BillOfMaterial",
+  "submodelElements" : [ {
+    "modelType" : "Entity",
+    "entityType" : "SelfManagedEntity",
+    "statements" : [ {
+      "modelType" : "Property",
+      "value" : "https://smartfactory.de/shells/5ee202c4-cbef-42c7-b5bd-020dc1b0ca07",
+      "valueType" : "xs:string",
+      "idShort" : "Id"
+    }, {
+      "modelType" : "Property",
+      "value" : "Truck",
+      "valueType" : "xs:string",
+      "idShort" : "Name"
+    }, {
+      "modelType" : "Property",
+      "value" : "1",
+      "valueType" : "xs:string",
+      "idShort" : "Quantity"
+    }, {
+      "modelType" : "ReferenceElement",
+      "idShort" : "URL",
+      "value" : {
+        "keys" : [ {
+          "type" : "AssetAdministrationShell",
+          "value" : "https://smartfactory.de/shells/5ee202c4-cbef-42c7-b5bd-020dc1b0ca07"
+        } ],
+        "type" : "ExternalReference"
+      }
+    }, {
+      "modelType" : "Entity",
+      "entityType" : "SelfManagedEntity",
+      "statements" : [ {
+        "modelType" : "Property",
+        "value" : "https://smartfactory.de/shells/fe7f1e29-7fd2-44e9-9e5a-5d95852d3f83",
+        "valueType" : "xs:string",
+        "idShort" : "Id"
+      }, {
+        "modelType" : "Property",
+        "value" : "Semitrailer",
+        "valueType" : "xs:string",
+        "idShort" : "Name"
+      }, {
+        "modelType" : "Property",
+        "value" : "1",
+        "valueType" : "xs:string",
+        "idShort" : "Quantity"
+      }, {
+        "modelType" : "ReferenceElement",
+        "idShort" : "URL",
+        "value" : {
+          "keys" : [ {
+            "type" : "AssetAdministrationShell",
+            "value" : "https://smartfactory.de/shells/fe7f1e29-7fd2-44e9-9e5a-5d95852d3f83"
+          } ],
+          "type" : "ExternalReference"
+        }
+      }, {
+        "modelType" : "Entity",
+        "entityType" : "SelfManagedEntity",
+        "statements" : [ {
+          "modelType" : "Property",
+          "value" : "https://smartfactory.de/shells/ea68adec-e8a5-48a1-bbec-752ee6a7560d",
+          "valueType" : "xs:string",
+          "idShort" : "Id"
+        }, {
+          "modelType" : "Property",
+          "value" : "Semitrailer_Chassis",
+          "valueType" : "xs:string",
+          "idShort" : "Name"
+        }, {
+          "modelType" : "Property",
+          "value" : "1",
+          "valueType" : "xs:string",
+          "idShort" : "Quantity"
+        }, {
+          "modelType" : "ReferenceElement",
+          "idShort" : "URL",
+          "value" : {
+            "keys" : [ {
+              "type" : "AssetAdministrationShell",
+              "value" : "https://smartfactory.de/shells/ea68adec-e8a5-48a1-bbec-752ee6a7560d"
+            } ],
+            "type" : "ExternalReference"
+          }
+        } ],
+        "idShort" : "Semitrailer_Chassis"
+      }, {
+        "modelType" : "Entity",
+        "entityType" : "SelfManagedEntity",
+        "statements" : [ {
+          "modelType" : "Property",
+          "value" : "https://smartfactory.de/shells/a1a14718-84c1-4578-9214-56bf166d12a0",
+          "valueType" : "xs:string",
+          "idShort" : "Id"
+        }, {
+          "modelType" : "Property",
+          "value" : "Trailer_Body_Blue",
+          "valueType" : "xs:string",
+          "idShort" : "Name"
+        }, {
+          "modelType" : "Property",
+          "value" : "1",
+          "valueType" : "xs:string",
+          "idShort" : "Quantity"
+        }, {
+          "modelType" : "ReferenceElement",
+          "idShort" : "URL",
+          "value" : {
+            "keys" : [ {
+              "type" : "AssetAdministrationShell",
+              "value" : "https://smartfactory.de/shells/a1a14718-84c1-4578-9214-56bf166d12a0"
+            } ],
+            "type" : "ExternalReference"
+          }
+        } ],
+        "idShort" : "Trailer_Body_Blue"
+      } ],
+      "idShort" : "Semitrailer"
+    }, {
+      "modelType" : "Entity",
+      "entityType" : "SelfManagedEntity",
+      "statements" : [ {
+        "modelType" : "Property",
+        "value" : "https://smartfactory.de/shells/e6a4cbf2-89a5-485e-b926-9c98a334be72",
+        "valueType" : "xs:string",
+        "idShort" : "Id"
+      }, {
+        "modelType" : "Property",
+        "value" : "Semitrailer_Truck",
+        "valueType" : "xs:string",
+        "idShort" : "Name"
+      }, {
+        "modelType" : "Property",
+        "value" : "1",
+        "valueType" : "xs:string",
+        "idShort" : "Quantity"
+      }, {
+        "modelType" : "ReferenceElement",
+        "idShort" : "URL",
+        "value" : {
+          "keys" : [ {
+            "type" : "AssetAdministrationShell",
+            "value" : "https://smartfactory.de/shells/e6a4cbf2-89a5-485e-b926-9c98a334be72"
+          } ],
+          "type" : "ExternalReference"
+        }
+      }, {
+        "modelType" : "Entity",
+        "entityType" : "SelfManagedEntity",
+        "statements" : [ {
+          "modelType" : "Property",
+          "value" : "https://smartfactory.de/shells/e6dedf92-1468-4b1b-80e9-095ded9eb4b0",
+          "valueType" : "xs:string",
+          "idShort" : "Id"
+        }, {
+          "modelType" : "Property",
+          "value" : "Cab_Chassis",
+          "valueType" : "xs:string",
+          "idShort" : "Name"
+        }, {
+          "modelType" : "Property",
+          "value" : "1",
+          "valueType" : "xs:string",
+          "idShort" : "Quantity"
+        }, {
+          "modelType" : "ReferenceElement",
+          "idShort" : "URL",
+          "value" : {
+            "keys" : [ {
+              "type" : "AssetAdministrationShell",
+              "value" : "https://smartfactory.de/shells/e6dedf92-1468-4b1b-80e9-095ded9eb4b0"
+            } ],
+            "type" : "ExternalReference"
+          }
+        } ],
+        "idShort" : "Cab_Chassis"
+      }, {
+        "modelType" : "Entity",
+        "entityType" : "SelfManagedEntity",
+        "statements" : [ {
+          "modelType" : "Property",
+          "value" : "https://smartfactory.de/shells/ae2ccf5d-2a59-4713-b446-291acfd923b7",
+          "valueType" : "xs:string",
+          "idShort" : "Id"
+        }, {
+          "modelType" : "Property",
+          "value" : "Cab_A_Blue",
+          "valueType" : "xs:string",
+          "idShort" : "Name"
+        }, {
+          "modelType" : "Property",
+          "value" : "1",
+          "valueType" : "xs:string",
+          "idShort" : "Quantity"
+        }, {
+          "modelType" : "ReferenceElement",
+          "idShort" : "URL",
+          "value" : {
+            "keys" : [ {
+              "type" : "AssetAdministrationShell",
+              "value" : "https://smartfactory.de/shells/ae2ccf5d-2a59-4713-b446-291acfd923b7"
+            } ],
+            "type" : "ExternalReference"
+          }
+        } ],
+        "idShort" : "Cab_A_Blue"
+      } ],
+      "idShort" : "Semitrailer_Truck"
+    } ],
+    "idShort" : "Truck"
+  } ]
+}

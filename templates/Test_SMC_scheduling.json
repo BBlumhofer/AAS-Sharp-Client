@@ -1,0 +1,57 @@
+{
+  "modelType" : "SubmodelElementCollection",
+  "semanticId" : {
+    "keys" : [ {
+      "type" : "GlobalReference",
+      "value" : "https://smartfactory.de/semantics/submodel-element/Step/Scheduling"
+    } ],
+    "type" : "ExternalReference"
+  },
+  "idShort" : "Scheduling",
+  "value" : [ {
+    "modelType" : "Property",
+    "semanticId" : {
+      "keys" : [ {
+        "type" : "Property",
+        "value" : "https://smartfactory.de/aas/ids/property/StartTime"
+      } ],
+      "type" : "ExternalReference"
+    },
+    "value" : "2025-05-19 00:00:30",
+    "valueType" : "xs:string",
+    "idShort" : "StartDateTime"
+  }, {
+    "modelType" : "Property",
+    "semanticId" : {
+      "keys" : [ {
+        "type" : "Property",
+        "value" : "https://smartfactory.de/aas/ids/property/EndTime"
+      } ],
+      "type" : "ExternalReference"
+    },
+    "value" : "2025-05-19 00:03:45",
+    "valueType" : "xs:string",
+    "idShort" : "EndDateTime"
+  }, {
+    "modelType" : "Property",
+    "semanticId" : {
+      "keys" : [ {
+        "type" : "GlobalReference",
+        "value" : "https://smartfactory.de/semantics/submodel-element/Step/Scheduling/CycleTime"
+      } ],
+      "type" : "ExternalReference"
+    },
+    "value" : "00:01:12",
+    "valueType" : "xs:string",
+    "idShort" : "CycleTime"
+  }, {
+    "modelType" : "Property",
+    "semanticId" : {
+      "keys" : [ ],
+      "type" : "ExternalReference"
+    },
+    "value" : "00:00:00",
+    "valueType" : "xs:string",
+    "idShort" : "SetupTime"
+  } ]
+}
