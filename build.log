@@ -1,0 +1,11 @@
+  Determining projects to restore...
+  All projects are up-to-date for restore.
+/home/benjamin/AgentDevelopment/AAS-Sharp-Client/Program.cs(10,20): error CS0234: The type or namespace name 'Export' does not exist in the namespace 'BaSyx.Models' (are you missing an assembly reference?) [/home/benjamin/AgentDevelopment/AAS-Sharp-Client/AAS Sharp Client.csproj]
+
+Build FAILED.
+
+/home/benjamin/AgentDevelopment/AAS-Sharp-Client/Program.cs(10,20): error CS0234: The type or namespace name 'Export' does not exist in the namespace 'BaSyx.Models' (are you missing an assembly reference?) [/home/benjamin/AgentDevelopment/AAS-Sharp-Client/AAS Sharp Client.csproj]
+    0 Warning(s)
+    1 Error(s)
+
+Time Elapsed 00:00:00.64

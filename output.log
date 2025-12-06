@@ -1,0 +1,6 @@
+Using launch settings from /home/benjamin/AgentDevelopment/AAS-Sharp-Client/Properties/launchSettings.json...
+/home/benjamin/AgentDevelopment/AAS-Sharp-Client/Program.cs(141,65): error CS0019: Operator '>' cannot be applied to operands of type 'method group' and 'int' [/home/benjamin/AgentDevelopment/AAS-Sharp-Client/AAS Sharp Client.csproj]
+/home/benjamin/AgentDevelopment/AAS-Sharp-Client/Program.cs(143,69): error CS0021: Cannot apply indexing with [] to an expression of type 'IEnumerable<IKey>' [/home/benjamin/AgentDevelopment/AAS-Sharp-Client/AAS Sharp Client.csproj]
+/home/benjamin/AgentDevelopment/AAS-Sharp-Client/Program.cs(143,69): warning CS8602: Dereference of a possibly null reference. [/home/benjamin/AgentDevelopment/AAS-Sharp-Client/AAS Sharp Client.csproj]
+
+The build failed. Fix the build errors and run again.

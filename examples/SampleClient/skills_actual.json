@@ -1,0 +1,78 @@
+{
+  "kind": "Instance",
+  "semanticId": {
+    "type": "ExternalReference",
+    "referredSemanticId": null,
+    "keys": [
+      {
+        "type": "GlobalReference",
+        "value": "https://smartfactory.de/semantics/submodel/MachineSchedule#1/0"
+      }
+    ]
+  },
+  "supplementalSemanticIds": [],
+  "submodelElements": [
+    {
+      "idShort": "LastTimeUpdated",
+      "kind": "Instance",
+      "modelType": "Property",
+      "semanticId": {
+        "type": "ExternalReference",
+        "referredSemanticId": null,
+        "keys": [
+          {
+            "type": "GlobalReference",
+            "value": "https://smartfactory.de/semantics/submodel-element/MachineSchedule/LastTimeUpdated#1/0"
+          }
+        ]
+      },
+      "valueType": "dateTime",
+      "value": "2025-12-05T15:16:14.3646748Z"
+    },
+    {
+      "idShort": "HasOpenTasks",
+      "kind": "Instance",
+      "modelType": "Property",
+      "semanticId": {
+        "type": "ExternalReference",
+        "referredSemanticId": null,
+        "keys": [
+          {
+            "type": "GlobalReference",
+            "value": "https://smartfactory.de/semantics/submodel-element/MachineSchedule/HasOpenTasks#1/0"
+          }
+        ]
+      },
+      "valueType": "boolean",
+      "value": "True"
+    },
+    {
+      "idShort": "Schedule",
+      "kind": "Instance",
+      "modelType": "SubmodelElementList",
+      "semanticId": {
+        "type": "ExternalReference",
+        "referredSemanticId": null,
+        "keys": [
+          {
+            "type": "GlobalReference",
+            "value": "https://smartfactory.de/semantics/submodel-element/MachineSchedule/Schedule#1/0"
+          }
+        ]
+      },
+      "orderRelevant": true,
+      "typeValueListElement": "SubmodelElementCollection",
+      "value": []
+    }
+  ],
+  "modelType": "Submodel",
+  "embeddedDataSpecifications": [],
+  "conceptDescription": null,
+  "qualifiers": [],
+  "id": "https://smartfactory.de/submodels/ebe84b2e-066c-45b1-b900-eb6b641447b9",
+  "administration": null,
+  "idShort": "MachineSchedule",
+  "category": null,
+  "description": [],
+  "displayName": []
+}

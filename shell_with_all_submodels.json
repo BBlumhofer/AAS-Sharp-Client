@@ -1,0 +1,87 @@
+{
+  "AssetInformation": {
+    "AssetKind": 2,
+    "GlobalAssetId": "https://smartfactory.de/assets/4d73e88f-f269-464c-a324-1691c5c9f81c",
+    "SpecificAssetIds": []
+  },
+  "submodels": [
+    {
+      "Type": 2,
+      "Keys": [
+        {
+          "Type": 21,
+          "Value": "https://smartfactory.de/submodels/machineSchedule/e4b88226-407f-49fb-8d8f-719824d59a81"
+        }
+      ]
+    },
+    {
+      "Type": 2,
+      "Keys": [
+        {
+          "Type": 21,
+          "Value": "https://smartfactory.de/submodels/billOfMaterial/dc1bc032-d5cd-4589-9c3b-8694848b74f9"
+        }
+      ]
+    },
+    {
+      "Type": 2,
+      "Keys": [
+        {
+          "Type": 21,
+          "Value": "https://smartfactory.de/submodels/capability/eef7875b-bc99-447a-80e1-35d3692508cc"
+        }
+      ]
+    },
+    {
+      "Type": 2,
+      "Keys": [
+        {
+          "Type": 21,
+          "Value": "https://smartfactory.de/submodels/nameplate/f93092f1-35af-4602-8209-9d4fc1da78d1"
+        }
+      ]
+    },
+    {
+      "Type": 2,
+      "Keys": [
+        {
+          "Type": 21,
+          "Value": "https://smartfactory.de/submodels/productId/2d0d60f5-2bee-4b57-998a-91e4729cc1a4"
+        }
+      ]
+    },
+    {
+      "Type": 2,
+      "Keys": [
+        {
+          "Type": 21,
+          "Value": "https://smartfactory.de/submodels/productionPlan/38a9a1b9-5a2b-45ce-b007-a3f59a19ca32"
+        }
+      ]
+    },
+    {
+      "Type": 2,
+      "Keys": [
+        {
+          "Type": 21,
+          "Value": "https://smartfactory.de/submodels/skills/5a4f1f67-84d7-4da5-8418-5dc5b7d03c9b"
+        }
+      ]
+    }
+  ],
+  "ModelType": "AssetAdministrationShell",
+  "EmbeddedDataSpecifications": [],
+  "Id": "https://smartfactory.de/aas/7d7f5054-2306-4f44-b36e-bfe62ca9bd5f",
+  "IdShort": "SmartFactoryAAS",
+  "Description": [
+    {
+      "Language": "de",
+      "Text": "Asset Administration Shell f\u00FCr Smart Factory Demo mit allen Submodellen"
+    },
+    {
+      "Language": "en",
+      "Text": "Asset Administration Shell for Smart Factory Demo with all Submodels"
+    }
+  ],
+  "DisplayName": []
+}
