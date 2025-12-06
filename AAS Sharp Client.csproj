@@ -23,6 +23,11 @@
     <PackageReference Include="BaSyx.Submodel.Client.Http" Version="1.0.0" />
     <PackageReference Include="BaSyx.Clients.Http" Version="2.0.24" />
   </ItemGroup>
+  
+  <ItemGroup>
+    <!-- I4.0 Messaging Client -->
+    <ProjectReference Include="../I4.0-Sharp-Messaging/I40Sharp.Messaging/I40Sharp.Messaging.csproj" />
+  </ItemGroup>
 
   <ItemGroup>
     <Folder Include="Basyx\" />

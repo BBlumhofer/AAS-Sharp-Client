@@ -41,18 +41,18 @@ public class NeighborMessage
             }
         };
 
-        // Erstelle Neighbors SubmodelElementList
-        var neighborsList = new SubmodelElementList("Neighbors")
-        {
-            TypeValueListElement = "Property"
-        };
+        // Erstelle Neighbors SubmodelElementCollection
+        var neighborsCollection = new SubmodelElementCollection("Neighbors");
 
+        int index = 0;
         foreach (var neighbor in neighbors)
         {
-            neighborsList.Value.Add(new Property<string>("", neighbor));
+            var property = new Property<string>($"Neighbor_{index++}");
+            property.Value = new PropertyValue<string>(neighbor);
+            neighborsCollection.Add(property);
         }
 
-        message.InteractionElements.Add(neighborsList);
+        message.InteractionElements.Add(neighborsCollection);
         return message;
     }
 
@@ -61,18 +61,28 @@ public class NeighborMessage
     /// </summary>
     public List<string> GetNeighbors()
     {
-        var neighborsList = InteractionElements
-            .OfType<SubmodelElementList>()
+        var neighborsCollection = InteractionElements
+            .OfType<SubmodelElementCollection>()
             .FirstOrDefault(e => e.IdShort == "Neighbors");
 
-        if (neighborsList == null)
+        if (neighborsCollection == null)
             return new List<string>();
 
-        return neighborsList.Value
-            .OfType<IProperty>()
-            .Select(p => p.Value?.Value?.ToObject<string>() ?? "")
-            .Where(n => !string.IsNullOrEmpty(n))
-            .ToList();
+        var result = new List<string>();
+        // SubmodelElementCollection implementiert IElementContainer<ISubmodelElement>
+        foreach (var element in neighborsCollection)
+        {
+            if (element is IProperty prop && prop.Value != null)
+            {
+                var value = prop.Value.ToString();
+                if (!string.IsNullOrEmpty(value))
+                {
+                    result.Add(value);
+                }
+            }
+        }
+
+        return result;
     }
 
     /// <summary>

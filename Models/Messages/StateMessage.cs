@@ -1,107 +1,78 @@
 using BaSyx.Models.AdminShell;
-using I40Sharp.Messaging.Models;
 
 namespace AasSharpClient.Models.Messages;
 
 /// <summary>
-/// StateMessage - Modulzustand (Ready, Locked, Notifications)
+/// StateMessage Helper - Modulzustand (Ready, Locked, Notifications)
+/// Nur InteractionElements - Frame wird im Messaging Client erstellt
 /// </summary>
-public class StateMessage
+public static class StateMessage
 {
-    public MessageFrame Frame { get; set; }
-    public List<ISubmodelElement> InteractionElements { get; set; }
-
-    public StateMessage()
-    {
-        Frame = new MessageFrame();
-        InteractionElements = new List<ISubmodelElement>();
-    }
-
     /// <summary>
-    /// Erstellt StateMessage mit Modulzustand
+    /// Erstellt InteractionElements für StateMessage
     /// </summary>
-    public static StateMessage Create(
-        string senderId,
-        string receiverId,
+    public static List<ISubmodelElement> CreateInteractionElements(
         bool isLocked,
         bool isReady,
         string moduleState,
         bool startupSkillRunning = false)
     {
-        var message = new StateMessage
-        {
-            Frame = new MessageFrame
-            {
-                Sender = new Participant
-                {
-                    Identification = new Identification { Id = senderId },
-                    Role = new Role()
-                },
-                Receiver = new Participant
-                {
-                    Identification = new Identification { Id = receiverId },
-                    Role = new Role()
-                },
-                Type = "inform",
-                ConversationId = Guid.NewGuid().ToString()
-            }
-        };
+        var elements = new List<ISubmodelElement>();
 
-        // Erstelle State SubmodelElementCollection
         var stateCollection = new SubmodelElementCollection("State")
         {
             SemanticId = new Reference(new Key(KeyType.GlobalReference, "https://smartfactory.de/semantics/ModuleState"))
         };
 
-        stateCollection.Add(new Property<bool>("ModuleLocked", isLocked));
-        stateCollection.Add(new Property<bool>("StartupSkillRunning", startupSkillRunning));
-        stateCollection.Add(new Property<bool>("ModuleReady", isReady));
-        stateCollection.Add(new Property<string>("ModuleState", moduleState));
+        stateCollection.Add(new Property<bool>("ModuleLocked") { Value = new PropertyValue<bool>(isLocked) });
+        stateCollection.Add(new Property<bool>("StartupSkillRunning") { Value = new PropertyValue<bool>(startupSkillRunning) });
+        stateCollection.Add(new Property<bool>("ModuleReady") { Value = new PropertyValue<bool>(isReady) });
+        stateCollection.Add(new Property<string>("ModuleState") { Value = new PropertyValue<string>(moduleState) });
 
-        message.InteractionElements.Add(stateCollection);
-        return message;
+        elements.Add(stateCollection);
+        return elements;
     }
 
     /// <summary>
-    /// Extrahiert Locked-Status aus StateMessage
+    /// Extrahiert ModuleLocked aus InteractionElements
     /// </summary>
-    public bool GetIsLocked()
+    public static bool GetIsLocked(List<ISubmodelElement> interactionElements)
     {
-        var stateCollection = InteractionElements
+        var stateCollection = interactionElements
             .OfType<SubmodelElementCollection>()
             .FirstOrDefault(e => e.IdShort == "State");
 
-        return stateCollection?.Value
+        return stateCollection?.Children
             .OfType<IProperty>()
             .FirstOrDefault(p => p.IdShort == "ModuleLocked")
             ?.Value?.Value?.ToObject<bool>() ?? false;
     }
 
     /// <summary>
-    /// Extrahiert Ready-Status aus StateMessage
+    /// Extrahiert ModuleReady aus InteractionElements
     /// </summary>
-    public bool GetIsReady()
+    public static bool GetIsReady(List<ISubmodelElement> interactionElements)
     {
-        var stateCollection = InteractionElements
+        var stateCollection = interactionElements
             .OfType<SubmodelElementCollection>()
             .FirstOrDefault(e => e.IdShort == "State");
 
-        return stateCollection?.Value
+        return stateCollection?.Children
             .OfType<IProperty>()
             .FirstOrDefault(p => p.IdShort == "ModuleReady")
             ?.Value?.Value?.ToObject<bool>() ?? false;
     }
 
     /// <summary>
-    /// Extrahiert ModuleState aus StateMessage
+    /// Extrahiert ModuleState aus InteractionElements
     /// </summary>
-    public string GetModuleState()
+    public static string GetModuleState(List<ISubmodelElement> interactionElements)
     {
-        var stateCollection = InteractionElements
+        var stateCollection = interactionElements
             .OfType<SubmodelElementCollection>()
             .FirstOrDefault(e => e.IdShort == "State");
 
-        return stateCollection?.Value
+        return stateCollection?.Children
             .OfType<IProperty>()
             .FirstOrDefault(p => p.IdShort == "ModuleState")
             ?.Value?.Value?.ToObject<string>() ?? "Unknown";
