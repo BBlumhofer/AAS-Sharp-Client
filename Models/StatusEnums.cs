@@ -4,6 +4,7 @@ public enum ActionStatusEnum
 {
     OPEN,
     PLANNED,
+    PRECONDITION_FAILED,
     EXECUTING,
     SUSPENDED,
     DONE,
@@ -28,6 +29,7 @@ internal static class StatusExtensions
     {
         ActionStatusEnum.OPEN => "open",
         ActionStatusEnum.PLANNED => "planned",
+        ActionStatusEnum.PRECONDITION_FAILED => "preconditionFailed",
         ActionStatusEnum.EXECUTING => "executing",
         ActionStatusEnum.SUSPENDED => "suspended",
         ActionStatusEnum.DONE => "done",
@@ -62,6 +64,7 @@ internal static class StatusExtensions
     public static ActionStatusEnum FromActionValue(string? status) => status?.ToLowerInvariant() switch
     {
         "planned" => ActionStatusEnum.PLANNED,
+        "preconditionfailed" => ActionStatusEnum.PRECONDITION_FAILED,
         "executing" => ActionStatusEnum.EXECUTING,
         "suspended" => ActionStatusEnum.SUSPENDED,
         "done" => ActionStatusEnum.DONE,

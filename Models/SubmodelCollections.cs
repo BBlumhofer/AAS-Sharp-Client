@@ -128,6 +128,25 @@ public class InputParameters : KeyValueSubmodelCollection
             SetParameter(key, value);
         }
     }
+    
+    /// <summary>
+    /// Factory-Methode zum Erstellen von InputParameters aus typisierten Werten
+    /// </summary>
+    public static InputParameters FromTypedValues(IDictionary<string, object>? values)
+    {
+        var inputParams = new InputParameters();
+        if (values == null)
+        {
+            return inputParams;
+        }
+
+        foreach (var (key, value) in values)
+        {
+            inputParams.SetParameter(key, value);
+        }
+        
+        return inputParams;
+    }
 }
 
 public class FinalResultData : KeyValueSubmodelCollection

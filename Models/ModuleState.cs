@@ -18,14 +18,9 @@ public class ModuleState : SubmodelElementCollection
     {
         SemanticId = SemanticReferences.EmptyExternal; // TODO: Add proper semantic reference
         
-        ModuleLocked = SubmodelElementFactory.CreateProperty("ModuleLocked", isLocked, null, "xs:boolean") as Property<bool> 
-            ?? throw new InvalidOperationException("Failed to create ModuleLocked property");
-        
-        ModuleReady = SubmodelElementFactory.CreateProperty("ModuleReady", isReady, null, "xs:boolean") as Property<bool>
-            ?? throw new InvalidOperationException("Failed to create ModuleReady property");
-        
-        HasError = SubmodelElementFactory.CreateProperty("HasError", hasError, null, "xs:boolean") as Property<bool>
-            ?? throw new InvalidOperationException("Failed to create HasError property");
+        ModuleLocked = new Property<bool>("ModuleLocked", isLocked);
+        ModuleReady = new Property<bool>("ModuleReady", isReady);
+        HasError = new Property<bool>("HasError", hasError);
         
         Add(ModuleLocked);
         Add(ModuleReady);

@@ -60,6 +60,7 @@ internal static class OrderStateMapper
     {
         ActionStatusEnum.OPEN => OrderState.Created,
         ActionStatusEnum.PLANNED => OrderState.Planned,
+        ActionStatusEnum.PRECONDITION_FAILED => OrderState.Planned,
         ActionStatusEnum.EXECUTING => OrderState.Executing,
         ActionStatusEnum.SUSPENDED => OrderState.Suspended,
         ActionStatusEnum.DONE => OrderState.Completed,
