@@ -1,47 +1,22 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
 using BaSyx.Models.AdminShell;
-using I40Sharp.Messaging.Models;
 
 namespace AasSharpClient.Models.Messages;
 
 /// <summary>
-/// NeighborMessage - Nachbarn eines Moduls
+/// NeighborMessage - Nachbarn eines Moduls (nur InteractionElements)
 /// </summary>
-public class NeighborMessage
+public static class NeighborMessage
 {
-    public MessageFrame Frame { get; set; }
-    public List<ISubmodelElement> InteractionElements { get; set; }
-
-    public NeighborMessage()
-    {
-        Frame = new MessageFrame();
-        InteractionElements = new List<ISubmodelElement>();
-    }
-
     /// <summary>
-    /// Erstellt NeighborMessage mit Liste von Nachbarn
+    /// Erstellt InteractionElements mit einer Liste von Nachbarn
     /// </summary>
-    public static NeighborMessage Create(string senderId, List<string> neighbors)
+    public static List<ISubmodelElement> CreateInteractionElements(string[] neighbors)
     {
-        var message = new NeighborMessage
-        {
-            Frame = new MessageFrame
-            {
-                Sender = new Participant
-                {
-                    Identification = new Identification { Id = senderId },
-                    Role = new Role()
-                },
-                Receiver = new Participant
-                {
-                    Identification = new Identification { Id = "" },
-                    Role = new Role()
-                },
-                Type = "consent",
-                ConversationId = Guid.NewGuid().ToString()
-            }
-        };
+        var elements = new List<ISubmodelElement>();
 
-        // Erstelle Neighbors SubmodelElementCollection
         var neighborsCollection = new SubmodelElementCollection("Neighbors");
 
         int index = 0;
@@ -52,16 +27,16 @@ public class NeighborMessage
             neighborsCollection.Add(property);
         }
 
-        message.InteractionElements.Add(neighborsCollection);
-        return message;
+        elements.Add(neighborsCollection);
+        return elements;
     }
 
     /// <summary>
-    /// Extrahiert Nachbarn-Liste
+    /// Extrahiert Nachbarn-Liste aus InteractionElements
     /// </summary>
-    public List<string> GetNeighbors()
+    public static List<string> GetNeighbors(List<ISubmodelElement> interactionElements)
     {
-        var neighborsCollection = InteractionElements
+        var neighborsCollection = interactionElements
             .OfType<SubmodelElementCollection>()
             .FirstOrDefault(e => e.IdShort == "Neighbors");
 
@@ -69,12 +44,11 @@ public class NeighborMessage
             return new List<string>();
 
         var result = new List<string>();
-        // SubmodelElementCollection implementiert IElementContainer<ISubmodelElement>
         foreach (var element in neighborsCollection)
         {
             if (element is IProperty prop && prop.Value != null)
             {
-                var value = prop.Value.ToString();
+                var value = prop.Value?.Value?.ToObject<string>() ?? prop.Value?.ToString() ?? string.Empty;
                 if (!string.IsNullOrEmpty(value))
                 {
                     result.Add(value);
@@ -88,8 +62,35 @@ public class NeighborMessage
     /// <summary>
     /// Prüft, ob ein bestimmter Nachbar verfügbar ist
     /// </summary>
-    public bool HasNeighbor(string neighborId)
+    public static bool HasNeighbor(List<ISubmodelElement> interactionElements, string neighborId)
     {
-        return GetNeighbors().Contains(neighborId, StringComparer.OrdinalIgnoreCase);
+        return GetNeighbors(interactionElements).Contains(neighborId, StringComparer.OrdinalIgnoreCase);
+    }
+
+    /// <summary>
+    /// Fügt einen Neighbor zur InteractionElements-Liste hinzu (mutierend)
+    /// </summary>
+    public static void AddNeighbor(IList<ISubmodelElement> interactionElements, string neighbor)
+    {
+        if (interactionElements == null) throw new ArgumentNullException(nameof(interactionElements));
+
+        var neighborsCollection = interactionElements.OfType<SubmodelElementCollection>().FirstOrDefault(e => e.IdShort == "Neighbors");
+        if (neighborsCollection == null)
+        {
+            neighborsCollection = new SubmodelElementCollection("Neighbors");
+            interactionElements.Add(neighborsCollection);
+        }
+
+        var index = neighborsCollection.Children.OfType<IProperty>().Count();
+        var prop = new Property<string>($"Neighbor_{index}") { Value = new PropertyValue<string>(neighbor) };
+        neighborsCollection.Add(prop);
+    }
+
+    /// <summary>
+    /// Fügt mehrere Neighbors hinzu
+    /// </summary>
+    public static void AddNeighbors(IList<ISubmodelElement> interactionElements, IEnumerable<string> neighbors)
+    {
+        foreach (var n in neighbors) AddNeighbor(interactionElements, n);
     }
 }

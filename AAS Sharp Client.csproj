@@ -23,32 +23,8 @@
     <PackageReference Include="BaSyx.Submodel.Client.Http" Version="1.0.0" />
     <PackageReference Include="BaSyx.Clients.Http" Version="2.0.24" />
   </ItemGroup>
-  
   <ItemGroup>
-    <!-- I4.0 Messaging Client -->
-    <ProjectReference Include="../I4.0-Sharp-Messaging/I40Sharp.Messaging/I40Sharp.Messaging.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Basyx\" />
-  </ItemGroup>
-
-  <!-- Exclude external sources placed under the project folder from the main project compilation -->
-  <ItemGroup>
-    <Compile Remove="tests\**\*.cs" />
-    <Compile Remove="examples\**\*.cs" />
-    <Compile Remove="basyx-dotnet\**\*.cs" />
-    <Compile Remove="aasmodel-main\**\*.cs" />
-
-    <EmbeddedResource Remove="tests\**\*.*" />
-    <EmbeddedResource Remove="examples\**\*.*" />
-    <EmbeddedResource Remove="basyx-dotnet\**\*.*" />
-    <EmbeddedResource Remove="aasmodel-main\**\*.*" />
-
-    <None Remove="tests\**\*.*" />
-    <None Remove="examples\**\*.*" />
-    <None Remove="basyx-dotnet\**\*.*" />
-    <None Remove="aasmodel-main\**\*.*" />
-  </ItemGroup>
-
+  <Compile Remove="examples/**/*.cs" />
+  <Compile Remove="tests/**/*.cs" />
+</ItemGroup>
 </Project>

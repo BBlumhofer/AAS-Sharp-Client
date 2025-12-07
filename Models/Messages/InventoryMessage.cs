@@ -1,80 +1,250 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
 using BaSyx.Models.AdminShell;
-using I40Sharp.Messaging.Models;
 
 namespace AasSharpClient.Models.Messages;
 
 /// <summary>
-/// InventoryMessage - Lagerbestand eines Moduls
+/// InventoryMessage helper - stellt nur die InteractionElements dar (kein Frame)
 /// </summary>
-public class InventoryMessage
+public static class InventoryMessage
 {
-    public MessageFrame Frame { get; set; }
-    public List<StorageUnit> StorageUnits { get; set; }
-
-    public InventoryMessage()
-    {
-        Frame = new MessageFrame();
-        StorageUnits = new List<StorageUnit>();
-    }
-
     /// <summary>
-    /// Erstellt InventoryMessage
+    /// Erstellt InteractionElements, die den Inventarinhalt beschreiben.
+    /// Struktur: SubmodelElementCollection "StorageUnits" -> für jede StorageUnit: SubmodelElementCollection(Name) -> SubmodelElementCollection "Slots" -> Slot_N: SubmodelElementCollection mit Properties
     /// </summary>
-    public static InventoryMessage Create(string senderId, List<StorageUnit> storageUnits)
+    public static List<ISubmodelElement> CreateInteractionElements(List<StorageUnit> storageUnits)
     {
-        return new InventoryMessage
+        var elements = new List<ISubmodelElement>();
+
+        var storageUnitsCollection = new SubmodelElementCollection("StorageUnits");
+
+        foreach (var storage in storageUnits)
         {
-            Frame = new MessageFrame
+            var storageCollection = new SubmodelElementCollection(string.IsNullOrWhiteSpace(storage.Name) ? "Storage" : storage.Name);
+
+            var slotsCollection = new SubmodelElementCollection("Slots");
+            foreach (var slot in storage.Slots)
             {
-                Sender = new Participant
-                {
-                    Identification = new Identification { Id = senderId },
-                    Role = new Role()
-                },
-                Receiver = new Participant
-                {
-                    Identification = new Identification { Id = "" },
-                    Role = new Role()
-                },
-                Type = "inform",
-                ConversationId = Guid.NewGuid().ToString()
-            },
-            StorageUnits = storageUnits
-        };
+                var slotCollection = new SubmodelElementCollection($"Slot_{slot.Index}");
+                slotCollection.Add(new Property<int>("Index") { Value = new PropertyValue<int>(slot.Index) });
+                slotCollection.Add(new Property<string>("CarrierID") { Value = new PropertyValue<string>(slot.Content.CarrierID) });
+                slotCollection.Add(new Property<string>("CarrierType") { Value = new PropertyValue<string>(slot.Content.CarrierType) });
+                slotCollection.Add(new Property<string>("ProductType") { Value = new PropertyValue<string>(slot.Content.ProductType) });
+                slotCollection.Add(new Property<string>("ProductID") { Value = new PropertyValue<string>(slot.Content.ProductID) });
+                slotCollection.Add(new Property<bool>("IsSlotEmpty") { Value = new PropertyValue<bool>(slot.Content.IsSlotEmpty) });
+
+                slotsCollection.Add(slotCollection);
+            }
+
+            storageCollection.Add(slotsCollection);
+            storageUnitsCollection.Add(storageCollection);
+        }
+
+        elements.Add(storageUnitsCollection);
+        return elements;
     }
 
     /// <summary>
-    /// Prüft, ob ein Item im Inventar ist
+    /// Prüft, ob ein Item in den InteractionElements vorhanden ist
     /// </summary>
-    public bool HasItem(string itemId, int minAmount = 1)
+    public static bool HasItem(IEnumerable<ISubmodelElement> interactionElements, string itemId, int minAmount = 1)
     {
-        foreach (var storage in StorageUnits)
-        {
-            var count = storage.Slots.Count(slot => 
-                !slot.Content.IsSlotEmpty && 
-                (slot.Content.ProductID == itemId || slot.Content.ProductType == itemId));
+        var storageUnits = (interactionElements ?? Enumerable.Empty<ISubmodelElement>())
+            .OfType<SubmodelElementCollection>()
+            .FirstOrDefault(e => e.IdShort == "StorageUnits");
 
-            if (count >= minAmount)
-                return true;
+        if (storageUnits == null)
+            return false;
+
+        foreach (var storage in storageUnits.OfType<SubmodelElementCollection>())
+        {
+            var slotsCollection = storage
+                .OfType<SubmodelElementCollection>()
+                .FirstOrDefault(c => c.IdShort == "Slots");
+
+            if (slotsCollection == null)
+                continue;
+
+            int count = 0;
+            foreach (var slot in slotsCollection.OfType<SubmodelElementCollection>())
+            {
+                var isEmpty = slot.Children.OfType<IProperty>()
+                    .FirstOrDefault(p => p.IdShort == "IsSlotEmpty")
+                    ?.Value?.Value?.ToObject<bool>() ?? true;
+
+                if (isEmpty)
+                    continue;
+
+                var productId = slot.Children.OfType<IProperty>()
+                    .FirstOrDefault(p => p.IdShort == "ProductID")
+                    ?.Value?.Value?.ToObject<string>() ?? string.Empty;
+
+                var productType = slot.Children.OfType<IProperty>()
+                    .FirstOrDefault(p => p.IdShort == "ProductType")
+                    ?.Value?.Value?.ToObject<string>() ?? string.Empty;
+
+                if (string.Equals(productId, itemId, StringComparison.OrdinalIgnoreCase) ||
+                    string.Equals(productType, itemId, StringComparison.OrdinalIgnoreCase))
+                {
+                    count++;
+                    if (count >= minAmount)
+                        return true;
+                }
+            }
         }
+
         return false;
     }
 
     /// <summary>
-    /// Findet Slot mit bestimmtem Item
+    /// Findet erstes SlotContent mit bestimmtem Item in den InteractionElements
     /// </summary>
-    public SlotContent? FindItem(string itemId)
+    public static StorageSlot? FindItem(IEnumerable<ISubmodelElement> interactionElements, string itemId)
     {
-        foreach (var storage in StorageUnits)
-        {
-            var slot = storage.Slots.FirstOrDefault(s => 
-                !s.Content.IsSlotEmpty && 
-                (s.Content.ProductID == itemId || s.Content.ProductType == itemId));
+        var storageUnits = (interactionElements ?? Enumerable.Empty<ISubmodelElement>())
+            .OfType<SubmodelElementCollection>()
+            .FirstOrDefault(e => e.IdShort == "StorageUnits");
 
-            if (slot != null)
-                return slot.Content;
+        if (storageUnits == null)
+            return null;
+
+        foreach (var storage in storageUnits.OfType<SubmodelElementCollection>())
+        {
+            var slotsCollection = storage
+                .OfType<SubmodelElementCollection>()
+                .FirstOrDefault(c => c.IdShort == "Slots");
+
+            if (slotsCollection == null)
+                continue;
+
+            foreach (var slot in slotsCollection.OfType<SubmodelElementCollection>())
+            {
+                var isEmpty = slot.Children.OfType<IProperty>()
+                    .FirstOrDefault(p => p.IdShort == "IsSlotEmpty")
+                    ?.Value?.Value?.ToObject<bool>() ?? true;
+
+                if (isEmpty)
+                    continue;
+
+                var productId = slot.Children.OfType<IProperty>()
+                    .FirstOrDefault(p => p.IdShort == "ProductID")
+                    ?.Value?.Value?.ToObject<string>() ?? string.Empty;
+
+                var productType = slot.Children.OfType<IProperty>()
+                    .FirstOrDefault(p => p.IdShort == "ProductType")
+                    ?.Value?.Value?.ToObject<string>() ?? string.Empty;
+
+                if (string.Equals(productId, itemId, StringComparison.OrdinalIgnoreCase) ||
+                    string.Equals(productType, itemId, StringComparison.OrdinalIgnoreCase))
+                {
+                    // Build SlotContent from properties
+                    var content = new SlotContent
+                    {
+                        CarrierID = slot.Children.OfType<IProperty>()
+                            .FirstOrDefault(p => p.IdShort == "CarrierID")
+                            ?.Value?.Value?.ToObject<string>() ?? string.Empty,
+                        CarrierType = slot.Children.OfType<IProperty>()
+                            .FirstOrDefault(p => p.IdShort == "CarrierType")
+                            ?.Value?.Value?.ToObject<string>() ?? string.Empty,
+                        ProductType = productType,
+                        ProductID = productId,
+                        IsSlotEmpty = false
+                    };
+
+                    var storageName = storage.IdShort ?? string.Empty;
+                    var index = slot.Children.OfType<IProperty>()
+                        .FirstOrDefault(p => p.IdShort == "Index")
+                        ?.Value?.Value?.ToObject<int>() ?? -1;
+
+                    return new StorageSlot
+                    {
+                        StorageName = storageName,
+                        Index = index,
+                        Content = content
+                    };
+                }
+            }
         }
+
         return null;
+    }
+
+    /// <summary>
+    /// Findet alle StorageSlots mit einem bestimmten Item
+    /// </summary>
+    public static List<StorageSlot> FindItems(IEnumerable<ISubmodelElement> interactionElements, string itemId)
+    {
+        var result = new List<StorageSlot>();
+        var storageUnits = (interactionElements ?? Enumerable.Empty<ISubmodelElement>())
+            .OfType<SubmodelElementCollection>()
+            .FirstOrDefault(e => e.IdShort == "StorageUnits");
+
+        if (storageUnits == null)
+            return result;
+
+        foreach (var storage in storageUnits.OfType<SubmodelElementCollection>())
+        {
+            var slotsCollection = storage
+                .OfType<SubmodelElementCollection>()
+                .FirstOrDefault(c => c.IdShort == "Slots");
+
+            if (slotsCollection == null)
+                continue;
+
+            foreach (var slot in slotsCollection.OfType<SubmodelElementCollection>())
+            {
+                var isEmpty = slot.Children.OfType<IProperty>()
+                    .FirstOrDefault(p => p.IdShort == "IsSlotEmpty")
+                    ?.Value?.Value?.ToObject<bool>() ?? true;
+
+                if (isEmpty)
+                    continue;
+
+                var productId = slot.Children.OfType<IProperty>()
+                    .FirstOrDefault(p => p.IdShort == "ProductID")
+                    ?.Value?.Value?.ToObject<string>() ?? string.Empty;
+
+                var productType = slot.Children.OfType<IProperty>()
+                    .FirstOrDefault(p => p.IdShort == "ProductType")
+                    ?.Value?.Value?.ToObject<string>() ?? string.Empty;
+
+                if (string.Equals(productId, itemId, StringComparison.OrdinalIgnoreCase) ||
+                    string.Equals(productType, itemId, StringComparison.OrdinalIgnoreCase))
+                {
+                    var content = new SlotContent
+                    {
+                        CarrierID = slot.Children.OfType<IProperty>()
+                            .FirstOrDefault(p => p.IdShort == "CarrierID")
+                            ?.Value?.Value?.ToObject<string>() ?? string.Empty,
+                        CarrierType = slot.Children.OfType<IProperty>()
+                            .FirstOrDefault(p => p.IdShort == "CarrierType")
+                            ?.Value?.Value?.ToObject<string>() ?? string.Empty,
+                        ProductType = productType,
+                        ProductID = productId,
+                        IsSlotEmpty = false
+                    };
+
+                    var storageName = storage.IdShort ?? string.Empty;
+                    var index = slot.Children.OfType<IProperty>()
+                        .FirstOrDefault(p => p.IdShort == "Index")
+                        ?.Value?.Value?.ToObject<int>() ?? -1;
+
+                    result.Add(new StorageSlot { StorageName = storageName, Index = index, Content = content });
+                }
+            }
+        }
+
+        return result;
+    }
+
+    /// <summary>
+    /// Zählt, wie oft ein Item vorkommt
+    /// </summary>
+    public static int CountItemOccurrences(IEnumerable<ISubmodelElement> interactionElements, string itemId)
+    {
+        return FindItems(interactionElements, itemId).Count;
     }
 }
 
@@ -106,4 +276,14 @@ public class SlotContent
     public string ProductType { get; set; } = string.Empty;
     public string ProductID { get; set; } = string.Empty;
     public bool IsSlotEmpty { get; set; }
+}
+
+/// <summary>
+/// Repräsentiert einen gefundenen Slot inklusive Storage-Name und Index
+/// </summary>
+public class StorageSlot
+{
+    public string StorageName { get; set; } = string.Empty;
+    public int Index { get; set; }
+    public SlotContent Content { get; set; } = new();
 }
