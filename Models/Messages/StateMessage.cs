@@ -1,4 +1,5 @@
 using BaSyx.Models.AdminShell;
+using AasSharpClient.Models;
 
 namespace AasSharpClient.Models.Messages;
 
@@ -6,31 +7,29 @@ namespace AasSharpClient.Models.Messages;
 /// StateMessage Helper - Modulzustand (Ready, Locked, Notifications)
 /// Nur InteractionElements - Frame wird im Messaging Client erstellt
 /// </summary>
-public static class StateMessage
+public class StateMessage : SubmodelElementCollection
 {
     /// <summary>
     /// Erstellt InteractionElements für StateMessage
     /// </summary>
+    public StateMessage(bool isLocked, bool isReady, string moduleState, bool startupSkillRunning = false)
+        : base("State")
+    {
+        SemanticId = new Reference(new Key(KeyType.GlobalReference, "https://smartfactory.de/semantics/ModuleState"));
+
+        Add(SubmodelElementFactory.CreateProperty("ModuleLocked", isLocked));
+        Add(SubmodelElementFactory.CreateProperty("StartupSkillRunning", startupSkillRunning));
+        Add(SubmodelElementFactory.CreateProperty("ModuleReady", isReady));
+        Add(SubmodelElementFactory.CreateStringProperty("ModuleState", moduleState));
+    }
+
     public static List<ISubmodelElement> CreateInteractionElements(
         bool isLocked,
         bool isReady,
         string moduleState,
         bool startupSkillRunning = false)
     {
-        var elements = new List<ISubmodelElement>();
-
-        var stateCollection = new SubmodelElementCollection("State")
-        {
-            SemanticId = new Reference(new Key(KeyType.GlobalReference, "https://smartfactory.de/semantics/ModuleState"))
-        };
-
-        stateCollection.Add(new Property<bool>("ModuleLocked") { Value = new PropertyValue<bool>(isLocked) });
-        stateCollection.Add(new Property<bool>("StartupSkillRunning") { Value = new PropertyValue<bool>(startupSkillRunning) });
-        stateCollection.Add(new Property<bool>("ModuleReady") { Value = new PropertyValue<bool>(isReady) });
-        stateCollection.Add(new Property<string>("ModuleState") { Value = new PropertyValue<string>(moduleState) });
-
-        elements.Add(stateCollection);
-        return elements;
+        return new List<ISubmodelElement> { new StateMessage(isLocked, isReady, moduleState, startupSkillRunning) };
     }
 
     /// <summary>

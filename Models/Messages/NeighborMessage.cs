@@ -8,28 +8,32 @@ namespace AasSharpClient.Models.Messages;
 /// <summary>
 /// NeighborMessage - Nachbarn eines Moduls (nur InteractionElements)
 /// </summary>
-public static class NeighborMessage
+public class NeighborMessage : SubmodelElementCollection
 {
-    /// <summary>
-    /// Erstellt InteractionElements mit einer Liste von Nachbarn
-    /// </summary>
-    public static List<ISubmodelElement> CreateInteractionElements(string[] neighbors)
+    public NeighborMessage(IEnumerable<string> neighbors) : base("Neighbors")
     {
-        var elements = new List<ISubmodelElement>();
-
-        var neighborsCollection = new SubmodelElementCollection("Neighbors");
-
         int index = 0;
         foreach (var neighbor in neighbors)
         {
-            var property = new Property<string>($"Neighbor_{index++}");
-            property.Value = new PropertyValue<string>(neighbor);
-            neighborsCollection.Add(property);
+            Add(SubmodelElementFactory.CreateStringProperty($"Neighbor_{index++}", neighbor));
         }
-
-        elements.Add(neighborsCollection);
-        return elements;
     }
+
+    public NeighborMessage(string[] neighbors) : base("Neighbors")
+    {
+        int index = 0;
+        foreach (var neighbor in neighbors)
+        {
+            var property = SubmodelElementFactory.CreateStringProperty($"Neighbor_{index++}", neighbor);
+            Add(property);
+        }
+    }
+
+    public static List<ISubmodelElement> CreateInteractionElements(string[] neighbors)
+    {
+        return new List<ISubmodelElement> { new NeighborMessage(neighbors) };
+    }
+    
 
     /// <summary>
     /// Extrahiert Nachbarn-Liste aus InteractionElements
@@ -82,7 +86,7 @@ public static class NeighborMessage
         }
 
         var index = neighborsCollection.Children.OfType<IProperty>().Count();
-        var prop = new Property<string>($"Neighbor_{index}") { Value = new PropertyValue<string>(neighbor) };
+        var prop = SubmodelElementFactory.CreateStringProperty($"Neighbor_{index}", neighbor);
         neighborsCollection.Add(prop);
     }
 

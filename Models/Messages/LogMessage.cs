@@ -2,42 +2,42 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using BaSyx.Models.AdminShell;
+using AasSharpClient.Models;
 
 namespace AasSharpClient.Models.Messages;
 
 /// <summary>
 /// LogMessage - Logging für Agenten (nur InteractionElements)
 /// </summary>
-public static class LogMessage
+public class LogMessage : SubmodelElementCollection
 {
     public enum LogLevel { Trace, Debug, Info, Warn, Error, Fatal }
 
-    /// <summary>
-    /// Create overload accepting LogLevel enum
-    /// </summary>
+    public LogMessage(LogLevel level, string message, string agentRole = "ResourceHolon", string agentState = "")
+        : this(level.ToString().ToUpperInvariant(), message, agentRole, agentState)
+    {
+    }
+
+    public LogMessage(string logLevel, string message, string agentRole = "ResourceHolon", string agentState = "")
+        : base("Log")
+    {
+        // Use SubmodelElementFactory so ValueType and Value are set correctly
+        Add(SubmodelElementFactory.CreateStringProperty("LogLevel", logLevel));
+        Add(SubmodelElementFactory.CreateStringProperty("Message", message));
+        Add(SubmodelElementFactory.CreateStringProperty("Timestamp", DateTime.UtcNow.ToString("o")));
+        Add(SubmodelElementFactory.CreateStringProperty("AgentRole", agentRole));
+        Add(SubmodelElementFactory.CreateStringProperty("AgentState", agentState));
+    }
+
+    // Backwards-compatible factory
     public static List<ISubmodelElement> CreateInteractionElements(LogLevel level, string message, string agentRole = "ResourceHolon", string agentState = "")
     {
         return CreateInteractionElements(level.ToString().ToUpperInvariant(), message, agentRole, agentState);
     }
 
-    /// <summary>
-    /// Erstellt InteractionElements für ein Log-Event.
-    /// </summary>
-    public static List<ISubmodelElement> CreateInteractionElements(
-        string logLevel,
-        string message,
-        string agentRole,
-        string agentState)
+    public static List<ISubmodelElement> CreateInteractionElements(string logLevel, string message, string agentRole, string agentState)
     {
-        var elements = new List<ISubmodelElement>();
-
-        elements.Add(new Property<string>("LogLevel") { Value = new PropertyValue<string>(logLevel) });
-        elements.Add(new Property<string>("Message") { Value = new PropertyValue<string>(message) });
-        elements.Add(new Property<string>("Timestamp") { Value = new PropertyValue<string>(DateTime.UtcNow.ToString("o")) });
-        elements.Add(new Property<string>("AgentRole") { Value = new PropertyValue<string>(agentRole) });
-        elements.Add(new Property<string>("AgentState") { Value = new PropertyValue<string>(agentState) });
-
-        return elements;
+        return new List<ISubmodelElement> { new LogMessage(logLevel, message, agentRole, agentState) };
     }
 
     /// <summary>

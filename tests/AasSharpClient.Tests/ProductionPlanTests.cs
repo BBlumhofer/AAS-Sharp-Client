@@ -106,10 +106,11 @@ namespace AasSharpClient.Tests
             // Serialize submodel using BaSyx serializer helpers (we'll use System.Text.Json for comparison)
             var output = await production_plan_sm.ToJsonAsync();
 
-            // save actual JSON to project root for inspection
-            var projectRoot = @"C:\Users\BenjaminBlumhofer\source\repos\CSharp\AAS-Sharp-Client\AAS Sharp Client";
-            Directory.CreateDirectory(projectRoot);
-            var outPath = Path.Combine(projectRoot, "ActualProductionPlan.json");
+            // save actual JSON to repo-local TestOutputs to avoid writing outside workspace
+            var projectRoot = Path.GetFullPath(Path.Combine(AppContext.BaseDirectory, "..", "..", ".."));
+            var outDir = Path.Combine(projectRoot, "TestOutputs", "ProductionPlan");
+            Directory.CreateDirectory(outDir);
+            var outPath = Path.Combine(outDir, "ActualProductionPlan.json");
             await File.WriteAllTextAsync(outPath, output);
 
             var expected = await File.ReadAllTextAsync("TestData/ExpectedProductionPlan.json");

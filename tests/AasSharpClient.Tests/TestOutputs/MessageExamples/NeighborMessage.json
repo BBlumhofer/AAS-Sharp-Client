@@ -1,0 +1,33 @@
+[
+  {
+    "idShort": "Neighbors",
+    "kind": "Instance",
+    "modelType": "SubmodelElementCollection",
+    "value": [
+      {
+        "idShort": "Neighbor_0",
+        "kind": "Instance",
+        "modelType": "Property",
+        "semanticId": {
+          "type": "ExternalReference",
+          "referredSemanticId": null,
+          "keys": []
+        },
+        "valueType": "string",
+        "value": "ModuleA"
+      },
+      {
+        "idShort": "Neighbor_1",
+        "kind": "Instance",
+        "modelType": "Property",
+        "semanticId": {
+          "type": "ExternalReference",
+          "referredSemanticId": null,
+          "keys": []
+        },
+        "valueType": "string",
+        "value": "ModuleB"
+      }
+    ]
+  }
+]

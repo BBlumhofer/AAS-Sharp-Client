@@ -2,24 +2,19 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using BaSyx.Models.AdminShell;
-
-namespace AasSharpClient.Models.Messages;
-
+using AasSharpClient.Models;
+using SubmodelFactory = AasSharpClient.Models.SubmodelElementFactory;
 /// <summary>
 /// InventoryMessage helper - stellt nur die InteractionElements dar (kein Frame)
 /// </summary>
-public static class InventoryMessage
+public class InventoryMessage : SubmodelElementCollection
 {
     /// <summary>
     /// Erstellt InteractionElements, die den Inventarinhalt beschreiben.
     /// Struktur: SubmodelElementCollection "StorageUnits" -> für jede StorageUnit: SubmodelElementCollection(Name) -> SubmodelElementCollection "Slots" -> Slot_N: SubmodelElementCollection mit Properties
     /// </summary>
-    public static List<ISubmodelElement> CreateInteractionElements(List<StorageUnit> storageUnits)
+    public InventoryMessage(List<StorageUnit> storageUnits) : base("StorageUnits")
     {
-        var elements = new List<ISubmodelElement>();
-
-        var storageUnitsCollection = new SubmodelElementCollection("StorageUnits");
-
         foreach (var storage in storageUnits)
         {
             var storageCollection = new SubmodelElementCollection(string.IsNullOrWhiteSpace(storage.Name) ? "Storage" : storage.Name);
@@ -28,26 +23,25 @@ public static class InventoryMessage
             foreach (var slot in storage.Slots)
             {
                 var slotCollection = new SubmodelElementCollection($"Slot_{slot.Index}");
-                slotCollection.Add(new Property<int>("Index") { Value = new PropertyValue<int>(slot.Index) });
-                slotCollection.Add(new Property<string>("CarrierID") { Value = new PropertyValue<string>(slot.Content.CarrierID) });
-                slotCollection.Add(new Property<string>("CarrierType") { Value = new PropertyValue<string>(slot.Content.CarrierType) });
-                slotCollection.Add(new Property<string>("ProductType") { Value = new PropertyValue<string>(slot.Content.ProductType) });
-                slotCollection.Add(new Property<string>("ProductID") { Value = new PropertyValue<string>(slot.Content.ProductID) });
-                slotCollection.Add(new Property<bool>("IsSlotEmpty") { Value = new PropertyValue<bool>(slot.Content.IsSlotEmpty) });
+                slotCollection.Add(SubmodelFactory.CreateProperty("Index", slot.Index));
+                slotCollection.Add(SubmodelFactory.CreateStringProperty("CarrierID", slot.Content.CarrierID));
+                slotCollection.Add(SubmodelFactory.CreateStringProperty("CarrierType", slot.Content.CarrierType));
+                slotCollection.Add(SubmodelFactory.CreateStringProperty("ProductType", slot.Content.ProductType));
+                slotCollection.Add(SubmodelFactory.CreateStringProperty("ProductID", slot.Content.ProductID));
+                slotCollection.Add(SubmodelFactory.CreateProperty("IsSlotEmpty", slot.Content.IsSlotEmpty));
 
                 slotsCollection.Add(slotCollection);
             }
 
             storageCollection.Add(slotsCollection);
-            storageUnitsCollection.Add(storageCollection);
+            Add(storageCollection);
         }
-
-        elements.Add(storageUnitsCollection);
-        return elements;
     }
 
-    /// <summary>
-    /// Prüft, ob ein Item in den InteractionElements vorhanden ist
+    public static List<ISubmodelElement> CreateInteractionElements(List<StorageUnit> storageUnits)
+    {
+        return new List<ISubmodelElement> { new InventoryMessage(storageUnits) };
+    }
     /// </summary>
     public static bool HasItem(IEnumerable<ISubmodelElement> interactionElements, string itemId, int minAmount = 1)
     {

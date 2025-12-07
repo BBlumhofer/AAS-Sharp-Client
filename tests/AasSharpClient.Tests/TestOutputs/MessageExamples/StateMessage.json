@@ -1,0 +1,67 @@
+[
+  {
+    "idShort": "State",
+    "kind": "Instance",
+    "modelType": "SubmodelElementCollection",
+    "semanticId": {
+      "type": "Undefined",
+      "referredSemanticId": null,
+      "keys": [
+        {
+          "type": "GlobalReference",
+          "value": "https://smartfactory.de/semantics/ModuleState"
+        }
+      ]
+    },
+    "value": [
+      {
+        "idShort": "ModuleLocked",
+        "kind": "Instance",
+        "modelType": "Property",
+        "semanticId": {
+          "type": "ExternalReference",
+          "referredSemanticId": null,
+          "keys": []
+        },
+        "valueType": "string",
+        "value": "false"
+      },
+      {
+        "idShort": "StartupSkillRunning",
+        "kind": "Instance",
+        "modelType": "Property",
+        "semanticId": {
+          "type": "ExternalReference",
+          "referredSemanticId": null,
+          "keys": []
+        },
+        "valueType": "string",
+        "value": "false"
+      },
+      {
+        "idShort": "ModuleReady",
+        "kind": "Instance",
+        "modelType": "Property",
+        "semanticId": {
+          "type": "ExternalReference",
+          "referredSemanticId": null,
+          "keys": []
+        },
+        "valueType": "string",
+        "value": "true"
+      },
+      {
+        "idShort": "ModuleState",
+        "kind": "Instance",
+        "modelType": "Property",
+        "semanticId": {
+          "type": "ExternalReference",
+          "referredSemanticId": null,
+          "keys": []
+        },
+        "valueType": "string",
+        "value": "Idle"
+      }
+    ]
+  }
+]

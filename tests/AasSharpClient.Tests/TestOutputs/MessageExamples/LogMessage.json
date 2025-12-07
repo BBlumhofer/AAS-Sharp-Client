@@ -1,0 +1,69 @@
+[
+  {
+    "idShort": "Log",
+    "kind": "Instance",
+    "modelType": "SubmodelElementCollection",
+    "value": [
+      {
+        "idShort": "LogLevel",
+        "kind": "Instance",
+        "modelType": "Property",
+        "semanticId": {
+          "type": "ExternalReference",
+          "referredSemanticId": null,
+          "keys": []
+        },
+        "valueType": "string",
+        "value": "INFO"
+      },
+      {
+        "idShort": "Message",
+        "kind": "Instance",
+        "modelType": "Property",
+        "semanticId": {
+          "type": "ExternalReference",
+          "referredSemanticId": null,
+          "keys": []
+        },
+        "valueType": "string",
+        "value": "Example log"
+      },
+      {
+        "idShort": "Timestamp",
+        "kind": "Instance",
+        "modelType": "Property",
+        "semanticId": {
+          "type": "ExternalReference",
+          "referredSemanticId": null,
+          "keys": []
+        },
+        "valueType": "string",
+        "value": "2025-12-07T11:31:36.4550147Z"
+      },
+      {
+        "idShort": "AgentRole",
+        "kind": "Instance",
+        "modelType": "Property",
+        "semanticId": {
+          "type": "ExternalReference",
+          "referredSemanticId": null,
+          "keys": []
+        },
+        "valueType": "string",
+        "value": "ExecutionAgent"
+      },
+      {
+        "idShort": "AgentState",
+        "kind": "Instance",
+        "modelType": "Property",
+        "semanticId": {
+          "type": "ExternalReference",
+          "referredSemanticId": null,
+          "keys": []
+        },
+        "valueType": "string",
+        "value": "Running"
+      }
+    ]
+  }
+]

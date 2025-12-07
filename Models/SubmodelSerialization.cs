@@ -11,7 +11,7 @@ using BaSyx.Models.Extensions;
 
 namespace AasSharpClient.Models;
 
-internal static class SubmodelSerialization
+public static class SubmodelSerialization
 {
     private static readonly JsonSerializerOptions Options = new()
     {
@@ -26,6 +26,12 @@ internal static class SubmodelSerialization
     }
 
     public static string Serialize(Submodel submodel) => SerializeInternal(submodel);
+
+    public static string SerializeElements(IEnumerable<ISubmodelElement> elements)
+    {
+        var json = JsonSerializer.Serialize(elements, Options);
+        return NormalizeMultiLanguageValues(json);
+    }
 
     private static string SerializeInternal(Submodel submodel)
     {

@@ -1,0 +1,102 @@
+[
+  {
+    "idShort": "StorageUnits",
+    "kind": "Instance",
+    "modelType": "SubmodelElementCollection",
+    "value": [
+      {
+        "idShort": "StorageA",
+        "kind": "Instance",
+        "modelType": "SubmodelElementCollection",
+        "value": [
+          {
+            "idShort": "Slots",
+            "kind": "Instance",
+            "modelType": "SubmodelElementCollection",
+            "value": [
+              {
+                "idShort": "Slot_1",
+                "kind": "Instance",
+                "modelType": "SubmodelElementCollection",
+                "value": [
+                  {
+                    "idShort": "Index",
+                    "kind": "Instance",
+                    "modelType": "Property",
+                    "semanticId": {
+                      "type": "ExternalReference",
+                      "referredSemanticId": null,
+                      "keys": []
+                    },
+                    "valueType": "int",
+                    "value": "1"
+                  },
+                  {
+                    "idShort": "CarrierID",
+                    "kind": "Instance",
+                    "modelType": "Property",
+                    "semanticId": {
+                      "type": "ExternalReference",
+                      "referredSemanticId": null,
+                      "keys": []
+                    },
+                    "valueType": "string",
+                    "value": "C001"
+                  },
+                  {
+                    "idShort": "CarrierType",
+                    "kind": "Instance",
+                    "modelType": "Property",
+                    "semanticId": {
+                      "type": "ExternalReference",
+                      "referredSemanticId": null,
+                      "keys": []
+                    },
+                    "valueType": "string",
+                    "value": "Tray"
+                  },
+                  {
+                    "idShort": "ProductType",
+                    "kind": "Instance",
+                    "modelType": "Property",
+                    "semanticId": {
+                      "type": "ExternalReference",
+                      "referredSemanticId": null,
+                      "keys": []
+                    },
+                    "valueType": "string",
+                    "value": "Widget"
+                  },
+                  {
+                    "idShort": "ProductID",
+                    "kind": "Instance",
+                    "modelType": "Property",
+                    "semanticId": {
+                      "type": "ExternalReference",
+                      "referredSemanticId": null,
+                      "keys": []
+                    },
+                    "valueType": "string",
+                    "value": "W-123"
+                  },
+                  {
+                    "idShort": "IsSlotEmpty",
+                    "kind": "Instance",
+                    "modelType": "Property",
+                    "semanticId": {
+                      "type": "ExternalReference",
+                      "referredSemanticId": null,
+                      "keys": []
+                    },
+                    "valueType": "string",
+                    "value": "false"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]
