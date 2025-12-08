@@ -128,54 +128,6 @@ public class Action : SubmodelElementCollection
 
         FinalResultData.SetParameter(key, value);
     }
-    
-    /// <summary>
-    /// Gibt alle FinalResultData als Dictionary zurück (für SkillResponse)
-    /// </summary>
-    public IDictionary<string, object> GetFinalResultData()
-    {
-        var result = new Dictionary<string, object>();
-        foreach (var param in FinalResultData.Parameters)
-        {
-            if (param.Value.Value?.Value != null)
-            {
-                result[param.Key] = param.Value.Value.Value;
-            }
-        }
-        return result;
-    }
-    
-    /// <summary>
-    /// Gibt alle InputParameters als Dictionary zurück
-    /// </summary>
-    public IDictionary<string, string> GetInputParameters()
-    {
-        var result = new Dictionary<string, string>();
-        foreach (var param in InputParameters.Parameters)
-        {
-            if (InputParameters.TryGetParameterValue(param.Key, out string? value) && value != null)
-            {
-                result[param.Key] = value;
-            }
-        }
-        return result;
-    }
-    
-    /// <summary>
-    /// Gibt den ActionTitle zurück
-    /// </summary>
-    public string GetActionTitle()
-    {
-        return ActionTitle.Value?.Value?.ToString() ?? string.Empty;
-    }
-    
-    /// <summary>
-    /// Gibt den MachineName zurück
-    /// </summary>
-    public string GetMachineName()
-    {
-        return MachineName.Value?.Value?.ToString() ?? string.Empty;
-    }
 
     public void LinkSkillReference(IEnumerable<(object Key, string Value)> referenceChain)
     {

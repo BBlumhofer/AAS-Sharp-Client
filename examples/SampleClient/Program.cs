@@ -51,7 +51,8 @@ try
         AssetKind = AssetKind.Instance, 
         GlobalAssetId = $"urn:asset:{Guid.NewGuid()}" 
     };
-    var shell = new AssetAdministrationShell("Shell2", new Identifier(shellId), assetInfo);
+    var shell = new AssetAdministrationShell("Shell2", new Identifier(shellId));
+    shell.AssetInformation = assetInfo;
     
     var shellResult = await aasRepoClient.CreateAssetAdministrationShellAsync(shell);
     if (shellResult.Success)

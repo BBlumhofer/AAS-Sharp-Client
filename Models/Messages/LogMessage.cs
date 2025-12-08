@@ -13,12 +13,22 @@ public class LogMessage : SubmodelElementCollection
 {
     public enum LogLevel { Trace, Debug, Info, Warn, Error, Fatal }
 
-    public LogMessage(LogLevel level, string message, string agentRole = "ResourceHolon", string agentState = "")
-        : this(level.ToString().ToUpperInvariant(), message, agentRole, agentState)
+    public LogMessage(
+        LogLevel level,
+        string message,
+        string agentRole = "ResourceHolon",
+        string agentState = "",
+        string moduleId = "")
+        : this(level.ToString().ToUpperInvariant(), message, agentRole, agentState, moduleId)
     {
     }
 
-    public LogMessage(string logLevel, string message, string agentRole = "ResourceHolon", string agentState = "")
+    public LogMessage(
+        string logLevel,
+        string message,
+        string agentRole = "ResourceHolon",
+        string agentState = "",
+        string moduleId = "")
         : base("Log")
     {
         // Use SubmodelElementFactory so ValueType and Value are set correctly
@@ -27,17 +37,32 @@ public class LogMessage : SubmodelElementCollection
         Add(SubmodelElementFactory.CreateStringProperty("Timestamp", DateTime.UtcNow.ToString("o")));
         Add(SubmodelElementFactory.CreateStringProperty("AgentRole", agentRole));
         Add(SubmodelElementFactory.CreateStringProperty("AgentState", agentState));
+
+        if (!string.IsNullOrWhiteSpace(moduleId))
+        {
+            Add(SubmodelElementFactory.CreateStringProperty("ModuleId", moduleId));
+        }
     }
 
     // Backwards-compatible factory
-    public static List<ISubmodelElement> CreateInteractionElements(LogLevel level, string message, string agentRole = "ResourceHolon", string agentState = "")
+    public static List<ISubmodelElement> CreateInteractionElements(
+        LogLevel level,
+        string message,
+        string agentRole = "ResourceHolon",
+        string agentState = "",
+        string moduleId = "")
     {
-        return CreateInteractionElements(level.ToString().ToUpperInvariant(), message, agentRole, agentState);
+        return CreateInteractionElements(level.ToString().ToUpperInvariant(), message, agentRole, agentState, moduleId);
     }
 
-    public static List<ISubmodelElement> CreateInteractionElements(string logLevel, string message, string agentRole, string agentState)
+    public static List<ISubmodelElement> CreateInteractionElements(
+        string logLevel,
+        string message,
+        string agentRole,
+        string agentState,
+        string moduleId = "")
     {
-        return new List<ISubmodelElement> { new LogMessage(logLevel, message, agentRole, agentState) };
+        return new List<ISubmodelElement> { new LogMessage(logLevel, message, agentRole, agentState, moduleId) };
     }
 
     /// <summary>
