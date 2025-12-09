@@ -431,6 +431,7 @@ public class Step : SubmodelElementCollection
             StatusExtensions.FromActionValue(status),
             new InputParameters(inputParameters),
             new FinalResultData(finalResultData),
+            new Preconditions(),
             new SkillReference(skillReferenceChain),
             machineName);
 

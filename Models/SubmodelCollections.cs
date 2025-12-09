@@ -148,7 +148,6 @@ public class InputParameters : KeyValueSubmodelCollection
         return inputParams;
     }
 }
-
 public class FinalResultData : KeyValueSubmodelCollection
 {
     public FinalResultData(IDictionary<string, object>? values = null)
@@ -173,6 +172,133 @@ public class FinalResultData : KeyValueSubmodelCollection
             "StartTime" => SemanticReferences.ActionFinalResultDataStartTime,
             _ => SemanticReferences.EmptyExternal
         };
+    }
+}
+
+public class Preconditions : SubmodelElementCollection
+{
+    public Preconditions(IEnumerable<PreconditionBase>? preconditions = null)
+        : base("Preconditions")
+    {
+        SemanticId = SemanticReferences.ActionPreconditions;
+
+        if (preconditions == null)
+        {
+            return;
+        }
+
+        foreach (var precondition in preconditions)
+        {
+            AddPrecondition(precondition);
+        }
+    }
+
+    public T AddPrecondition<T>(T precondition) where T : PreconditionBase
+    {
+        ArgumentNullException.ThrowIfNull(precondition);
+
+        Add(precondition);
+        return precondition;
+    }
+
+    public StoragePrecondition CreateStoragePrecondition(string idShort)
+    {
+        return AddPrecondition(new StoragePrecondition(idShort));
+    }
+}
+
+public abstract class PreconditionBase : SubmodelElementCollection
+{
+    protected Property<string> ConditionType { get; }
+    protected SubmodelElementCollection ConditionValue { get; }
+
+    protected PreconditionBase(string idShort, string conditionType)
+        : base(NormalizeIdShort(idShort))
+    {
+        SemanticId = SemanticReferences.ActionPreconditions;
+
+        ConditionType = SubmodelElementFactory.CreateStringProperty(
+            "ConditionType",
+            conditionType,
+            SemanticReferences.ActionPreconditions);
+
+        ConditionValue = new SubmodelElementCollection("ConditionValue")
+        {
+            SemanticId = SemanticReferences.ActionPreconditions
+        };
+
+        Add(ConditionType);
+        Add(ConditionValue);
+    }
+
+    protected Property<string> AddConditionValueProperty(string idShort, string? value = null)
+    {
+        var property = SubmodelElementFactory.CreateStringProperty(
+            idShort,
+            value ?? string.Empty,
+            SemanticReferences.ActionPreconditions);
+        ConditionValue.Add(property);
+        return property;
+    }
+
+    private static string NormalizeIdShort(string? idShort)
+    {
+        if (string.IsNullOrWhiteSpace(idShort))
+        {
+            return "Condition_001";
+        }
+
+        var trimmed = idShort.Trim();
+        if (trimmed.StartsWith("Condition_", StringComparison.OrdinalIgnoreCase))
+        {
+            return trimmed;
+        }
+
+        return trimmed;
+    }
+}
+
+public enum StorageConditionContentType
+{
+    CarrierId,
+    CarrierType,
+    ProductId,
+    ProductType,
+    EmptySlot
+}
+
+public sealed class StoragePrecondition : PreconditionBase
+{
+    private readonly Property<string> _slotContentType;
+    private readonly Property<string> _slotValue;
+
+    public StoragePrecondition(string idShort)
+        : this(idShort, StorageConditionContentType.ProductId, string.Empty)
+    {
+    }
+
+    public StoragePrecondition(string idShort, StorageConditionContentType contentType, string? slotValue)
+        : base(idShort, "InStorage")
+    {
+        _slotContentType = AddConditionValueProperty("SlotContentType", contentType.ToString());
+        _slotValue = AddConditionValueProperty("SlotValue", slotValue ?? string.Empty);
+    }
+
+    public StorageConditionContentType ContentType
+    {
+        get => Enum.TryParse(
+                _slotContentType.Value.Value?.ToString(),
+                true,
+                out StorageConditionContentType result)
+            ? result
+            : StorageConditionContentType.ProductId;
+        set => _slotContentType.Value = new PropertyValue<string>(value.ToString());
+    }
+
+    public string SlotValue
+    {
+        get => _slotValue.Value.Value?.ToString() ?? string.Empty;
+        set => _slotValue.Value = new PropertyValue<string>(value ?? string.Empty);
     }
 }
 

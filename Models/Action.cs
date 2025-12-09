@@ -24,6 +24,7 @@ public class Action : SubmodelElementCollection
         ActionStatusEnum status,
         InputParameters? inputParameters,
         FinalResultData? finalResultData,
+        Preconditions? preconditions,
         SkillReference? skillReference,
         string machineName)
         : base(NormalizeIdShort(idShort))
@@ -34,7 +35,7 @@ public class Action : SubmodelElementCollection
         Status = SubmodelElementFactory.CreateStringProperty("Status", string.Empty, SemanticReferences.ActionStatus);
         InputParameters = inputParameters ?? new InputParameters();
         FinalResultData = finalResultData ?? new FinalResultData();
-        Preconditions = CreateEmptyCollection("Preconditions", SemanticReferences.ActionPreconditions);
+        Preconditions = preconditions ?? new Preconditions();
         SkillReference = skillReference ?? new SkillReference(Array.Empty<(object Key, string Value)>());
         Effects = CreateEmptyCollection("Effects", SemanticReferences.ActionEffects);
         MachineName = SubmodelElementFactory.CreateStringProperty("MachineName", machineName?.Trim() ?? string.Empty, SemanticReferences.ActionMachineName);
