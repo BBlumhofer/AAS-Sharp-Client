@@ -61,6 +61,18 @@
         },
         "valueType": "string",
         "value": "Idle"
+      },
+      {
+        "idShort": "HasError",
+        "kind": "Instance",
+        "modelType": "Property",
+        "semanticId": {
+          "type": "ExternalReference",
+          "referredSemanticId": null,
+          "keys": []
+        },
+        "valueType": "string",
+        "value": "false"
       }
     ]
   }

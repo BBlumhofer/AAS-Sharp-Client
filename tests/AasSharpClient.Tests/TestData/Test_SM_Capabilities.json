@@ -8,7 +8,7 @@
       "keys": [
         {
           "type": "GlobalReference",
-          "value": "https://smartfactory.de/semantics/submodel/CapabilityDescription#1/0"
+          "value": "https://admin-shell.io/idta/CapabilityDescription/1/0/Submodel"
         }
       ]
     },
@@ -20,7 +20,7 @@
           "keys": [
             {
               "type": "GlobalReference",
-              "value": "https://smartfactory.de/aas/submodel/OfferedCapabilitiyDescription/CapabilitySet#1/0"
+              "value": "https://admin-shell.io/idta/CapabilityDescription/CapabilitySet/1/0"
             }
           ]
         },
@@ -38,7 +38,7 @@
               "keys": [
                 {
                   "type": "GlobalReference",
-                  "value": "https://smartfactory.de/aas/submodel/OfferedCapabilitiyDescription/CapabilitySet/FullyAutomatedAssemblyContainer#1/0"
+                  "value": "https://admin-shell.io/idta/CapabilityDescription/CapabilityContainer/1/0"
                 }
               ]
             },
@@ -164,7 +164,7 @@
                   "keys": [
                     {
                       "type": "GlobalReference",
-                      "value": "https://smartfactory.de/aas/submodel/OfferedCapabilitiyDescription/CapabilitySet/FullyAutomatedAssemblyContainer/PropertySet#1/0"
+                      "value": "https://admin-shell.io/idta/CapabilityDescription/PropertySet/1/0"
                     }
                   ]
                 },
@@ -183,7 +183,7 @@
                       "keys": [
                         {
                           "type": "GlobalReference",
-                          "value": "https://smartfactory.de/aas/submodel/OfferedCapabilitiyDescription/CapabilitySet/FullyAutomatedAssemblyContainer/PropertySet/HeightOfProduct#1/0"
+                          "value": "https://admin-shell.io/idta/CapabilityDescription/PropertyContainer/1/0"
                         }
                       ]
                     },
@@ -229,7 +229,7 @@
                       "keys": [
                         {
                           "type": "GlobalReference",
-                          "value": "https://smartfactory.de/aas/submodel/OfferedCapabilitiyDescription/CapabilitySet/FullyAutomatedAssemblyContainer/PropertySet/WidthOfProduct#1/0"
+                          "value": "https://admin-shell.io/idta/CapabilityDescription/PropertyContainer/1/0"
                         }
                       ]
                     },
@@ -275,7 +275,7 @@
                       "keys": [
                         {
                           "type": "GlobalReference",
-                          "value": "https://smartfactory.de/aas/submodel/OfferedCapabilitiyDescription/CapabilitySet/FullyAutomatedAssemblyContainer/PropertySet/DepthOfProduct#1/0"
+                          "value": "https://admin-shell.io/idta/CapabilityDescription/PropertyContainer/1/0"
                         }
                       ]
                     },
@@ -321,8 +321,8 @@
                       "keys": [
                         {
                           "type": "GlobalReference",
-                          "value": "https://smartfactory.de/aas/submodel/OfferedCapabilitiyDescription/CapabilitySet/FullyAutomatedAssemblyContainer/PropertySet/WeightOfProduct#1/0"
-                        }
+                          "value": "https://admin-shell.io/idta/CapabilityDescription/PropertyContainer/1/0"
+						}
                       ]
                     },
                     "qualifiers": [
@@ -367,7 +367,7 @@
                       "keys": [
                         {
                           "type": "GlobalReference",
-                          "value": "https://smartfactory.de/aas/submodel/OfferedCapabilitiyDescription/CapabilitySet/FullyAutomatedAssemblyContainer/PropertySet/JoiningTechnique#1/0"
+                          "value": "https://admin-shell.io/idta/CapabilityDescription/PropertyContainer/1/0"
                         }
                       ]
                     },
@@ -412,7 +412,7 @@
                       "keys": [
                         {
                           "type": "GlobalReference",
-                          "value": "https://smartfactory.de/aas/submodel/OfferedCapabilitiyDescription/CapabilitySet/FullyAutomatedAssemblyContainer/PropertySet/ManufacturableShapeOfProduct#1/0"
+                          "value": "https://admin-shell.io/idta/CapabilityDescription/PropertyContainer/1/0"
                         }
                       ]
                     },
@@ -457,7 +457,7 @@
                       "keys": [
                         {
                           "type": "GlobalReference",
-                          "value": "https://smartfactory.de/aas/submodel/OfferedCapabilitiyDescription/CapabilitySet/FullyAutomatedAssemblyContainer/PropertySet/ManufacturableMaterialOfProduct#1/0"
+                          "value": "https://admin-shell.io/idta/CapabilityDescription/PropertyContainer/1/0"
                         }
                       ]
                     },

@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using BaSyx.Models.AdminShell;
@@ -9,29 +10,34 @@ namespace AasSharpClient.Models;
 public sealed class BillOfMaterialSubmodel : Submodel
 {
     private static readonly Reference SemanticReference = ReferenceFactory.External(
-        (KeyType.Submodel, "http://example.com/id/type/submodel/BOM/1/1"),
-        (KeyType.Submodel, "https://smartfactory.de/semantics/submodel/Truck/BillOfMaterial#1/0"));
+        (KeyType.GlobalReference, "http://example.com/id/type/submodel/BOM/1/1"));
+
+    // Default supplemental semantic used by the truck template; callers can override or pass none.
+    public static readonly Reference DefaultSupplementalSemanticReference = ReferenceFactory.External(
+        (KeyType.GlobalReference, "https://smartfactory.de/semantics/submodel/Truck/BillOfMaterial#1/0"));
 
     // Parameterless constructor: programmatic, empty BOM (use AddElement/AddSubElement)
-    public BillOfMaterialSubmodel()
+    public BillOfMaterialSubmodel(IEnumerable<Reference>? supplementalSemanticIds = null)
         : base("BillOfMaterial", new Identifier(Guid.NewGuid().ToString()))
     {
         Kind = ModelingKind.Instance;
         SemanticId = SemanticReference;
+        SupplementalSemanticIds = supplementalSemanticIds?.ToArray() ?? new[] { DefaultSupplementalSemanticReference };
     }
 
     // Create an empty, programmatic submodel but with a specific identifier
-    public static BillOfMaterialSubmodel CreateWithIdentifier(string submodelIdentifier)
+    public static BillOfMaterialSubmodel CreateWithIdentifier(string submodelIdentifier, IEnumerable<Reference>? supplementalSemanticIds = null)
     {
-        return new BillOfMaterialSubmodel(submodelIdentifier);
+        return new BillOfMaterialSubmodel(submodelIdentifier, supplementalSemanticIds);
     }
 
     // Internal ctor used to set a known identifier
-    private BillOfMaterialSubmodel(string submodelIdentifier)
+    private BillOfMaterialSubmodel(string submodelIdentifier, IEnumerable<Reference>? supplementalSemanticIds)
         : base("BillOfMaterial", new Identifier(submodelIdentifier))
     {
         Kind = ModelingKind.Instance;
         SemanticId = SemanticReference;
+        SupplementalSemanticIds = supplementalSemanticIds?.ToArray() ?? new[] { DefaultSupplementalSemanticReference };
     }
 
     public Task<string> ToJsonAsync(CancellationToken cancellationToken = default) => SubmodelSerialization.SerializeAsync(this, cancellationToken);

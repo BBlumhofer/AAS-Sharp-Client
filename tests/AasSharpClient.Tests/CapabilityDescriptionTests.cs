@@ -28,7 +28,7 @@ public class CapabilityDescriptionTests
         {
             new(
                 "PropertyContainer01",
-                "https://smartfactory.de/aas/submodel/OfferedCapabilitiyDescription/CapabilitySet/FullyAutomatedAssemblyContainer/PropertySet/HeightOfProduct#1/0",
+                "https://admin-shell.io/idta/CapabilityDescription/PropertyContainer/1/0",
                 TestHelpers.Lang(("en", "blank")),
                 PropertyContainerType.Range,
                 RangeIdShort: "HeightOfTheProduct",
@@ -36,7 +36,7 @@ public class CapabilityDescriptionTests
                 RangeMax: "1000"),
             new(
                 "PropertyContainer02",
-                "https://smartfactory.de/aas/submodel/OfferedCapabilitiyDescription/CapabilitySet/FullyAutomatedAssemblyContainer/PropertySet/WidthOfProduct#1/0",
+                "https://admin-shell.io/idta/CapabilityDescription/PropertyContainer/1/0",
                 TestHelpers.Lang(("en", "blank")),
                 PropertyContainerType.Range,
                 RangeIdShort: "WidthOfTheProduct",
@@ -44,7 +44,7 @@ public class CapabilityDescriptionTests
                 RangeMax: "1000"),
             new(
                 "PropertyContainer03",
-                "https://smartfactory.de/aas/submodel/OfferedCapabilitiyDescription/CapabilitySet/FullyAutomatedAssemblyContainer/PropertySet/DepthOfProduct#1/0",
+                "https://admin-shell.io/idta/CapabilityDescription/PropertyContainer/1/0",
                 TestHelpers.Lang(("en", "blank")),
                 PropertyContainerType.Range,
                 RangeIdShort: "DepthOfProduct",
@@ -52,7 +52,7 @@ public class CapabilityDescriptionTests
                 RangeMax: "1000"),
             new(
                 "PropertyContainer04",
-                "https://smartfactory.de/aas/submodel/OfferedCapabilitiyDescription/CapabilitySet/FullyAutomatedAssemblyContainer/PropertySet/WeightOfProduct#1/0",
+                "https://admin-shell.io/idta/CapabilityDescription/PropertyContainer/1/0",
                 TestHelpers.Lang(("en", "blank")),
                 PropertyContainerType.Range,
                 RangeIdShort: "WeightOfProduct",
@@ -60,7 +60,7 @@ public class CapabilityDescriptionTests
                 RangeMax: "500"),
             new(
                 "PropertyContainer05",
-                "https://smartfactory.de/aas/submodel/OfferedCapabilitiyDescription/CapabilitySet/FullyAutomatedAssemblyContainer/PropertySet/JoiningTechnique#1/0",
+                "https://admin-shell.io/idta/CapabilityDescription/PropertyContainer/1/0",
                 TestHelpers.Lang(("en", "blank")),
                 PropertyContainerType.Property,
                 PropertyIdShort: "JoiningTechnique",
@@ -68,7 +68,7 @@ public class CapabilityDescriptionTests
                 PropertyValueType: "xs:string"),
             new(
                 "PropertyContainer06",
-                "https://smartfactory.de/aas/submodel/OfferedCapabilitiyDescription/CapabilitySet/FullyAutomatedAssemblyContainer/PropertySet/ManufacturableShapeOfProduct#1/0",
+                "https://admin-shell.io/idta/CapabilityDescription/PropertyContainer/1/0",
                 TestHelpers.Lang(("en", "blank")),
                 PropertyContainerType.Property,
                 PropertyIdShort: "ManufacturableShapeOfProduct",
@@ -76,7 +76,7 @@ public class CapabilityDescriptionTests
                 PropertyValueType: "xs:string"),
             new(
                 "PropertyContainer07",
-                "https://smartfactory.de/aas/submodel/OfferedCapabilitiyDescription/CapabilitySet/FullyAutomatedAssemblyContainer/PropertySet/ManufacturableMaterialOfProduct#1/0",
+                "https://admin-shell.io/idta/CapabilityDescription/PropertyContainer/1/0",
                 TestHelpers.Lang(("en", "blank")),
                 PropertyContainerType.List,
                 ListIdShort: "ManufacturableMaterialOfProduct",

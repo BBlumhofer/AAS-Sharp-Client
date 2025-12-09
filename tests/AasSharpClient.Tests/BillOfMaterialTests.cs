@@ -14,7 +14,9 @@ public class BillOfMaterialTests
         var expected = await File.ReadAllTextAsync("TestData/Test_SM_BoM_Truck.json");
         using var doc = JsonDocument.Parse(expected);
         var templateId = doc.RootElement.GetProperty("id").GetString();
-        var submodel = BillOfMaterialSubmodel.CreateWithIdentifier(templateId ?? Guid.NewGuid().ToString());
+        var submodel = BillOfMaterialSubmodel.CreateWithIdentifier(
+            templateId ?? Guid.NewGuid().ToString(),
+            new[] { BillOfMaterialSubmodel.DefaultSupplementalSemanticReference });
 
         // Build the same structure as the template programmatically
         var truck = submodel.AddElement(

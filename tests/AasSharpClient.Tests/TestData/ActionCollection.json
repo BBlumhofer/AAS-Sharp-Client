@@ -1,0 +1,62 @@
+{
+  "idShort": "Action001",
+  "modelType": "SubmodelElementCollection",
+  "value": [
+    {
+      "idShort": "ActionTitle",
+      "modelType": "Property",
+      "valueType": "xs:string",
+      "value": "Retrieve"
+    },
+    {
+      "idShort": "Status",
+      "modelType": "Property",
+      "valueType": "xs:string",
+      "value": "planned"
+    },
+    {
+      "idShort": "MachineName",
+      "modelType": "Property",
+      "valueType": "xs:string",
+      "value": "CA-Module"
+    },
+    {
+      "idShort": "InputParameters",
+      "modelType": "SubmodelElementCollection",
+      "value": [
+        {
+          "idShort": "ProductId",
+          "modelType": "Property",
+          "valueType": "xs:string",
+          "value": "https://smartfactory.de/shells/test_product"
+        },
+        {
+          "idShort": "RetrieveByProductID",
+          "modelType": "Property",
+          "valueType": "xs:boolean",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "idShort": "Preconditions",
+      "modelType": "SubmodelElementCollection",
+      "value": []
+    },
+    {
+      "idShort": "Effects",
+      "modelType": "SubmodelElementCollection",
+      "value": []
+    },
+    {
+      "idShort": "FinalResultData",
+      "modelType": "SubmodelElementCollection",
+      "value": []
+    },
+    {
+      "idShort": "SkillReference",
+      "modelType": "SubmodelElementCollection",
+      "value": []
+    }
+  ]
+}

@@ -11,19 +11,19 @@ namespace AasSharpClient.Models;
 public sealed class CapabilityDescriptionSubmodel : Submodel
 {
     private static readonly Reference SemanticReference = ReferenceFactory.External(
-        (KeyType.GlobalReference, "https://smartfactory.de/semantics/submodel/CapabilityDescription#1/0"));
+        (KeyType.GlobalReference, "https://admin-shell.io/idta/CapabilityDescription/1/0/Submodel"));
 
     private static readonly Reference CapabilitySetSemantic = ReferenceFactory.External(
-        (KeyType.GlobalReference, "https://smartfactory.de/aas/submodel/OfferedCapabilitiyDescription/CapabilitySet#1/0"));
+        (KeyType.GlobalReference, "https://admin-shell.io/idta/CapabilityDescription/CapabilitySet/1/0"));
 
     private static readonly Reference CapabilityContainerSemantic = ReferenceFactory.External(
-        (KeyType.GlobalReference, "https://smartfactory.de/aas/submodel/OfferedCapabilitiyDescription/CapabilitySet/FullyAutomatedAssemblyContainer#1/0"));
+        (KeyType.GlobalReference, "https://admin-shell.io/idta/CapabilityDescription/CapabilityContainer/1/0"));
 
     private static readonly Reference CapabilityRelationsSemantic = ReferenceFactory.External(
         (KeyType.GlobalReference, "https://admin-shell.io/idta/CapabilityDescription/CapabilityRelations/1/0"));
 
     private static readonly Reference PropertySetSemantic = ReferenceFactory.External(
-        (KeyType.GlobalReference, "https://smartfactory.de/aas/submodel/OfferedCapabilitiyDescription/CapabilitySet/FullyAutomatedAssemblyContainer/PropertySet#1/0"));
+        (KeyType.GlobalReference, "https://admin-shell.io/idta/CapabilityDescription/PropertySet/1/0"));
 
     public SubmodelElementCollection CapabilitySet { get; }
 

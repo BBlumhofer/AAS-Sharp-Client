@@ -1,7 +1,79 @@
-Baue ein Klassenmodell in C# Sharp auf ähnlich zu dem Java beispiel. Verwende Basyx.Models Paket..
 
-Java Teilbeispiel:
-public static class States
+## Zu untersuchender Serialisierungsfehler
+
+Bitte testen: Warum kann das folgende JSON nicht von BaSyx (`SubmodelElementCollection`) deserialisiert werden?
+
+Beispiel-Payload:
+
+```json
+{
+    "idShort": "Action001",
+    "modelType": "SubmodelElementCollection",
+    "value": [
+        {
+            "idShort": "ActionTitle",
+            "modelType": "Property",
+            "valueType": "xs:string",
+            "value": "Retrieve"
+        },
+        {
+            "idShort": "Status",
+            "modelType": "Property",
+            "valueType": "xs:string",
+            "value": "planned"
+        },
+        {
+            "idShort": "MachineName",
+            "modelType": "Property",
+            "valueType": "xs:string",
+            "value": "CA-Module"
+        },
+        {
+            "idShort": "InputParameters",
+            "modelType": "SubmodelElementCollection",
+            "value": [
+                {
+                    "idShort": "ProductId",
+                    "modelType": "Property",
+                    "valueType": "xs:string",
+                    "value": "https://smartfactory.de/shells/test_product"
+                },
+                {
+                    "idShort": "RetrieveByProductID",
+                    "modelType": "Property",
+                    "valueType": "xs:boolean",
+                    "value": "true"
+                }
+            ]
+        },
+        {
+            "idShort": "Preconditions",
+            "modelType": "SubmodelElementCollection",
+            "value": []
+        },
+        {
+            "idShort": "Effects",
+            "modelType": "SubmodelElementCollection",
+            "value": []
+        },
+        {
+            "idShort": "FinalResultData",
+            "modelType": "SubmodelElementCollection",
+            "value": []
+        }
+    ]
+}
+```
+
+Testaufgaben / Hinweise:
+
+- Prüfen, ob der BaSyx `SubmodelElementConverter` in der verwendeten Version Arrays im Feld `value` für `SubmodelElementCollection` erwartet oder stattdessen ein Objekt mit `value`-Property eines bestimmten Typs.
+- Sicherstellen, dass `JsonSerializerOptions` die nötigen Converters registriert (z. B. `SubmodelElementConverter`) und `PropertyNameCaseInsensitive` gesetzt ist, falls unterschiedliche Namenskonventionen vorkommen.
+- Testen, ob ein Fallback funktioniert, der statt direkter Deserialisierung erst `value` als Array liest und daraus ein `SubmodelElementCollection`-Objekt manuell zusammenbaut.
+- Loggen des rohen JSON vor dem Deserialisierungsversuch (bereits in `MAS-BT` implementiert) verwenden, um den genauen Payload zu analysieren.
+
+Bitte dokumentiere hier die Ergebnisse der Tests (Datum, BaSyx-Version, verwendete JsonSerializerOptions, Ergebnis und ggf. Fix).
+
 {
     public const string NotPlanned = "open";
     public const string Planned = "planned";

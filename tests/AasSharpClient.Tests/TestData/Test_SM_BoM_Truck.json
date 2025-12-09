@@ -3,14 +3,23 @@
   "kind" : "Instance",
   "semanticId" : {
     "keys" : [ {
-      "type" : "Submodel",
+      "type" : "GlobalReference",
       "value" : "http://example.com/id/type/submodel/BOM/1/1"
-    }, {
-      "type" : "Submodel",
-      "value" : "https://smartfactory.de/semantics/submodel/Truck/BillOfMaterial#1/0"
-    } ],
+    }
+	],
     "type" : "ExternalReference"
   },
+  "supplementalSemanticIds": [
+    {
+      "type": "ExternalReference",
+      "keys": [
+        {
+          "type": "GlobalReference",
+          "value": "https://smartfactory.de/semantics/submodel/Truck/BillOfMaterial#1/0"
+        }
+      ]
+    }
+  ],
   "id" : "https://smartfactory.de/submodels/35c2e56c-fd97-4bda-8ecd-42ab068f66db",
   "idShort" : "BillOfMaterial",
   "submodelElements" : [ {
