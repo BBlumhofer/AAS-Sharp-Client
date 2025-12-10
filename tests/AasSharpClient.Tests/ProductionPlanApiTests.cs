@@ -260,7 +260,7 @@ public class ProductionPlanApiTests
         };
 
         return new ProductionAction(idShort, $"Action {idShort}", status, new InputParameters(), new FinalResultData(),
-            new SkillReference(referenceChain), "Machine");
+            null, new SkillReference(referenceChain), "Machine");
     }
 
     private static string? GetSchedulingValue(Step step, string idShort)

@@ -1,0 +1,359 @@
+{
+  "modelType": "Submodel",
+  "kind": "Instance",
+  "semanticId": {
+    "keys": [
+      {
+        "type": "GlobalReference",
+        "value": "https://smartfactory.de/semantics/submodel/CapabilityDescription#1/0"
+      }
+    ],
+    "type": "ExternalReference"
+  },
+  "id": "https://smartfactory.de/submodels/5107ce40-b886-4b80-b986-a180e1424500",
+  "idShort": "RequiredCapabilityDescription",
+  "submodelElements": [
+    {
+      "modelType": "SubmodelElementCollection",
+      "semanticId": {
+        "keys": [
+          {
+            "type": "GlobalReference",
+            "value": "https://smartfactory.de/aas/submodel/CapabilityDescription/CapabilitySet#1/0"
+          }
+        ],
+        "type": "ExternalReference"
+      },
+      "idShort": "CapabilitySet",
+      "value": [
+        {
+          "modelType": "SubmodelElementCollection",
+          "semanticId": {
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://smartfactory.de/aas/submodel/CapabilityDescription/CapabilitySet/CapabilityContainer#1/0"
+              }
+            ],
+            "type": "ExternalReference"
+          },
+          "idShort": "AssembleContainer",
+          "value": [
+            {
+              "modelType": "Capability",
+              "semanticId": {
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://smartfactory.de/aas/submodel/CapabilityDescription/Capability#1/0"
+                  }
+                ],
+                "type": "ExternalReference"
+              },
+              "idShort": "Assemble"
+            },
+            {
+              "modelType": "SubmodelElementCollection",
+              "semanticId": {
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://smartfactory.de/aas/submodel/CapabilityDescription/CapabilitySet/CapabilityContainer/CapabilityRelations#1/0"
+                  }
+                ],
+                "type": "ExternalReference"
+              },
+              "idShort": "CapabilityRelations",
+              "value": [
+                {
+                  "modelType": "RelationshipElement",
+                  "idShort": "CapabilityRealizedBy_001",
+                  "first": {
+                    "keys": [
+                      {
+                        "type": "Submodel",
+                        "value": "TestCapabilityDescription"
+                      },
+                      {
+                        "type": "SubmodelElementCollection",
+                        "value": "CapabilitySet"
+                      },
+                      {
+                        "type": "SubmodelElementCollection",
+                        "value": "AssembleContainer"
+                      },
+                      {
+                        "type": "Capability",
+                        "value": "Assemble"
+                      }
+                    ],
+                    "type": "ModelReference"
+                  },
+                  "second": {
+                    "keys": [
+                      {
+                        "type": "Submodel",
+                        "value": "https://smartfactory.de/submodells/03zurpeqwr"
+                      },
+                      {
+                        "type": "SubmodelElementCollection",
+                        "value": "SkillSet"
+                      },
+                      {
+                        "type": "SubmodelElementCollection",
+                        "value": "Skill_001"
+                      }
+                    ],
+                    "type": "ModelReference"
+                  }
+                },
+                {
+                  "modelType": "SubmodelElementCollection",
+                  "idShort": "GeneralizedBySet",
+                  "value": []
+                },
+                {
+                  "modelType": "SubmodelElementCollection",
+                  "idShort": "ComposedOfSet",
+                  "value": []
+                },
+                {
+                  "modelType": "SubmodelElementCollection",
+                  "semanticId": {
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://smartfactory.de/aas/submodel/CapabilityDescription/CapabilitySet/CapabilityContainer/CapabilityRelations#1/0/ConstraintSet#1/0"
+                      }
+                    ],
+                    "type": "ExternalReference"
+                  },
+                  "idShort": "ConstraintSet",
+                  "value": [
+                    {
+                      "modelType": "SubmodelElementCollection",
+                      "semanticId": {
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://smartfactory.de/aas/submodel/CapabilityDescription/CapabilitySet/CapabilityContainer/CapabilityRelations#1/0/ConstraintSet#1/0/PropertyConstraintContainer#1/0"
+                          }
+                        ],
+                        "type": "ExternalReference"
+                      },
+                      "idShort": "PropertyConstraintContainer000",
+                      "value": [
+                        {
+                          "modelType": "Property",
+                          "value": "Pre",
+                          "valueType": "xs:string",
+                          "idShort": "PropertyConditionalType"
+                        },
+                        {
+                          "modelType": "Property",
+                          "value": "CustomConstraint",
+                          "valueType": "xs:string",
+                          "idShort": "ConstraintType"
+                        },
+                        {
+                          "modelType": "SubmodelElementCollection",
+                          "semanticId": {
+                            "keys": [
+                              {
+                                "type": "GlobalReference",
+                                "value": "https://smartfactory.de/aas/submodel/CapabilityDescription/CapabilitySet/CapabilityContainer/CapabilityRelations#1/0/ConstraintSet#1/0/PropertyConstraintContainer#1/0/CustomConstraint#1/0/ConstraintValue#1/0"
+                              }
+                            ],
+                            "type": "ExternalReference"
+                          },
+                          "idShort": "CustomConstraint",
+                          "value": [
+                            {
+                              "modelType": "Property",
+                              "semanticId": {
+                                "keys": [
+                                  {
+                                    "type": "GlobalReference",
+                                    "value": "https://smartfactory.de/aas/submodel/CapabilityDescription/CapabilitySet/CapabilityContainer/CapabilityRelations#1/0/ConstraintSet#1/0/PropertyConstraintContainer#1/0/CustomConstraint#1/0/ConstraintValue#1/0/SotrageConstraint#1/0"
+                                  }
+                                ],
+                                "type": "ExternalReference"
+                              },
+                              "value": "StorageConstraint",
+                              "valueType": "xs:string",
+                              "idShort": "ConstraintName"
+                            },
+                            {
+                              "modelType": "Property",
+                              "semanticId": {
+                                "keys": [
+                                  {
+                                    "type": "GlobalReference",
+                                    "value": "https://smartfactory.de/aas/submodel/CapabilityDescription/CapabilitySet/CapabilityContainer/CapabilityRelations#1/0/ConstraintSet#1/0/PropertyConstraintContainer#1/0/CustomConstraint#1/0/ConstraintValue#1/0/SotrageConstraint#1/0/ProductID#1/0"
+                                  }
+                                ],
+                                "type": "ExternalReference"
+                              },
+                              "value": "https://smartfactory.de/aas/sample_cab_a_blue",
+                              "valueType": "xs:string",
+                              "idShort": "ProductID"
+                            },
+                            {
+                              "modelType": "Property",
+                              "semanticId": {
+                                "keys": [
+                                  {
+                                    "type": "GlobalReference",
+                                    "value": "https://smartfactory.de/aas/submodel/CapabilityDescription/CapabilitySet/CapabilityContainer/CapabilityRelations#1/0/ConstraintSet#1/0/PropertyConstraintContainer#1/0/CustomConstraint#1/0/ConstraintValue#1/0/SotrageConstraint#1/0/ProductType#1/0"
+                                  }
+                                ],
+                                "type": "ExternalReference"
+                              },
+                              "value": "Cab_A_Blue",
+                              "valueType": "xs:string",
+                              "idShort": "ProductType"
+                            }
+                          ]
+                        },
+                        {
+                          "modelType": "SubmodelElementCollection",
+                          "semanticId": {
+                            "keys": [
+                              {
+                                "type": "GlobalReference",
+                                "value": "https://smartfactory.de/aas/submodel/CapabilityDescription/CapabilitySet/CapabilityContainer/CapabilityRelations#1/0/ConstraintSet#1/0/PropertyConstraintContainer#1/0"
+                              }
+                            ],
+                            "type": "ExternalReference"
+                          },
+                          "idShort": "ConstraintPropertyRelations",
+                          "value": [
+                            {
+                              "modelType": "RelationshipElement",
+                              "idShort": "ConstraintHasProperty_001",
+                              "first": {
+                                "keys": [
+                                  {
+                                    "type": "Submodel",
+                                    "value": "TestCapabilityDescription"
+                                  },
+                                  {
+                                    "type": "SubmodelElementCollection",
+                                    "value": "CapabilitySet"
+                                  },
+                                  {
+                                    "type": "SubmodelElementCollection",
+                                    "value": "AssembleContainer"
+                                  },
+                                  {
+                                    "type": "SubmodelElementCollection",
+                                    "value": "CapabilityRelations"
+                                  },
+                                  {
+                                    "type": "SubmodelElementCollection",
+                                    "value": "ConstraintSet"
+                                  },
+                                  {
+                                    "type": "SubmodelElementCollection",
+                                    "value": "PropertyConstraintContainer000"
+                                  },
+                                  {
+                                    "type": "SubmodelElementCollection",
+                                    "value": "CustomConstraint"
+                                  }
+                                ],
+                                "type": "ModelReference"
+                              },
+                              "second": {
+                                "keys": [
+                                  {
+                                    "type": "Submodel",
+                                    "value": "TestCapabilityDescription"
+                                  },
+                                  {
+                                    "type": "SubmodelElementCollection",
+                                    "value": "CapabilitySet"
+                                  },
+                                  {
+                                    "type": "SubmodelElementCollection",
+                                    "value": "AssembleContainer"
+                                  },
+                                  {
+                                    "type": "SubmodelElementCollection",
+                                    "value": "PropertySet"
+                                  },
+                                  {
+                                    "type": "SubmodelElementCollection",
+                                    "value": "PropertyContainer001"
+                                  },
+                                  {
+                                    "type": "SubmodelElementList",
+                                    "value": "InitialProductID"
+                                  }
+                                ],
+                                "type": "ModelReference"
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "modelType": "SubmodelElementCollection",
+              "semanticId": {
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://smartfactory.de/aas/submodel/CapabilityDescription/CapabilitySet/CapabilityContainer/PropertySet#1/0"
+                  }
+                ],
+                "type": "ExternalReference"
+              },
+              "idShort": "PropertySet",
+              "value": [
+                {
+                  "modelType": "SubmodelElementCollection",
+                  "semanticId": {
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://smartfactory.de/aas/submodel/CapabilityDescription/CapabilitySet/CapabilityContainer/PropertySet/PropertyContainer/InitialProductID#1/0"
+                      }
+                    ],
+                    "type": "ExternalReference"
+                  },
+                  "idShort": "PropertyContainer001",
+                  "value": [
+                    {
+                      "modelType": "SubmodelElementList",
+                      "idShort": "InitialProductID",
+                      "orderRelevant": true,
+                      "typeValueListElement": "Property",
+                      "value": [
+                        {
+                          "modelType": "Property",
+                          "value": "https://smartfactory.de/aas/sample_cab_a_blue",
+                          "valueType": "xs:string"
+                        },
+                        {
+                          "modelType": "Property",
+                          "value": "https://smartfactory.de/aas/sample_cab_chassis",
+                          "valueType": "xs:string"
+                        }
+                      ],
+                      "valueTypeListElement": "xs:string"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

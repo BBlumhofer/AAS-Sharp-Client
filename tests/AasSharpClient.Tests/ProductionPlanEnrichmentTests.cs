@@ -17,7 +17,7 @@ public class ProductionPlanEnrichmentTests
         referenced.SubmodelElements.Add(temperature);
 
         // create action with input parameter referencing the submodel property
-        var action = new AasSharpClient.Models.Action("Action001", "Action 1", ActionStatusEnum.OPEN, null, null, null, "MachineA");
+        var action = new AasSharpClient.Models.Action("Action001", "Action 1", ActionStatusEnum.OPEN, null, null, null, null, "MachineA");
         action.SetInputParameter("Temp", "RefSm/Temperature");
 
         var step = new Step("Step001", "Step 1", StepStatusEnum.OPEN, action, "Station1", new SchedulingContainer(), "Ent", "WC");

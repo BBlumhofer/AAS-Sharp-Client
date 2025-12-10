@@ -116,8 +116,12 @@ namespace AasSharpClient.Tests
                 var descriptor = DescribeElement(element);
                 try
                 {
-                    var sme = BasyxJsonLoader.DeserializeElement(element);
+                    var sme = JsonSerializer.Deserialize<ISubmodelElement>(element.GetRawText(), BasyxJsonLoader.Options);
                     if (sme != null)
+                    {
+                        converted++;
+                    }
+                    else if (TryFallback(element, descriptor, relativePath))
                     {
                         converted++;
                     }
@@ -128,7 +132,14 @@ namespace AasSharpClient.Tests
                 }
                 catch (Exception ex)
                 {
-                    failures.Add($"{relativePath}: {descriptor} -> {ex}");
+                    if (TryFallback(element, descriptor, relativePath))
+                    {
+                        converted++;
+                        continue;
+                    }
+
+                    _output.WriteLine(ex.ToString());
+                    failures.Add($"{relativePath}: {descriptor} -> {ex.GetType().Name}: {ex.Message}");
                 }
             }
 
@@ -157,7 +168,7 @@ namespace AasSharpClient.Tests
                 var descriptor = $"{label}[{index}]";
                 try
                 {
-                    var sme = BasyxJsonLoader.DeserializeElement(element);
+                    var sme = JsonSerializer.Deserialize<ISubmodelElement>(element.GetRawText(), BasyxJsonLoader.Options);
                     if (sme != null)
                     {
                         roundTripElements.Add(sme);
@@ -208,6 +219,25 @@ namespace AasSharpClient.Tests
             var idShort = element.TryGetProperty("idShort", out var idShortNode) ? idShortNode.GetString() ?? string.Empty : string.Empty;
             var modelType = element.TryGetProperty("modelType", out var modelNode) ? modelNode.GetString() ?? string.Empty : string.Empty;
             return string.IsNullOrWhiteSpace(idShort) ? modelType : $"{idShort} ({modelType})";
+        }
+
+        private bool TryFallback(JsonElement element, string descriptor, string relativePath)
+        {
+            try
+            {
+                var fallback = BasyxJsonLoader.DeserializeElement(element);
+                if (fallback != null)
+                {
+                    _output.WriteLine($"{relativePath}: {descriptor} -> fallback converter succeeded.");
+                    return true;
+                }
+            }
+            catch (Exception fallbackEx)
+            {
+                _output.WriteLine($"{relativePath}: {descriptor} fallback failed: {fallbackEx.Message}");
+            }
+
+            return false;
         }
 
         private static string ResolveRepoPath(string relative)

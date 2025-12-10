@@ -60,6 +60,7 @@ namespace AasSharpClient.Tests
                 status: status,
                 inputParameters: inputParams,
                 finalResultData: finalResultData,
+                preconditions: null,
                 skillReference: skillReference,
                 machineName: machineName
             );

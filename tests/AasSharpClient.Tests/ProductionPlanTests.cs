@@ -42,7 +42,7 @@ namespace AasSharpClient.Tests
                 { "StartTime", "2023/12/06 12:01:40" }
             };
             FinalResultData final_result_data_1 = new FinalResultData(final_result_dict_1);
-            ActionModel action_1 = new ActionModel("Action001", "AssembleProduct", ActionStatusEnum.OPEN, input_params_1, final_result_data_1, skill_reference_1, "TSN-Hochzeitsmodul");
+            ActionModel action_1 = new ActionModel("Action001", "AssembleProduct", ActionStatusEnum.OPEN, input_params_1, final_result_data_1, null, skill_reference_1, "TSN-Hochzeitsmodul");
 
             var input_param_dict_1_2 = new Dictionary<string, string>();
             InputParameters input_params_1_2 = new InputParameters(input_param_dict_1_2);
@@ -52,7 +52,7 @@ namespace AasSharpClient.Tests
                 { "StartTime", "2023/12/06 12:01:40" }
             };
             FinalResultData final_result_data_1_2 = new FinalResultData(final_result_dict_1_2);
-            ActionModel action_1_2 = new ActionModel("Action0002", "LoadCarrierFromAssemblyStationToAxis", ActionStatusEnum.OPEN, input_params_1_2, final_result_data_1_2, skill_reference_1, "TSN-Hochzeitsmodul");
+            ActionModel action_1_2 = new ActionModel("Action0002", "LoadCarrierFromAssemblyStationToAxis", ActionStatusEnum.OPEN, input_params_1_2, final_result_data_1_2, null, skill_reference_1, "TSN-Hochzeitsmodul");
 
             var input_param_dict_1_3 = new Dictionary<string, string>();
             InputParameters input_params_1_3 = new InputParameters(input_param_dict_1_3);
@@ -62,7 +62,7 @@ namespace AasSharpClient.Tests
                 { "StartTime", "2023/12/06 12:01:40" }
             };
             FinalResultData final_result_data_1_3 = new FinalResultData(final_result_dict_1_3);
-            ActionModel action_1_3 = new ActionModel("Action0003", "LoadProductToTrack", ActionStatusEnum.OPEN, input_params_1_3, final_result_data_1_3, skill_reference_1, "TSN-Hochzeitsmodul");
+            ActionModel action_1_3 = new ActionModel("Action0003", "LoadProductToTrack", ActionStatusEnum.OPEN, input_params_1_3, final_result_data_1_3, null, skill_reference_1, "TSN-Hochzeitsmodul");
 
             SchedulingContainer scheduling_1 = new SchedulingContainer("2025-12-03 00:05:35", "2025-12-03 00:06:55", "00:00:00", "00:01:20");
             Step step_1 = new Step("Step0001", "Assembly", StepStatusEnum.OPEN, new[] { action_1, action_1_2, action_1_3 }, "P13", scheduling_1, "SmartFactory-KL", "_PHUKET");
@@ -76,7 +76,7 @@ namespace AasSharpClient.Tests
             };
             InputParameters input_params_2 = new InputParameters(input_param_dict_2);
             FinalResultData final_result_data_2 = new FinalResultData();
-            ActionModel action_2 = new ActionModel("Action001", "RetrieveFromPortLogisticToAMR", ActionStatusEnum.OPEN, input_params_2, final_result_data_2, skill_reference_1, "StorageModule");
+            ActionModel action_2 = new ActionModel("Action001", "RetrieveFromPortLogisticToAMR", ActionStatusEnum.OPEN, input_params_2, final_result_data_2, null, skill_reference_1, "StorageModule");
 
             SchedulingContainer scheduling_2 = new SchedulingContainer("2025-12-03 00:07:05", "2025-12-03 00:07:55", "00:00:00", "00:00:50");
             Step step_2 = new Step("Step0002", "Unload", StepStatusEnum.OPEN, action_2, "P24", scheduling_2, "SmartFactory-KL", "_PHUKET");
@@ -94,7 +94,7 @@ namespace AasSharpClient.Tests
                 { "StartTime", "2023/12/06 12:02:54" }
             };
             FinalResultData final_result_data_3 = new FinalResultData(final_result_dict_3);
-            ActionModel action_3 = new ActionModel("Action001", "AASLabelPrint", ActionStatusEnum.OPEN, input_params_3, final_result_data_3, skill_reference_1, "LabelPrinter");
+            ActionModel action_3 = new ActionModel("Action001", "AASLabelPrint", ActionStatusEnum.OPEN, input_params_3, final_result_data_3, null, skill_reference_1, "LabelPrinter");
 
             SchedulingContainer scheduling_3 = new SchedulingContainer("2025-12-03 00:08:05", "2025-12-03 00:08:10", "00:00:00", "00:00:05");
             Step step_3 = new Step("Step0003", "LabelPrint", StepStatusEnum.OPEN, action_3, "P12", scheduling_3, "SmartFactory-KL", "_PHUKET");

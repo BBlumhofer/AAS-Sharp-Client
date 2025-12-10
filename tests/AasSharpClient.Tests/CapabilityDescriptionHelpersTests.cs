@@ -10,9 +10,9 @@ public class CapabilityDescriptionHelpersTests
     [Fact]
     public void GetCapabilities_Returns_CapabilityElements()
     {
-        var data = CapabilityDescriptionTests.BuildCapabilityDescriptionData();
-        var submodel = CapabilityDescriptionSubmodel.CreateWithIdentifier(data.SubmodelIdentifier);
-        submodel.Apply(data);
+        var template = CapabilityDescriptionTests.BuildOfferedCapabilityTemplate();
+        var submodel = new CapabilityDescriptionSubmodel(template.Identifier);
+        submodel.Apply(template);
 
         var names = submodel.GetCapabilityNames().ToList();
         Assert.Contains("FullyAutomatedAssembly", names);
@@ -21,9 +21,9 @@ public class CapabilityDescriptionHelpersTests
     [Fact]
     public void FindCapabilityContainer_Finds_ByIdShort()
     {
-        var data = CapabilityDescriptionTests.BuildCapabilityDescriptionData();
-        var submodel = CapabilityDescriptionSubmodel.CreateWithIdentifier(data.SubmodelIdentifier);
-        submodel.Apply(data);
+        var template = CapabilityDescriptionTests.BuildOfferedCapabilityTemplate();
+        var submodel = new CapabilityDescriptionSubmodel(template.Identifier);
+        submodel.Apply(template);
 
         var container = submodel.FindCapabilityContainer("FullyAutomatedAssemblyContainer");
         Assert.NotNull(container);

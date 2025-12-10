@@ -16,7 +16,7 @@
     <PackageReference Include="Microsoft.Extensions.Logging.Console" Version="8.0.0" />
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.23.0" />
     <PackageReference Include="Microsoft.Extensions.Http" Version="8.0.0" />
-    <PackageReference Include="BaSyx.Models" Version="2.0.24" />
+    <PackageReference Include="BaSyx.Models" Version="2.0.25" />
     <PackageReference Include="BaSyx.Utils" Version="2.0.24" />
     <PackageReference Include="BaSyx.AAS.Client.Http" Version="1.0.0" />
     <PackageReference Include="BaSyx.Registry.Client.Http" Version="2.0.24" />
