@@ -25,6 +25,9 @@
     <PackageReference Include="BaSyx.Clients.Http" Version="2.0.24" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="../I4.0-Sharp-Messaging/I40Sharp.Messaging/I40Sharp.Messaging.csproj" />
+  </ItemGroup>
+  <ItemGroup>
   <Compile Remove="examples/**/*.cs" />
   <Compile Remove="tests/**/*.cs" />
 </ItemGroup>
