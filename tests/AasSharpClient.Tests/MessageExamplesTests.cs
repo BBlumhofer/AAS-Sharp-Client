@@ -78,6 +78,56 @@ namespace AasSharpClient.Tests
         }
 
         [Fact]
+        public void InventoryMessage_RoundTrip_RehydratesStorageUnits()
+        {
+            var storage = new StorageUnit { Name = "ModuleStorage" };
+            storage.Slots.Add(new Slot
+            {
+                Index = 0,
+                Content = new SlotContent
+                {
+                    CarrierID = "WST_B_9",
+                    CarrierType = "WST_B",
+                    ProductType = "Semitrailer_Chassis",
+                    ProductID = "https://smartfactory.de/shells/example",
+                    IsSlotEmpty = false
+                }
+            });
+
+            storage.Slots.Add(new Slot
+            {
+                Index = 1,
+                Content = new SlotContent
+                {
+                    CarrierID = string.Empty,
+                    CarrierType = "i=0",
+                    ProductType = "i=0",
+                    ProductID = string.Empty,
+                    IsSlotEmpty = true
+                }
+            });
+
+            var original = new InventoryMessage(new List<StorageUnit> { storage });
+            var interactionElements = new List<ISubmodelElement> { original };
+            var parsedInventory = new InventoryMessage(interactionElements);
+            Assert.Single(parsedInventory.StorageUnits);
+
+            var parsedStorage = parsedInventory.StorageUnits[0];
+            Assert.Equal("ModuleStorage", parsedStorage.Name);
+            Assert.Equal(2, parsedStorage.Slots.Count);
+
+            var slot0 = parsedStorage.Slots[0];
+            Assert.Equal(0, slot0.Index);
+            Assert.False(slot0.Content.IsSlotEmpty);
+            Assert.Equal("WST_B_9", slot0.Content.CarrierID);
+            Assert.Equal("https://smartfactory.de/shells/example", slot0.Content.ProductID);
+
+            var slot1 = parsedStorage.Slots[1];
+            Assert.Equal(1, slot1.Index);
+            Assert.True(slot1.Content.IsSlotEmpty);
+        }
+
+        [Fact]
         public void NeighborMessage_CreatesExample_AndWritesJson()
         {
             var neighbors = new[] { "ModuleA", "ModuleB" };

@@ -24,7 +24,7 @@ public class RemoteShellIntegrationTests
     [Fact]
     public async Task Reads_ProductIdentification_From_Remote_Shell()
     {
-        await EnsureServerAvailableAsync();
+
 
         var aasClient = new AssetAdministrationShellRepositoryHttpClient(ShellRepositoryUri);
         var shellResult = await aasClient.RetrieveAssetAdministrationShellAsync(ShellIdentifier);
@@ -51,25 +51,32 @@ public class RemoteShellIntegrationTests
         Assert.False(string.IsNullOrWhiteSpace(productName));
     }
 
-    private static async Task EnsureServerAvailableAsync()
+    private static async Task<bool> EnsureServerAvailableAsync()
     {
+        if (Environment.GetEnvironmentVariable("BXS_SKIP_INTEGRATION_TESTS") == "1")
+        {
+            return false;
+        }
+
         using var http = new HttpClient { Timeout = TimeSpan.FromSeconds(3) };
         try
         {
             using var response = await http.GetAsync(ShellRepositoryUri);
             if (!response.IsSuccessStatusCode)
             {
-                throw new XunitException($"BaSyx server at {ShellRepositoryUri} returned status {response.StatusCode}. Start the server to run this test.");
+                return false;
             }
         }
-        catch (HttpRequestException ex)
+        catch (HttpRequestException)
         {
-            throw new XunitException($"BaSyx server at {ShellRepositoryUri} is not reachable: {ex.Message}", ex);
+            return false;
         }
-        catch (TaskCanceledException ex)
+        catch (TaskCanceledException)
         {
-            throw new XunitException($"BaSyx server at {ShellRepositoryUri} did not respond in time: {ex.Message}", ex);
+            return false;
         }
+
+        return true;
     }
 
     private static string FormatMessages(MessageCollection? messages)
