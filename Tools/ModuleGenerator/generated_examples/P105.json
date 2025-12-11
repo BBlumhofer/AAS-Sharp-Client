@@ -1,0 +1,2315 @@
+{
+  "assetAdministrationShells": [
+    {
+      "modelType": "AssetAdministrationShell",
+      "assetInformation": {
+        "assetKind": "Instance",
+        "assetType": "resource",
+        "defaultThumbnail": {
+          "contentType": "image/png",
+          "path": "https://raw.githubusercontent.com/SmartFactory-KL/thumbnails/refs/heads/main/other/roadshow_module.png"
+        },
+        "globalAssetId": "https://smartfactory.de/asset/P105",
+        "specificAssetIds": [
+          {
+            "name": "CyberPhysicalProductionModule",
+            "value": "P105"
+          }
+        ]
+      },
+      "submodels": [
+        {
+          "keys": [
+            {
+              "type": "Submodel",
+              "value": "https://smartfactory.de/submodels/a15f42b7-20e3-48d1-8bda-c827307df1b5"
+            }
+          ],
+          "type": "ModelReference"
+        },
+        {
+          "keys": [
+            {
+              "type": "Submodel",
+              "value": "https://smartfactory.de/submodels/6961dad7-631b-48a5-a51b-a2c0c659e127-P105"
+            }
+          ],
+          "type": "ModelReference"
+        },
+        {
+          "keys": [
+            {
+              "type": "Submodel",
+              "value": "https://smartfactory.de/submodels/f58558ed-8fbb-4b84-b611-424dd5eaa0e9-P105"
+            }
+          ],
+          "referredSemanticId": {
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://smartfactory.de/semantics/submodel/MachineSchedule#1/0"
+              }
+            ],
+            "type": "ModelReference"
+          },
+          "type": "ModelReference"
+        },
+        {
+          "keys": [
+            {
+              "type": "Submodel",
+              "value": "https://smartfactory.de/submodels/7e760b41-9124-4026-90b9-39d7b84dd220-P105"
+            }
+          ],
+          "referredSemanticId": {
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://smartfactory.de/semantics/submodel/MachineScheduleLog#1/0"
+              }
+            ],
+            "type": "ModelReference"
+          },
+          "type": "ModelReference"
+        },
+        {
+          "keys": [
+            {
+              "type": "Submodel",
+              "value": "https://smartfactory.de/submodels/skills/4047f839-dd1f-4d7b-8c40-2094da5bf236"
+            }
+          ],
+          "type": "ModelReference"
+        },
+        {
+          "keys": [
+            {
+              "type": "Submodel",
+              "value": "https://smartfactory.de/submodels/capability/cf485bf4-1d0f-491c-80ec-c806b1cefe09"
+            }
+          ],
+          "type": "ModelReference"
+        },
+        {
+          "keys": [
+            {
+              "type": "Submodel",
+              "value": "https://smartfactory.de/submodels/assetlocation/1bc13ac6-b62d-464e-8135-b08dea6d8539"
+            }
+          ],
+          "type": "ModelReference"
+        }
+      ],
+      "extensions": [
+        {
+          "name": "namespace",
+          "value": "_PHUKET",
+          "valueType": "xs:string"
+        }
+      ],
+      "id": "P105",
+      "idShort": "P105"
+    }
+  ],
+  "submodels": [
+    {
+      "modelType": "Submodel",
+      "kind": "Instance",
+      "semanticId": {
+        "keys": [
+          {
+            "type": "GlobalReference",
+            "value": "https://admin-shell.io/idta/nameplate/3/0/Nameplate"
+          }
+        ],
+        "type": "ExternalReference"
+      },
+      "id": "https://smartfactory.de/submodels/6961dad7-631b-48a5-a51b-a2c0c659e127-P105",
+      "description": [
+        {
+          "language": "en",
+          "text": "Contains the nameplate information attached to the product"
+        }
+      ],
+      "idShort": "Nameplate",
+      "submodelElements": [
+        {
+          "modelType": "Property",
+          "semanticId": {
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "0112/2///61987#ABN590#002"
+              }
+            ],
+            "type": "ExternalReference"
+          },
+          "supplementalSemanticIds": [
+            {
+              "keys": [
+                {
+                  "type": "GlobalReference",
+                  "value": "0173-1#02-ABH173#003"
+                }
+              ],
+              "type": "ExternalReference"
+            }
+          ],
+          "value": "https://smartfactory.de/asset/P18",
+          "valueType": "xs:anyURI",
+          "idShort": "URIOfTheProduct"
+        },
+        {
+          "modelType": "MultiLanguageProperty",
+          "semanticId": {
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "0112/2///61987#ABA565#009"
+              }
+            ],
+            "type": "ExternalReference"
+          },
+          "supplementalSemanticIds": [
+            {
+              "keys": [
+                {
+                  "type": "GlobalReference",
+                  "value": "0173-1#02-AAO677#004"
+                }
+              ],
+              "type": "ExternalReference"
+            }
+          ],
+          "value": [
+            {
+              "language": "de",
+              "text": "Technologie-Initiative SmartFactory KL e. V."
+            }
+          ],
+          "idShort": "ManufacturerName"
+        },
+        {
+          "modelType": "MultiLanguageProperty",
+          "semanticId": {
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "0112/2///61987#ABA567#009"
+              }
+            ],
+            "type": "ExternalReference"
+          },
+          "supplementalSemanticIds": [
+            {
+              "keys": [
+                {
+                  "type": "GlobalReference",
+                  "value": "0173-1#02-AAW338#003"
+                }
+              ],
+              "type": "ExternalReference"
+            }
+          ],
+          "value": [
+            {
+              "language": "en",
+              "text": "Roadshow demonstrator to demonstrate plug and produce and remote control in context of factory-x."
+            }
+          ],
+          "idShort": "ManufacturerProductDesignation"
+        },
+        {
+          "modelType": "SubmodelElementCollection",
+          "semanticId": {
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/zvei/nameplate/1/0/ContactInformations/AddressInformation"
+              }
+            ],
+            "type": "ExternalReference"
+          },
+          "supplementalSemanticIds": [
+            {
+              "keys": [
+                {
+                  "type": "GlobalReference",
+                  "value": "https://admin-shell.io/smt-dropin/smt-dropin-use/1/0"
+                }
+              ],
+              "type": "ExternalReference"
+            },
+            {
+              "keys": [
+                {
+                  "type": "GlobalReference",
+                  "value": "0112/2///61360_7#AAS002#001"
+                }
+              ],
+              "type": "ExternalReference"
+            },
+            {
+              "keys": [
+                {
+                  "type": "GlobalReference",
+                  "value": "0173-1#02-AAQ837#008/0173-1#01-ADR448#008"
+                }
+              ],
+              "type": "ExternalReference"
+            }
+          ],
+          "description": [
+            {
+              "language": "en",
+              "text": "Note: this set of information is defined by SMT drop-in \u0022Address Information\u0022"
+            }
+          ],
+          "idShort": "AddressInformation",
+          "value": [
+            {
+              "modelType": "Property",
+              "semanticId": {
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "0173-1#07-AAS927#001"
+                  }
+                ],
+                "type": "ExternalReference"
+              },
+              "value": "0173-1#07-AAS931#001",
+              "valueType": "xs:string",
+              "qualifiers": [
+                {
+                  "kind": "ConceptQualifier",
+                  "type": "Multiplicity",
+                  "value": "ZeroToOne",
+                  "valueType": "xs:string"
+                }
+              ],
+              "description": [
+                {
+                  "language": "en",
+                  "text": "enumeration: 0173-1#07-AAS927#001 (administrativ contact), 0173-1#07-AAS928#001 (commercial contact), 0173-1#07-AAS929#001 (other contact), 0173-1#07-AAS930#001 (hazardous goods contact), 0173-1#07-AAS931#001 (technical contact). Note: the above mentioned ECLASS enumeration should be declared as \u201Copen\u201D for further addition. ECLASS enumeration IRDI is preferable. If no IRDI available, custom input as String may also be accepted."
+                }
+              ],
+              "idShort": "RoleOfContactPerson"
+            },
+            {
+              "modelType": "MultiLanguageProperty",
+              "semanticId": {
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "0173-1#02-AAO208#003"
+                  }
+                ],
+                "type": "ExternalReference"
+              },
+              "value": [
+                {
+                  "language": "en",
+                  "text": "Mr"
+                }
+              ],
+              "qualifiers": [
+                {
+                  "kind": "ConceptQualifier",
+                  "type": "Multiplicity",
+                  "value": "ZeroToOne",
+                  "valueType": "xs:string"
+                }
+              ],
+              "idShort": "Title"
+            },
+            {
+              "modelType": "MultiLanguageProperty",
+              "semanticId": {
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "0173-1#02-AAO134#002"
+                  }
+                ],
+                "type": "ExternalReference"
+              },
+              "value": [
+                {
+                  "language": "en",
+                  "text": "DE"
+                }
+              ],
+              "qualifiers": [
+                {
+                  "kind": "ConceptQualifier",
+                  "type": "Multiplicity",
+                  "value": "One",
+                  "valueType": "xs:string"
+                }
+              ],
+              "description": [
+                {
+                  "language": "en",
+                  "text": "Note: see also [IRDI] 0112/2///61360_4#ADA005#001 country code. country codes defined accord. to DIN EN ISO 3166-1 alpha-2 codes. Mandatory property according to EU Machine Directive 2006/42/EC. Recommendation: property declaration as MLP is required by its semantic definition. As the property value is language independent, users are recommended to provide maximal 1 string in any language of the user\u2019s choice."
+                }
+              ],
+              "idShort": "NationalCode"
+            },
+            {
+              "modelType": "Property",
+              "semanticId": {
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/zvei/nameplate/1/0/ContactInformations/ContactInformation/Language"
+                  }
+                ],
+                "type": "ExternalReference"
+              },
+              "value": "DE",
+              "valueType": "xs:string",
+              "qualifiers": [
+                {
+                  "kind": "ConceptQualifier",
+                  "type": "Multiplicity",
+                  "value": "ZeroToMany",
+                  "valueType": "xs:string"
+                }
+              ],
+              "description": [
+                {
+                  "language": "en",
+                  "text": "Note: language codes defined accord. to ISO 639-1. Note: as per ECLASS definition, Expression and representation of thoughts, information, feelings, ideas through characters."
+                }
+              ],
+              "idShort": "Language"
+            },
+            {
+              "modelType": "Property",
+              "semanticId": {
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/zvei/nameplate/1/0/ContactInformations/ContactInformation/TimeZone"
+                  }
+                ],
+                "type": "ExternalReference"
+              },
+              "value": "Z",
+              "valueType": "xs:string",
+              "qualifiers": [
+                {
+                  "kind": "ConceptQualifier",
+                  "type": "Multiplicity",
+                  "value": "ZeroToOne",
+                  "valueType": "xs:string"
+                }
+              ],
+              "description": [
+                {
+                  "language": "en",
+                  "text": "Note: notation accord. to ISO 8601 Note: for time in UTC the zone designator \u201CZ\u201D is to be used"
+                }
+              ],
+              "idShort": "TimeZone"
+            },
+            {
+              "modelType": "MultiLanguageProperty",
+              "semanticId": {
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "0173-1#02-AAO132#002"
+                  }
+                ],
+                "type": "ExternalReference"
+              },
+              "value": [
+                {
+                  "language": "de",
+                  "text": "Kaiserslautern"
+                }
+              ],
+              "qualifiers": [
+                {
+                  "kind": "ConceptQualifier",
+                  "type": "Multiplicity",
+                  "value": "One",
+                  "valueType": "xs:string"
+                }
+              ],
+              "description": [
+                {
+                  "language": "en",
+                  "text": "Note: see also [IRDI] 0112/2///61987#ABA129#001 city/town. Mandatory property according to EU Machine Directive 2006/42/EC."
+                }
+              ],
+              "idShort": "CityTown"
+            },
+            {
+              "modelType": "MultiLanguageProperty",
+              "semanticId": {
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "0173-1#02-AAW001#001"
+                  }
+                ],
+                "type": "ExternalReference"
+              },
+              "value": [
+                {
+                  "language": "en",
+                  "text": "Technologie-Initiative SmartFactory KL e. V."
+                }
+              ],
+              "qualifiers": [
+                {
+                  "kind": "ConceptQualifier",
+                  "type": "Multiplicity",
+                  "value": "ZeroToOne",
+                  "valueType": "xs:string"
+                }
+              ],
+              "idShort": "Company"
+            },
+            {
+              "modelType": "MultiLanguageProperty",
+              "semanticId": {
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "0173-1#02-AAO127#003"
+                  }
+                ],
+                "type": "ExternalReference"
+              },
+              "value": [
+                {
+                  "language": "de",
+                  "text": "Innovative Fabriksysteme"
+                }
+              ],
+              "qualifiers": [
+                {
+                  "kind": "ConceptQualifier",
+                  "type": "Multiplicity",
+                  "value": "ZeroToOne",
+                  "valueType": "xs:string"
+                }
+              ],
+              "idShort": "Department"
+            },
+            {
+              "modelType": "SubmodelElementCollection",
+              "semanticId": {
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/zvei/nameplate/1/0/ContactInformations/ContactInformation/Phone"
+                  }
+                ],
+                "type": "ExternalReference"
+              },
+              "qualifiers": [
+                {
+                  "kind": "ConceptQualifier",
+                  "type": "Multiplicity",
+                  "value": "ZeroToOne",
+                  "valueType": "xs:string"
+                }
+              ],
+              "idShort": "Phone",
+              "value": [
+                {
+                  "modelType": "MultiLanguageProperty",
+                  "semanticId": {
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0173-1#02-AAO136#002"
+                      }
+                    ],
+                    "type": "ExternalReference"
+                  },
+                  "value": [
+                    {
+                      "language": "en",
+                      "text": "\u002B49(0) 631 20575-3401"
+                    }
+                  ],
+                  "qualifiers": [
+                    {
+                      "kind": "ConceptQualifier",
+                      "type": "Multiplicity",
+                      "value": "One",
+                      "valueType": "xs:string"
+                    }
+                  ],
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Recommendation: property declaration as MLP is required by its semantic definition. As the property value is language independent, users are recommended to provide maximal 1 string in any language of the user\u2019s choice."
+                    }
+                  ],
+                  "idShort": "TelephoneNumber"
+                },
+                {
+                  "modelType": "Property",
+                  "semanticId": {
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0173-1#02-AAO137#003"
+                      }
+                    ],
+                    "type": "ExternalReference"
+                  },
+                  "value": "0173-1#07-AAS754#001",
+                  "valueType": "xs:string",
+                  "qualifiers": [
+                    {
+                      "kind": "ConceptQualifier",
+                      "type": "Multiplicity",
+                      "value": "ZeroToOne",
+                      "valueType": "xs:string"
+                    }
+                  ],
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": " enumeration: 0173-1#07-AAS754#001 (office), 0173-1#07-AAS755#001 (office mobile), 0173-1#07-AAS756#001 (secretary), 0173-1#07-AAS757#001 (substitute), 0173-1#07-AAS758#001 (home), 0173-1#07-AAS759#001 (private mobile)"
+                    }
+                  ],
+                  "idShort": "TypeOfTelephone"
+                },
+                {
+                  "modelType": "MultiLanguageProperty",
+                  "semanticId": {
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/zvei/nameplate/1/0/ContactInformations/ContactInformation/AvailableTime/"
+                      }
+                    ],
+                    "type": "ExternalReference"
+                  },
+                  "value": [
+                    {
+                      "language": "de",
+                      "text": "Montag \u2013 Freitag 08:00 bis 16:00"
+                    }
+                  ],
+                  "qualifiers": [
+                    {
+                      "kind": "ConceptQualifier",
+                      "type": "Multiplicity",
+                      "value": "ZeroToOne",
+                      "valueType": "xs:string"
+                    }
+                  ],
+                  "idShort": "AvailableTime"
+                }
+              ]
+            },
+            {
+              "modelType": "SubmodelElementCollection",
+              "semanticId": {
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "0173-1#02-AAQ834#005"
+                  }
+                ],
+                "type": "ExternalReference"
+              },
+              "qualifiers": [
+                {
+                  "kind": "ConceptQualifier",
+                  "type": "Multiplicity",
+                  "value": "ZeroToOne",
+                  "valueType": "xs:string"
+                }
+              ],
+              "idShort": "Fax",
+              "value": [
+                {
+                  "modelType": "MultiLanguageProperty",
+                  "semanticId": {
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0173-1#02-AAO195#002"
+                      }
+                    ],
+                    "type": "ExternalReference"
+                  },
+                  "value": [
+                    {
+                      "language": "en",
+                      "text": "\u002B49(0) 631 20575-3402"
+                    }
+                  ],
+                  "qualifiers": [
+                    {
+                      "kind": "ConceptQualifier",
+                      "type": "Multiplicity",
+                      "value": "One",
+                      "valueType": "xs:string"
+                    }
+                  ],
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Recommendation: property declaration as MLP is required by its semantic definition. As the property value is language independent, users are recommended to provide maximal 1 string in any language of the user\u2019s choice."
+                    }
+                  ],
+                  "idShort": "FaxNumber"
+                },
+                {
+                  "modelType": "Property",
+                  "semanticId": {
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0173-1#02-AAO196#003"
+                      }
+                    ],
+                    "type": "ExternalReference"
+                  },
+                  "value": " 0173-1#07-AAS754#001",
+                  "valueType": "xs:string",
+                  "qualifiers": [
+                    {
+                      "kind": "ConceptQualifier",
+                      "type": "Multiplicity",
+                      "value": "ZeroToOne",
+                      "valueType": "xs:string"
+                    }
+                  ],
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "enumeration: 0173-1#07-AAS754#001 (office), 0173-1#07-AAS756#001 (secretary), 0173-1#07-AAS758#001 (home)"
+                    }
+                  ],
+                  "idShort": "TypeOfFaxNumber"
+                }
+              ]
+            },
+            {
+              "modelType": "SubmodelElementCollection",
+              "semanticId": {
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "0173-1#02-AAQ836#005"
+                  }
+                ],
+                "type": "ExternalReference"
+              },
+              "qualifiers": [
+                {
+                  "kind": "ConceptQualifier",
+                  "type": "Multiplicity",
+                  "value": "ZeroToOne",
+                  "valueType": "xs:string"
+                }
+              ],
+              "idShort": "Email",
+              "value": [
+                {
+                  "modelType": "Property",
+                  "semanticId": {
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0173-1#02-AAO198#002"
+                      }
+                    ],
+                    "type": "ExternalReference"
+                  },
+                  "value": "info@smartfactory.de",
+                  "valueType": "xs:string",
+                  "qualifiers": [
+                    {
+                      "kind": "ConceptQualifier",
+                      "type": "Multiplicity",
+                      "value": "One",
+                      "valueType": "xs:string"
+                    }
+                  ],
+                  "idShort": "EmailAddress"
+                }
+              ]
+            },
+            {
+              "modelType": "SubmodelElementCollection",
+              "semanticId": {
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/zvei/nameplate/1/0/ContactInformations/"
+                  }
+                ],
+                "type": "ExternalReference"
+              },
+              "qualifiers": [
+                {
+                  "kind": "ConceptQualifier",
+                  "type": "Multiplicity",
+                  "value": "ZeroToMany",
+                  "valueType": "xs:string"
+                }
+              ],
+              "idShort": "IPCommunication__00__",
+              "value": [
+                {
+                  "modelType": "Property",
+                  "semanticId": {
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0173-1#02-AAQ326#002"
+                      }
+                    ],
+                    "type": "ExternalReference"
+                  },
+                  "value": "https://www.smartfactory.de/",
+                  "valueType": "xs:string",
+                  "qualifiers": [
+                    {
+                      "kind": "ConceptQualifier",
+                      "type": "Multiplicity",
+                      "value": "One",
+                      "valueType": "xs:string"
+                    }
+                  ],
+                  "idShort": "AddressOfAdditionalLink"
+                },
+                {
+                  "modelType": "Property",
+                  "semanticId": {
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/zvei/nameplate/1/0/ ContactInformations/ContactInformation/IPCommunication/TypeOfCommunication"
+                      }
+                    ],
+                    "type": "ExternalReference"
+                  },
+                  "value": "Chat",
+                  "valueType": "xs:string",
+                  "qualifiers": [
+                    {
+                      "kind": "ConceptQualifier",
+                      "type": "Multiplicity",
+                      "value": "ZeroToOne",
+                      "valueType": "xs:string"
+                    }
+                  ],
+                  "idShort": "TypeOfCommunication"
+                },
+                {
+                  "modelType": "MultiLanguageProperty",
+                  "semanticId": {
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/zvei/nameplate/1/0/ContactInformations/ContactInformation/AvailableTime/"
+                      }
+                    ],
+                    "type": "ExternalReference"
+                  },
+                  "value": [
+                    {
+                      "language": "de",
+                      "text": "Montag \u2013 Freitag 08:00 bis 16:00"
+                    }
+                  ],
+                  "qualifiers": [
+                    {
+                      "kind": "ConceptQualifier",
+                      "type": "Multiplicity",
+                      "value": "ZeroToOne",
+                      "valueType": "xs:string"
+                    }
+                  ],
+                  "idShort": "AvailableTime"
+                }
+              ]
+            },
+            {
+              "modelType": "MultiLanguageProperty",
+              "semanticId": {
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "0173-1#02-AAO128#002"
+                  }
+                ],
+                "type": "ExternalReference"
+              },
+              "value": [
+                {
+                  "language": "de",
+                  "text": "Trippstadter Str. 122"
+                }
+              ],
+              "qualifiers": [
+                {
+                  "kind": "ConceptQualifier",
+                  "type": "Multiplicity",
+                  "value": "One",
+                  "valueType": "xs:string"
+                }
+              ],
+              "description": [
+                {
+                  "language": "en",
+                  "text": "Note: see also [IRDI] 0112/2///61987#ABA286#001 street. Mandatory property according to EU Machine Directive 2006/42/EC"
+                }
+              ],
+              "idShort": "Street"
+            },
+            {
+              "modelType": "MultiLanguageProperty",
+              "semanticId": {
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "0173-1#02-AAO129#002"
+                  }
+                ],
+                "type": "ExternalReference"
+              },
+              "value": [
+                {
+                  "language": "de",
+                  "text": "67663"
+                }
+              ],
+              "qualifiers": [
+                {
+                  "kind": "ConceptQualifier",
+                  "type": "Multiplicity",
+                  "value": "One",
+                  "valueType": "xs:string"
+                }
+              ],
+              "description": [
+                {
+                  "language": "en",
+                  "text": "Note: see also [IRDI] 0112/2///61987#ABA281#001 ZIP/Postal code. Mandatory property according to EU Machine Directive 2006/42/EC. Recommendation: property declaration as MLP is required by its semantic definition. As the property value is language independent, users are recommended to provide maximal 1 string in any language of the user\u2019s choice."
+                }
+              ],
+              "idShort": "Zipcode"
+            },
+            {
+              "modelType": "MultiLanguageProperty",
+              "semanticId": {
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "0173-1#02-AAO130#002"
+                  }
+                ],
+                "type": "ExternalReference"
+              },
+              "value": [
+                {
+                  "language": "en",
+                  "text": "PF 1234"
+                }
+              ],
+              "qualifiers": [
+                {
+                  "kind": "ConceptQualifier",
+                  "type": "Multiplicity",
+                  "value": "ZeroToOne",
+                  "valueType": "xs:string"
+                }
+              ],
+              "idShort": "POBox"
+            },
+            {
+              "modelType": "MultiLanguageProperty",
+              "semanticId": {
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "0173-1#02-AAO131#002"
+                  }
+                ],
+                "type": "ExternalReference"
+              },
+              "value": [
+                {
+                  "language": "en",
+                  "text": "12345"
+                }
+              ],
+              "qualifiers": [
+                {
+                  "kind": "ConceptQualifier",
+                  "type": "Multiplicity",
+                  "value": "ZeroToOne",
+                  "valueType": "xs:string"
+                }
+              ],
+              "description": [
+                {
+                  "language": "en",
+                  "text": "Recommendation: property declaration as MLP is required by its semantic definition. As the property value is language independent, users are recommended to provide maximal 1 string in any language of the user\u2019s choice."
+                }
+              ],
+              "idShort": "ZipCodeOfPOBox"
+            },
+            {
+              "modelType": "MultiLanguageProperty",
+              "semanticId": {
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "0173-1#02-AAO133#002"
+                  }
+                ],
+                "type": "ExternalReference"
+              },
+              "value": [
+                {
+                  "language": "de",
+                  "text": "Rheinland-Pfalz"
+                }
+              ],
+              "qualifiers": [
+                {
+                  "kind": "ConceptQualifier",
+                  "type": "Multiplicity",
+                  "value": "ZeroToOne",
+                  "valueType": "xs:string"
+                }
+              ],
+              "idShort": "StateCounty"
+            },
+            {
+              "modelType": "MultiLanguageProperty",
+              "semanticId": {
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "0173-1#02-AAO205#002"
+                  }
+                ],
+                "type": "ExternalReference"
+              },
+              "value": [
+                {
+                  "language": "en",
+                  "text": "Jungbluth"
+                }
+              ],
+              "qualifiers": [
+                {
+                  "kind": "ConceptQualifier",
+                  "type": "Multiplicity",
+                  "value": "ZeroToOne",
+                  "valueType": "xs:string"
+                }
+              ],
+              "idShort": "NameOfContact"
+            },
+            {
+              "modelType": "MultiLanguageProperty",
+              "semanticId": {
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "0173-1#02-AAO206#002"
+                  }
+                ],
+                "type": "ExternalReference"
+              },
+              "value": [
+                {
+                  "language": "en",
+                  "text": "Simon"
+                }
+              ],
+              "qualifiers": [
+                {
+                  "kind": "ConceptQualifier",
+                  "type": "Multiplicity",
+                  "value": "ZeroToOne",
+                  "valueType": "xs:string"
+                }
+              ],
+              "idShort": "FirstName"
+            }
+          ]
+        },
+        {
+          "modelType": "MultiLanguageProperty",
+          "semanticId": {
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "0112/2///61360_7#AAS011#001"
+              }
+            ],
+            "type": "ExternalReference"
+          },
+          "supplementalSemanticIds": [
+            {
+              "keys": [
+                {
+                  "type": "GlobalReference",
+                  "value": "0173-1#02-AAU732#003"
+                }
+              ],
+              "type": "ExternalReference"
+            }
+          ],
+          "value": [
+            {
+              "language": "en",
+              "text": "Machine"
+            }
+          ],
+          "valueId": {
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "0112/2///61987#ABP464#002"
+              }
+            ],
+            "type": "ExternalReference"
+          },
+          "idShort": "ManufacturerProductRoot"
+        },
+        {
+          "modelType": "MultiLanguageProperty",
+          "semanticId": {
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "0112/2///61987#ABP464#002"
+              }
+            ],
+            "type": "ExternalReference"
+          },
+          "supplementalSemanticIds": [
+            {
+              "keys": [
+                {
+                  "type": "GlobalReference",
+                  "value": "0173-1#02-AAU731#003"
+                }
+              ],
+              "type": "ExternalReference"
+            }
+          ],
+          "value": [
+            {
+              "language": "en",
+              "text": "Cyber-Physical Production Module"
+            }
+          ],
+          "idShort": "ManufacturerProductFamily"
+        },
+        {
+          "modelType": "Property",
+          "semanticId": {
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "0112/2///61987#ABA300#008"
+              }
+            ],
+            "type": "ExternalReference"
+          },
+          "supplementalSemanticIds": [
+            {
+              "keys": [
+                {
+                  "type": "GlobalReference",
+                  "value": "0173-1#02-AAO057#004"
+                }
+              ],
+              "type": "ExternalReference"
+            }
+          ],
+          "value": "Value-adding Cyber-Physical Production Module",
+          "valueType": "xs:string",
+          "idShort": "ManufacturerProductType"
+        },
+        {
+          "modelType": "Property",
+          "semanticId": {
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "0112/2///61987#ABP000#002"
+              }
+            ],
+            "type": "ExternalReference"
+          },
+          "supplementalSemanticIds": [
+            {
+              "keys": [
+                {
+                  "type": "GlobalReference",
+                  "value": "0173-1#02-AAP906#003"
+                }
+              ],
+              "type": "ExternalReference"
+            }
+          ],
+          "value": "2019",
+          "valueType": "xs:string",
+          "idShort": "YearOfConstruction"
+        },
+        {
+          "modelType": "Property",
+          "semanticId": {
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "0112/2///61987#ABB757#007"
+              }
+            ],
+            "type": "ExternalReference"
+          },
+          "supplementalSemanticIds": [
+            {
+              "keys": [
+                {
+                  "type": "GlobalReference",
+                  "value": "0173-1#02-AAR972#004"
+                }
+              ],
+              "type": "ExternalReference"
+            }
+          ],
+          "value": "2019-01-31",
+          "valueType": "xs:date",
+          "idShort": "DateOfManufacture"
+        },
+        {
+          "modelType": "Property",
+          "semanticId": {
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "0112/2///61987#ABA926#008"
+              }
+            ],
+            "type": "ExternalReference"
+          },
+          "supplementalSemanticIds": [
+            {
+              "keys": [
+                {
+                  "type": "GlobalReference",
+                  "value": "0173-1#02-AAN270#004"
+                }
+              ],
+              "type": "ExternalReference"
+            }
+          ],
+          "value": "1.0.0",
+          "valueType": "xs:string",
+          "idShort": "HardwareVersion"
+        },
+        {
+          "modelType": "Property",
+          "semanticId": {
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "0112/2///61987#ABA601#008"
+              }
+            ],
+            "type": "ExternalReference"
+          },
+          "supplementalSemanticIds": [
+            {
+              "keys": [
+                {
+                  "type": "GlobalReference",
+                  "value": "0173-1#02-AAM737#004"
+                }
+              ],
+              "type": "ExternalReference"
+            }
+          ],
+          "value": "2.0.0",
+          "valueType": "xs:string",
+          "idShort": "SoftwareVersion"
+        },
+        {
+          "modelType": "Property",
+          "semanticId": {
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "0112/2///61987#ABP462#001"
+              }
+            ],
+            "type": "ExternalReference"
+          },
+          "supplementalSemanticIds": [
+            {
+              "keys": [
+                {
+                  "type": "GlobalReference",
+                  "value": "0173-1#02-AAO259#007"
+                }
+              ],
+              "type": "ExternalReference"
+            }
+          ],
+          "value": "DE",
+          "valueType": "xs:string",
+          "description": [
+            {
+              "language": "en",
+              "text": "Note: Country codes defined accord. to DIN EN ISO 3166-1 alpha-2 codes"
+            }
+          ],
+          "idShort": "CountryOfOrigin"
+        },
+        {
+          "modelType": "File",
+          "contentType": "image/png",
+          "semanticId": {
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "0112/2///61987#ABP463#001"
+              }
+            ],
+            "type": "ExternalReference"
+          },
+          "supplementalSemanticIds": [
+            {
+              "keys": [
+                {
+                  "type": "GlobalReference",
+                  "value": "0173-1#02-ABI776#002"
+                }
+              ],
+              "type": "ExternalReference"
+            }
+          ],
+          "idShort": "CompanyLogo"
+        }
+      ]
+    },
+    {
+      "modelType": "Submodel",
+      "kind": "Instance",
+      "semanticId": {
+        "keys": [
+          {
+            "type": "GlobalReference",
+            "value": "https://smartfactory.de/semantics/submodel/MachineSchedule#1/0"
+          }
+        ],
+        "type": "ExternalReference"
+      },
+      "id": "https://smartfactory.de/submodels/f58558ed-8fbb-4b84-b611-424dd5eaa0e9-P105",
+      "idShort": "MachineSchedule",
+      "submodelElements": [
+        {
+          "modelType": "Property",
+          "semanticId": {
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://smartfactory.de/semantics/submodel-element/MachineSchedule/LastTimeUpdated#1/0"
+              }
+            ],
+            "type": "ExternalReference"
+          },
+          "value": "2025-11-27T15:23:25.334330",
+          "valueType": "xs:dateTime",
+          "idShort": "LastTimeUpdated"
+        },
+        {
+          "modelType": "Property",
+          "semanticId": {
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://smartfactory.de/semantics/submodel-element/MachineSchedule/HasOpenTasks#1/0"
+              }
+            ],
+            "type": "ExternalReference"
+          },
+          "value": "false",
+          "valueType": "xs:boolean",
+          "idShort": "HasOpenTasks"
+        },
+        {
+          "modelType": "SubmodelElementList",
+          "semanticId": {
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://smartfactory.de/semantics/submodel-element/MachineSchedule/Schedule#1/0"
+              }
+            ],
+            "type": "ExternalReference"
+          },
+          "idShort": "Schedule",
+          "orderRelevant": true,
+          "typeValueListElement": "SubmodelElementCollection"
+        }
+      ]
+    },
+    {
+      "modelType": "Submodel",
+      "kind": "Instance",
+      "semanticId": {
+        "keys": [
+          {
+            "type": "GlobalReference",
+            "value": "https://smartfactory.de/semantics/submodel/MachineScheduleLog#1/0"
+          }
+        ],
+        "type": "ExternalReference"
+      },
+      "id": "https://smartfactory.de/submodels/7e760b41-9124-4026-90b9-39d7b84dd220-P105",
+      "idShort": "MachineScheduleLog",
+      "submodelElements": [
+        {
+          "modelType": "Property",
+          "semanticId": {
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://smartfactory.de/semantics/submodel-element/MachineScheduleLog/LastTimeUpdated#1/0"
+              }
+            ],
+            "type": "ExternalReference"
+          },
+          "value": "2025-11-27T15:23:25.500176",
+          "valueType": "xs:dateTime",
+          "idShort": "LastTimeUpdated"
+        },
+        {
+          "modelType": "SubmodelElementList",
+          "semanticId": {
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://smartfactory.de/semantics/submodel-element/MachineScheduleLog/Schedule#1/0"
+              }
+            ],
+            "type": "ExternalReference"
+          },
+          "idShort": "Schedule",
+          "orderRelevant": true,
+          "typeValueListElement": "SubmodelElementCollection",
+          "value": [
+            {
+              "modelType": "SubmodelElementCollection",
+              "semanticId": {
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://smartfactory.de/semantics/submodel-element/MachineSchedule/Schedule/SchedulingContainer#1/0"
+                  }
+                ],
+                "type": "ExternalReference"
+              },
+              "idShort": "ReferredStep1",
+              "value": [
+                {
+                  "modelType": "ReferenceElement",
+                  "semanticId": {
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://smartfactory.de/semantics/submodel-element/MachineSchedule/Schedule/SchedulingContainer/ReferredStep#1/0"
+                      }
+                    ],
+                    "type": "ExternalReference"
+                  },
+                  "idShort": "ReferredStep",
+                  "value": {
+                    "keys": [
+                      {
+                        "type": "SubmodelElementCollection",
+                        "value": "Step001"
+                      },
+                      {
+                        "type": "Submodel",
+                        "value": "https://smartfactory.de/submodels/89b173d2-4400-4ca0-9456-0ab3fef0f133"
+                      }
+                    ],
+                    "type": "ModelReference"
+                  }
+                },
+                {
+                  "modelType": "SubmodelElementCollection",
+                  "semanticId": {
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://smartfactory.de/semantics/submodel-element/Scheduling#1/0"
+                      }
+                    ],
+                    "type": "ExternalReference"
+                  },
+                  "idShort": "InitialSchedulingInformation",
+                  "value": [
+                    {
+                      "modelType": "Property",
+                      "semanticId": {
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://smartfactory.de/semantics/submodel-element/Scheduling/StartDateTime"
+                          }
+                        ],
+                        "type": "ExternalReference"
+                      },
+                      "value": "",
+                      "valueType": "xs:string",
+                      "idShort": "StartDateTime"
+                    },
+                    {
+                      "modelType": "Property",
+                      "semanticId": {
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://smartfactory.de/semantics/submodel-element/Scheduling/CycleTime"
+                          }
+                        ],
+                        "type": "ExternalReference"
+                      },
+                      "value": "",
+                      "valueType": "xs:string",
+                      "idShort": "CycleTime"
+                    },
+                    {
+                      "modelType": "Property",
+                      "semanticId": {
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://smartfactory.de/semantics/submodel-element/Scheduling/EndTime"
+                          }
+                        ],
+                        "type": "ExternalReference"
+                      },
+                      "value": "",
+                      "valueType": "xs:string",
+                      "idShort": "EndDateTime"
+                    },
+                    {
+                      "modelType": "Property",
+                      "semanticId": {
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://smartfactory.de/semantics/submodel-element/Scheduling/SetupTime"
+                          }
+                        ],
+                        "type": "ExternalReference"
+                      },
+                      "value": "",
+                      "valueType": "xs:string",
+                      "idShort": "SetupTime"
+                    }
+                  ]
+                },
+                {
+                  "modelType": "SubmodelElementCollection",
+                  "semanticId": {
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://smartfactory.de/semantics/submodel-element/Scheduling#1/0"
+                      }
+                    ],
+                    "type": "ExternalReference"
+                  },
+                  "idShort": "ActualSchedulingInformation",
+                  "value": [
+                    {
+                      "modelType": "Property",
+                      "semanticId": {
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://smartfactory.de/semantics/submodel-element/Scheduling/StartDateTime"
+                          }
+                        ],
+                        "type": "ExternalReference"
+                      },
+                      "value": "2025-11-23 18:41:07",
+                      "valueType": "xs:string",
+                      "idShort": "StartDateTime"
+                    },
+                    {
+                      "modelType": "Property",
+                      "semanticId": {
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://smartfactory.de/semantics/submodel-element/Scheduling/CycleTime"
+                          }
+                        ],
+                        "type": "ExternalReference"
+                      },
+                      "value": "00:00:42",
+                      "valueType": "xs:string",
+                      "idShort": "CycleTime"
+                    },
+                    {
+                      "modelType": "Property",
+                      "semanticId": {
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://smartfactory.de/semantics/submodel-element/Scheduling/EndTime"
+                          }
+                        ],
+                        "type": "ExternalReference"
+                      },
+                      "value": "2025-11-23 18:41:49",
+                      "valueType": "xs:string",
+                      "idShort": "EndDateTime"
+                    },
+                    {
+                      "modelType": "Property",
+                      "semanticId": {
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://smartfactory.de/semantics/submodel-element/Scheduling/SetupTime"
+                          }
+                        ],
+                        "type": "ExternalReference"
+                      },
+                      "value": "",
+                      "valueType": "xs:string",
+                      "idShort": "SetupTime"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "Instance",
+      "semanticId": {
+        "type": "ModelReference",
+        "referredSemanticId": null,
+        "keys": [
+          {
+            "type": "Submodel",
+            "value": "https://smartfactory.de/semantics/submodel/Skills#1/0"
+          }
+        ]
+      },
+      "supplementalSemanticIds": [],
+      "submodelElements": [
+        {
+          "idShort": "SkillSet",
+          "kind": "Instance",
+          "modelType": "SubmodelElementCollection",
+          "value": [
+            {
+              "idShort": "Skill_0001",
+              "kind": "Instance",
+              "modelType": "SubmodelElementCollection",
+              "value": [
+                {
+                  "idShort": "Name",
+                  "kind": "Instance",
+                  "modelType": "Property",
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "referredSemanticId": null,
+                    "keys": []
+                  },
+                  "valueType": "string",
+                  "value": "Drill"
+                },
+                {
+                  "idShort": "SkillInterfaceDescription",
+                  "kind": "Instance",
+                  "modelType": "SubmodelElementCollection",
+                  "value": [
+                    {
+                      "idShort": "RequiredAccessLevel",
+                      "kind": "Instance",
+                      "modelType": "Property",
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "referredSemanticId": null,
+                        "keys": []
+                      },
+                      "valueType": "integer",
+                      "value": "2"
+                    },
+                    {
+                      "idShort": "SkillEndpoint",
+                      "kind": "Instance",
+                      "modelType": "Property",
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "referredSemanticId": null,
+                        "keys": []
+                      },
+                      "valueType": "anyURI",
+                      "value": null
+                    },
+                    {
+                      "idShort": "RequiredInputParameters",
+                      "kind": "Instance",
+                      "modelType": "SubmodelElementCollection",
+                      "value": [
+                        {
+                          "idShort": "ProductId",
+                          "kind": "Instance",
+                          "modelType": "Property",
+                          "semanticId": {
+                            "type": "ExternalReference",
+                            "referredSemanticId": null,
+                            "keys": []
+                          },
+                          "valueType": "string",
+                          "value": "*"
+                        }
+                      ]
+                    },
+                    {
+                      "idShort": "Trigger",
+                      "kind": "Instance",
+                      "modelType": "SubmodelElementCollection",
+                      "value": []
+                    },
+                    {
+                      "idShort": "SecurityRequirements",
+                      "kind": "Instance",
+                      "modelType": "ReferenceElement",
+                      "value": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://example.org/security"
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "idShort": "EndpointMetadata",
+          "kind": "Instance",
+          "modelType": "SubmodelElementCollection",
+          "semanticId": {
+            "type": "ExternalReference",
+            "referredSemanticId": null,
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/idta/AssetInterfacesDescription/1/0/EndpointMetadata"
+              }
+            ]
+          },
+          "qualifiers": [
+            {
+              "kind": "ValueQualifier",
+              "type": "Cardinality",
+              "value": "One",
+              "valueId": null,
+              "valueType": "string",
+              "semanticId": null,
+              "supplementalSemanticIds": []
+            }
+          ],
+          "value": [
+            {
+              "idShort": "security",
+              "kind": "Instance",
+              "modelType": "SubmodelElementList",
+              "semanticId": {
+                "type": "ExternalReference",
+                "referredSemanticId": null,
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://www.w3.org/2019/wot/td#hasSecurityConfiguration"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "kind": "ValueQualifier",
+                  "type": "Cardinality",
+                  "value": "One",
+                  "valueId": null,
+                  "valueType": "string",
+                  "semanticId": null,
+                  "supplementalSemanticIds": []
+                }
+              ],
+              "orderRelevant": false,
+              "typeValueListElement": "ReferenceElement",
+              "value": [
+                {
+                  "idShort": null,
+                  "kind": "Instance",
+                  "modelType": "ReferenceElement",
+                  "value": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://example.org/securityList"
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            {
+              "idShort": "securityDefinitions",
+              "kind": "Instance",
+              "modelType": "SubmodelElementCollection",
+              "semanticId": {
+                "type": "ExternalReference",
+                "referredSemanticId": null,
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://www.w3.org/2019/wot/td#definesSecurityScheme"
+                  }
+                ]
+              },
+              "qualifiers": [
+                {
+                  "kind": "ValueQualifier",
+                  "type": "Cardinality",
+                  "value": "One",
+                  "valueId": null,
+                  "valueType": "string",
+                  "semanticId": null,
+                  "supplementalSemanticIds": []
+                }
+              ],
+              "value": []
+            }
+          ]
+        },
+        {
+          "idShort": "SkillMetadata",
+          "kind": "Instance",
+          "modelType": "SubmodelElementCollection",
+          "semanticId": {
+            "type": "ExternalReference",
+            "referredSemanticId": null,
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/idta/AssetInterfacesDescription/1/0/EndpointMetadata"
+              }
+            ]
+          },
+          "qualifiers": [
+            {
+              "kind": "ValueQualifier",
+              "type": "Cardinality",
+              "value": "One",
+              "valueId": null,
+              "valueType": "string",
+              "semanticId": null,
+              "supplementalSemanticIds": []
+            }
+          ],
+          "value": [
+            {
+              "idShort": "StateMachine",
+              "kind": "Instance",
+              "modelType": "SubmodelElementCollection",
+              "value": [
+                {
+                  "idShort": "TypeOfStateMachine",
+                  "kind": "Instance",
+                  "modelType": "Property",
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "referredSemanticId": null,
+                    "keys": []
+                  },
+                  "valueType": "string",
+                  "value": ""
+                },
+                {
+                  "idShort": "States",
+                  "kind": "Instance",
+                  "modelType": "SubmodelElementCollection",
+                  "value": []
+                },
+                {
+                  "idShort": "Transitions",
+                  "kind": "Instance",
+                  "modelType": "SubmodelElementCollection",
+                  "value": []
+                },
+                {
+                  "idShort": "Trigger",
+                  "kind": "Instance",
+                  "modelType": "SubmodelElementCollection",
+                  "value": []
+                }
+              ]
+            },
+            {
+              "idShort": "InterfaceConcept",
+              "kind": "Instance",
+              "modelType": "Property",
+              "semanticId": {
+                "type": "ExternalReference",
+                "referredSemanticId": null,
+                "keys": []
+              },
+              "valueType": "string",
+              "value": ""
+            },
+            {
+              "idShort": "InterfaceProtocol",
+              "kind": "Instance",
+              "modelType": "Property",
+              "semanticId": {
+                "type": "ExternalReference",
+                "referredSemanticId": null,
+                "keys": []
+              },
+              "valueType": "string",
+              "value": ""
+            }
+          ]
+        }
+      ],
+      "modelType": "Submodel",
+      "embeddedDataSpecifications": [],
+      "conceptDescription": null,
+      "qualifiers": [],
+      "id": "https://smartfactory.de/submodels/skills/4047f839-dd1f-4d7b-8c40-2094da5bf236",
+      "administration": null,
+      "idShort": "Skills",
+      "category": null,
+      "description": [],
+      "displayName": []
+    },
+    {
+      "kind": "Instance",
+      "semanticId": {
+        "type": "ExternalReference",
+        "keys": [
+          {
+            "type": "GlobalReference",
+            "value": "https://admin-shell.io/idta/CapabilityDescription/1/0/Submodel"
+          }
+        ]
+      },
+      "submodelElements": [
+        {
+          "idShort": "CapabilitySet",
+          "modelType": "SubmodelElementCollection",
+          "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/idta/CapabilityDescription/CapabilitySet/1/0"
+              }
+            ]
+          },
+          "value": [
+            {
+              "idShort": "DrillContainer",
+              "modelType": "SubmodelElementCollection",
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/CapabilityDescription/CapabilityContainer/1/0"
+                  }
+                ]
+              },
+              "value": [
+                {
+                  "idShort": "Drill",
+                  "modelType": "Capability",
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://wiki.eclipse.org/BaSyx_/_Documentation_/_Submodels_/_Capability#Capability"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "idShort": "Relations",
+                  "modelType": "SubmodelElementCollection",
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/CapabilityDescription/CapabilityRelations/1/0"
+                      }
+                    ]
+                  },
+                  "value": [
+                    {
+                      "idShort": "ConstraintSet",
+                      "modelType": "SubmodelElementCollection",
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/idta/CapabilityDescription/ConstraintSet/1/0"
+                          }
+                        ]
+                      },
+                      "value": [
+                        {
+                          "idShort": "StorageConstraint",
+                          "modelType": "SubmodelElementCollection",
+                          "semanticId": {
+                            "type": "ExternalReference",
+                            "keys": [
+                              {
+                                "type": "GlobalReference",
+                                "value": "https://admin-shell.io/idta/CapabilityDescription/PropertyConstraintContainer/1/0"
+                              }
+                            ]
+                          },
+                          "value": [
+                            {
+                              "idShort": "ConditionalType",
+                              "modelType": "Property",
+                              "valueType": "string",
+                              "value": "Pre"
+                            },
+                            {
+                              "idShort": "ConstraintType",
+                              "modelType": "Property",
+                              "valueType": "string",
+                              "value": "CustomConstraint"
+                            },
+                            {
+                              "idShort": "CustomConstraint",
+                              "modelType": "SubmodelElementCollection",
+                              "semanticId": {
+                                "type": "ExternalReference",
+                                "keys": [
+                                  {
+                                    "type": "GlobalReference",
+                                    "value": "https://admin-shell.io/idta/CapabilityDescription/CustomConstraint/1/0"
+                                  }
+                                ]
+                              },
+                              "value": [
+                                {
+                                  "idShort": "ConstraintName",
+                                  "modelType": "Property",
+                                  "valueType": "string",
+                                  "value": "StorageConstraint"
+                                },
+                                {
+                                  "idShort": "ProductId",
+                                  "modelType": "Property",
+                                  "valueType": "string",
+                                  "value": "*"
+                                }
+                              ]
+                            },
+                            {
+                              "idShort": "ConstraintPropertyRelations",
+                              "modelType": "SubmodelElementCollection",
+                              "value": [
+                                {
+                                  "idShort": "RelatedProperty",
+                                  "modelType": "RelationshipElement",
+                                  "first": {
+                                    "type": "ModelReference",
+                                    "keys": [
+                                      {
+                                        "type": "Submodel",
+                                        "value": "https://smartfactory.de/submodels/capability/cf485bf4-1d0f-491c-80ec-c806b1cefe09"
+                                      },
+                                      {
+                                        "type": "SubmodelElementCollection",
+                                        "value": "CapabilitySet"
+                                      },
+                                      {
+                                        "type": "SubmodelElementCollection",
+                                        "value": "DrillContainer"
+                                      },
+                                      {
+                                        "type": "SubmodelElementCollection",
+                                        "value": "CapabilityRelations"
+                                      },
+                                      {
+                                        "type": "SubmodelElementCollection",
+                                        "value": "ConstraintSet"
+                                      },
+                                      {
+                                        "type": "SubmodelElementCollection",
+                                        "value": "StorageConstraint"
+                                      },
+                                      {
+                                        "type": "SubmodelElementCollection",
+                                        "value": "CustomConstraint"
+                                      }
+                                    ]
+                                  },
+                                  "second": {
+                                    "type": "ModelReference",
+                                    "keys": [
+                                      {
+                                        "type": "Submodel",
+                                        "value": "https://smartfactory.de/submodels/capability/cf485bf4-1d0f-491c-80ec-c806b1cefe09"
+                                      },
+                                      {
+                                        "type": "SubmodelElementCollection",
+                                        "value": "CapabilitySet"
+                                      },
+                                      {
+                                        "type": "SubmodelElementCollection",
+                                        "value": "DrillContainer"
+                                      },
+                                      {
+                                        "type": "SubmodelElementCollection",
+                                        "value": "PropertySet"
+                                      },
+                                      {
+                                        "type": "SubmodelElementCollection",
+                                        "value": "ProductIdFixed"
+                                      },
+                                      {
+                                        "type": "Property",
+                                        "value": "ProductId"
+                                      }
+                                    ]
+                                  }
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "idShort": "PropertySet",
+                  "modelType": "SubmodelElementCollection",
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/CapabilityDescription/PropertySet/1/0"
+                      }
+                    ]
+                  },
+                  "value": [
+                    {
+                      "idShort": "DepthRange",
+                      "modelType": "SubmodelElementCollection",
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/idta/CapabilityDescription/PropertyContainer/1/0"
+                          }
+                        ]
+                      },
+                      "value": [
+                        {
+                          "idShort": "Depth",
+                          "modelType": "Range",
+                          "valueType": "double",
+                          "min": "3",
+                          "max": "6"
+                        }
+                      ]
+                    },
+                    {
+                      "idShort": "DiameterRange",
+                      "modelType": "SubmodelElementCollection",
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/idta/CapabilityDescription/PropertyContainer/1/0"
+                          }
+                        ]
+                      },
+                      "value": [
+                        {
+                          "idShort": "Diameter",
+                          "modelType": "Range",
+                          "valueType": "double",
+                          "min": "3",
+                          "max": "10"
+                        }
+                      ]
+                    },
+                    {
+                      "idShort": "ProductIdFixed",
+                      "modelType": "SubmodelElementCollection",
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/idta/CapabilityDescription/PropertyContainer/1/0"
+                          }
+                        ]
+                      },
+                      "value": [
+                        {
+                          "idShort": "ProductId",
+                          "modelType": "Property",
+                          "valueType": "string",
+                          "value": "*"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "modelType": "Submodel",
+      "id": "https://smartfactory.de/submodels/capability/cf485bf4-1d0f-491c-80ec-c806b1cefe09",
+      "idShort": "OfferedCapabilitiyDescription"
+    },
+    {
+      "kind": "Instance",
+      "semanticId": null,
+      "supplementalSemanticIds": [],
+      "submodelElements": [
+        {
+          "idShort": "Address",
+          "kind": "Instance",
+          "modelType": "Property",
+          "semanticId": {
+            "type": "ExternalReference",
+            "referredSemanticId": null,
+            "keys": []
+          },
+          "valueType": "string",
+          "value": "Trippstadter Str. 122, 67663 Kaiserslautern"
+        },
+        {
+          "idShort": "CurrentArea",
+          "kind": "Instance",
+          "modelType": "Property",
+          "semanticId": {
+            "type": "ExternalReference",
+            "referredSemanticId": null,
+            "keys": []
+          },
+          "valueType": "string",
+          "value": "Halle2"
+        },
+        {
+          "idShort": "Position",
+          "kind": "Instance",
+          "modelType": "SubmodelElementCollection",
+          "value": [
+            {
+              "idShort": "X",
+              "kind": "Instance",
+              "modelType": "Property",
+              "semanticId": {
+                "type": "ExternalReference",
+                "referredSemanticId": null,
+                "keys": []
+              },
+              "valueType": "double",
+              "value": "6.5"
+            },
+            {
+              "idShort": "Y",
+              "kind": "Instance",
+              "modelType": "Property",
+              "semanticId": {
+                "type": "ExternalReference",
+                "referredSemanticId": null,
+                "keys": []
+              },
+              "valueType": "double",
+              "value": "11"
+            },
+            {
+              "idShort": "Theta",
+              "kind": "Instance",
+              "modelType": "Property",
+              "semanticId": {
+                "type": "ExternalReference",
+                "referredSemanticId": null,
+                "keys": []
+              },
+              "valueType": "double",
+              "value": "0"
+            },
+            {
+              "idShort": "Floor",
+              "kind": "Instance",
+              "modelType": "Property",
+              "semanticId": {
+                "type": "ExternalReference",
+                "referredSemanticId": null,
+                "keys": []
+              },
+              "valueType": "integer",
+              "value": "0"
+            }
+          ]
+        }
+      ],
+      "modelType": "Submodel",
+      "embeddedDataSpecifications": [],
+      "conceptDescription": null,
+      "qualifiers": [],
+      "id": "https://smartfactory.de/submodels/assetlocation/1bc13ac6-b62d-464e-8135-b08dea6d8539",
+      "administration": null,
+      "idShort": "AssetLocation",
+      "category": null,
+      "description": [],
+      "displayName": []
+    }
+  ]
+}

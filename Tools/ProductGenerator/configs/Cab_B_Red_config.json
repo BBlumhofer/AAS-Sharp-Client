@@ -1,0 +1,32 @@
+{
+  "Id": "https://smartfactory.de/shells/IZ_LH-AkUF",
+  "Capabilities":
+  [{
+    "Name": "Drill",
+    "PropertyContainers":
+    {
+      "Depth": 54.5,
+      "Diameter":5.7,
+      "ProductId": "https://smartfactory.de/shells/IZ_LH-AkUF"
+    }
+  },
+  {
+    "Name": "Screw",
+    "PropertyContainers":
+    {
+      "Torque": 45,
+      "Diameter":6,
+      "ProductId": "https://smartfactory.de/shells/IZ_LH-AkUF"
+    }
+  },
+  {
+    "Name": "Assemble",
+    "PropertyContainers":
+    {
+      "GripForce": 15.1,
+      "ProductWeight":1.1,
+      "ProductId": "https://smartfactory.de/shells/IZ_LH-AkUF"
+    }
+  }
+]
+}

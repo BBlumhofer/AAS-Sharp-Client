@@ -1,0 +1,96 @@
+{
+  "kind": "Instance",
+  "semanticId": null,
+  "supplementalSemanticIds": [],
+  "submodelElements": [
+    {
+      "idShort": "Address",
+      "kind": "Instance",
+      "modelType": "Property",
+      "semanticId": {
+        "type": "ExternalReference",
+        "referredSemanticId": null,
+        "keys": []
+      },
+      "valueType": "string",
+      "value": "Trippstadter Str. 122, 67663 Kaiserslautern"
+    },
+    {
+      "idShort": "CurrentArea",
+      "kind": "Instance",
+      "modelType": "Property",
+      "semanticId": {
+        "type": "ExternalReference",
+        "referredSemanticId": null,
+        "keys": []
+      },
+      "valueType": "string",
+      "value": "Halle1"
+    },
+    {
+      "idShort": "Position",
+      "kind": "Instance",
+      "modelType": "SubmodelElementCollection",
+      "value": [
+        {
+          "idShort": "X",
+          "kind": "Instance",
+          "modelType": "Property",
+          "semanticId": {
+            "type": "ExternalReference",
+            "referredSemanticId": null,
+            "keys": []
+          },
+          "valueType": "double",
+          "value": "8"
+        },
+        {
+          "idShort": "Y",
+          "kind": "Instance",
+          "modelType": "Property",
+          "semanticId": {
+            "type": "ExternalReference",
+            "referredSemanticId": null,
+            "keys": []
+          },
+          "valueType": "double",
+          "value": "30"
+        },
+        {
+          "idShort": "Theta",
+          "kind": "Instance",
+          "modelType": "Property",
+          "semanticId": {
+            "type": "ExternalReference",
+            "referredSemanticId": null,
+            "keys": []
+          },
+          "valueType": "double",
+          "value": "0"
+        },
+        {
+          "idShort": "Floor",
+          "kind": "Instance",
+          "modelType": "Property",
+          "semanticId": {
+            "type": "ExternalReference",
+            "referredSemanticId": null,
+            "keys": []
+          },
+          "valueType": "integer",
+          "value": "1"
+        }
+      ]
+    }
+  ],
+  "modelType": "Submodel",
+  "embeddedDataSpecifications": [],
+  "conceptDescription": null,
+  "qualifiers": [],
+  "id": "https://smartfactory.de/submodels/assetlocation/24fabb9e-c830-4f26-aa1e-cecbd7d7275f",
+  "administration": null,
+  "idShort": "AssetLocation",
+  "category": null,
+  "description": [],
+  "displayName": []
+}

@@ -28,7 +28,20 @@
     <ProjectReference Include="../I4.0-Sharp-Messaging/I40Sharp.Messaging/I40Sharp.Messaging.csproj" />
   </ItemGroup>
   <ItemGroup>
-  <Compile Remove="examples/**/*.cs" />
-  <Compile Remove="tests/**/*.cs" />
-</ItemGroup>
+    <Compile Remove="examples/**/*.cs" />
+    <Compile Remove="tests/**/*.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="Tools/ModuleGenerator/**/*.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="Tools/ModuleGenerator/Program.cs" />
+  </ItemGroup>
+    <ItemGroup>
+    <Compile Remove="Tools/ProductGenerator/**/*.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="Tools/ProductGenerator/Program.cs" />
+  </ItemGroup>
+
 </Project>

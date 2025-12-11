@@ -1,0 +1,28 @@
+{
+  "Id": "P100",
+  "Skill": "Screw",
+  "Capability":{
+    "Name": "Screw",
+    "SkillReference": "Screw",
+    "PropertyContainers":
+    {
+      "Torque":{ "min": 1.2, "max": 2.2 },
+      "Diameter":{ "min": 4, "max": 8 },
+      "ProductId":{ "value": "*" }
+    },
+    "Constraints": [ 
+        { 
+            "ConstraintType": "CustomConstraint", 
+            "ConditionalType": "Pre", 
+            "ConstraintName": "StorageConstraint", 
+            "RelatedProperty": "ProductId" 
+            } 
+        ]
+  },
+  "AssetLocation":{
+    "Area": "Halle1",
+    "X": 12.5,
+    "Y": 7.0,
+    "Level": 0
+  }
+}

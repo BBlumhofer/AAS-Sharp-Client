@@ -1,0 +1,4281 @@
+{
+  "assetAdministrationShells": [
+    {
+      "modelType": "AssetAdministrationShell",
+      "assetInformation": {
+        "assetKind": "Instance",
+        "assetType": "resource",
+        "defaultThumbnail": {
+          "contentType": "image/png",
+          "path": "https://raw.githubusercontent.com/SmartFactory-KL/thumbnails/refs/heads/main/other/roadshow_module.png"
+        },
+        "globalAssetId": "https://smartfactory.de/asset/P18",
+        "specificAssetIds": [
+          {
+            "name": "CyberPhysicalProductionModule",
+            "value": "P18"
+          }
+        ]
+      },
+      "submodels": [
+        {
+          "keys": [
+            {
+              "type": "Submodel",
+              "value": "https://smartfactory.de/submodels/b6f0d706-88b7-4ab7-b17b-bdbc7a2ad261"
+            }
+          ],
+          "type": "ModelReference"
+        },
+        {
+          "keys": [
+            {
+              "type": "Submodel",
+              "value": "https://smartfactory.de/submodels/a15f42b7-20e3-48d1-8bda-c827307df1b5"
+            }
+          ],
+          "type": "ModelReference"
+        },
+        {
+          "keys": [
+            {
+              "type": "Submodel",
+              "value": "https://smartfactory.de/submodels/60252b9f-e1ee-4ac8-8a82-7cecdec79d3b"
+            }
+          ],
+          "type": "ModelReference"
+        },
+        {
+          "keys": [
+            {
+              "type": "Submodel",
+              "value": "https://smartfactory.de/submodels/6961dad7-631b-48a5-a51b-a2c0c659e127"
+            }
+          ],
+          "type": "ModelReference"
+        },
+        {
+          "keys": [
+            {
+              "type": "Submodel",
+              "value": "https://smartfactory.de/submodels/f58558ed-8fbb-4b84-b611-424dd5eaa0e9"
+            }
+          ],
+          "referredSemanticId": {
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://smartfactory.de/semantics/submodel/MachineSchedule#1/0"
+              }
+            ],
+            "type": "ModelReference"
+          },
+          "type": "ModelReference"
+        },
+        {
+          "keys": [
+            {
+              "type": "Submodel",
+              "value": "https://smartfactory.de/submodels/7e760b41-9124-4026-90b9-39d7b84dd220"
+            }
+          ],
+          "referredSemanticId": {
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://smartfactory.de/semantics/submodel/MachineScheduleLog#1/0"
+              }
+            ],
+            "type": "ModelReference"
+          },
+          "type": "ModelReference"
+        }
+      ],
+      "extensions": [
+        {
+          "name": "namespace",
+          "value": "_PHUKET",
+          "valueType": "xs:string"
+        }
+      ],
+      "id": "P18",
+      "idShort": "Roadshow"
+    }
+  ],
+  "submodels": [
+    {
+      "modelType": "Submodel",
+      "kind": "Instance",
+      "semanticId": {
+        "keys": [
+          {
+            "type": "GlobalReference",
+            "value": "https://smartfactory.de/semantics/submodel/Skills#1/0"
+          }
+        ],
+        "type": "ExternalReference"
+      },
+      "id": "https://smartfactory.de/submodels/b6f0d706-88b7-4ab7-b17b-bdbc7a2ad261",
+      "idShort": "Skills",
+      "submodelElements": [
+        {
+          "modelType": "SubmodelElementCollection",
+          "semanticId": {
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://smartfactory.de/semantics/submodel-element/Skills/SkillSet#1/0"
+              }
+            ],
+            "type": "ExternalReference"
+          },
+          "idShort": "SkillSet",
+          "value": [
+            {
+              "modelType": "SubmodelElementCollection",
+              "semanticId": {
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://smartfactory.de/semantics/submodel-element/Skills/SkillSet/Skill#1/0"
+                  }
+                ],
+                "type": "ExternalReference"
+              },
+              "idShort": "Skill_0001",
+              "value": [
+                {
+                  "modelType": "Property",
+                  "semanticId": {
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://smartfactory.de/semantics/submodel-element/Skills/SkillSet/Skill/Name#1/0"
+                      }
+                    ],
+                    "type": "ExternalReference"
+                  },
+                  "value": "Screw",
+                  "valueType": "xs:string",
+                  "idShort": "Name"
+                },
+                {
+                  "modelType": "SubmodelElementCollection",
+                  "semanticId": {
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://smartfactory.de/semantics/submodel-element/Skills/SkillSet/Skill/SkillInterfaceDescription#1/0"
+                      }
+                    ],
+                    "type": "ExternalReference"
+                  },
+                  "idShort": "SkillInterfaceDescription",
+                  "value": [
+                    {
+                      "modelType": "Property",
+                      "semanticId": {
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://smartfactory.de/semantics/submodel-element/Skills/SkillSet/Skill/SkillInterfaceDescription/RequiredAccessLevel#1/0"
+                          }
+                        ],
+                        "type": "ExternalReference"
+                      },
+                      "value": "2",
+                      "valueType": "xs:integer",
+                      "idShort": "RequiredAccessLevel"
+                    },
+                    {
+                      "modelType": "Property",
+                      "semanticId": {
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://smartfactory.de/semantics/submodel-element/Skills/SkillSet/Skill/SkillInterfaceDescription/SkillEndpoint#1/0"
+                          }
+                        ],
+                        "type": "ExternalReference"
+                      },
+                      "value": "opc.tcp://172.17.57.3:4845/ns=6;s=Module.SkillSet.Store",
+                      "valueType": "xs:anyURI",
+                      "idShort": "SkillEndpoint"
+                    },
+                    {
+                      "modelType": "SubmodelElementCollection",
+                      "semanticId": {
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://smartfactory.de/semantics/submodel-element/Skills/SkillSet/Skill/SkillInterfaceDescription/RequiredInputParameters#1/0"
+                          }
+                        ],
+                        "type": "ExternalReference"
+                      },
+                      "idShort": "RequiredInputParameters",
+                      "value": [
+                        {
+                          "modelType": "Property",
+                          "valueType": "xs:string",
+                          "idShort": "ProductId"
+                        }
+                      ]
+                    },
+                    {
+                      "modelType": "SubmodelElementCollection",
+                      "semanticId": {
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://smartfactory.de/semantics/submodel-element/Skills/SkillSet/Skill/SkillInterfaceDescription/Trigger#1/0"
+                          }
+                        ],
+                        "type": "ExternalReference"
+                      },
+                      "idShort": "Trigger",
+                      "value": [
+                        {
+                          "modelType": "Operation",
+                          "semanticId": {
+                            "keys": [
+                              {
+                                "type": "GlobalReference",
+                                "value": "https://smartfactory.de/semantics/submodel-element/Skills/SkillSet/Skill/SkillInterfaceDescription/Trigger/Start#1/0"
+                              }
+                            ],
+                            "type": "ExternalReference"
+                          },
+                          "inoutputVariables": [
+                            {
+                              "value": {
+                                "modelType": "Property",
+                                "valueType": "xs:string",
+                                "idShort": "test"
+                              }
+                            }
+                          ],
+                          "idShort": "Start"
+                        },
+                        {
+                          "modelType": "Operation",
+                          "semanticId": {
+                            "keys": [
+                              {
+                                "type": "GlobalReference",
+                                "value": "https://smartfactory.de/semantics/submodel-element/Skills/SkillSet/Skill/SkillInterfaceDescription/Trigger/Reset#1/0"
+                              }
+                            ],
+                            "type": "ExternalReference"
+                          },
+                          "inoutputVariables": [
+                            {
+                              "value": {
+                                "modelType": "Property",
+                                "valueType": "xs:string",
+                                "idShort": "test"
+                              }
+                            }
+                          ],
+                          "idShort": "Reset"
+                        },
+                        {
+                          "modelType": "Operation",
+                          "semanticId": {
+                            "keys": [
+                              {
+                                "type": "GlobalReference",
+                                "value": "https://smartfactory.de/semantics/submodel-element/Skills/SkillSet/Skill/SkillInterfaceDescription/Trigger/Suspend#1/0"
+                              }
+                            ],
+                            "type": "ExternalReference"
+                          },
+                          "inoutputVariables": [
+                            {
+                              "value": {
+                                "modelType": "Property",
+                                "valueType": "xs:string",
+                                "idShort": "test"
+                              }
+                            }
+                          ],
+                          "idShort": "Suspend"
+                        },
+                        {
+                          "modelType": "Operation",
+                          "semanticId": {
+                            "keys": [
+                              {
+                                "type": "GlobalReference",
+                                "value": "https://smartfactory.de/semantics/submodel-element/Skills/SkillSet/Skill/SkillInterfaceDescription/Trigger/Halt#1/0"
+                              }
+                            ],
+                            "type": "ExternalReference"
+                          },
+                          "inoutputVariables": [
+                            {
+                              "value": {
+                                "modelType": "Property",
+                                "valueType": "xs:string",
+                                "idShort": "test"
+                              }
+                            }
+                          ],
+                          "idShort": "Halt"
+                        }
+                      ]
+                    },
+                    {
+                      "modelType": "ReferenceElement",
+                      "idShort": "SecurityRequirements",
+                      "value": {
+                        "keys": [
+                          {
+                            "type": "Submodel",
+                            "value": "https://smartfactory.de/submodels/a868c959-baad-406c-a5ef-c087a491def8"
+                          },
+                          {
+                            "type": "SubmodelElementCollection",
+                            "value": "Skills"
+                          },
+                          {
+                            "type": "SubmodelElementCollection",
+                            "value": "EndpointMetadata"
+                          },
+                          {
+                            "type": "SubmodelElementCollection",
+                            "value": "securityDefinitions"
+                          },
+                          {
+                            "type": "SubmodelElementCollection",
+                            "value": "basic_sc"
+                          }
+                        ],
+                        "type": "ModelReference"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "modelType": "SubmodelElementCollection",
+          "semanticId": {
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://smartfactory.de/semantics/submodel-element/Skills/EndpointMetadata#1/0"
+              }
+            ],
+            "type": "ExternalReference"
+          },
+          "qualifiers": [
+            {
+              "kind": "ConceptQualifier",
+              "type": "Cardinality",
+              "value": "One",
+              "valueType": "xs:string"
+            }
+          ],
+          "idShort": "EndpointMetadata",
+          "value": [
+            {
+              "modelType": "Property",
+              "semanticId": {
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://smartfactory.de/semantics/submodel-element/Skills/EndpointMetadata/base#1/0"
+                  }
+                ],
+                "type": "ExternalReference"
+              },
+              "value": "http://172.17.57.3:4845",
+              "valueType": "xs:anyURI",
+              "qualifiers": [
+                {
+                  "kind": "ConceptQualifier",
+                  "type": "Cardinality",
+                  "value": "One",
+                  "valueType": "xs:string"
+                }
+              ],
+              "idShort": "base"
+            },
+            {
+              "modelType": "Property",
+              "semanticId": {
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://smartfactory.de/semantics/submodel-element/Skills/EndpointMetadata/scada#1/0"
+                  }
+                ],
+                "type": "ExternalReference"
+              },
+              "value": "http://172.17.57.3:8000",
+              "valueType": "xs:anyURI",
+              "qualifiers": [
+                {
+                  "kind": "ConceptQualifier",
+                  "type": "Cardinality",
+                  "value": "One",
+                  "valueType": "xs:string"
+                }
+              ],
+              "idShort": "scada"
+            },
+            {
+              "modelType": "Property",
+              "semanticId": {
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://smartfactory.de/semantics/submodel-element/Skills/EndpointMetadata/contentType#1/0"
+                  }
+                ],
+                "type": "ExternalReference"
+              },
+              "value": "application/json",
+              "valueType": "xs:string",
+              "qualifiers": [
+                {
+                  "kind": "ConceptQualifier",
+                  "type": "Cardinality",
+                  "value": "One",
+                  "valueType": "xs:string"
+                }
+              ],
+              "idShort": "contentType"
+            },
+            {
+              "modelType": "SubmodelElementList",
+              "semanticId": {
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://smartfactory.de/semantics/submodel-element/Skills/EndpointMetadata/security#1/0"
+                  }
+                ],
+                "type": "ExternalReference"
+              },
+              "qualifiers": [
+                {
+                  "kind": "ConceptQualifier",
+                  "type": "Cardinality",
+                  "value": "One",
+                  "valueType": "xs:string"
+                }
+              ],
+              "idShort": "security",
+              "orderRelevant": true,
+              "typeValueListElement": "ReferenceElement",
+              "value": [
+                {
+                  "modelType": "ReferenceElement",
+                  "value": {
+                    "keys": [
+                      {
+                        "type": "Submodel",
+                        "value": "https://smartfactory.de/sm/e70c0aa2-2a58-43a9-aa3d-cd81bcbedd3b"
+                      },
+                      {
+                        "type": "SubmodelElementCollection",
+                        "value": "Skills"
+                      },
+                      {
+                        "type": "SubmodelElementCollection",
+                        "value": "EndpointMetadata"
+                      },
+                      {
+                        "type": "SubmodelElementCollection",
+                        "value": "securityDefinitions"
+                      },
+                      {
+                        "type": "SubmodelElementCollection",
+                        "value": "basic_sc"
+                      }
+                    ],
+                    "type": "ModelReference"
+                  }
+                }
+              ]
+            },
+            {
+              "modelType": "SubmodelElementCollection",
+              "semanticId": {
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://smartfactory.de/semantics/submodel-element/Skills/EndpointMetadata/securityDefinitions#1/0"
+                  }
+                ],
+                "type": "ExternalReference"
+              },
+              "qualifiers": [
+                {
+                  "kind": "ConceptQualifier",
+                  "type": "Cardinality",
+                  "value": "One",
+                  "valueType": "xs:string"
+                }
+              ],
+              "idShort": "securityDefinitions",
+              "value": [
+                {
+                  "modelType": "SubmodelElementCollection",
+                  "semanticId": {
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://smartfactory.de/semantics/submodel-element/Skills/EndpointMetadata/securityDefinitions/nosec_sc#1/0"
+                      }
+                    ],
+                    "type": "ExternalReference"
+                  },
+                  "qualifiers": [
+                    {
+                      "kind": "ConceptQualifier",
+                      "type": "Cardinality",
+                      "value": "ZeroToOne",
+                      "valueType": "xs:string"
+                    }
+                  ],
+                  "idShort": "nosec_sc",
+                  "value": [
+                    {
+                      "modelType": "Property",
+                      "semanticId": {
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://smartfactory.de/semantics/submodel-element/Skills/EndpointMetadata/securityDefinitions/nosec_sc/scheme#1/0"
+                          }
+                        ],
+                        "type": "ExternalReference"
+                      },
+                      "value": "nosec",
+                      "valueType": "xs:string",
+                      "qualifiers": [
+                        {
+                          "kind": "ConceptQualifier",
+                          "type": "Cardinality",
+                          "value": "One",
+                          "valueType": "xs:string"
+                        }
+                      ],
+                      "idShort": "scheme"
+                    }
+                  ]
+                },
+                {
+                  "modelType": "SubmodelElementCollection",
+                  "semanticId": {
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://smartfactory.de/semantics/submodel-element/Skills/EndpointMetadata/securityDefinitions/auto_sc#1/0"
+                      }
+                    ],
+                    "type": "ExternalReference"
+                  },
+                  "qualifiers": [
+                    {
+                      "kind": "ConceptQualifier",
+                      "type": "Cardinality",
+                      "value": "ZeroToOne",
+                      "valueType": "xs:string"
+                    }
+                  ],
+                  "idShort": "auto_sc",
+                  "value": [
+                    {
+                      "modelType": "Property",
+                      "semanticId": {
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://smartfactory.de/semantics/submodel-element/Skills/EndpointMetadata/securityDefinitions/auto_sc/scheme#1/0"
+                          }
+                        ],
+                        "type": "ExternalReference"
+                      },
+                      "value": "auto",
+                      "valueType": "xs:string",
+                      "qualifiers": [
+                        {
+                          "kind": "ConceptQualifier",
+                          "type": "Cardinality",
+                          "value": "One",
+                          "valueType": "xs:string"
+                        }
+                      ],
+                      "idShort": "scheme"
+                    },
+                    {
+                      "modelType": "Property",
+                      "semanticId": {
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://smartfactory.de/semantics/submodel-element/Skills/EndpointMetadata/securityDefinitions/auto_sc/proxy#1/0"
+                          }
+                        ],
+                        "type": "ExternalReference"
+                      },
+                      "valueType": "xs:string",
+                      "qualifiers": [
+                        {
+                          "kind": "ConceptQualifier",
+                          "type": "Cardinality",
+                          "value": "ZeroToOne",
+                          "valueType": "xs:string"
+                        }
+                      ],
+                      "idShort": "proxy"
+                    }
+                  ]
+                },
+                {
+                  "modelType": "SubmodelElementCollection",
+                  "semanticId": {
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://smartfactory.de/semantics/submodel-element/Skills/EndpointMetadata/securityDefinitions/basic_sc#1/0"
+                      }
+                    ],
+                    "type": "ExternalReference"
+                  },
+                  "qualifiers": [
+                    {
+                      "kind": "ConceptQualifier",
+                      "type": "Cardinality",
+                      "value": "ZeroToOne",
+                      "valueType": "xs:string"
+                    }
+                  ],
+                  "idShort": "basic_sc",
+                  "value": [
+                    {
+                      "modelType": "Property",
+                      "semanticId": {
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://smartfactory.de/semantics/submodel-element/Skills/EndpointMetadata/securityDefinitions/basic_sc/scheme#1/0"
+                          }
+                        ],
+                        "type": "ExternalReference"
+                      },
+                      "value": "basic",
+                      "valueType": "xs:string",
+                      "qualifiers": [
+                        {
+                          "kind": "ConceptQualifier",
+                          "type": "Cardinality",
+                          "value": "One",
+                          "valueType": "xs:string"
+                        }
+                      ],
+                      "idShort": "scheme"
+                    },
+                    {
+                      "modelType": "Property",
+                      "semanticId": {
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://smartfactory.de/semantics/submodel-element/Skills/EndpointMetadata/securityDefinitions/basic_sc/name#1/0"
+                          }
+                        ],
+                        "type": "ExternalReference"
+                      },
+                      "valueType": "xs:string",
+                      "qualifiers": [
+                        {
+                          "kind": "ConceptQualifier",
+                          "type": "Cardinality",
+                          "value": "ZeroToOne",
+                          "valueType": "xs:string"
+                        }
+                      ],
+                      "idShort": "name"
+                    },
+                    {
+                      "modelType": "Property",
+                      "semanticId": {
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://smartfactory.de/semantics/submodel-element/Skills/EndpointMetadata/securityDefinitions/basic_sc/in#1/0"
+                          }
+                        ],
+                        "type": "ExternalReference"
+                      },
+                      "valueType": "xs:string",
+                      "qualifiers": [
+                        {
+                          "kind": "ConceptQualifier",
+                          "type": "Cardinality",
+                          "value": "ZeroToOne",
+                          "valueType": "xs:string"
+                        }
+                      ],
+                      "idShort": "in"
+                    },
+                    {
+                      "modelType": "Property",
+                      "semanticId": {
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://smartfactory.de/semantics/submodel-element/Skills/EndpointMetadata/securityDefinitions/basic_sc/proxy#1/0"
+                          }
+                        ],
+                        "type": "ExternalReference"
+                      },
+                      "valueType": "xs:string",
+                      "qualifiers": [
+                        {
+                          "kind": "ConceptQualifier",
+                          "type": "Cardinality",
+                          "value": "ZeroToOne",
+                          "valueType": "xs:string"
+                        }
+                      ],
+                      "idShort": "proxy"
+                    }
+                  ]
+                },
+                {
+                  "modelType": "SubmodelElementCollection",
+                  "semanticId": {
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://smartfactory.de/semantics/submodel-element/Skills/EndpointMetadata/securityDefinitions/combo_sc#1/0"
+                      }
+                    ],
+                    "type": "ExternalReference"
+                  },
+                  "qualifiers": [
+                    {
+                      "kind": "ConceptQualifier",
+                      "type": "Cardinality",
+                      "value": "ZeroToOne",
+                      "valueType": "xs:string"
+                    }
+                  ],
+                  "idShort": "combo_sc",
+                  "value": [
+                    {
+                      "modelType": "Property",
+                      "semanticId": {
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://smartfactory.de/semantics/submodel-element/Skills/EndpointMetadata/securityDefinitions/combo_sc/scheme#1/0"
+                          }
+                        ],
+                        "type": "ExternalReference"
+                      },
+                      "value": "combo",
+                      "valueType": "xs:string",
+                      "qualifiers": [
+                        {
+                          "kind": "ConceptQualifier",
+                          "type": "Cardinality",
+                          "value": "One",
+                          "valueType": "xs:string"
+                        }
+                      ],
+                      "idShort": "scheme"
+                    },
+                    {
+                      "modelType": "SubmodelElementList",
+                      "semanticId": {
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://smartfactory.de/semantics/submodel-element/Skills/EndpointMetadata/securityDefinitions/combo_sc/oneOf#1/0"
+                          }
+                        ],
+                        "type": "ExternalReference"
+                      },
+                      "qualifiers": [
+                        {
+                          "kind": "ConceptQualifier",
+                          "type": "Cardinality",
+                          "value": "One",
+                          "valueType": "xs:string"
+                        }
+                      ],
+                      "idShort": "oneOf",
+                      "orderRelevant": true,
+                      "typeValueListElement": "SubmodelElement"
+                    },
+                    {
+                      "modelType": "SubmodelElementList",
+                      "semanticId": {
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://smartfactory.de/semantics/submodel-element/Skills/EndpointMetadata/securityDefinitions/combo_sc/allOf#1/0"
+                          }
+                        ],
+                        "type": "ExternalReference"
+                      },
+                      "qualifiers": [
+                        {
+                          "kind": "ConceptQualifier",
+                          "type": "Cardinality",
+                          "value": "One",
+                          "valueType": "xs:string"
+                        }
+                      ],
+                      "idShort": "allOf",
+                      "orderRelevant": true,
+                      "typeValueListElement": "SubmodelElement"
+                    },
+                    {
+                      "modelType": "Property",
+                      "semanticId": {
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://smartfactory.de/semantics/submodel-element/Skills/EndpointMetadata/securityDefinitions/combo_sc/proxy#1/0"
+                          }
+                        ],
+                        "type": "ExternalReference"
+                      },
+                      "valueType": "xs:string",
+                      "qualifiers": [
+                        {
+                          "kind": "ConceptQualifier",
+                          "type": "Cardinality",
+                          "value": "ZeroToOne",
+                          "valueType": "xs:string"
+                        }
+                      ],
+                      "idShort": "proxy"
+                    }
+                  ]
+                },
+                {
+                  "modelType": "SubmodelElementCollection",
+                  "semanticId": {
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://smartfactory.de/semantics/submodel-element/Skills/EndpointMetadata/securityDefinitions/apikey_sc#1/0"
+                      }
+                    ],
+                    "type": "ExternalReference"
+                  },
+                  "qualifiers": [
+                    {
+                      "kind": "ConceptQualifier",
+                      "type": "Cardinality",
+                      "value": "ZeroToOne",
+                      "valueType": "xs:string"
+                    }
+                  ],
+                  "idShort": "apikey_sc",
+                  "value": [
+                    {
+                      "modelType": "Property",
+                      "semanticId": {
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://smartfactory.de/semantics/submodel-element/Skills/EndpointMetadata/securityDefinitions/apikey_sc/scheme#1/0"
+                          }
+                        ],
+                        "type": "ExternalReference"
+                      },
+                      "value": "apikey",
+                      "valueType": "xs:string",
+                      "qualifiers": [
+                        {
+                          "kind": "ConceptQualifier",
+                          "type": "Cardinality",
+                          "value": "One",
+                          "valueType": "xs:string"
+                        }
+                      ],
+                      "idShort": "scheme"
+                    },
+                    {
+                      "modelType": "Property",
+                      "semanticId": {
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://smartfactory.de/semantics/submodel-element/Skills/EndpointMetadata/securityDefinitions/apikey_sc/name#1/0"
+                          }
+                        ],
+                        "type": "ExternalReference"
+                      },
+                      "valueType": "xs:string",
+                      "qualifiers": [
+                        {
+                          "kind": "ConceptQualifier",
+                          "type": "Cardinality",
+                          "value": "ZeroToOne",
+                          "valueType": "xs:string"
+                        }
+                      ],
+                      "idShort": "name"
+                    },
+                    {
+                      "modelType": "Property",
+                      "semanticId": {
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://smartfactory.de/semantics/submodel-element/Skills/EndpointMetadata/securityDefinitions/apikey_sc/in#1/0"
+                          }
+                        ],
+                        "type": "ExternalReference"
+                      },
+                      "valueType": "xs:string",
+                      "qualifiers": [
+                        {
+                          "kind": "ConceptQualifier",
+                          "type": "Cardinality",
+                          "value": "ZeroToOne",
+                          "valueType": "xs:string"
+                        }
+                      ],
+                      "idShort": "in"
+                    },
+                    {
+                      "modelType": "Property",
+                      "semanticId": {
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://smartfactory.de/semantics/submodel-element/Skills/EndpointMetadata/securityDefinitions/apikey_sc/proxy#1/0"
+                          }
+                        ],
+                        "type": "ExternalReference"
+                      },
+                      "valueType": "xs:string",
+                      "qualifiers": [
+                        {
+                          "kind": "ConceptQualifier",
+                          "type": "Cardinality",
+                          "value": "ZeroToOne",
+                          "valueType": "xs:string"
+                        }
+                      ],
+                      "idShort": "proxy"
+                    }
+                  ]
+                },
+                {
+                  "modelType": "SubmodelElementCollection",
+                  "semanticId": {
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://smartfactory.de/semantics/submodel-element/Skills/EndpointMetadata/securityDefinitions/psk_sc#1/0"
+                      }
+                    ],
+                    "type": "ExternalReference"
+                  },
+                  "qualifiers": [
+                    {
+                      "kind": "ConceptQualifier",
+                      "type": "Cardinality",
+                      "value": "ZeroToOne",
+                      "valueType": "xs:string"
+                    }
+                  ],
+                  "idShort": "psk_sc",
+                  "value": [
+                    {
+                      "modelType": "Property",
+                      "semanticId": {
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://smartfactory.de/semantics/submodel-element/Skills/EndpointMetadata/securityDefinitions/psk_sc/scheme#1/0"
+                          }
+                        ],
+                        "type": "ExternalReference"
+                      },
+                      "value": "psk",
+                      "valueType": "xs:string",
+                      "qualifiers": [
+                        {
+                          "kind": "ConceptQualifier",
+                          "type": "Cardinality",
+                          "value": "One",
+                          "valueType": "xs:string"
+                        }
+                      ],
+                      "idShort": "scheme"
+                    },
+                    {
+                      "modelType": "Property",
+                      "semanticId": {
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://smartfactory.de/semantics/submodel-element/Skills/EndpointMetadata/securityDefinitions/psk_sc/identity#1/0"
+                          }
+                        ],
+                        "type": "ExternalReference"
+                      },
+                      "valueType": "xs:string",
+                      "qualifiers": [
+                        {
+                          "kind": "ConceptQualifier",
+                          "type": "Cardinality",
+                          "value": "ZeroToOne",
+                          "valueType": "xs:string"
+                        }
+                      ],
+                      "idShort": "identity"
+                    },
+                    {
+                      "modelType": "Property",
+                      "semanticId": {
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://smartfactory.de/semantics/submodel-element/Skills/EndpointMetadata/securityDefinitions/psk_sc/proxy#1/0"
+                          }
+                        ],
+                        "type": "ExternalReference"
+                      },
+                      "valueType": "xs:string",
+                      "qualifiers": [
+                        {
+                          "kind": "ConceptQualifier",
+                          "type": "Cardinality",
+                          "value": "ZeroToOne",
+                          "valueType": "xs:string"
+                        }
+                      ],
+                      "idShort": "proxy"
+                    }
+                  ]
+                },
+                {
+                  "modelType": "SubmodelElementCollection",
+                  "semanticId": {
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://smartfactory.de/semantics/submodel-element/Skills/EndpointMetadata/securityDefinitions/digest_sc#1/0"
+                      }
+                    ],
+                    "type": "ExternalReference"
+                  },
+                  "qualifiers": [
+                    {
+                      "kind": "ConceptQualifier",
+                      "type": "Cardinality",
+                      "value": "ZeroToOne",
+                      "valueType": "xs:string"
+                    }
+                  ],
+                  "idShort": "digest_sc",
+                  "value": [
+                    {
+                      "modelType": "Property",
+                      "semanticId": {
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://smartfactory.de/semantics/submodel-element/Skills/EndpointMetadata/securityDefinitions/digest_sc/scheme#1/0"
+                          }
+                        ],
+                        "type": "ExternalReference"
+                      },
+                      "value": "digest",
+                      "valueType": "xs:string",
+                      "qualifiers": [
+                        {
+                          "kind": "ConceptQualifier",
+                          "type": "Cardinality",
+                          "value": "One",
+                          "valueType": "xs:string"
+                        }
+                      ],
+                      "idShort": "scheme"
+                    },
+                    {
+                      "modelType": "Property",
+                      "semanticId": {
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://smartfactory.de/semantics/submodel-element/Skills/EndpointMetadata/securityDefinitions/digest_sc/name#1/0"
+                          }
+                        ],
+                        "type": "ExternalReference"
+                      },
+                      "valueType": "xs:string",
+                      "qualifiers": [
+                        {
+                          "kind": "ConceptQualifier",
+                          "type": "Cardinality",
+                          "value": "ZeroToOne",
+                          "valueType": "xs:string"
+                        }
+                      ],
+                      "idShort": "name"
+                    },
+                    {
+                      "modelType": "Property",
+                      "semanticId": {
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://smartfactory.de/semantics/submodel-element/Skills/EndpointMetadata/securityDefinitions/digest_sc/in#1/0"
+                          }
+                        ],
+                        "type": "ExternalReference"
+                      },
+                      "valueType": "xs:string",
+                      "qualifiers": [
+                        {
+                          "kind": "ConceptQualifier",
+                          "type": "Cardinality",
+                          "value": "ZeroToOne",
+                          "valueType": "xs:string"
+                        }
+                      ],
+                      "idShort": "in"
+                    },
+                    {
+                      "modelType": "Property",
+                      "semanticId": {
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://smartfactory.de/semantics/submodel-element/Skills/EndpointMetadata/securityDefinitions/digest_sc/qop#1/0"
+                          }
+                        ],
+                        "type": "ExternalReference"
+                      },
+                      "valueType": "xs:string",
+                      "qualifiers": [
+                        {
+                          "kind": "ConceptQualifier",
+                          "type": "Cardinality",
+                          "value": "ZeroToOne",
+                          "valueType": "xs:string"
+                        }
+                      ],
+                      "idShort": "qop"
+                    },
+                    {
+                      "modelType": "Property",
+                      "semanticId": {
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://smartfactory.de/semantics/submodel-element/Skills/EndpointMetadata/securityDefinitions/digest_sc/proxy#1/0"
+                          }
+                        ],
+                        "type": "ExternalReference"
+                      },
+                      "valueType": "xs:string",
+                      "qualifiers": [
+                        {
+                          "kind": "ConceptQualifier",
+                          "type": "Cardinality",
+                          "value": "ZeroToOne",
+                          "valueType": "xs:string"
+                        }
+                      ],
+                      "idShort": "proxy"
+                    }
+                  ]
+                },
+                {
+                  "modelType": "SubmodelElementCollection",
+                  "semanticId": {
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://smartfactory.de/semantics/submodel-element/Skills/EndpointMetadata/securityDefinitions/bearer_sc#1/0"
+                      }
+                    ],
+                    "type": "ExternalReference"
+                  },
+                  "qualifiers": [
+                    {
+                      "kind": "ConceptQualifier",
+                      "type": "Cardinality",
+                      "value": "ZeroToOne",
+                      "valueType": "xs:string"
+                    }
+                  ],
+                  "idShort": "bearer_sc",
+                  "value": [
+                    {
+                      "modelType": "Property",
+                      "semanticId": {
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://smartfactory.de/semantics/submodel-element/Skills/EndpointMetadata/securityDefinitions/bearer_sc/scheme#1/0"
+                          }
+                        ],
+                        "type": "ExternalReference"
+                      },
+                      "value": "bearer",
+                      "valueType": "xs:string",
+                      "qualifiers": [
+                        {
+                          "kind": "ConceptQualifier",
+                          "type": "Cardinality",
+                          "value": "One",
+                          "valueType": "xs:string"
+                        }
+                      ],
+                      "idShort": "scheme"
+                    },
+                    {
+                      "modelType": "Property",
+                      "semanticId": {
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://smartfactory.de/semantics/submodel-element/Skills/EndpointMetadata/securityDefinitions/bearer_sc/name#1/0"
+                          }
+                        ],
+                        "type": "ExternalReference"
+                      },
+                      "valueType": "xs:string",
+                      "qualifiers": [
+                        {
+                          "kind": "ConceptQualifier",
+                          "type": "Cardinality",
+                          "value": "ZeroToOne",
+                          "valueType": "xs:string"
+                        }
+                      ],
+                      "idShort": "name"
+                    },
+                    {
+                      "modelType": "Property",
+                      "semanticId": {
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://smartfactory.de/semantics/submodel-element/Skills/EndpointMetadata/securityDefinitions/bearer_sc/in#1/0"
+                          }
+                        ],
+                        "type": "ExternalReference"
+                      },
+                      "valueType": "xs:string",
+                      "qualifiers": [
+                        {
+                          "kind": "ConceptQualifier",
+                          "type": "Cardinality",
+                          "value": "ZeroToOne",
+                          "valueType": "xs:string"
+                        }
+                      ],
+                      "idShort": "in"
+                    },
+                    {
+                      "modelType": "Property",
+                      "semanticId": {
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://smartfactory.de/semantics/submodel-element/Skills/EndpointMetadata/securityDefinitions/bearer_sc/authorization#1/0"
+                          }
+                        ],
+                        "type": "ExternalReference"
+                      },
+                      "valueType": "xs:string",
+                      "qualifiers": [
+                        {
+                          "kind": "ConceptQualifier",
+                          "type": "Cardinality",
+                          "value": "ZeroToOne",
+                          "valueType": "xs:string"
+                        }
+                      ],
+                      "idShort": "authorization"
+                    },
+                    {
+                      "modelType": "Property",
+                      "semanticId": {
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://smartfactory.de/semantics/submodel-element/Skills/EndpointMetadata/securityDefinitions/bearer_sc/alg#1/0"
+                          }
+                        ],
+                        "type": "ExternalReference"
+                      },
+                      "valueType": "xs:string",
+                      "qualifiers": [
+                        {
+                          "kind": "ConceptQualifier",
+                          "type": "Cardinality",
+                          "value": "ZeroToOne",
+                          "valueType": "xs:string"
+                        }
+                      ],
+                      "idShort": "alg"
+                    },
+                    {
+                      "modelType": "Property",
+                      "semanticId": {
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://smartfactory.de/semantics/submodel-element/Skills/EndpointMetadata/securityDefinitions/bearer_sc/format#1/0"
+                          }
+                        ],
+                        "type": "ExternalReference"
+                      },
+                      "valueType": "xs:string",
+                      "qualifiers": [
+                        {
+                          "kind": "ConceptQualifier",
+                          "type": "Cardinality",
+                          "value": "ZeroToOne",
+                          "valueType": "xs:string"
+                        }
+                      ],
+                      "idShort": "format"
+                    },
+                    {
+                      "modelType": "Property",
+                      "semanticId": {
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://smartfactory.de/semantics/submodel-element/Skills/EndpointMetadata/securityDefinitions/bearer_sc/proxy#1/0"
+                          }
+                        ],
+                        "type": "ExternalReference"
+                      },
+                      "valueType": "xs:string",
+                      "qualifiers": [
+                        {
+                          "kind": "ConceptQualifier",
+                          "type": "Cardinality",
+                          "value": "ZeroToOne",
+                          "valueType": "xs:string"
+                        }
+                      ],
+                      "idShort": "proxy"
+                    }
+                  ]
+                },
+                {
+                  "modelType": "SubmodelElementCollection",
+                  "semanticId": {
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://smartfactory.de/semantics/submodel-element/Skills/EndpointMetadata/securityDefinitions/oauth2_sc#1/0"
+                      }
+                    ],
+                    "type": "ExternalReference"
+                  },
+                  "qualifiers": [
+                    {
+                      "kind": "ConceptQualifier",
+                      "type": "Cardinality",
+                      "value": "ZeroToOne",
+                      "valueType": "xs:string"
+                    }
+                  ],
+                  "idShort": "oauth2_sc",
+                  "value": [
+                    {
+                      "modelType": "Property",
+                      "semanticId": {
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://smartfactory.de/semantics/submodel-element/Skills/EndpointMetadata/securityDefinitions/oauth2_sc/scheme#1/0"
+                          }
+                        ],
+                        "type": "ExternalReference"
+                      },
+                      "value": "oauth2",
+                      "valueType": "xs:string",
+                      "qualifiers": [
+                        {
+                          "kind": "ConceptQualifier",
+                          "type": "Cardinality",
+                          "value": "One",
+                          "valueType": "xs:string"
+                        }
+                      ],
+                      "idShort": "scheme"
+                    },
+                    {
+                      "modelType": "Property",
+                      "semanticId": {
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://smartfactory.de/semantics/submodel-element/Skills/EndpointMetadata/securityDefinitions/oauth2_sc/token#1/0"
+                          }
+                        ],
+                        "type": "ExternalReference"
+                      },
+                      "valueType": "xs:anyURI",
+                      "qualifiers": [
+                        {
+                          "kind": "ConceptQualifier",
+                          "type": "Cardinality",
+                          "value": "ZeroToOne",
+                          "valueType": "xs:string"
+                        }
+                      ],
+                      "idShort": "token"
+                    },
+                    {
+                      "modelType": "Property",
+                      "semanticId": {
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://smartfactory.de/semantics/submodel-element/Skills/EndpointMetadata/securityDefinitions/oauth2_sc/refresh#1/0"
+                          }
+                        ],
+                        "type": "ExternalReference"
+                      },
+                      "valueType": "xs:anyURI",
+                      "qualifiers": [
+                        {
+                          "kind": "ConceptQualifier",
+                          "type": "Cardinality",
+                          "value": "ZeroToOne",
+                          "valueType": "xs:string"
+                        }
+                      ],
+                      "idShort": "refresh"
+                    },
+                    {
+                      "modelType": "Property",
+                      "semanticId": {
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://smartfactory.de/semantics/submodel-element/Skills/EndpointMetadata/securityDefinitions/oauth2_sc/authorization#1/0"
+                          }
+                        ],
+                        "type": "ExternalReference"
+                      },
+                      "valueType": "xs:anyURI",
+                      "qualifiers": [
+                        {
+                          "kind": "ConceptQualifier",
+                          "type": "Cardinality",
+                          "value": "ZeroToOne",
+                          "valueType": "xs:string"
+                        }
+                      ],
+                      "idShort": "authorization"
+                    },
+                    {
+                      "modelType": "Property",
+                      "semanticId": {
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://smartfactory.de/semantics/submodel-element/Skills/EndpointMetadata/securityDefinitions/oauth2_sc/scopes#1/0"
+                          }
+                        ],
+                        "type": "ExternalReference"
+                      },
+                      "valueType": "xs:string",
+                      "qualifiers": [
+                        {
+                          "kind": "ConceptQualifier",
+                          "type": "Cardinality",
+                          "value": "ZeroToOne",
+                          "valueType": "xs:string"
+                        }
+                      ],
+                      "idShort": "scopes"
+                    },
+                    {
+                      "modelType": "Property",
+                      "semanticId": {
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://smartfactory.de/semantics/submodel-element/Skills/EndpointMetadata/securityDefinitions/oauth2_sc/flow#1/0"
+                          }
+                        ],
+                        "type": "ExternalReference"
+                      },
+                      "value": "code",
+                      "valueType": "xs:string",
+                      "qualifiers": [
+                        {
+                          "kind": "ConceptQualifier",
+                          "type": "Cardinality",
+                          "value": "ZeroToOne",
+                          "valueType": "xs:string"
+                        }
+                      ],
+                      "idShort": "flow"
+                    },
+                    {
+                      "modelType": "Property",
+                      "semanticId": {
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://smartfactory.de/semantics/submodel-element/Skills/EndpointMetadata/securityDefinitions/oauth2_sc/proxy#1/0"
+                          }
+                        ],
+                        "type": "ExternalReference"
+                      },
+                      "valueType": "xs:anyURI",
+                      "qualifiers": [
+                        {
+                          "kind": "ConceptQualifier",
+                          "type": "Cardinality",
+                          "value": "ZeroToOne",
+                          "valueType": "xs:string"
+                        }
+                      ],
+                      "idShort": "proxy"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "modelType": "SubmodelElementCollection",
+          "semanticId": {
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://smartfactory.de/semantics/submodel-element/Skills/SkillMetadata#1/0"
+              }
+            ],
+            "type": "ExternalReference"
+          },
+          "qualifiers": [
+            {
+              "kind": "ConceptQualifier",
+              "type": "Cardinality",
+              "value": "One",
+              "valueType": "xs:string"
+            }
+          ],
+          "idShort": "SkillMetadata",
+          "value": [
+            {
+              "modelType": "SubmodelElementCollection",
+              "semanticId": {
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://smartfactory.de/semantics/submodel-element/Skills/SkillMetadata/StateMachine#1/0"
+                  }
+                ],
+                "type": "ExternalReference"
+              },
+              "idShort": "StateMachine",
+              "value": [
+                {
+                  "modelType": "Property",
+                  "semanticId": {
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://smartfactory.de/semantics/submodel-element/Skills/SkillMetadata/StateMachine/TypeOfStateMachine#1/0"
+                      }
+                    ],
+                    "type": "ExternalReference"
+                  },
+                  "value": "SmartFactoryKL V4",
+                  "valueType": "xs:string",
+                  "idShort": "TypeOfStateMachine"
+                },
+                {
+                  "modelType": "SubmodelElementCollection",
+                  "semanticId": {
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://smartfactory.de/semantics/submodel-element/Skills/SkillMetadata/StateMachine/States#1/0"
+                      }
+                    ],
+                    "type": "ExternalReference"
+                  },
+                  "idShort": "States",
+                  "value": [
+                    {
+                      "modelType": "Property",
+                      "semanticId": {
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://smartfactory.de/semantics/submodel-element/Skills/SkillMetadata/StateMachine/States/Halted#1/0"
+                          }
+                        ],
+                        "type": "ExternalReference"
+                      },
+                      "valueType": "xs:string",
+                      "idShort": "Halted"
+                    },
+                    {
+                      "modelType": "Property",
+                      "semanticId": {
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://smartfactory.de/semantics/submodel-element/Skills/SkillMetadata/StateMachine/States/Ready#1/0"
+                          }
+                        ],
+                        "type": "ExternalReference"
+                      },
+                      "valueType": "xs:string",
+                      "idShort": "Ready"
+                    },
+                    {
+                      "modelType": "Property",
+                      "semanticId": {
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://smartfactory.de/semantics/submodel-element/Skills/SkillMetadata/StateMachine/States/Running#1/0"
+                          }
+                        ],
+                        "type": "ExternalReference"
+                      },
+                      "valueType": "xs:string",
+                      "idShort": "Running"
+                    },
+                    {
+                      "modelType": "Property",
+                      "semanticId": {
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://smartfactory.de/semantics/submodel-element/Skills/SkillMetadata/StateMachine/States/Suspended#1/0"
+                          }
+                        ],
+                        "type": "ExternalReference"
+                      },
+                      "valueType": "xs:string",
+                      "idShort": "Suspended"
+                    },
+                    {
+                      "modelType": "Property",
+                      "semanticId": {
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://smartfactory.de/semantics/submodel-element/Skills/SkillMetadata/StateMachine/States/Completed#1/0"
+                          }
+                        ],
+                        "type": "ExternalReference"
+                      },
+                      "valueType": "xs:string",
+                      "idShort": "Completed"
+                    },
+                    {
+                      "modelType": "Property",
+                      "valueType": "xs:string",
+                      "idShort": "Starting"
+                    },
+                    {
+                      "modelType": "Property",
+                      "valueType": "xs:string",
+                      "idShort": "Halting"
+                    }
+                  ]
+                },
+                {
+                  "modelType": "SubmodelElementCollection",
+                  "semanticId": {
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://smartfactory.de/semantics/submodel-element/Skills/SkillMetadata/StateMachine/Transitions#1/0"
+                      }
+                    ],
+                    "type": "ExternalReference"
+                  },
+                  "idShort": "Transitions",
+                  "value": [
+                    {
+                      "modelType": "AnnotatedRelationshipElement",
+                      "semanticId": {
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://smartfactory.de/semantics/submodel-element/Skills/SkillMetadata/StateMachine/Transitions/ReadyToStarting#1/0"
+                          }
+                        ],
+                        "type": "ExternalReference"
+                      },
+                      "idShort": "ReadyToStarting",
+                      "first": {
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "empty"
+                          }
+                        ],
+                        "type": "ExternalReference"
+                      },
+                      "second": {
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "empty"
+                          }
+                        ],
+                        "type": "ExternalReference"
+                      }
+                    },
+                    {
+                      "modelType": "AnnotatedRelationshipElement",
+                      "semanticId": {
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://smartfactory.de/semantics/submodel-element/Skills/SkillMetadata/StateMachine/Transitions/ReadyToHalting#1/0"
+                          }
+                        ],
+                        "type": "ExternalReference"
+                      },
+                      "idShort": "ReadyToHalting",
+                      "first": {
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "empty"
+                          }
+                        ],
+                        "type": "ExternalReference"
+                      },
+                      "second": {
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "empty"
+                          }
+                        ],
+                        "type": "ExternalReference"
+                      }
+                    },
+                    {
+                      "modelType": "AnnotatedRelationshipElement",
+                      "semanticId": {
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://smartfactory.de/semantics/submodel-element/Skills/SkillMetadata/StateMachine/Transitions/StartingToHalting#1/0"
+                          }
+                        ],
+                        "type": "ExternalReference"
+                      },
+                      "idShort": "StartingToHalting",
+                      "first": {
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "empty"
+                          }
+                        ],
+                        "type": "ExternalReference"
+                      },
+                      "second": {
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "empty"
+                          }
+                        ],
+                        "type": "ExternalReference"
+                      }
+                    },
+                    {
+                      "modelType": "AnnotatedRelationshipElement",
+                      "semanticId": {
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://smartfactory.de/semantics/submodel-element/Skills/SkillMetadata/StateMachine/Transitions/StartingToRunning#1/0"
+                          }
+                        ],
+                        "type": "ExternalReference"
+                      },
+                      "idShort": "StartingToRunning",
+                      "first": {
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "empty"
+                          }
+                        ],
+                        "type": "ExternalReference"
+                      },
+                      "second": {
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "empty"
+                          }
+                        ],
+                        "type": "ExternalReference"
+                      }
+                    },
+                    {
+                      "modelType": "AnnotatedRelationshipElement",
+                      "semanticId": {
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://smartfactory.de/semantics/submodel-element/Skills/SkillMetadata/StateMachine/Transitions/RunningToHalting#1/0"
+                          }
+                        ],
+                        "type": "ExternalReference"
+                      },
+                      "idShort": "RunningToHalting",
+                      "first": {
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "empty"
+                          }
+                        ],
+                        "type": "ExternalReference"
+                      },
+                      "second": {
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "empty"
+                          }
+                        ],
+                        "type": "ExternalReference"
+                      }
+                    },
+                    {
+                      "modelType": "AnnotatedRelationshipElement",
+                      "semanticId": {
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://smartfactory.de/semantics/submodel-element/Skills/SkillMetadata/StateMachine/Transitions/RunningToSuspended#1/0"
+                          }
+                        ],
+                        "type": "ExternalReference"
+                      },
+                      "idShort": "RunningToSuspended",
+                      "first": {
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "empty"
+                          }
+                        ],
+                        "type": "ExternalReference"
+                      },
+                      "second": {
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "empty"
+                          }
+                        ],
+                        "type": "ExternalReference"
+                      }
+                    },
+                    {
+                      "modelType": "AnnotatedRelationshipElement",
+                      "semanticId": {
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://smartfactory.de/semantics/submodel-element/Skills/SkillMetadata/StateMachine/Transitions/RunningToCompleted#1/0"
+                          }
+                        ],
+                        "type": "ExternalReference"
+                      },
+                      "idShort": "RunningToCompleted",
+                      "first": {
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "empty"
+                          }
+                        ],
+                        "type": "ExternalReference"
+                      },
+                      "second": {
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "empty"
+                          }
+                        ],
+                        "type": "ExternalReference"
+                      }
+                    },
+                    {
+                      "modelType": "AnnotatedRelationshipElement",
+                      "semanticId": {
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://smartfactory.de/semantics/submodel-element/Skills/SkillMetadata/StateMachine/Transitions/SuspendedToRunning#1/0"
+                          }
+                        ],
+                        "type": "ExternalReference"
+                      },
+                      "idShort": "SuspendedToRunning",
+                      "first": {
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "empty"
+                          }
+                        ],
+                        "type": "ExternalReference"
+                      },
+                      "second": {
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "empty"
+                          }
+                        ],
+                        "type": "ExternalReference"
+                      }
+                    },
+                    {
+                      "modelType": "AnnotatedRelationshipElement",
+                      "semanticId": {
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://smartfactory.de/semantics/submodel-element/Skills/SkillMetadata/StateMachine/Transitions/SuspendedToHalting#1/0"
+                          }
+                        ],
+                        "type": "ExternalReference"
+                      },
+                      "idShort": "SuspendedToHalting",
+                      "first": {
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "empty"
+                          }
+                        ],
+                        "type": "ExternalReference"
+                      },
+                      "second": {
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "empty"
+                          }
+                        ],
+                        "type": "ExternalReference"
+                      }
+                    },
+                    {
+                      "modelType": "AnnotatedRelationshipElement",
+                      "semanticId": {
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://smartfactory.de/semantics/submodel-element/Skills/SkillMetadata/StateMachine/Transitions/CompletedToReady#1/0"
+                          }
+                        ],
+                        "type": "ExternalReference"
+                      },
+                      "idShort": "CompletedToReady",
+                      "first": {
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "empty"
+                          }
+                        ],
+                        "type": "ExternalReference"
+                      },
+                      "second": {
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "empty"
+                          }
+                        ],
+                        "type": "ExternalReference"
+                      }
+                    },
+                    {
+                      "modelType": "AnnotatedRelationshipElement",
+                      "semanticId": {
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://smartfactory.de/semantics/submodel-element/Skills/SkillMetadata/StateMachine/Transitions/CompletedToHalting#1/0"
+                          }
+                        ],
+                        "type": "ExternalReference"
+                      },
+                      "idShort": "CompletedToHalting",
+                      "first": {
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "empty"
+                          }
+                        ],
+                        "type": "ExternalReference"
+                      },
+                      "second": {
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "empty"
+                          }
+                        ],
+                        "type": "ExternalReference"
+                      }
+                    },
+                    {
+                      "modelType": "AnnotatedRelationshipElement",
+                      "semanticId": {
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://smartfactory.de/semantics/submodel-element/Skills/SkillMetadata/StateMachine/Transitions/HaltingToHalted#1/0"
+                          }
+                        ],
+                        "type": "ExternalReference"
+                      },
+                      "idShort": "HaltingToHalted",
+                      "first": {
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "empty"
+                          }
+                        ],
+                        "type": "ExternalReference"
+                      },
+                      "second": {
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "empty"
+                          }
+                        ],
+                        "type": "ExternalReference"
+                      }
+                    },
+                    {
+                      "modelType": "AnnotatedRelationshipElement",
+                      "semanticId": {
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://smartfactory.de/semantics/submodel-element/Skills/SkillMetadata/StateMachine/Transitions/HaltedToReady#1/0"
+                          }
+                        ],
+                        "type": "ExternalReference"
+                      },
+                      "idShort": "HaltedToReady",
+                      "first": {
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "empty"
+                          }
+                        ],
+                        "type": "ExternalReference"
+                      },
+                      "second": {
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "empty"
+                          }
+                        ],
+                        "type": "ExternalReference"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "modelType": "SubmodelElementCollection",
+                  "semanticId": {
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://smartfactory.de/semantics/submodel-element/Skills/SkillMetadata/StateMachine/Trigger#1/0"
+                      }
+                    ],
+                    "type": "ExternalReference"
+                  },
+                  "idShort": "Trigger",
+                  "value": [
+                    {
+                      "modelType": "ReferenceElement",
+                      "semanticId": {
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://smartfactory.de/semantics/submodel-element/Skills/SkillMetadata/StateMachine/Trigger/Start#1/0"
+                          }
+                        ],
+                        "type": "ExternalReference"
+                      },
+                      "idShort": "Start"
+                    },
+                    {
+                      "modelType": "ReferenceElement",
+                      "semanticId": {
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://smartfactory.de/semantics/submodel-element/Skills/SkillMetadata/StateMachine/Trigger/Suspend#1/0"
+                          }
+                        ],
+                        "type": "ExternalReference"
+                      },
+                      "idShort": "Suspend"
+                    },
+                    {
+                      "modelType": "ReferenceElement",
+                      "semanticId": {
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://smartfactory.de/semantics/submodel-element/Skills/SkillMetadata/StateMachine/Trigger/Halt#1/0"
+                          }
+                        ],
+                        "type": "ExternalReference"
+                      },
+                      "idShort": "Halt"
+                    },
+                    {
+                      "modelType": "ReferenceElement",
+                      "semanticId": {
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://smartfactory.de/semantics/submodel-element/Skills/SkillMetadata/StateMachine/Trigger/Reset#1/0"
+                          }
+                        ],
+                        "type": "ExternalReference"
+                      },
+                      "idShort": "Reset"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "modelType": "Property",
+              "semanticId": {
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://smartfactory.de/semantics/submodel-element/Skills/SkillMetadata/InterfaceConcept#1/0"
+                  }
+                ],
+                "type": "ExternalReference"
+              },
+              "value": "SkillModel_V4",
+              "valueType": "xs:string",
+              "idShort": "InterfaceConcept"
+            },
+            {
+              "modelType": "Property",
+              "semanticId": {
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://smartfactory.de/semantics/submodel-element/Skills/SkillMetadata/InterfaceProtocol#1/0"
+                  }
+                ],
+                "type": "ExternalReference"
+              },
+              "value": "opc.tcp",
+              "valueType": "xs:string",
+              "idShort": "InterfaceProtocol"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelType": "Submodel",
+      "kind": "Instance",
+      "semanticId": {
+        "keys": [
+          {
+            "type": "GlobalReference",
+            "value": "https://admin-shell.io/idta/CapabilityDescription/1/0/Submodel"
+          }
+        ],
+        "type": "ExternalReference"
+      },
+      "id": "https://smartfactory.de/submodels/60252b9f-e1ee-4ac8-8a82-7cecdec79d3b",
+      "idShort": "OfferedCapabilityDescription",
+      "submodelElements": [
+        {
+          "modelType": "SubmodelElementCollection",
+          "semanticId": {
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/idta/CapabilityDescription/CapabilitySet/1/0"
+              }
+            ],
+            "type": "ExternalReference"
+          },
+          "idShort": "CapabilitySet",
+          "value": [
+            {
+              "modelType": "SubmodelElementCollection",
+              "semanticId": {
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/CapabilityDescription/CapabilityContainer/1/0"
+                  }
+                ],
+                "type": "ExternalReference"
+              },
+              "idShort": "ScrewContainer",
+              "value": [
+                {
+                  "modelType": "Capability",
+                  "semanticId": {
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/CapabilityDescription/Capability/1/0"
+                      }
+                    ],
+                    "type": "ExternalReference"
+                  },
+                  "idShort": "Screw"
+                },
+                {
+                  "modelType": "MultiLanguageProperty",
+                  "value": [
+                    {
+                      "language": "en",
+                      "text": " Capability to screw a screw into a part"
+                    }
+                  ],
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "This is a value in English"
+                    },
+                    {
+                      "language": "de",
+                      "text": "Das ist ein Wert in Deutsch"
+                    }
+                  ],
+                  "idShort": "CapabilityComment"
+                },
+                {
+                  "modelType": "SubmodelElementCollection",
+                  "semanticId": {
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/CapabilityDescription/CapabilityRelations/1/0"
+                      }
+                    ],
+                    "type": "ExternalReference"
+                  },
+                  "idShort": "CapabilityRelations",
+                  "value": [
+                    {
+                      "modelType": "RelationshipElement",
+                      "category": "PARAMETER",
+                      "description": [
+                        {
+                          "language": "en-US",
+                          "text": "Relationship between two elements"
+                        },
+                        {
+                          "language": "de",
+                          "text": "Beziehung zwischen zwei Elementen"
+                        }
+                      ],
+                      "idShort": "CapabilityRealizedBy",
+                      "first": {
+                        "keys": [
+                          {
+                            "type": "Submodel",
+                            "value": "https://smartfactory.de/submodels/60252b9f-e1ee-4ac8-8a82-7cecdec79d3b"
+                          },
+                          {
+                            "type": "SubmodelElementCollection",
+                            "value": "CapabilitySet"
+                          },
+                          {
+                            "type": "SubmodelElementCollection",
+                            "value": "ScrewContainer"
+                          }
+                        ],
+                        "type": "ModelReference"
+                      },
+                      "second": {
+                        "keys": [
+                          {
+                            "type": "Submodel",
+                            "value": "https://smartfactory.de/submodels/b6f0d706-88b7-4ab7-b17b-bdbc7a2ad261"
+                          },
+                          {
+                            "type": "SubmodelElementCollection",
+                            "value": "SkillSet"
+                          },
+                          {
+                            "type": "SubmodelElementCollection",
+                            "value": "Skill_0001"
+                          }
+                        ],
+                        "type": "ModelReference"
+                      }
+                    },
+                    {
+                  "modelType": "SubmodelElementCollection",
+                  "semanticId": {
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://smartfactory.de/aas/submodel/CapabilityDescription/CapabilitySet/CapabilityContainer/CapabilityRelations#1/0/ConstraintSet#1/0"
+                      }
+                    ],
+                    "type": "ExternalReference"
+                  },
+                  "idShort": "ConstraintSet",
+                  "value": [
+                    {
+                      "modelType": "SubmodelElementCollection",
+                      "semanticId": {
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://smartfactory.de/aas/submodel/CapabilityDescription/CapabilitySet/CapabilityContainer/CapabilityRelations#1/0/ConstraintSet#1/0/PropertyConstraintContainer#1/0"
+                          }
+                        ],
+                        "type": "ExternalReference"
+                      },
+                      "idShort": "PropertyConstraintContainer001",
+                      "value": [
+                        {
+                          "modelType": "Property",
+                          "value": "Pre",
+                          "valueType": "xs:string",
+                          "idShort": "PropertyConditionalType"
+                        },
+                        {
+                          "modelType": "Property",
+                          "value": "CustomConstraint",
+                          "valueType": "xs:string",
+                          "idShort": "ConstraintType"
+                        },
+                        {
+                          "modelType": "SubmodelElementCollection",
+                          "semanticId": {
+                            "keys": [
+                              {
+                                "type": "GlobalReference",
+                                "value": "https://smartfactory.de/aas/submodel/CapabilityDescription/CapabilitySet/CapabilityContainer/CapabilityRelations#1/0/ConstraintSet#1/0/PropertyConstraintContainer#1/0/CustomConstraint#1/0/ConstraintValue#1/0"
+                              }
+                            ],
+                            "type": "ExternalReference"
+                          },
+                          "idShort": "CustomConstraint",
+                          "value": [
+                            {
+                              "modelType": "Property",
+                              "semanticId": {
+                                "keys": [
+                                  {
+                                    "type": "GlobalReference",
+                                    "value": "https://smartfactory.de/aas/submodel/CapabilityDescription/CapabilitySet/CapabilityContainer/CapabilityRelations#1/0/ConstraintSet#1/0/PropertyConstraintContainer#1/0/CustomConstraint#1/0/ConstraintValue#1/0/SotrageConstraint#1/0"
+                                  }
+                                ],
+                                "type": "ExternalReference"
+                              },
+                              "value": "StorageConstraint",
+                              "valueType": "xs:string",
+                              "idShort": "ConstraintName"
+                            }
+                          ]
+                        },
+                        {
+                          "modelType": "SubmodelElementCollection",
+                          "semanticId": {
+                            "keys": [
+                              {
+                                "type": "GlobalReference",
+                                "value": "https://smartfactory.de/aas/submodel/CapabilityDescription/CapabilitySet/CapabilityContainer/CapabilityRelations#1/0/ConstraintSet#1/0/PropertyConstraintContainer#1/0"
+                              }
+                            ],
+                            "type": "ExternalReference"
+                          },
+                          "idShort": "ConstraintPropertyRelations",
+                          "value": [
+                            {
+                              "modelType": "RelationshipElement",
+                              "idShort": "ConstraintHasProperty_001",
+                              "first": {
+                                "keys": [
+                                  {
+                                    "type": "Submodel",
+                                    "value": "https://smartfactory.de/submodels/60252b9f-e1ee-4ac8-8a82-7cecdec79d3b"
+                                  },
+                                  {
+                                    "type": "SubmodelElementCollection",
+                                    "value": "CapabilitySet"
+                                  },
+                                  {
+                                    "type": "SubmodelElementCollection",
+                                    "value": "ScrewContainer"
+                                  },
+                                  {
+                                    "type": "SubmodelElementCollection",
+                                    "value": "CapabilityRelations"
+                                  },
+                                  {
+                                    "type": "SubmodelElementCollection",
+                                    "value": "ConstraintSet"
+                                  },
+                                  {
+                                    "type": "SubmodelElementCollection",
+                                    "value": "PropertyConstraintContainer001"
+                                  },
+                                  {
+                                    "type": "SubmodelElementCollection",
+                                    "value": "CustomConstraint"
+                                  }
+                                ],
+                                "type": "ModelReference"
+                              },
+                              "second": {
+                                "keys": [
+                                  {
+                                    "type": "Submodel",
+                                    "value": "https://smartfactory.de/submodels/60252b9f-e1ee-4ac8-8a82-7cecdec79d3b"
+                                  },
+                                  {
+                                    "type": "SubmodelElementCollection",
+                                    "value": "CapabilitySet"
+                                  },
+                                  {
+                                    "type": "SubmodelElementCollection",
+                                    "value": "ScrewContainer"
+                                  },
+                                  {
+                                    "type": "SubmodelElementCollection",
+                                    "value": "PropertySet"
+                                  },
+                                  {
+                                    "type": "SubmodelElementCollection",
+                                    "value": "PropertyContainer003"
+                                  },
+                                  {
+                                    "type": "SubmodelElementList",
+                                    "value": "ProductId"
+                                  }
+                                ],
+                                "type": "ModelReference"
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+                  ]
+                },
+                {
+                  "modelType": "SubmodelElementCollection",
+                  "semanticId": {
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/CapabilityDescription/PropertySet/1/0"
+                      }
+                    ],
+                    "type": "ExternalReference"
+                  },
+                  "idShort": "PropertySet",
+                  "value": [
+                    {
+                      "modelType": "SubmodelElementCollection",
+                      "semanticId": {
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/idta/CapabilityDescription/PropertyContainer/1/0"
+                          }
+                        ],
+                        "type": "ExternalReference"
+                      },
+                      "idShort": "PropertyContainer001",
+                      "value": [
+                        {
+                          "modelType": "RelationshipElement",
+                          "category": "PARAMETER",
+                          "description": [
+                            {
+                              "language": "en-US",
+                              "text": "Relationship between two elements"
+                            },
+                            {
+                              "language": "de",
+                              "text": "Beziehung zwischen zwei Elementen"
+                            }
+                          ],
+                          "idShort": "SameProperty",
+                          "first": {
+                            "keys": [
+                              {
+                                "type": "Submodel",
+                                "value": "https://smartfactory.de/submodels/404"
+                              }
+                            ],
+                            "type": "ModelReference"
+                          },
+                          "second": {
+                            "keys": [
+                              {
+                                "type": "Submodel",
+                                "value": "https://smartfactory.de/submodels/405"
+                              }
+                            ],
+                            "type": "ModelReference"
+                          }
+                        },
+                        {
+                          "modelType": "MultiLanguageProperty",
+                          "value": [
+                            {
+                              "language": "en",
+                              "text": " "
+                            }
+                          ],
+                          "description": [
+                            {
+                              "language": "en",
+                              "text": "usable torque for srewing process"
+                            },
+                            {
+                              "language": "de",
+                              "text": "Nutzbarer Torque beim der Verschraubung"
+                            }
+                          ],
+                          "idShort": "PropertyComment"
+                        },
+                        {
+                          "modelType": "Range",
+                          "semanticId": {
+                            "keys": [
+                              {
+                                "type": "GlobalReference",
+                                "value": "https://admin-shell.io/idta/CapabilityPropertyEnumType/Range/1/0"
+                              }
+                            ],
+                            "type": "ExternalReference"
+                          },
+                          "max": "6.7",
+                          "min": "1.5",
+                          "valueType": "xs:double",
+                          "idShort": "Torque"
+                        }
+                      ]
+                    },
+                    {
+                      "modelType": "SubmodelElementCollection",
+                      "semanticId": {
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/idta/CapabilityDescription/PropertyContainer/1/0"
+                          }
+                        ],
+                        "type": "ExternalReference"
+                      },
+                      "idShort": "PropertyContainer002",
+                      "value": [
+                        {
+                          "modelType": "RelationshipElement",
+                          "category": "PARAMETER",
+                          "description": [
+                            {
+                              "language": "en-US",
+                              "text": "Relationship between two elements"
+                            },
+                            {
+                              "language": "de",
+                              "text": "Beziehung zwischen zwei Elementen"
+                            }
+                          ],
+                          "idShort": "SameProperty",
+                          "first": {
+                            "keys": [
+                              {
+                                "type": "Submodel",
+                                "value": "https://smartfactory.de/submodels/404"
+                              }
+                            ],
+                            "type": "ModelReference"
+                          },
+                          "second": {
+                            "keys": [
+                              {
+                                "type": "Submodel",
+                                "value": "https://smartfactory.de/submodels/405"
+                              }
+                            ],
+                            "type": "ModelReference"
+                          }
+                        },
+                        {
+                          "modelType": "MultiLanguageProperty",
+                          "value": [
+                            {
+                              "language": "en",
+                              "text": " "
+                            }
+                          ],
+                          "description": [
+                            {
+                              "language": "en",
+                              "text": "Usable Sizes for for screwing process"
+                            },
+                            {
+                              "language": "de",
+                              "text": "Verfügbare Schraubengrößen"
+                            }
+                          ],
+                          "idShort": "PropertyComment"
+                        },
+                        {
+                          "modelType": "Range",
+                          "semanticId": {
+                            "keys": [
+                              {
+                                "type": "GlobalReference",
+                                "value": "https://admin-shell.io/idta/CapabilityPropertyEnumType/Range/1/0"
+                              }
+                            ],
+                            "type": "ExternalReference"
+                          },
+                          "max": "8",
+                          "min": "4",
+                          "valueType": "xs:integer",
+                          "idShort": "Diameter"
+                        }
+                      ]
+                    },
+                    {
+                      "modelType": "SubmodelElementCollection",
+                      "semanticId": {
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/idta/CapabilityDescription/PropertyContainer/1/0"
+                          }
+                        ],
+                        "type": "ExternalReference"
+                      },
+                      "idShort": "PropertyContainer003",
+                      "value": [
+                        {
+                          "modelType": "RelationshipElement",
+                          "category": "PARAMETER",
+                          "description": [
+                            {
+                              "language": "en-US",
+                              "text": "Relationship between two elements"
+                            },
+                            {
+                              "language": "de",
+                              "text": "Beziehung zwischen zwei Elementen"
+                            }
+                          ],
+                          "idShort": "SameProperty",
+                          "first": {
+                            "keys": [
+                              {
+                                "type": "Submodel",
+                                "value": "https://smartfactory.de/submodels/404"
+                              }
+                            ],
+                            "type": "ModelReference"
+                          },
+                          "second": {
+                            "keys": [
+                              {
+                                "type": "Submodel",
+                                "value": "https://smartfactory.de/submodels/405"
+                              }
+                            ],
+                            "type": "ModelReference"
+                          }
+                        },
+                        {
+                          "modelType": "MultiLanguageProperty",
+                          "value": [
+                            {
+                              "language": "en",
+                              "text": " "
+                            }
+                          ],
+                          "description": [
+                            {
+                              "language": "en",
+                              "text": "This is a value in English"
+                            },
+                            {
+                              "language": "de",
+                              "text": "Das ist ein Wert in Deutsch"
+                            }
+                          ],
+                          "idShort": "PropertyComment"
+                        },
+                        {
+                        "modelType": "Property",
+                        "value": "*",
+                        "valueType": "xs:string",
+                        "idShort": "ProductId"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelType": "Submodel",
+      "kind": "Instance",
+      "semanticId": {
+        "keys": [
+          {
+            "type": "GlobalReference",
+            "value": "https://admin-shell.io/idta/nameplate/3/0/Nameplate"
+          }
+        ],
+        "type": "ExternalReference"
+      },
+      "id": "https://smartfactory.de/submodels/6961dad7-631b-48a5-a51b-a2c0c659e127",
+      "description": [
+        {
+          "language": "en",
+          "text": "Contains the nameplate information attached to the product"
+        }
+      ],
+      "idShort": "Nameplate",
+      "submodelElements": [
+        {
+          "modelType": "Property",
+          "semanticId": {
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "0112/2///61987#ABN590#002"
+              }
+            ],
+            "type": "ExternalReference"
+          },
+          "supplementalSemanticIds": [
+            {
+              "keys": [
+                {
+                  "type": "GlobalReference",
+                  "value": "0173-1#02-ABH173#003"
+                }
+              ],
+              "type": "ExternalReference"
+            }
+          ],
+          "value": "https://smartfactory.de/asset/P18",
+          "valueType": "xs:anyURI",
+          "idShort": "URIOfTheProduct"
+        },
+        {
+          "modelType": "MultiLanguageProperty",
+          "semanticId": {
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "0112/2///61987#ABA565#009"
+              }
+            ],
+            "type": "ExternalReference"
+          },
+          "supplementalSemanticIds": [
+            {
+              "keys": [
+                {
+                  "type": "GlobalReference",
+                  "value": "0173-1#02-AAO677#004"
+                }
+              ],
+              "type": "ExternalReference"
+            }
+          ],
+          "value": [
+            {
+              "language": "de",
+              "text": "Technologie-Initiative SmartFactory KL e. V."
+            }
+          ],
+          "idShort": "ManufacturerName"
+        },
+        {
+          "modelType": "MultiLanguageProperty",
+          "semanticId": {
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "0112/2///61987#ABA567#009"
+              }
+            ],
+            "type": "ExternalReference"
+          },
+          "supplementalSemanticIds": [
+            {
+              "keys": [
+                {
+                  "type": "GlobalReference",
+                  "value": "0173-1#02-AAW338#003"
+                }
+              ],
+              "type": "ExternalReference"
+            }
+          ],
+          "value": [
+            {
+              "language": "en",
+              "text": "Roadshow demonstrator to demonstrate plug and produce and remote control in context of factory-x."
+            }
+          ],
+          "idShort": "ManufacturerProductDesignation"
+        },
+        {
+          "modelType": "SubmodelElementCollection",
+          "semanticId": {
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/zvei/nameplate/1/0/ContactInformations/AddressInformation"
+              }
+            ],
+            "type": "ExternalReference"
+          },
+          "supplementalSemanticIds": [
+            {
+              "keys": [
+                {
+                  "type": "GlobalReference",
+                  "value": "https://admin-shell.io/smt-dropin/smt-dropin-use/1/0"
+                }
+              ],
+              "type": "ExternalReference"
+            },
+            {
+              "keys": [
+                {
+                  "type": "GlobalReference",
+                  "value": "0112/2///61360_7#AAS002#001"
+                }
+              ],
+              "type": "ExternalReference"
+            },
+            {
+              "keys": [
+                {
+                  "type": "GlobalReference",
+                  "value": "0173-1#02-AAQ837#008/0173-1#01-ADR448#008"
+                }
+              ],
+              "type": "ExternalReference"
+            }
+          ],
+          "description": [
+            {
+              "language": "en",
+              "text": "Note: this set of information is defined by SMT drop-in \"Address Information\""
+            }
+          ],
+          "idShort": "AddressInformation",
+          "value": [
+            {
+              "modelType": "Property",
+              "semanticId": {
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "0173-1#07-AAS927#001"
+                  }
+                ],
+                "type": "ExternalReference"
+              },
+              "value": "0173-1#07-AAS931#001",
+              "valueType": "xs:string",
+              "qualifiers": [
+                {
+                  "kind": "ConceptQualifier",
+                  "type": "Multiplicity",
+                  "value": "ZeroToOne",
+                  "valueType": "xs:string"
+                }
+              ],
+              "description": [
+                {
+                  "language": "en",
+                  "text": "enumeration: 0173-1#07-AAS927#001 (administrativ contact), 0173-1#07-AAS928#001 (commercial contact), 0173-1#07-AAS929#001 (other contact), 0173-1#07-AAS930#001 (hazardous goods contact), 0173-1#07-AAS931#001 (technical contact). Note: the above mentioned ECLASS enumeration should be declared as “open” for further addition. ECLASS enumeration IRDI is preferable. If no IRDI available, custom input as String may also be accepted."
+                }
+              ],
+              "idShort": "RoleOfContactPerson"
+            },
+            {
+              "modelType": "MultiLanguageProperty",
+              "semanticId": {
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "0173-1#02-AAO208#003"
+                  }
+                ],
+                "type": "ExternalReference"
+              },
+              "value": [
+                {
+                  "language": "en",
+                  "text": "Mr"
+                }
+              ],
+              "qualifiers": [
+                {
+                  "kind": "ConceptQualifier",
+                  "type": "Multiplicity",
+                  "value": "ZeroToOne",
+                  "valueType": "xs:string"
+                }
+              ],
+              "idShort": "Title"
+            },
+            {
+              "modelType": "MultiLanguageProperty",
+              "semanticId": {
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "0173-1#02-AAO134#002"
+                  }
+                ],
+                "type": "ExternalReference"
+              },
+              "value": [
+                {
+                  "language": "en",
+                  "text": "DE"
+                }
+              ],
+              "qualifiers": [
+                {
+                  "kind": "ConceptQualifier",
+                  "type": "Multiplicity",
+                  "value": "One",
+                  "valueType": "xs:string"
+                }
+              ],
+              "description": [
+                {
+                  "language": "en",
+                  "text": "Note: see also [IRDI] 0112/2///61360_4#ADA005#001 country code. country codes defined accord. to DIN EN ISO 3166-1 alpha-2 codes. Mandatory property according to EU Machine Directive 2006/42/EC. Recommendation: property declaration as MLP is required by its semantic definition. As the property value is language independent, users are recommended to provide maximal 1 string in any language of the user’s choice."
+                }
+              ],
+              "idShort": "NationalCode"
+            },
+            {
+              "modelType": "Property",
+              "semanticId": {
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/zvei/nameplate/1/0/ContactInformations/ContactInformation/Language"
+                  }
+                ],
+                "type": "ExternalReference"
+              },
+              "value": "DE",
+              "valueType": "xs:string",
+              "qualifiers": [
+                {
+                  "kind": "ConceptQualifier",
+                  "type": "Multiplicity",
+                  "value": "ZeroToMany",
+                  "valueType": "xs:string"
+                }
+              ],
+              "description": [
+                {
+                  "language": "en",
+                  "text": "Note: language codes defined accord. to ISO 639-1. Note: as per ECLASS definition, Expression and representation of thoughts, information, feelings, ideas through characters."
+                }
+              ],
+              "idShort": "Language"
+            },
+            {
+              "modelType": "Property",
+              "semanticId": {
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/zvei/nameplate/1/0/ContactInformations/ContactInformation/TimeZone"
+                  }
+                ],
+                "type": "ExternalReference"
+              },
+              "value": "Z",
+              "valueType": "xs:string",
+              "qualifiers": [
+                {
+                  "kind": "ConceptQualifier",
+                  "type": "Multiplicity",
+                  "value": "ZeroToOne",
+                  "valueType": "xs:string"
+                }
+              ],
+              "description": [
+                {
+                  "language": "en",
+                  "text": "Note: notation accord. to ISO 8601 Note: for time in UTC the zone designator “Z” is to be used"
+                }
+              ],
+              "idShort": "TimeZone"
+            },
+            {
+              "modelType": "MultiLanguageProperty",
+              "semanticId": {
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "0173-1#02-AAO132#002"
+                  }
+                ],
+                "type": "ExternalReference"
+              },
+              "value": [
+                {
+                  "language": "de",
+                  "text": "Kaiserslautern"
+                }
+              ],
+              "qualifiers": [
+                {
+                  "kind": "ConceptQualifier",
+                  "type": "Multiplicity",
+                  "value": "One",
+                  "valueType": "xs:string"
+                }
+              ],
+              "description": [
+                {
+                  "language": "en",
+                  "text": "Note: see also [IRDI] 0112/2///61987#ABA129#001 city/town. Mandatory property according to EU Machine Directive 2006/42/EC."
+                }
+              ],
+              "idShort": "CityTown"
+            },
+            {
+              "modelType": "MultiLanguageProperty",
+              "semanticId": {
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "0173-1#02-AAW001#001"
+                  }
+                ],
+                "type": "ExternalReference"
+              },
+              "value": [
+                {
+                  "language": "en",
+                  "text": "Technologie-Initiative SmartFactory KL e. V."
+                }
+              ],
+              "qualifiers": [
+                {
+                  "kind": "ConceptQualifier",
+                  "type": "Multiplicity",
+                  "value": "ZeroToOne",
+                  "valueType": "xs:string"
+                }
+              ],
+              "idShort": "Company"
+            },
+            {
+              "modelType": "MultiLanguageProperty",
+              "semanticId": {
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "0173-1#02-AAO127#003"
+                  }
+                ],
+                "type": "ExternalReference"
+              },
+              "value": [
+                {
+                  "language": "de",
+                  "text": "Innovative Fabriksysteme"
+                }
+              ],
+              "qualifiers": [
+                {
+                  "kind": "ConceptQualifier",
+                  "type": "Multiplicity",
+                  "value": "ZeroToOne",
+                  "valueType": "xs:string"
+                }
+              ],
+              "idShort": "Department"
+            },
+            {
+              "modelType": "SubmodelElementCollection",
+              "semanticId": {
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/zvei/nameplate/1/0/ContactInformations/ContactInformation/Phone"
+                  }
+                ],
+                "type": "ExternalReference"
+              },
+              "qualifiers": [
+                {
+                  "kind": "ConceptQualifier",
+                  "type": "Multiplicity",
+                  "value": "ZeroToOne",
+                  "valueType": "xs:string"
+                }
+              ],
+              "idShort": "Phone",
+              "value": [
+                {
+                  "modelType": "MultiLanguageProperty",
+                  "semanticId": {
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0173-1#02-AAO136#002"
+                      }
+                    ],
+                    "type": "ExternalReference"
+                  },
+                  "value": [
+                    {
+                      "language": "en",
+                      "text": "+49(0) 631 20575-3401"
+                    }
+                  ],
+                  "qualifiers": [
+                    {
+                      "kind": "ConceptQualifier",
+                      "type": "Multiplicity",
+                      "value": "One",
+                      "valueType": "xs:string"
+                    }
+                  ],
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Recommendation: property declaration as MLP is required by its semantic definition. As the property value is language independent, users are recommended to provide maximal 1 string in any language of the user’s choice."
+                    }
+                  ],
+                  "idShort": "TelephoneNumber"
+                },
+                {
+                  "modelType": "Property",
+                  "semanticId": {
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0173-1#02-AAO137#003"
+                      }
+                    ],
+                    "type": "ExternalReference"
+                  },
+                  "value": "0173-1#07-AAS754#001",
+                  "valueType": "xs:string",
+                  "qualifiers": [
+                    {
+                      "kind": "ConceptQualifier",
+                      "type": "Multiplicity",
+                      "value": "ZeroToOne",
+                      "valueType": "xs:string"
+                    }
+                  ],
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": " enumeration: 0173-1#07-AAS754#001 (office), 0173-1#07-AAS755#001 (office mobile), 0173-1#07-AAS756#001 (secretary), 0173-1#07-AAS757#001 (substitute), 0173-1#07-AAS758#001 (home), 0173-1#07-AAS759#001 (private mobile)"
+                    }
+                  ],
+                  "idShort": "TypeOfTelephone"
+                },
+                {
+                  "modelType": "MultiLanguageProperty",
+                  "semanticId": {
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/zvei/nameplate/1/0/ContactInformations/ContactInformation/AvailableTime/"
+                      }
+                    ],
+                    "type": "ExternalReference"
+                  },
+                  "value": [
+                    {
+                      "language": "de",
+                      "text": "Montag – Freitag 08:00 bis 16:00"
+                    }
+                  ],
+                  "qualifiers": [
+                    {
+                      "kind": "ConceptQualifier",
+                      "type": "Multiplicity",
+                      "value": "ZeroToOne",
+                      "valueType": "xs:string"
+                    }
+                  ],
+                  "idShort": "AvailableTime"
+                }
+              ]
+            },
+            {
+              "modelType": "SubmodelElementCollection",
+              "semanticId": {
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "0173-1#02-AAQ834#005"
+                  }
+                ],
+                "type": "ExternalReference"
+              },
+              "qualifiers": [
+                {
+                  "kind": "ConceptQualifier",
+                  "type": "Multiplicity",
+                  "value": "ZeroToOne",
+                  "valueType": "xs:string"
+                }
+              ],
+              "idShort": "Fax",
+              "value": [
+                {
+                  "modelType": "MultiLanguageProperty",
+                  "semanticId": {
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0173-1#02-AAO195#002"
+                      }
+                    ],
+                    "type": "ExternalReference"
+                  },
+                  "value": [
+                    {
+                      "language": "en",
+                      "text": "+49(0) 631 20575-3402"
+                    }
+                  ],
+                  "qualifiers": [
+                    {
+                      "kind": "ConceptQualifier",
+                      "type": "Multiplicity",
+                      "value": "One",
+                      "valueType": "xs:string"
+                    }
+                  ],
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "Recommendation: property declaration as MLP is required by its semantic definition. As the property value is language independent, users are recommended to provide maximal 1 string in any language of the user’s choice."
+                    }
+                  ],
+                  "idShort": "FaxNumber"
+                },
+                {
+                  "modelType": "Property",
+                  "semanticId": {
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0173-1#02-AAO196#003"
+                      }
+                    ],
+                    "type": "ExternalReference"
+                  },
+                  "value": " 0173-1#07-AAS754#001",
+                  "valueType": "xs:string",
+                  "qualifiers": [
+                    {
+                      "kind": "ConceptQualifier",
+                      "type": "Multiplicity",
+                      "value": "ZeroToOne",
+                      "valueType": "xs:string"
+                    }
+                  ],
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "enumeration: 0173-1#07-AAS754#001 (office), 0173-1#07-AAS756#001 (secretary), 0173-1#07-AAS758#001 (home)"
+                    }
+                  ],
+                  "idShort": "TypeOfFaxNumber"
+                }
+              ]
+            },
+            {
+              "modelType": "SubmodelElementCollection",
+              "semanticId": {
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "0173-1#02-AAQ836#005"
+                  }
+                ],
+                "type": "ExternalReference"
+              },
+              "qualifiers": [
+                {
+                  "kind": "ConceptQualifier",
+                  "type": "Multiplicity",
+                  "value": "ZeroToOne",
+                  "valueType": "xs:string"
+                }
+              ],
+              "idShort": "Email",
+              "value": [
+                {
+                  "modelType": "Property",
+                  "semanticId": {
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0173-1#02-AAO198#002"
+                      }
+                    ],
+                    "type": "ExternalReference"
+                  },
+                  "value": "info@smartfactory.de",
+                  "valueType": "xs:string",
+                  "qualifiers": [
+                    {
+                      "kind": "ConceptQualifier",
+                      "type": "Multiplicity",
+                      "value": "One",
+                      "valueType": "xs:string"
+                    }
+                  ],
+                  "idShort": "EmailAddress"
+                }
+              ]
+            },
+            {
+              "modelType": "SubmodelElementCollection",
+              "semanticId": {
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/zvei/nameplate/1/0/ContactInformations/"
+                  }
+                ],
+                "type": "ExternalReference"
+              },
+              "qualifiers": [
+                {
+                  "kind": "ConceptQualifier",
+                  "type": "Multiplicity",
+                  "value": "ZeroToMany",
+                  "valueType": "xs:string"
+                }
+              ],
+              "idShort": "IPCommunication__00__",
+              "value": [
+                {
+                  "modelType": "Property",
+                  "semanticId": {
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "0173-1#02-AAQ326#002"
+                      }
+                    ],
+                    "type": "ExternalReference"
+                  },
+                  "value": "https://www.smartfactory.de/",
+                  "valueType": "xs:string",
+                  "qualifiers": [
+                    {
+                      "kind": "ConceptQualifier",
+                      "type": "Multiplicity",
+                      "value": "One",
+                      "valueType": "xs:string"
+                    }
+                  ],
+                  "idShort": "AddressOfAdditionalLink"
+                },
+                {
+                  "modelType": "Property",
+                  "semanticId": {
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/zvei/nameplate/1/0/ ContactInformations/ContactInformation/IPCommunication/TypeOfCommunication"
+                      }
+                    ],
+                    "type": "ExternalReference"
+                  },
+                  "value": "Chat",
+                  "valueType": "xs:string",
+                  "qualifiers": [
+                    {
+                      "kind": "ConceptQualifier",
+                      "type": "Multiplicity",
+                      "value": "ZeroToOne",
+                      "valueType": "xs:string"
+                    }
+                  ],
+                  "idShort": "TypeOfCommunication"
+                },
+                {
+                  "modelType": "MultiLanguageProperty",
+                  "semanticId": {
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/zvei/nameplate/1/0/ContactInformations/ContactInformation/AvailableTime/"
+                      }
+                    ],
+                    "type": "ExternalReference"
+                  },
+                  "value": [
+                    {
+                      "language": "de",
+                      "text": "Montag – Freitag 08:00 bis 16:00"
+                    }
+                  ],
+                  "qualifiers": [
+                    {
+                      "kind": "ConceptQualifier",
+                      "type": "Multiplicity",
+                      "value": "ZeroToOne",
+                      "valueType": "xs:string"
+                    }
+                  ],
+                  "idShort": "AvailableTime"
+                }
+              ]
+            },
+            {
+              "modelType": "MultiLanguageProperty",
+              "semanticId": {
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "0173-1#02-AAO128#002"
+                  }
+                ],
+                "type": "ExternalReference"
+              },
+              "value": [
+                {
+                  "language": "de",
+                  "text": "Trippstadter Str. 122"
+                }
+              ],
+              "qualifiers": [
+                {
+                  "kind": "ConceptQualifier",
+                  "type": "Multiplicity",
+                  "value": "One",
+                  "valueType": "xs:string"
+                }
+              ],
+              "description": [
+                {
+                  "language": "en",
+                  "text": "Note: see also [IRDI] 0112/2///61987#ABA286#001 street. Mandatory property according to EU Machine Directive 2006/42/EC"
+                }
+              ],
+              "idShort": "Street"
+            },
+            {
+              "modelType": "MultiLanguageProperty",
+              "semanticId": {
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "0173-1#02-AAO129#002"
+                  }
+                ],
+                "type": "ExternalReference"
+              },
+              "value": [
+                {
+                  "language": "de",
+                  "text": "67663"
+                }
+              ],
+              "qualifiers": [
+                {
+                  "kind": "ConceptQualifier",
+                  "type": "Multiplicity",
+                  "value": "One",
+                  "valueType": "xs:string"
+                }
+              ],
+              "description": [
+                {
+                  "language": "en",
+                  "text": "Note: see also [IRDI] 0112/2///61987#ABA281#001 ZIP/Postal code. Mandatory property according to EU Machine Directive 2006/42/EC. Recommendation: property declaration as MLP is required by its semantic definition. As the property value is language independent, users are recommended to provide maximal 1 string in any language of the user’s choice."
+                }
+              ],
+              "idShort": "Zipcode"
+            },
+            {
+              "modelType": "MultiLanguageProperty",
+              "semanticId": {
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "0173-1#02-AAO130#002"
+                  }
+                ],
+                "type": "ExternalReference"
+              },
+              "value": [
+                {
+                  "language": "en",
+                  "text": "PF 1234"
+                }
+              ],
+              "qualifiers": [
+                {
+                  "kind": "ConceptQualifier",
+                  "type": "Multiplicity",
+                  "value": "ZeroToOne",
+                  "valueType": "xs:string"
+                }
+              ],
+              "idShort": "POBox"
+            },
+            {
+              "modelType": "MultiLanguageProperty",
+              "semanticId": {
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "0173-1#02-AAO131#002"
+                  }
+                ],
+                "type": "ExternalReference"
+              },
+              "value": [
+                {
+                  "language": "en",
+                  "text": "12345"
+                }
+              ],
+              "qualifiers": [
+                {
+                  "kind": "ConceptQualifier",
+                  "type": "Multiplicity",
+                  "value": "ZeroToOne",
+                  "valueType": "xs:string"
+                }
+              ],
+              "description": [
+                {
+                  "language": "en",
+                  "text": "Recommendation: property declaration as MLP is required by its semantic definition. As the property value is language independent, users are recommended to provide maximal 1 string in any language of the user’s choice."
+                }
+              ],
+              "idShort": "ZipCodeOfPOBox"
+            },
+            {
+              "modelType": "MultiLanguageProperty",
+              "semanticId": {
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "0173-1#02-AAO133#002"
+                  }
+                ],
+                "type": "ExternalReference"
+              },
+              "value": [
+                {
+                  "language": "de",
+                  "text": "Rheinland-Pfalz"
+                }
+              ],
+              "qualifiers": [
+                {
+                  "kind": "ConceptQualifier",
+                  "type": "Multiplicity",
+                  "value": "ZeroToOne",
+                  "valueType": "xs:string"
+                }
+              ],
+              "idShort": "StateCounty"
+            },
+            {
+              "modelType": "MultiLanguageProperty",
+              "semanticId": {
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "0173-1#02-AAO205#002"
+                  }
+                ],
+                "type": "ExternalReference"
+              },
+              "value": [
+                {
+                  "language": "en",
+                  "text": "Jungbluth"
+                }
+              ],
+              "qualifiers": [
+                {
+                  "kind": "ConceptQualifier",
+                  "type": "Multiplicity",
+                  "value": "ZeroToOne",
+                  "valueType": "xs:string"
+                }
+              ],
+              "idShort": "NameOfContact"
+            },
+            {
+              "modelType": "MultiLanguageProperty",
+              "semanticId": {
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "0173-1#02-AAO206#002"
+                  }
+                ],
+                "type": "ExternalReference"
+              },
+              "value": [
+                {
+                  "language": "en",
+                  "text": "Simon"
+                }
+              ],
+              "qualifiers": [
+                {
+                  "kind": "ConceptQualifier",
+                  "type": "Multiplicity",
+                  "value": "ZeroToOne",
+                  "valueType": "xs:string"
+                }
+              ],
+              "idShort": "FirstName"
+            }
+          ]
+        },
+        {
+          "modelType": "MultiLanguageProperty",
+          "semanticId": {
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "0112/2///61360_7#AAS011#001"
+              }
+            ],
+            "type": "ExternalReference"
+          },
+          "supplementalSemanticIds": [
+            {
+              "keys": [
+                {
+                  "type": "GlobalReference",
+                  "value": "0173-1#02-AAU732#003"
+                }
+              ],
+              "type": "ExternalReference"
+            }
+          ],
+          "value": [
+            {
+              "language": "en",
+              "text": "Machine"
+            }
+          ],
+          "valueId": {
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "0112/2///61987#ABP464#002"
+              }
+            ],
+            "type": "ExternalReference"
+          },
+          "idShort": "ManufacturerProductRoot"
+        },
+        {
+          "modelType": "MultiLanguageProperty",
+          "semanticId": {
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "0112/2///61987#ABP464#002"
+              }
+            ],
+            "type": "ExternalReference"
+          },
+          "supplementalSemanticIds": [
+            {
+              "keys": [
+                {
+                  "type": "GlobalReference",
+                  "value": "0173-1#02-AAU731#003"
+                }
+              ],
+              "type": "ExternalReference"
+            }
+          ],
+          "value": [
+            {
+              "language": "en",
+              "text": "Cyber-Physical Production Module"
+            }
+          ],
+          "idShort": "ManufacturerProductFamily"
+        },
+        {
+          "modelType": "Property",
+          "semanticId": {
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "0112/2///61987#ABA300#008"
+              }
+            ],
+            "type": "ExternalReference"
+          },
+          "supplementalSemanticIds": [
+            {
+              "keys": [
+                {
+                  "type": "GlobalReference",
+                  "value": "0173-1#02-AAO057#004"
+                }
+              ],
+              "type": "ExternalReference"
+            }
+          ],
+          "value": "Value-adding Cyber-Physical Production Module",
+          "valueType": "xs:string",
+          "idShort": "ManufacturerProductType"
+        },
+        {
+          "modelType": "Property",
+          "semanticId": {
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "0112/2///61987#ABP000#002"
+              }
+            ],
+            "type": "ExternalReference"
+          },
+          "supplementalSemanticIds": [
+            {
+              "keys": [
+                {
+                  "type": "GlobalReference",
+                  "value": "0173-1#02-AAP906#003"
+                }
+              ],
+              "type": "ExternalReference"
+            }
+          ],
+          "value": "2019",
+          "valueType": "xs:string",
+          "idShort": "YearOfConstruction"
+        },
+        {
+          "modelType": "Property",
+          "semanticId": {
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "0112/2///61987#ABB757#007"
+              }
+            ],
+            "type": "ExternalReference"
+          },
+          "supplementalSemanticIds": [
+            {
+              "keys": [
+                {
+                  "type": "GlobalReference",
+                  "value": "0173-1#02-AAR972#004"
+                }
+              ],
+              "type": "ExternalReference"
+            }
+          ],
+          "value": "2019-01-31",
+          "valueType": "xs:date",
+          "idShort": "DateOfManufacture"
+        },
+        {
+          "modelType": "Property",
+          "semanticId": {
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "0112/2///61987#ABA926#008"
+              }
+            ],
+            "type": "ExternalReference"
+          },
+          "supplementalSemanticIds": [
+            {
+              "keys": [
+                {
+                  "type": "GlobalReference",
+                  "value": "0173-1#02-AAN270#004"
+                }
+              ],
+              "type": "ExternalReference"
+            }
+          ],
+          "value": "1.0.0",
+          "valueType": "xs:string",
+          "idShort": "HardwareVersion"
+        },
+        {
+          "modelType": "Property",
+          "semanticId": {
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "0112/2///61987#ABA601#008"
+              }
+            ],
+            "type": "ExternalReference"
+          },
+          "supplementalSemanticIds": [
+            {
+              "keys": [
+                {
+                  "type": "GlobalReference",
+                  "value": "0173-1#02-AAM737#004"
+                }
+              ],
+              "type": "ExternalReference"
+            }
+          ],
+          "value": "2.0.0",
+          "valueType": "xs:string",
+          "idShort": "SoftwareVersion"
+        },
+        {
+          "modelType": "Property",
+          "semanticId": {
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "0112/2///61987#ABP462#001"
+              }
+            ],
+            "type": "ExternalReference"
+          },
+          "supplementalSemanticIds": [
+            {
+              "keys": [
+                {
+                  "type": "GlobalReference",
+                  "value": "0173-1#02-AAO259#007"
+                }
+              ],
+              "type": "ExternalReference"
+            }
+          ],
+          "value": "DE",
+          "valueType": "xs:string",
+          "description": [
+            {
+              "language": "en",
+              "text": "Note: Country codes defined accord. to DIN EN ISO 3166-1 alpha-2 codes"
+            }
+          ],
+          "idShort": "CountryOfOrigin"
+        },
+        {
+          "modelType": "File",
+          "contentType": "image/png",
+          "semanticId": {
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "0112/2///61987#ABP463#001"
+              }
+            ],
+            "type": "ExternalReference"
+          },
+          "supplementalSemanticIds": [
+            {
+              "keys": [
+                {
+                  "type": "GlobalReference",
+                  "value": "0173-1#02-ABI776#002"
+                }
+              ],
+              "type": "ExternalReference"
+            }
+          ],
+          "idShort": "CompanyLogo"
+        }
+      ]
+    },
+    {
+      "modelType": "Submodel",
+      "kind": "Instance",
+      "semanticId": {
+        "keys": [
+          {
+            "type": "GlobalReference",
+            "value": "https://smartfactory.de/semantics/submodel/MachineSchedule#1/0"
+          }
+        ],
+        "type": "ExternalReference"
+      },
+      "id": "https://smartfactory.de/submodels/f58558ed-8fbb-4b84-b611-424dd5eaa0e9",
+      "idShort": "MachineSchedule",
+      "submodelElements": [
+        {
+          "modelType": "Property",
+          "semanticId": {
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://smartfactory.de/semantics/submodel-element/MachineSchedule/LastTimeUpdated#1/0"
+              }
+            ],
+            "type": "ExternalReference"
+          },
+          "value": "2025-11-27T15:23:25.334330",
+          "valueType": "xs:dateTime",
+          "idShort": "LastTimeUpdated"
+        },
+        {
+          "modelType": "Property",
+          "semanticId": {
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://smartfactory.de/semantics/submodel-element/MachineSchedule/HasOpenTasks#1/0"
+              }
+            ],
+            "type": "ExternalReference"
+          },
+          "value": "false",
+          "valueType": "xs:boolean",
+          "idShort": "HasOpenTasks"
+        },
+        {
+          "modelType": "SubmodelElementList",
+          "semanticId": {
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://smartfactory.de/semantics/submodel-element/MachineSchedule/Schedule#1/0"
+              }
+            ],
+            "type": "ExternalReference"
+          },
+          "idShort": "Schedule",
+          "orderRelevant": true,
+          "typeValueListElement": "SubmodelElementCollection"
+        }
+      ]
+    },
+    {
+      "modelType": "Submodel",
+      "kind": "Instance",
+      "semanticId": {
+        "keys": [
+          {
+            "type": "GlobalReference",
+            "value": "https://smartfactory.de/semantics/submodel/MachineScheduleLog#1/0"
+          }
+        ],
+        "type": "ExternalReference"
+      },
+      "id": "https://smartfactory.de/submodels/7e760b41-9124-4026-90b9-39d7b84dd220",
+      "idShort": "MachineScheduleLog",
+      "submodelElements": [
+        {
+          "modelType": "Property",
+          "semanticId": {
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://smartfactory.de/semantics/submodel-element/MachineScheduleLog/LastTimeUpdated#1/0"
+              }
+            ],
+            "type": "ExternalReference"
+          },
+          "value": "2025-11-27T15:23:25.500176",
+          "valueType": "xs:dateTime",
+          "idShort": "LastTimeUpdated"
+        },
+        {
+          "modelType": "SubmodelElementList",
+          "semanticId": {
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://smartfactory.de/semantics/submodel-element/MachineScheduleLog/Schedule#1/0"
+              }
+            ],
+            "type": "ExternalReference"
+          },
+          "idShort": "Schedule",
+          "orderRelevant": true,
+          "typeValueListElement": "SubmodelElementCollection",
+          "value": [
+            {
+              "modelType": "SubmodelElementCollection",
+              "semanticId": {
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://smartfactory.de/semantics/submodel-element/MachineSchedule/Schedule/SchedulingContainer#1/0"
+                  }
+                ],
+                "type": "ExternalReference"
+              },
+              "idShort": "ReferredStep1",
+              "value": [
+                {
+                  "modelType": "ReferenceElement",
+                  "semanticId": {
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://smartfactory.de/semantics/submodel-element/MachineSchedule/Schedule/SchedulingContainer/ReferredStep#1/0"
+                      }
+                    ],
+                    "type": "ExternalReference"
+                  },
+                  "idShort": "ReferredStep",
+                  "value": {
+                    "keys": [
+                      {
+                        "type": "SubmodelElementCollection",
+                        "value": "Step001"
+                      },
+                      {
+                        "type": "Submodel",
+                        "value": "https://smartfactory.de/submodels/89b173d2-4400-4ca0-9456-0ab3fef0f133"
+                      }
+                    ],
+                    "type": "ModelReference"
+                  }
+                },
+                {
+                  "modelType": "SubmodelElementCollection",
+                  "semanticId": {
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://smartfactory.de/semantics/submodel-element/Scheduling#1/0"
+                      }
+                    ],
+                    "type": "ExternalReference"
+                  },
+                  "idShort": "InitialSchedulingInformation",
+                  "value": [
+                    {
+                      "modelType": "Property",
+                      "semanticId": {
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://smartfactory.de/semantics/submodel-element/Scheduling/StartDateTime"
+                          }
+                        ],
+                        "type": "ExternalReference"
+                      },
+                      "value": "",
+                      "valueType": "xs:string",
+                      "idShort": "StartDateTime"
+                    },
+                    {
+                      "modelType": "Property",
+                      "semanticId": {
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://smartfactory.de/semantics/submodel-element/Scheduling/CycleTime"
+                          }
+                        ],
+                        "type": "ExternalReference"
+                      },
+                      "value": "",
+                      "valueType": "xs:string",
+                      "idShort": "CycleTime"
+                    },
+                    {
+                      "modelType": "Property",
+                      "semanticId": {
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://smartfactory.de/semantics/submodel-element/Scheduling/EndTime"
+                          }
+                        ],
+                        "type": "ExternalReference"
+                      },
+                      "value": "",
+                      "valueType": "xs:string",
+                      "idShort": "EndDateTime"
+                    },
+                    {
+                      "modelType": "Property",
+                      "semanticId": {
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://smartfactory.de/semantics/submodel-element/Scheduling/SetupTime"
+                          }
+                        ],
+                        "type": "ExternalReference"
+                      },
+                      "value": "",
+                      "valueType": "xs:string",
+                      "idShort": "SetupTime"
+                    }
+                  ]
+                },
+                {
+                  "modelType": "SubmodelElementCollection",
+                  "semanticId": {
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://smartfactory.de/semantics/submodel-element/Scheduling#1/0"
+                      }
+                    ],
+                    "type": "ExternalReference"
+                  },
+                  "idShort": "ActualSchedulingInformation",
+                  "value": [
+                    {
+                      "modelType": "Property",
+                      "semanticId": {
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://smartfactory.de/semantics/submodel-element/Scheduling/StartDateTime"
+                          }
+                        ],
+                        "type": "ExternalReference"
+                      },
+                      "value": "2025-11-23 18:41:07",
+                      "valueType": "xs:string",
+                      "idShort": "StartDateTime"
+                    },
+                    {
+                      "modelType": "Property",
+                      "semanticId": {
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://smartfactory.de/semantics/submodel-element/Scheduling/CycleTime"
+                          }
+                        ],
+                        "type": "ExternalReference"
+                      },
+                      "value": "00:00:42",
+                      "valueType": "xs:string",
+                      "idShort": "CycleTime"
+                    },
+                    {
+                      "modelType": "Property",
+                      "semanticId": {
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://smartfactory.de/semantics/submodel-element/Scheduling/EndTime"
+                          }
+                        ],
+                        "type": "ExternalReference"
+                      },
+                      "value": "2025-11-23 18:41:49",
+                      "valueType": "xs:string",
+                      "idShort": "EndDateTime"
+                    },
+                    {
+                      "modelType": "Property",
+                      "semanticId": {
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://smartfactory.de/semantics/submodel-element/Scheduling/SetupTime"
+                          }
+                        ],
+                        "type": "ExternalReference"
+                      },
+                      "value": "",
+                      "valueType": "xs:string",
+                      "idShort": "SetupTime"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

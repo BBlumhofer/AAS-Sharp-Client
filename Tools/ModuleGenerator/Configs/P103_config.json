@@ -1,0 +1,28 @@
+{
+  "Id": "P103",
+  "Skill": "Screw",
+  "Capability":{
+    "Name": "Screw",
+    "SkillReference": "Screw",
+    "PropertyContainers":
+    {
+      "Torque":{ "min": 8.0, "max": 19.8 },
+      "Diameter":{ "min": 8, "max": 14 },
+      "ProductId":{ "value": "*" }
+    },
+    "Constraints": [ 
+        { 
+            "ConstraintType": "CustomConstraint", 
+            "ConditionalType": "Pre", 
+            "ConstraintName": "StorageConstraint", 
+            "RelatedProperty": "ProductId" 
+        } 
+        ]
+  },
+  "AssetLocation":{
+    "Area": "Halle3",
+    "X": 16.0,
+    "Y": 47.5,
+    "Level": 0
+  }
+}

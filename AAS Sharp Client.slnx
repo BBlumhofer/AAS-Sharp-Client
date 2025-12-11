@@ -1,3 +1,4 @@
 <Solution>
   <Project Path="AAS Sharp Client.csproj" />
+  <Project Path="Tools/ModuleGenerator/ModuleGenerator.csproj" />
 </Solution>

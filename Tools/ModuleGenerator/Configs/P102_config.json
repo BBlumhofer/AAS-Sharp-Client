@@ -1,0 +1,28 @@
+{
+  "Id": "P102",
+  "Skill": "Assemble",
+  "Capability":{
+    "Name": "Assemble",
+    "SkillReference": "Assemble",
+    "PropertyContainers":
+    {
+      "GripForce":{ "min": 10, "max": 50 },
+      "ProductWeight":{ "min": 0.5, "max": 5.0 },
+      "ProductId":{ "value": "*" }
+    },
+        "Constraints": [ 
+        { 
+            "ConstraintType": "CustomConstraint", 
+            "ConditionalType": "Pre", 
+            "ConstraintName": "StorageConstraint", 
+            "RelatedProperty": "ProductId" 
+        } 
+        ]
+  },
+  "AssetLocation":{
+    "Area": "Halle1",
+    "X": 40.0,
+    "Y": 20.0,
+    "Level": 1
+  }
+}

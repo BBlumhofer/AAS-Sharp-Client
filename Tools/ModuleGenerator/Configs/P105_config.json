@@ -1,0 +1,28 @@
+{
+  "Id": "P105",
+  "Skill": "Drill",
+  "Capability":{
+    "Name": "Drill",
+    "SkillReference": "Drill",
+    "PropertyContainers":
+    {
+      "Depth":{ "min": 3.0, "max": 6.0 },
+      "Diameter":{ "min": 3, "max": 10 },
+      "ProductId":{ "value": "*" }
+    },
+    "Constraints": [ 
+        { 
+            "ConstraintType": "CustomConstraint", 
+            "ConditionalType": "Pre", 
+            "ConstraintName": "StorageConstraint", 
+            "RelatedProperty": "ProductId" 
+        } 
+        ]
+  },
+  "AssetLocation":{
+    "Area": "Halle2",
+    "X": 6.5,
+    "Y": 11.0,
+    "Level": 0
+  }
+}

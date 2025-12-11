@@ -16,6 +16,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\AAS Sharp Client.csproj" />
+    <ProjectReference Include="..\..\Tools\ModuleGenerator\ModuleGenerator.csproj" />
   </ItemGroup>
 
   <ItemGroup>
@@ -27,5 +28,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="TestData\**\*.*" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="..\Tools\ModuleGenerator\Examples\**\*.*">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 </Project>

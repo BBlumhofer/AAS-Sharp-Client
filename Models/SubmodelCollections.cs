@@ -586,7 +586,7 @@ public class QuantityInformation : SubmodelElementCollection
     }
 }
 
-internal static class SubmodelElementFactory
+public static class SubmodelElementFactory
 {
     public static Property<string> CreateStringProperty(string idShort, string? value, Reference? semanticId = null, string valueType = "xs:string")
     {
