@@ -218,24 +218,6 @@
           "keys": [
             {
               "type": "Submodel",
-              "value": "https://smartfactory.de/submodels/vKIefHGen7-IZ_LH-AkUF"
-            }
-          ],
-          "referredSemanticId": {
-            "keys": [
-              {
-                "type": "GlobalReference",
-                "value": "https://smartfactory.de/semantics/submodel/CapabilityDescription#1/0"
-              }
-            ],
-            "type": "ExternalReference"
-          },
-          "type": "ExternalReference"
-        },
-        {
-          "keys": [
-            {
-              "type": "Submodel",
               "value": "https://smartfactory.de/submodels/coroqQEVVQ-IZ_LH-AkUF"
             }
           ],
@@ -254,10 +236,37 @@
           "keys": [
             {
               "type": "Submodel",
-              "value": "https://smartfactory.de/submodels/capability/b558710b-c796-4b6c-9d51-ee7ad80a8fb8-IZ_LH-AkUF"
+              "value": "https://smartfactory.de/submodels/1a0c3c66-f796-4e26-86d9-8002a2558b68-IZ_LH-AkUF"
             }
           ],
+          "referredSemanticId": {
+            "keys": [
+              {
+                "type": "Submodel",
+                "value": "https://smartfactory.de/semantics/submodel/ProductionPlan#1/0"
+              }
+            ],
+            "type": "ExternalReference"
+          },
           "type": "ModelReference"
+        },
+        {
+          "keys": [
+            {
+              "type": "Submodel",
+              "value": "https://smartfactory.de/submodels/ecc8e49c-57e6-468c-a7cd-60e1e4b76580-IZ_LH-AkUF"
+            }
+          ],
+          "referredSemanticId": {
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://smartfactory.de/semantics/submodel/CapabilityDescription#1/0"
+              }
+            ],
+            "type": "ExternalReference"
+          },
+          "type": "ExternalReference"
         }
       ],
       "extensions": [
@@ -2775,7 +2784,7 @@
             "keys": [
               {
                 "type": "Submodel",
-                "value": "https://smartfactory.de/submodels/WhASZ7F0Lm"
+                "value": "https://smartfactory.de/submodels/WhASZ7F0Lm-IZ_LH-AkUF"
               }
             ],
             "type": "ExternalReference"
@@ -2788,7 +2797,7 @@
             "keys": [
               {
                 "type": "Submodel",
-                "value": "https://smartfactory.de/submodels/l0R-7q4DJl"
+                "value": "https://smartfactory.de/submodels/l0R-7q4DJl-IZ_LH-AkUF"
               }
             ],
             "type": "ExternalReference"
@@ -2801,7 +2810,7 @@
             "keys": [
               {
                 "type": "Submodel",
-                "value": "https://smartfactory.de/submodels/iJJhAlfAfv"
+                "value": "https://smartfactory.de/submodels/iJJhAlfAfv-IZ_LH-AkUF"
               }
             ],
             "type": "ExternalReference"
@@ -2814,7 +2823,7 @@
             "keys": [
               {
                 "type": "Submodel",
-                "value": "https://smartfactory.de/submodels/vKIefHGen7"
+                "value": "https://smartfactory.de/submodels/vKIefHGen7-IZ_LH-AkUF"
               }
             ],
             "type": "ExternalReference"
@@ -2823,10 +2832,7 @@
       ]
     },
     {
-      "modelType": "Submodel",
       "kind": "Instance",
-      "id": "https://smartfactory.de/submodels/capability/b558710b-c796-4b6c-9d51-ee7ad80a8fb8-IZ_LH-AkUF",
-      "idShort": "OfferedCapabilityDescription",
       "semanticId": {
         "type": "ExternalReference",
         "keys": [
@@ -2853,6 +2859,15 @@
             {
               "idShort": "DrillContainer",
               "modelType": "SubmodelElementCollection",
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/CapabilityDescription/CapabilityContainer/1/0"
+                  }
+                ]
+              },
               "value": [
                 {
                   "idShort": "Drill",
@@ -2870,10 +2885,28 @@
                 {
                   "idShort": "PropertySet",
                   "modelType": "SubmodelElementCollection",
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/CapabilityDescription/PropertySet/1/0"
+                      }
+                    ]
+                  },
                   "value": [
                     {
                       "idShort": "DepthContainer",
                       "modelType": "SubmodelElementCollection",
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/idta/CapabilityDescription/PropertyContainer/1/0"
+                          }
+                        ]
+                      },
                       "value": [
                         {
                           "idShort": "Depth",
@@ -2886,6 +2919,15 @@
                     {
                       "idShort": "DiameterContainer",
                       "modelType": "SubmodelElementCollection",
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/idta/CapabilityDescription/PropertyContainer/1/0"
+                          }
+                        ]
+                      },
                       "value": [
                         {
                           "idShort": "Diameter",
@@ -2902,6 +2944,15 @@
             {
               "idShort": "ScrewContainer",
               "modelType": "SubmodelElementCollection",
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/CapabilityDescription/CapabilityContainer/1/0"
+                  }
+                ]
+              },
               "value": [
                 {
                   "idShort": "Screw",
@@ -2919,10 +2970,28 @@
                 {
                   "idShort": "PropertySet",
                   "modelType": "SubmodelElementCollection",
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/CapabilityDescription/PropertySet/1/0"
+                      }
+                    ]
+                  },
                   "value": [
                     {
                       "idShort": "TorqueContainer",
                       "modelType": "SubmodelElementCollection",
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/idta/CapabilityDescription/PropertyContainer/1/0"
+                          }
+                        ]
+                      },
                       "value": [
                         {
                           "idShort": "Torque",
@@ -2935,6 +3004,15 @@
                     {
                       "idShort": "DiameterContainer",
                       "modelType": "SubmodelElementCollection",
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/idta/CapabilityDescription/PropertyContainer/1/0"
+                          }
+                        ]
+                      },
                       "value": [
                         {
                           "idShort": "Diameter",
@@ -2951,6 +3029,15 @@
             {
               "idShort": "AssembleContainer",
               "modelType": "SubmodelElementCollection",
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/CapabilityDescription/CapabilityContainer/1/0"
+                  }
+                ]
+              },
               "value": [
                 {
                   "idShort": "Assemble",
@@ -2968,10 +3055,28 @@
                 {
                   "idShort": "PropertySet",
                   "modelType": "SubmodelElementCollection",
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/CapabilityDescription/PropertySet/1/0"
+                      }
+                    ]
+                  },
                   "value": [
                     {
                       "idShort": "GripForceContainer",
                       "modelType": "SubmodelElementCollection",
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/idta/CapabilityDescription/PropertyContainer/1/0"
+                          }
+                        ]
+                      },
                       "value": [
                         {
                           "idShort": "GripForce",
@@ -2984,6 +3089,15 @@
                     {
                       "idShort": "ProductWeightContainer",
                       "modelType": "SubmodelElementCollection",
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/idta/CapabilityDescription/PropertyContainer/1/0"
+                          }
+                        ]
+                      },
                       "value": [
                         {
                           "idShort": "ProductWeight",
@@ -2999,7 +3113,10 @@
             }
           ]
         }
-      ]
+      ],
+      "modelType": "Submodel",
+      "id": "https://smartfactory.de/submodels/ecc8e49c-57e6-468c-a7cd-60e1e4b76580-IZ_LH-AkUF",
+      "idShort": "RequiredCapabilityDescription"
     },
     {
       "modelType": "Submodel",
@@ -3187,6 +3304,739 @@
                 }
               ],
               "idShort": "LinkToShellScape"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelType": "Submodel",
+      "kind": "Instance",
+      "semanticId": {
+        "keys": [
+          {
+            "type": "Submodel",
+            "value": "ProductionPlan"
+          },
+          {
+            "type": "Submodel",
+            "value": "ProductionSchedule"
+          },
+          {
+            "type": "Submodel",
+            "value": "https://smartfactory.de/semantics/submodel/ProductionPlan#1/0"
+          }
+        ],
+        "type": "ModelReference"
+      },
+      "id": "https://smartfactory.de/submodels/1a0c3c66-f796-4e26-86d9-8002a2558b68-IZ_LH-AkUF",
+      "idShort": "ProductionPlan",
+      "submodelElements": [
+        {
+          "modelType": "Property",
+          "semanticId": {
+            "keys": [],
+            "type": "ExternalReference"
+          },
+          "value": "true",
+          "valueType": "xs:string",
+          "idShort": "IsFinished"
+        },
+        {
+          "modelType": "SubmodelElementCollection",
+          "semanticId": {
+            "keys": [],
+            "type": "ExternalReference"
+          },
+          "idShort": "QuantityInformation",
+          "value": [
+            {
+              "modelType": "Property",
+              "semanticId": {
+                "keys": [],
+                "type": "ExternalReference"
+              },
+              "value": "1",
+              "valueType": "xs:integer",
+              "idShort": "TotalNumberOfPieces"
+            }
+          ]
+        },
+        {
+          "modelType": "SubmodelElementCollection",
+          "semanticId": {
+            "keys": [],
+            "type": "ExternalReference"
+          },
+          "idShort": "Step0001",
+          "value": [
+            {
+              "modelType": "Property",
+              "semanticId": {
+                "keys": [],
+                "type": "ExternalReference"
+              },
+              "value": "Load",
+              "valueType": "xs:string",
+              "idShort": "StepTitle"
+            },
+            {
+              "modelType": "Property",
+              "semanticId": {
+                "keys": [],
+                "type": "ExternalReference"
+              },
+              "value": "done",
+              "valueType": "xs:string",
+              "idShort": "Status"
+            },
+            {
+              "modelType": "SubmodelElementCollection",
+              "semanticId": {
+                "keys": [],
+                "type": "ExternalReference"
+              },
+              "idShort": "InitialSate"
+            },
+            {
+              "modelType": "SubmodelElementCollection",
+              "semanticId": {
+                "keys": [
+                  {
+                    "type": "SubmodelElementCollection",
+                    "value": "MachineOperationList"
+                  },
+                  {
+                    "type": "SubmodelElementCollection",
+                    "value": "Actions"
+                  }
+                ],
+                "type": "ExternalReference"
+              },
+              "idShort": "Actions",
+              "value": [
+                {
+                  "modelType": "SubmodelElementCollection",
+                  "semanticId": {
+                    "keys": [
+                      {
+                        "type": "SubmodelElementCollection",
+                        "value": "MachineOperation"
+                      },
+                      {
+                        "type": "SubmodelElementCollection",
+                        "value": "Action"
+                      }
+                    ],
+                    "type": "ExternalReference"
+                  },
+                  "idShort": "Action0001",
+                  "value": [
+                    {
+                      "modelType": "Property",
+                      "semanticId": {
+                        "keys": [],
+                        "type": "ExternalReference"
+                      },
+                      "value": "RetrieveToPortLogistic",
+                      "valueType": "xs:string",
+                      "idShort": "ActionTitle"
+                    },
+                    {
+                      "modelType": "Property",
+                      "semanticId": {
+                        "keys": [],
+                        "type": "ExternalReference"
+                      },
+                      "value": "StorageModule",
+                      "valueType": "xs:string",
+                      "idShort": "MachineName"
+                    },
+                    {
+                      "modelType": "Property",
+                      "semanticId": {
+                        "keys": [],
+                        "type": "ExternalReference"
+                      },
+                      "value": "done",
+                      "valueType": "xs:string",
+                      "idShort": "Status"
+                    },
+                    {
+                      "modelType": "SubmodelElementCollection",
+                      "semanticId": {
+                        "keys": [],
+                        "type": "ExternalReference"
+                      },
+                      "idShort": "Preconditions"
+                    },
+                    {
+                      "modelType": "SubmodelElementCollection",
+                      "semanticId": {
+                        "keys": [],
+                        "type": "ExternalReference"
+                      },
+                      "idShort": "FinalResultData",
+                      "value": [
+                        {
+                          "modelType": "Property",
+                          "value": "WST_B_11",
+                          "valueType": "xs:string",
+                          "idShort": "CarrierID"
+                        },
+                        {
+                          "modelType": "Property",
+                          "value": "ns=6;s=Module.Resources.WST_B",
+                          "valueType": "xs:string",
+                          "idShort": "CarrierType"
+                        },
+                        {
+                          "modelType": "Property",
+                          "value": "ns=6;s=Module.Resources.Cab_A_Blue",
+                          "valueType": "xs:string",
+                          "idShort": "ProductType"
+                        },
+                        {
+                          "modelType": "Property",
+                          "value": "39.66570162773132",
+                          "valueType": "xs:double",
+                          "idShort": "ElapsedTime"
+                        },
+                        {
+                          "modelType": "Property",
+                          "value": "",
+                          "valueType": "xs:string",
+                          "idShort": "CarrierEmpty"
+                        },
+                        {
+                          "modelType": "Property",
+                          "value": "",
+                          "valueType": "xs:string",
+                          "idShort": "ProductID"
+                        },
+                        {
+                          "modelType": "Property",
+                          "value": "10",
+                          "valueType": "xs:integer",
+                          "idShort": "SuccessfulExecutionsCount"
+                        },
+                        {
+                          "modelType": "Property",
+                          "value": "2025/04/04 13:39:46",
+                          "valueType": "xs:string",
+                          "idShort": "StartTime"
+                        },
+                        {
+                          "modelType": "Property",
+                          "value": "2025/04/04 13:40:26",
+                          "valueType": "xs:string",
+                          "idShort": "EndTime"
+                        }
+                      ]
+                    },
+                    {
+                      "modelType": "ReferenceElement",
+                      "semanticId": {
+                        "keys": [
+                          {
+                            "type": "ReferenceElement",
+                            "value": "Skill"
+                          },
+                          {
+                            "type": "ReferenceElement",
+                            "value": "Operation"
+                          }
+                        ],
+                        "type": "ExternalReference"
+                      },
+                      "idShort": "SkillReference",
+                      "value": {
+                        "keys": [
+                          {
+                            "type": "Submodel",
+                            "value": "https://example.com/ids/sm/4510_5181_3022_5180"
+                          },
+                          {
+                            "type": "SubmodelElementCollection",
+                            "value": "Skills"
+                          },
+                          {
+                            "type": "SubmodelElementCollection",
+                            "value": "Skill_0001"
+                          }
+                        ],
+                        "type": "ModelReference"
+                      }
+                    },
+                    {
+                      "modelType": "SubmodelElementCollection",
+                      "semanticId": {
+                        "keys": [
+                          {
+                            "type": "SubmodelElementCollection",
+                            "value": "ParameterSet"
+                          },
+                          {
+                            "type": "SubmodelElementCollection",
+                            "value": "InputParameters"
+                          }
+                        ],
+                        "type": "ExternalReference"
+                      },
+                      "idShort": "InputParameters",
+                      "value": [
+                        {
+                          "modelType": "Property",
+                          "semanticId": {
+                            "keys": [],
+                            "type": "ExternalReference"
+                          },
+                          "value": "true",
+                          "valueType": "xs:string",
+                          "idShort": "RetrieveByProductType"
+                        },
+                        {
+                          "modelType": "Property",
+                          "value": "Cab_A_Blue",
+                          "valueType": "xs:string",
+                          "idShort": "ProductType"
+                        },
+                        {
+                          "modelType": "Property",
+                          "value": "",
+                          "valueType": "xs:string",
+                          "idShort": "ProductID"
+                        }
+                      ]
+                    },
+                    {
+                      "modelType": "SubmodelElementCollection",
+                      "semanticId": {
+                        "keys": [],
+                        "type": "ExternalReference"
+                      },
+                      "idShort": "Effects"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "modelType": "SubmodelElementCollection",
+              "semanticId": {
+                "keys": [],
+                "type": "ExternalReference"
+              },
+              "idShort": "FinalState"
+            },
+            {
+              "modelType": "SubmodelElementCollection",
+              "semanticId": {
+                "keys": [],
+                "type": "ExternalReference"
+              },
+              "idShort": "Scheduling",
+              "value": [
+                {
+                  "modelType": "Property",
+                  "semanticId": {
+                    "keys": [
+                      {
+                        "type": "Property",
+                        "value": "https://smartfactory.de/aas/ids/property/StartTime"
+                      }
+                    ],
+                    "type": "ExternalReference"
+                  },
+                  "value": "2022-07-28 12:03:00",
+                  "valueType": "xs:string",
+                  "idShort": "PlannedStartDateTime"
+                },
+                {
+                  "modelType": "Property",
+                  "semanticId": {
+                    "keys": [
+                      {
+                        "type": "Property",
+                        "value": "https://smartfactory.de/aas/ids/property/EndTime"
+                      }
+                    ],
+                    "type": "ExternalReference"
+                  },
+                  "value": "2022-07-28 13:30:00",
+                  "valueType": "xs:string",
+                  "idShort": "PlannedEndDateTime"
+                },
+                {
+                  "modelType": "Property",
+                  "semanticId": {
+                    "keys": [],
+                    "type": "ExternalReference"
+                  },
+                  "value": "00:34:00",
+                  "valueType": "xs:string",
+                  "idShort": "PlannedSetupTime"
+                },
+                {
+                  "modelType": "Property",
+                  "semanticId": {
+                    "keys": [],
+                    "type": "ExternalReference"
+                  },
+                  "value": "00:01:12",
+                  "valueType": "xs:string",
+                  "idShort": "PlannedCycleTime"
+                }
+              ]
+            },
+            {
+              "modelType": "Property",
+              "semanticId": {
+                "keys": [],
+                "type": "ExternalReference"
+              },
+              "value": "SmartFactory-KL",
+              "valueType": "xs:string",
+              "idShort": "Enterprise"
+            },
+            {
+              "modelType": "Property",
+              "semanticId": {
+                "keys": [],
+                "type": "ExternalReference"
+              },
+              "value": "_PHUCKET",
+              "valueType": "xs:string",
+              "idShort": "Workcentre"
+            },
+            {
+              "modelType": "Property",
+              "semanticId": {
+                "keys": [],
+                "type": "ExternalReference"
+              },
+              "value": "P24",
+              "valueType": "xs:string",
+              "idShort": "Station"
+            }
+          ]
+        },
+        {
+          "modelType": "SubmodelElementCollection",
+          "semanticId": {
+            "keys": [],
+            "type": "ExternalReference"
+          },
+          "idShort": "Step0002",
+          "value": [
+            {
+              "modelType": "Property",
+              "semanticId": {
+                "keys": [],
+                "type": "ExternalReference"
+              },
+              "value": "Unload",
+              "valueType": "xs:string",
+              "idShort": "StepTitle"
+            },
+            {
+              "modelType": "Property",
+              "semanticId": {
+                "keys": [],
+                "type": "ExternalReference"
+              },
+              "value": "done",
+              "valueType": "xs:string",
+              "idShort": "Status"
+            },
+            {
+              "modelType": "SubmodelElementCollection",
+              "semanticId": {
+                "keys": [],
+                "type": "ExternalReference"
+              },
+              "idShort": "InitialSate"
+            },
+            {
+              "modelType": "SubmodelElementCollection",
+              "semanticId": {
+                "keys": [
+                  {
+                    "type": "SubmodelElementCollection",
+                    "value": "MachineOperationList"
+                  },
+                  {
+                    "type": "SubmodelElementCollection",
+                    "value": "Actions"
+                  }
+                ],
+                "type": "ExternalReference"
+              },
+              "idShort": "Actions",
+              "value": [
+                {
+                  "modelType": "SubmodelElementCollection",
+                  "semanticId": {
+                    "keys": [
+                      {
+                        "type": "SubmodelElementCollection",
+                        "value": "MachineOperation"
+                      },
+                      {
+                        "type": "SubmodelElementCollection",
+                        "value": "Action"
+                      }
+                    ],
+                    "type": "ExternalReference"
+                  },
+                  "idShort": "Action0001",
+                  "value": [
+                    {
+                      "modelType": "Property",
+                      "semanticId": {
+                        "keys": [],
+                        "type": "ExternalReference"
+                      },
+                      "value": "Store",
+                      "valueType": "xs:string",
+                      "idShort": "ActionTitle"
+                    },
+                    {
+                      "modelType": "Property",
+                      "semanticId": {
+                        "keys": [],
+                        "type": "ExternalReference"
+                      },
+                      "value": "CollaborativeAssembly",
+                      "valueType": "xs:string",
+                      "idShort": "MachineName"
+                    },
+                    {
+                      "modelType": "Property",
+                      "semanticId": {
+                        "keys": [],
+                        "type": "ExternalReference"
+                      },
+                      "value": "done",
+                      "valueType": "xs:string",
+                      "idShort": "Status"
+                    },
+                    {
+                      "modelType": "SubmodelElementCollection",
+                      "semanticId": {
+                        "keys": [],
+                        "type": "ExternalReference"
+                      },
+                      "idShort": "Preconditions"
+                    },
+                    {
+                      "modelType": "SubmodelElementCollection",
+                      "semanticId": {
+                        "keys": [],
+                        "type": "ExternalReference"
+                      },
+                      "idShort": "FinalResultData",
+                      "value": [
+                        {
+                          "modelType": "Property",
+                          "value": "Slot_1",
+                          "valueType": "xs:string",
+                          "idShort": "StoredSlot"
+                        },
+                        {
+                          "modelType": "Property",
+                          "value": "8",
+                          "valueType": "xs:integer",
+                          "idShort": "SuccessfulExecutionsCount"
+                        },
+                        {
+                          "modelType": "Property",
+                          "value": "2025/04/04 13:40:54",
+                          "valueType": "xs:string",
+                          "idShort": "StartTime"
+                        },
+                        {
+                          "modelType": "Property",
+                          "value": "2025/04/04 13:41:21",
+                          "valueType": "xs:string",
+                          "idShort": "EndTime"
+                        }
+                      ]
+                    },
+                    {
+                      "modelType": "ReferenceElement",
+                      "semanticId": {
+                        "keys": [
+                          {
+                            "type": "ReferenceElement",
+                            "value": "Skill"
+                          },
+                          {
+                            "type": "ReferenceElement",
+                            "value": "Operation"
+                          }
+                        ],
+                        "type": "ExternalReference"
+                      },
+                      "idShort": "SkillReference",
+                      "value": {
+                        "keys": [
+                          {
+                            "type": "Submodel",
+                            "value": "https://example.com/ids/sm/4510_5181_3022_5180"
+                          },
+                          {
+                            "type": "SubmodelElementCollection",
+                            "value": "Skills"
+                          },
+                          {
+                            "type": "SubmodelElementCollection",
+                            "value": "Skill_0001"
+                          }
+                        ],
+                        "type": "ModelReference"
+                      }
+                    },
+                    {
+                      "modelType": "SubmodelElementCollection",
+                      "semanticId": {
+                        "keys": [
+                          {
+                            "type": "SubmodelElementCollection",
+                            "value": "ParameterSet"
+                          },
+                          {
+                            "type": "SubmodelElementCollection",
+                            "value": "InputParameters"
+                          }
+                        ],
+                        "type": "ExternalReference"
+                      },
+                      "idShort": "InputParameters",
+                      "value": [
+                        {
+                          "modelType": "Property",
+                          "value": "Cab_A_Blue",
+                          "valueType": "xs:string",
+                          "idShort": "ProductType"
+                        },
+                        {
+                          "modelType": "Property",
+                          "value": "https://smartfactory.de/shells/LG3JsASu4_",
+                          "valueType": "xs:string",
+                          "idShort": "ProductID"
+                        }
+                      ]
+                    },
+                    {
+                      "modelType": "SubmodelElementCollection",
+                      "semanticId": {
+                        "keys": [],
+                        "type": "ExternalReference"
+                      },
+                      "idShort": "Effects"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "modelType": "SubmodelElementCollection",
+              "semanticId": {
+                "keys": [],
+                "type": "ExternalReference"
+              },
+              "idShort": "FinalState"
+            },
+            {
+              "modelType": "SubmodelElementCollection",
+              "semanticId": {
+                "keys": [],
+                "type": "ExternalReference"
+              },
+              "idShort": "Scheduling",
+              "value": [
+                {
+                  "modelType": "Property",
+                  "semanticId": {
+                    "keys": [
+                      {
+                        "type": "Property",
+                        "value": "https://smartfactory.de/aas/ids/property/StartTime"
+                      }
+                    ],
+                    "type": "ExternalReference"
+                  },
+                  "value": "2022-07-28 12:03:00",
+                  "valueType": "xs:string",
+                  "idShort": "PlannedStartDateTime"
+                },
+                {
+                  "modelType": "Property",
+                  "semanticId": {
+                    "keys": [
+                      {
+                        "type": "Property",
+                        "value": "https://smartfactory.de/aas/ids/property/EndTime"
+                      }
+                    ],
+                    "type": "ExternalReference"
+                  },
+                  "value": "2022-07-28 13:30:00",
+                  "valueType": "xs:string",
+                  "idShort": "PlannedEndDateTime"
+                },
+                {
+                  "modelType": "Property",
+                  "semanticId": {
+                    "keys": [],
+                    "type": "ExternalReference"
+                  },
+                  "value": "00:34:00",
+                  "valueType": "xs:string",
+                  "idShort": "PlannedSetupTime"
+                },
+                {
+                  "modelType": "Property",
+                  "semanticId": {
+                    "keys": [],
+                    "type": "ExternalReference"
+                  },
+                  "value": "00:01:12",
+                  "valueType": "xs:string",
+                  "idShort": "PlannedCycleTime"
+                }
+              ]
+            },
+            {
+              "modelType": "Property",
+              "semanticId": {
+                "keys": [],
+                "type": "ExternalReference"
+              },
+              "value": "SmartFactory-KL",
+              "valueType": "xs:string",
+              "idShort": "Enterprise"
+            },
+            {
+              "modelType": "Property",
+              "semanticId": {
+                "keys": [],
+                "type": "ExternalReference"
+              },
+              "value": "_PHUCKET",
+              "valueType": "xs:string",
+              "idShort": "Workcentre"
+            },
+            {
+              "modelType": "Property",
+              "semanticId": {
+                "keys": [],
+                "type": "ExternalReference"
+              },
+              "value": "P17",
+              "valueType": "xs:string",
+              "idShort": "Station"
             }
           ]
         }

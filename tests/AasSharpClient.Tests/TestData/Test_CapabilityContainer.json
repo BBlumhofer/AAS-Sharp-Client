@@ -1,0 +1,265 @@
+
+    {
+      "modelType": "SubmodelElementCollection",
+      "semanticId": {
+        "keys": [
+          {
+            "type": "GlobalReference",
+            "value": "https://admin-shell.io/idta/CapabilityDescription/CapabilityContainer/1/0"
+          }
+        ],
+        "type": "ExternalReference"
+      },
+      "idShort": "AssembleContainer",
+      "value": [
+        {
+          "modelType": "Capability",
+          "semanticId": {
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://wiki.eclipse.org/BaSyx_/_Documentation_/_Submodels_/_Capability#Capability"
+              }
+            ],
+            "type": "ExternalReference"
+          },
+          "idShort": "Assemble"
+        },
+        {
+          "modelType": "SubmodelElementCollection",
+          "semanticId": {
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/idta/CapabilityDescription/CapabilityRelations/1/0"
+              }
+            ],
+            "type": "ExternalReference"
+          },
+          "idShort": "Relations",
+          "value": [
+            {
+              "modelType": "SubmodelElementCollection",
+              "semanticId": {
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/CapabilityDescription/ConstraintSet/1/0"
+                  }
+                ],
+                "type": "ExternalReference"
+              },
+              "idShort": "ConstraintSet",
+              "value": [
+                {
+                  "modelType": "SubmodelElementCollection",
+                  "semanticId": {
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/CapabilityDescription/PropertyConstraintContainer/1/0"
+                      }
+                    ],
+                    "type": "ExternalReference"
+                  },
+                  "idShort": "StorageConstraint",
+                  "value": [
+                    {
+                      "modelType": "Property",
+                      "value": "Pre",
+                      "valueType": "xs:string",
+                      "idShort": "ConditionalType"
+                    },
+                    {
+                      "modelType": "Property",
+                      "value": "CustomConstraint",
+                      "valueType": "xs:string",
+                      "idShort": "ConstraintType"
+                    },
+                    {
+                      "modelType": "SubmodelElementCollection",
+                      "semanticId": {
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/idta/CapabilityDescription/CustomConstraint/1/0"
+                          }
+                        ],
+                        "type": "ExternalReference"
+                      },
+                      "idShort": "CustomConstraint",
+                      "value": [
+                        {
+                          "modelType": "Property",
+                          "value": "StorageConstraint",
+                          "valueType": "xs:string",
+                          "idShort": "ConstraintName"
+                        },
+                        {
+                          "modelType": "Property",
+                          "value": "*",
+                          "valueType": "xs:string",
+                          "idShort": "ProductId"
+                        }
+                      ]
+                    },
+                    {
+                      "modelType": "SubmodelElementCollection",
+                      "idShort": "ConstraintPropertyRelations",
+                      "value": [
+                        {
+                          "modelType": "RelationshipElement",
+                          "idShort": "RelatedProperty",
+                          "first": {
+                            "keys": [
+                              {
+                                "type": "Submodel",
+                                "value": "https://smartfactory.de/submodels/capability/3b3c7ec0-ddd0-422b-99c3-7e61aa670f83"
+                              },
+                              {
+                                "type": "SubmodelElementCollection",
+                                "value": "CapabilitySet"
+                              },
+                              {
+                                "type": "SubmodelElementCollection",
+                                "value": "AssembleContainer"
+                              },
+                              {
+                                "type": "SubmodelElementCollection",
+                                "value": "CapabilityRelations"
+                              },
+                              {
+                                "type": "SubmodelElementCollection",
+                                "value": "ConstraintSet"
+                              },
+                              {
+                                "type": "SubmodelElementCollection",
+                                "value": "StorageConstraint"
+                              },
+                              {
+                                "type": "SubmodelElementCollection",
+                                "value": "CustomConstraint"
+                              }
+                            ],
+                            "type": "ModelReference"
+                          },
+                          "second": {
+                            "keys": [
+                              {
+                                "type": "Submodel",
+                                "value": "https://smartfactory.de/submodels/capability/3b3c7ec0-ddd0-422b-99c3-7e61aa670f83"
+                              },
+                              {
+                                "type": "SubmodelElementCollection",
+                                "value": "CapabilitySet"
+                              },
+                              {
+                                "type": "SubmodelElementCollection",
+                                "value": "AssembleContainer"
+                              },
+                              {
+                                "type": "SubmodelElementCollection",
+                                "value": "PropertySet"
+                              },
+                              {
+                                "type": "SubmodelElementCollection",
+                                "value": "ProductIdFixed"
+                              },
+                              {
+                                "type": "Property",
+                                "value": "ProductId"
+                              }
+                            ],
+                            "type": "ModelReference"
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "modelType": "SubmodelElementCollection",
+          "semanticId": {
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/idta/CapabilityDescription/PropertySet/1/0"
+              }
+            ],
+            "type": "ExternalReference"
+          },
+          "idShort": "PropertySet",
+          "value": [
+            {
+              "modelType": "SubmodelElementCollection",
+              "semanticId": {
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/CapabilityDescription/PropertyContainer/1/0"
+                  }
+                ],
+                "type": "ExternalReference"
+              },
+              "idShort": "GripForceRange",
+              "value": [
+                {
+                  "modelType": "Range",
+                  "max": "50",
+                  "min": "10",
+                  "valueType": "xs:double",
+                  "idShort": "GripForce"
+                }
+              ]
+            },
+            {
+              "modelType": "SubmodelElementCollection",
+              "semanticId": {
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/CapabilityDescription/PropertyContainer/1/0"
+                  }
+                ],
+                "type": "ExternalReference"
+              },
+              "idShort": "ProductWeightRange",
+              "value": [
+                {
+                  "modelType": "Range",
+                  "max": "5",
+                  "min": "0.5",
+                  "valueType": "xs:double",
+                  "idShort": "ProductWeight"
+                }
+              ]
+            },
+            {
+              "modelType": "SubmodelElementCollection",
+              "semanticId": {
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/CapabilityDescription/PropertyContainer/1/0"
+                  }
+                ],
+                "type": "ExternalReference"
+              },
+              "idShort": "ProductIdFixed",
+              "value": [
+                {
+                  "modelType": "Property",
+                  "value": "*",
+                  "valueType": "xs:string",
+                  "idShort": "ProductId"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }

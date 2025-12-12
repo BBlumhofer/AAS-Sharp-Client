@@ -1,0 +1,334 @@
+{
+  "kind": "Instance",
+  "semanticId": {
+    "type": "ExternalReference",
+    "referredSemanticId": null,
+    "keys": [
+      {
+        "type": "GlobalReference",
+        "value": "https://admin-shell.io/idta/CapabilityDescription/1/0/Submodel"
+      }
+    ]
+  },
+  "supplementalSemanticIds": [],
+  "submodelElements": [
+    {
+      "idShort": "CapabilitySet",
+      "kind": "Instance",
+      "modelType": "SubmodelElementCollection",
+      "semanticId": {
+        "type": "ExternalReference",
+        "referredSemanticId": null,
+        "keys": [
+          {
+            "type": "GlobalReference",
+            "value": "https://admin-shell.io/idta/CapabilityDescription/CapabilitySet/1/0"
+          }
+        ]
+      },
+      "value": [
+        {
+          "idShort": "DrillContainer",
+          "kind": "Instance",
+          "modelType": "SubmodelElementCollection",
+          "semanticId": {
+            "type": "ExternalReference",
+            "referredSemanticId": null,
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/idta/CapabilityDescription/CapabilityContainer/1/0"
+              }
+            ]
+          },
+          "value": [
+            {
+              "idShort": "Drill",
+              "kind": "Instance",
+              "modelType": "Capability",
+              "semanticId": {
+                "type": "ExternalReference",
+                "referredSemanticId": null,
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://wiki.eclipse.org/BaSyx_/_Documentation_/_Submodels_/_Capability#Capability"
+                  }
+                ]
+              }
+            },
+            {
+              "idShort": "PropertySet",
+              "kind": "Instance",
+              "modelType": "SubmodelElementCollection",
+              "semanticId": {
+                "type": "ExternalReference",
+                "referredSemanticId": null,
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/CapabilityDescription/PropertySet/1/0"
+                  }
+                ]
+              },
+              "value": [
+                {
+                  "idShort": "DepthContainer",
+                  "kind": "Instance",
+                  "modelType": "SubmodelElementCollection",
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "referredSemanticId": null,
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/CapabilityDescription/PropertyContainer/1/0"
+                      }
+                    ]
+                  },
+                  "value": [
+                    {
+                      "idShort": "Depth",
+                      "kind": "Instance",
+                      "modelType": "Property",
+                      "valueType": "double",
+                      "value": "54.5"
+                    }
+                  ]
+                },
+                {
+                  "idShort": "DiameterContainer",
+                  "kind": "Instance",
+                  "modelType": "SubmodelElementCollection",
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "referredSemanticId": null,
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/CapabilityDescription/PropertyContainer/1/0"
+                      }
+                    ]
+                  },
+                  "value": [
+                    {
+                      "idShort": "Diameter",
+                      "kind": "Instance",
+                      "modelType": "Property",
+                      "valueType": "double",
+                      "value": "5.7"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "idShort": "ScrewContainer",
+          "kind": "Instance",
+          "modelType": "SubmodelElementCollection",
+          "semanticId": {
+            "type": "ExternalReference",
+            "referredSemanticId": null,
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/idta/CapabilityDescription/CapabilityContainer/1/0"
+              }
+            ]
+          },
+          "value": [
+            {
+              "idShort": "Screw",
+              "kind": "Instance",
+              "modelType": "Capability",
+              "semanticId": {
+                "type": "ExternalReference",
+                "referredSemanticId": null,
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://wiki.eclipse.org/BaSyx_/_Documentation_/_Submodels_/_Capability#Capability"
+                  }
+                ]
+              }
+            },
+            {
+              "idShort": "PropertySet",
+              "kind": "Instance",
+              "modelType": "SubmodelElementCollection",
+              "semanticId": {
+                "type": "ExternalReference",
+                "referredSemanticId": null,
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/CapabilityDescription/PropertySet/1/0"
+                  }
+                ]
+              },
+              "value": [
+                {
+                  "idShort": "TorqueContainer",
+                  "kind": "Instance",
+                  "modelType": "SubmodelElementCollection",
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "referredSemanticId": null,
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/CapabilityDescription/PropertyContainer/1/0"
+                      }
+                    ]
+                  },
+                  "value": [
+                    {
+                      "idShort": "Torque",
+                      "kind": "Instance",
+                      "modelType": "Property",
+                      "valueType": "double",
+                      "value": "45"
+                    }
+                  ]
+                },
+                {
+                  "idShort": "DiameterContainer",
+                  "kind": "Instance",
+                  "modelType": "SubmodelElementCollection",
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "referredSemanticId": null,
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/CapabilityDescription/PropertyContainer/1/0"
+                      }
+                    ]
+                  },
+                  "value": [
+                    {
+                      "idShort": "Diameter",
+                      "kind": "Instance",
+                      "modelType": "Property",
+                      "valueType": "double",
+                      "value": "6"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "idShort": "AssembleContainer",
+          "kind": "Instance",
+          "modelType": "SubmodelElementCollection",
+          "semanticId": {
+            "type": "ExternalReference",
+            "referredSemanticId": null,
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/idta/CapabilityDescription/CapabilityContainer/1/0"
+              }
+            ]
+          },
+          "value": [
+            {
+              "idShort": "Assemble",
+              "kind": "Instance",
+              "modelType": "Capability",
+              "semanticId": {
+                "type": "ExternalReference",
+                "referredSemanticId": null,
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://wiki.eclipse.org/BaSyx_/_Documentation_/_Submodels_/_Capability#Capability"
+                  }
+                ]
+              }
+            },
+            {
+              "idShort": "PropertySet",
+              "kind": "Instance",
+              "modelType": "SubmodelElementCollection",
+              "semanticId": {
+                "type": "ExternalReference",
+                "referredSemanticId": null,
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/CapabilityDescription/PropertySet/1/0"
+                  }
+                ]
+              },
+              "value": [
+                {
+                  "idShort": "GripForceContainer",
+                  "kind": "Instance",
+                  "modelType": "SubmodelElementCollection",
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "referredSemanticId": null,
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/CapabilityDescription/PropertyContainer/1/0"
+                      }
+                    ]
+                  },
+                  "value": [
+                    {
+                      "idShort": "GripForce",
+                      "kind": "Instance",
+                      "modelType": "Property",
+                      "valueType": "double",
+                      "value": "15.1"
+                    }
+                  ]
+                },
+                {
+                  "idShort": "ProductWeightContainer",
+                  "kind": "Instance",
+                  "modelType": "SubmodelElementCollection",
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "referredSemanticId": null,
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/CapabilityDescription/PropertyContainer/1/0"
+                      }
+                    ]
+                  },
+                  "value": [
+                    {
+                      "idShort": "ProductWeight",
+                      "kind": "Instance",
+                      "modelType": "Property",
+                      "valueType": "double",
+                      "value": "1.1"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "modelType": "Submodel",
+  "embeddedDataSpecifications": [],
+  "conceptDescription": null,
+  "qualifiers": [],
+  "id": "https://smartfactory.de/submodels/ecc8e49c-57e6-468c-a7cd-60e1e4b76580-IZ_LH-AkUF",
+  "administration": null,
+  "idShort": "RequiredCapabilityDescription",
+  "category": null,
+  "description": [],
+  "displayName": []
+}

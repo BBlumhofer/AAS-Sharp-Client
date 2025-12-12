@@ -26,6 +26,8 @@ public class ProcessChain : SubmodelElementCollection
     {
         if (capability != null)
         {
+            // SubmodelElementList items must not carry their own IdShort
+            capability.IdShort = string.Empty;
             RequiredCapabilities.Add(capability);
         }
     }

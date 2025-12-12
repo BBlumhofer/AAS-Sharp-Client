@@ -3,6 +3,10 @@ using System.Text.Json.Nodes;
 using System.IO;
 using System;
 using System.Threading.Tasks;
+using System.Collections.Generic;
+using System.Linq;
+using AasSharpClient.Models;
+using BaSyx.Models.AdminShell;
 
 public static class ProductGenerator
 {
@@ -85,20 +89,8 @@ public static class ProductGenerator
             }
         }
 
-        // build capability submodel from config: similar structure but without Constraints, only RealizedBy relation
-        var newCap = new JsonObject();
-        newCap["modelType"] = "Submodel";
-        newCap["kind"] = "Instance";
-        newCap["id"] = $"https://smartfactory.de/submodels/capability/{Guid.NewGuid()}-{idShort}";
-        newCap["idShort"] = "OfferedCapabilityDescription";
-        newCap["semanticId"] = new JsonObject { ["type"] = "ExternalReference", ["keys"] = new JsonArray(new JsonObject { ["type"] = "GlobalReference", ["value"] = "https://admin-shell.io/idta/CapabilityDescription/1/0/Submodel" }) };
-
-        var capabilitySet = new JsonObject();
-        capabilitySet["idShort"] = "CapabilitySet";
-        capabilitySet["modelType"] = "SubmodelElementCollection";
-        capabilitySet["semanticId"] = new JsonObject { ["type"] = "ExternalReference", ["keys"] = new JsonArray(new JsonObject { ["type"] = "GlobalReference", ["value"] = "https://admin-shell.io/idta/CapabilityDescription/CapabilitySet/1/0" }) };
-
-        var capList = new JsonArray();
+        // Build capability submodel using CapabilityDescription types and apply template
+        var capabilityContainers = new List<CapabilityContainerDefinition>();
 
         if (cfg["Capabilities"] is JsonArray caps)
         {
@@ -107,52 +99,57 @@ public static class ProductGenerator
                 if (c is JsonObject co)
                 {
                     var name = co["Name"]?.ToString() ?? "Capability";
-                    var container = new JsonObject();
-                    container["idShort"] = name + "Container";
-                    container["modelType"] = "SubmodelElementCollection";
-                    container["value"] = new JsonArray();
 
-                    // Capability entry
-                    var capEntry = new JsonObject();
-                    capEntry["idShort"] = name;
-                    capEntry["modelType"] = "Capability";
-                    capEntry["semanticId"] = new JsonObject { ["type"] = "ExternalReference", ["keys"] = new JsonArray(new JsonObject { ["type"] = "GlobalReference", ["value"] = "https://wiki.eclipse.org/BaSyx_/_Documentation_/_Submodels_/_Capability#Capability" }) };
-
-                    // No RealizedBy relation: product-side relations are omitted for this generator
-                    // add capEntry
-                    var capValueArray = container["value"] as JsonArray ?? new JsonArray();
-                    capValueArray.Add(capEntry);
-                    container["value"] = capValueArray;
-
-                    // Build PropertySet from PropertyContainers (no constraints)
-                    var propertySet = new JsonObject { ["idShort"] = "PropertySet", ["modelType"] = "SubmodelElementCollection", ["value"] = new JsonArray() };
+                    // Build property containers for this capability
+                    var propertyContainers = new List<CapabilityPropertyContainerDefinition>();
                     if (co["PropertyContainers"] is JsonObject pcs)
                     {
                         foreach (var kv in pcs)
                         {
                             var key = kv.Key;
-                            var val = kv.Value?.ToString();
-                            if (key == "ProductId") continue; // skip ProductId here
-                            var propContainer = new JsonObject { ["idShort"] = key + "Container", ["modelType"] = "SubmodelElementCollection", ["value"] = new JsonArray() };
-                            // add a simple Property element
-                            var prop = new JsonObject { ["idShort"] = key, ["modelType"] = "Property", ["valueType"] = "double", ["value"] = val ?? "" };
-                            (propContainer["value"] as JsonArray ?? new JsonArray()).Add(prop);
-                            (propertySet["value"] as JsonArray ?? new JsonArray()).Add(propContainer);
+                            var val = kv.Value?.ToString() ?? string.Empty;
+                            if (string.Equals(key, "ProductId", StringComparison.OrdinalIgnoreCase)) continue;
+
+                            // choose value type heuristically
+                            string valueType = "xs:string";
+                            if (double.TryParse(val, System.Globalization.NumberStyles.Any, System.Globalization.CultureInfo.InvariantCulture, out _))
+                            {
+                                valueType = "xs:double";
+                            }
+                            else if (val.StartsWith("http://", StringComparison.OrdinalIgnoreCase) || val.StartsWith("https://", StringComparison.OrdinalIgnoreCase))
+                            {
+                                valueType = "xs:anyURI";
+                            }
+
+                            var propContainer = new PropertyValueContainerDefinition(key + "Container", key, val, valueType);
+                            propertyContainers.Add(propContainer);
                         }
                     }
 
-                    // attach elements to container: capability and propertySet (no relations)
-                    var containerVals = container["value"] as JsonArray ?? new JsonArray();
-                    containerVals.Add(propertySet);
-                    container["value"] = containerVals;
+                    CapabilityPropertySetDefinition? propSetDef = null;
+                    if (propertyContainers.Count > 0)
+                    {
+                        propSetDef = new CapabilityPropertySetDefinition("PropertySet", propertyContainers);
+                    }
 
-                    capList.Add(container);
+                    var capElem = new CapabilityElementDefinition(name);
+                    var containerDef = new CapabilityContainerDefinition(name + "Container", capElem, null, null, null, null, null, propSetDef, null);
+                    capabilityContainers.Add(containerDef);
                 }
             }
         }
 
-        capabilitySet["value"] = capList;
-        newCap["submodelElements"] = new JsonArray(capabilitySet);
+        var capSetDef = new CapabilitySetDefinition("CapabilitySet", capabilityContainers);
+        // Use plain submodels/ UUID path (no 'capability' segment) to match repo conventions
+        var templateIdentifier = $"https://smartfactory.de/submodels/{Guid.NewGuid()}-{idShort}";
+        // Provide the desired submodel idShort here so Apply(...) does not overwrite it
+        var desiredIdShort = "RequiredCapabilityDescription";
+        var capTemplate = new CapabilityDescriptionTemplate(templateIdentifier, capSetDef, desiredIdShort, null);
+
+        var capSubmodel = new CapabilityDescriptionSubmodel(null, "RequiredCapabilities");
+        capSubmodel.Apply(capTemplate);
+        var serializedSubmodel = await capSubmodel.ToJsonAsync();
+        var newCapNode = JsonNode.Parse(serializedSubmodel) as JsonObject ?? throw new Exception("failed to parse serialized capability submodel");
 
         // rename existing template submodel ids to include shell short id to avoid duplicates and update AAS refs
         var renameMap = new Dictionary<string,string>(StringComparer.OrdinalIgnoreCase);
@@ -170,37 +167,132 @@ public static class ProductGenerator
             }
         }
 
+        // Replace any occurrences of the old submodel ids inside the whole template JSON
+        void ReplaceIdsInNode(JsonNode? node)
+        {
+            if (node is JsonObject obj)
+            {
+                var propList = obj.ToList();
+                foreach (var property in propList)
+                {
+                    var k = property.Key;
+                    var child = obj[k];
+                    if (child is JsonValue v)
+                    {
+                        if (v.TryGetValue<string>(out var s) && s != null && renameMap.TryGetValue(s, out var replacement))
+                        {
+                            obj[k] = replacement;
+                        }
+                    }
+                    else
+                    {
+                        ReplaceIdsInNode(child);
+                    }
+                }
+            }
+            else if (node is JsonArray arr)
+            {
+                for (int i = 0; i < arr.Count; i++)
+                {
+                    var el = arr[i];
+                    if (el is JsonValue vv)
+                    {
+                        if (vv.TryGetValue<string>(out var s2) && s2 != null && renameMap.TryGetValue(s2, out var repl2))
+                        {
+                            arr[i] = repl2;
+                        }
+                    }
+                    else
+                    {
+                        ReplaceIdsInNode(el);
+                    }
+                }
+            }
+        }
+
+        ReplaceIdsInNode(root);
+
         // replace capability submodel
         if (capIndex >= 0 && root["submodels"] is JsonArray arr)
         {
-            arr[capIndex] = newCap;
+            arr[capIndex] = newCapNode;
         }
         else
         {
             // append if not found
-            if (root["submodels"] is JsonArray arr2) arr2.Add(newCap);
+            if (root["submodels"] is JsonArray arr2) arr2.Add(newCapNode);
         }
 
-        // update AAS submodel references in assetAdministrationShells
-        if (root["assetAdministrationShells"] is JsonArray aasArr && aasArr.Count>0 && aasArr[0] is JsonObject aasObj && aasObj.TryGetPropertyValue("submodels", out var smRefs) && smRefs is JsonArray smRefsArr)
+        // update AAS submodel references in assetAdministrationShells: keep only refs to actually present submodels
+        if (root["assetAdministrationShells"] is JsonArray aasArr && aasArr.Count > 0 && aasArr[0] is JsonObject aasObj && aasObj.TryGetPropertyValue("submodels", out var smRefs) && smRefs is JsonArray smRefsArr)
         {
+            // compute set of submodel ids that exist in the root document
+            var existingSubmodelIds = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
+            if (root["submodels"] is JsonArray allSubs)
+            {
+                foreach (var s in allSubs)
+                {
+                    if (s is JsonObject so && so.TryGetPropertyValue("id", out var idNode) && idNode != null)
+                    {
+                        existingSubmodelIds.Add(idNode.ToString() ?? string.Empty);
+                    }
+                }
+            }
+
             var newRefs = new JsonArray();
             foreach (var r in smRefsArr)
             {
-                if (r is JsonObject ro && ro.TryGetPropertyValue("keys", out var keys) && keys is JsonArray kArr && kArr.Count>0)
+                if (r is JsonObject ro && ro.TryGetPropertyValue("keys", out var keys) && keys is JsonArray kArr && kArr.Count > 0)
                 {
                     var k0 = kArr[0] as JsonObject;
-                    if (k0 != null && k0.TryGetPropertyValue("value", out var v) && v!=null)
+                    if (k0 != null && k0.TryGetPropertyValue("value", out var v) && v != null)
                     {
                         var vs = v.ToString() ?? string.Empty;
-                        if (renameMap.TryGetValue(vs, out var nv)) k0["value"] = nv;
+                        // apply rename map if needed
+                        if (renameMap.TryGetValue(vs, out var nv)) vs = nv;
+                        // include only if the referenced submodel exists in the document
+                        if (existingSubmodelIds.Contains(vs))
+                        {
+                            // ensure the key value is updated to the possibly renamed id
+                            k0["value"] = vs;
+                            newRefs.Add(JsonNode.Parse(ro.ToJsonString()));
+                        }
                     }
                 }
-                newRefs.Add(JsonNode.Parse(r?.ToJsonString() ?? string.Empty));
             }
-            // ensure capability ref exists and points to newCap id
-            var capRef = new JsonObject { ["keys"] = new JsonArray(new JsonObject { ["type"] = "Submodel", ["value"] = newCap["id"]?.ToString() ?? string.Empty }), ["type"] = "ModelReference" };
-            newRefs.Add(capRef);
+
+            // ensure our generated capability submodel is referenced
+            if (!existingSubmodelIds.Contains(templateIdentifier))
+            {
+                // if for some reason the generated submodel isn't added to root, add it now
+                if (root["submodels"] is JsonArray arr2) arr2.Add(newCapNode);
+                existingSubmodelIds.Add(templateIdentifier);
+            }
+
+            var capRef = new JsonObject
+            {
+                ["keys"] = new JsonArray(new JsonObject { ["type"] = "Submodel", ["value"] = templateIdentifier }),
+                // make this an ExternalReference and add referredSemanticId pointing to CapabilityDescription semantics
+                ["referredSemanticId"] = new JsonObject
+                {
+                    ["keys"] = new JsonArray(new JsonObject { ["type"] = "GlobalReference", ["value"] = "https://smartfactory.de/semantics/submodel/CapabilityDescription#1/0" }),
+                    ["type"] = "ExternalReference"
+                },
+                ["type"] = "ExternalReference"
+            };
+
+            // avoid duplicate entries
+            var already = false;
+            foreach (var nr in newRefs)
+            {
+                if (nr is JsonObject nro && nro.TryGetPropertyValue("keys", out var k) && k is JsonArray kar && kar.Count > 0)
+                {
+                    var first = kar[0] as JsonObject;
+                    if (first != null && first.TryGetPropertyValue("value", out var fv) && fv != null && fv.ToString() == templateIdentifier) { already = true; break; }
+                }
+            }
+            if (!already) newRefs.Add(capRef);
+
             aasObj["submodels"] = newRefs;
         }
 
