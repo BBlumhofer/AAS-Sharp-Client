@@ -14,19 +14,21 @@ public class OfferedCapability : SubmodelElementCollection
     public const string InstanceIdentifierIdShort = "InstanceIdentifier";
     public const string MatchingScoreIdShort = "MatchingScore";
     public const string StationIdShort = "Station";
-    public const string SkillsIdShort = "Skills";
     public const string EarliestSchedulingInformationIdShort = "EarliestSchedulingInformation";
     public const string ActionsIdShort = "Actions";
     public const string CostIdShort = "Cost";
+    public const string CapabilitySequenceIdShort = "CapabilitySequence";
+    public const string SequencePlacementIdShort = "SequencePlacement";
 
     public ReferenceElement OfferedCapabilityReference { get; }
     public Property<string> InstanceIdentifier { get; }
     public Property<double> MatchingScore { get; }
     public Property<string> Station { get; }
-    public SubmodelElementList Skills { get; }
     public SchedulingContainer EarliestSchedulingInformation { get; }
     public SubmodelElementList Actions { get; }
     public Property<double> Cost { get; }
+    public SubmodelElementList CapabilitySequence { get; }
+    public Property<string> SequencePlacement { get; }
 
     public OfferedCapability(string idShort) : base(idShort)
     {
@@ -34,7 +36,6 @@ public class OfferedCapability : SubmodelElementCollection
         InstanceIdentifier = new Property<string>(InstanceIdentifierIdShort) { Value = new PropertyValue<string>(string.Empty) };
         MatchingScore = new Property<double>(MatchingScoreIdShort) { Value = new PropertyValue<double>(0.0) };
         Station = new Property<string>(StationIdShort) { Value = new PropertyValue<string>(string.Empty) };
-        Skills = new SubmodelElementList(SkillsIdShort);
         EarliestSchedulingInformation = new SchedulingContainer()
         {
             IdShort = EarliestSchedulingInformationIdShort
@@ -44,34 +45,24 @@ public class OfferedCapability : SubmodelElementCollection
         {
             Value = new PropertyValue<double>(0.0)
         };
+        CapabilitySequence = new SubmodelElementList(CapabilitySequenceIdShort)
+        {
+            OrderRelevant = false
+        };
+        SequencePlacement = new Property<string>(SequencePlacementIdShort)
+        {
+            Value = new PropertyValue<string>(string.Empty)
+        };
 
         Add(OfferedCapabilityReference);
         Add(InstanceIdentifier);
         Add(MatchingScore);
         Add(Station);
-        Add(Skills);
         Add(EarliestSchedulingInformation);
         Add(Actions);
         Add(Cost);
-    }
-
-    public void AddSkill(ProcessChainSkill skill)
-    {
-        if (skill != null)
-        {
-            Skills.Add(skill);
-        }
-    }
-
-    public IEnumerable<ProcessChainSkill> GetSkills()
-    {
-        foreach (var element in Skills)
-        {
-            if (element is ProcessChainSkill skill)
-            {
-                yield return skill;
-            }
-        }
+        Add(CapabilitySequence);
+        Add(SequencePlacement);
     }
 
     public void SetEarliestScheduling(DateTime start, DateTime end, TimeSpan setup, TimeSpan cycle)
@@ -97,5 +88,42 @@ public class OfferedCapability : SubmodelElementCollection
     public void SetCost(double amount)
     {
         Cost.Value = new PropertyValue<double>(amount);
+    }
+
+    public void AddCapabilityToSequence(OfferedCapability capability)
+    {
+        if (capability == null)
+        {
+            return;
+        }
+
+        var newId = capability.InstanceIdentifier.Value?.Value?.ToString();
+        if (!string.IsNullOrWhiteSpace(newId))
+        {
+            foreach (var element in CapabilitySequence)
+            {
+                if (element is OfferedCapability existing)
+                {
+                    var existingId = existing.InstanceIdentifier.Value?.Value?.ToString();
+                    if (!string.IsNullOrWhiteSpace(existingId) &&
+                        string.Equals(existingId, newId, StringComparison.OrdinalIgnoreCase))
+                    {
+                        return;
+                    }
+                }
+            }
+        }
+
+        if (!string.IsNullOrEmpty(capability.IdShort))
+        {
+            capability.IdShort = string.Empty;
+        }
+
+        CapabilitySequence.Add(capability);
+    }
+
+    public void SetSequencePlacement(string placement)
+    {
+        SequencePlacement.Value = new PropertyValue<string>(placement ?? string.Empty);
     }
 }

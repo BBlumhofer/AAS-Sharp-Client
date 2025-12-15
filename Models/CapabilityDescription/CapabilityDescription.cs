@@ -685,6 +685,9 @@ internal static class CapabilityDescriptionSemantics
     public static Reference CapabilityRelations { get; } = ReferenceFactory.External(
         (KeyType.GlobalReference, "https://admin-shell.io/idta/CapabilityDescription/CapabilityRelations/1/0"));
 
+    public static Reference CapabilityRelationsRealizedBy { get; } = ReferenceFactory.External(
+        (KeyType.GlobalReference, "https://admin-shell.io/idta/CapabilityDescription/CapabilityRelations/RealizedBy/1/0"));
+
     public static Reference PropertySet { get; } = ReferenceFactory.External(
         (KeyType.GlobalReference, "https://admin-shell.io/idta/CapabilityDescription/PropertySet/1/0"));
 

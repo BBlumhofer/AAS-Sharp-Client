@@ -31,7 +31,7 @@
           "keys": [
             {
               "type": "Submodel",
-              "value": "https://smartfactory.de/submodels/6961dad7-631b-48a5-a51b-a2c0c659e127"
+              "value": "https://smartfactory.de/submodels/6961dad7-631b-48a5-a51b-a2c0c659e127-P18"
             }
           ],
           "type": "ModelReference"
@@ -40,7 +40,7 @@
           "keys": [
             {
               "type": "Submodel",
-              "value": "https://smartfactory.de/submodels/f58558ed-8fbb-4b84-b611-424dd5eaa0e9"
+              "value": "https://smartfactory.de/submodels/f58558ed-8fbb-4b84-b611-424dd5eaa0e9-P18"
             }
           ],
           "referredSemanticId": {
@@ -58,7 +58,7 @@
           "keys": [
             {
               "type": "Submodel",
-              "value": "https://smartfactory.de/submodels/7e760b41-9124-4026-90b9-39d7b84dd220"
+              "value": "https://smartfactory.de/submodels/7e760b41-9124-4026-90b9-39d7b84dd220-P18"
             }
           ],
           "referredSemanticId": {
@@ -76,7 +76,7 @@
           "keys": [
             {
               "type": "Submodel",
-              "value": "https://smartfactory.de/submodels/skills/1069b6b1-e37a-46b3-b6bc-e5c4d4e664bb"
+              "value": "https://smartfactory.de/submodels/skills/b3c073b1-5864-44b9-bc8f-d66d7c292e69"
             }
           ],
           "type": "ModelReference"
@@ -85,7 +85,16 @@
           "keys": [
             {
               "type": "Submodel",
-              "value": "https://smartfactory.de/submodels/capability/a98d0eeb-df7b-4a3c-9186-965bedc74c0b"
+              "value": "https://smartfactory.de/submodels/capability/455aba77-d1b4-4e80-87f0-08327b7cdd07"
+            }
+          ],
+          "type": "ModelReference"
+        },
+        {
+          "keys": [
+            {
+              "type": "Submodel",
+              "value": "https://smartfactory.de/submodels/assetlocation/dca80994-ea4b-4b3d-9c6b-251c520fa3d9"
             }
           ],
           "type": "ModelReference"
@@ -115,7 +124,7 @@
         ],
         "type": "ExternalReference"
       },
-      "id": "https://smartfactory.de/submodels/6961dad7-631b-48a5-a51b-a2c0c659e127",
+      "id": "https://smartfactory.de/submodels/6961dad7-631b-48a5-a51b-a2c0c659e127-P18",
       "description": [
         {
           "language": "en",
@@ -1310,7 +1319,7 @@
         ],
         "type": "ExternalReference"
       },
-      "id": "https://smartfactory.de/submodels/f58558ed-8fbb-4b84-b611-424dd5eaa0e9",
+      "id": "https://smartfactory.de/submodels/f58558ed-8fbb-4b84-b611-424dd5eaa0e9-P18",
       "idShort": "MachineSchedule",
       "submodelElements": [
         {
@@ -1372,7 +1381,7 @@
         ],
         "type": "ExternalReference"
       },
-      "id": "https://smartfactory.de/submodels/7e760b41-9124-4026-90b9-39d7b84dd220",
+      "id": "https://smartfactory.de/submodels/7e760b41-9124-4026-90b9-39d7b84dd220-P18",
       "idShort": "MachineScheduleLog",
       "submodelElements": [
         {
@@ -1695,7 +1704,7 @@
                       "kind": "Instance",
                       "modelType": "ReferenceElement",
                       "value": {
-                        "type": "Undefined",
+                        "type": "ExternalReference",
                         "keys": [
                           {
                             "type": "GlobalReference",
@@ -1769,7 +1778,7 @@
                   "kind": "Instance",
                   "modelType": "ReferenceElement",
                   "value": {
-                    "type": "Undefined",
+                    "type": "ExternalReference",
                     "keys": [
                       {
                         "type": "GlobalReference",
@@ -1903,7 +1912,7 @@
       "embeddedDataSpecifications": [],
       "conceptDescription": null,
       "qualifiers": [],
-      "id": "https://smartfactory.de/submodels/skills/1069b6b1-e37a-46b3-b6bc-e5c4d4e664bb",
+      "id": "https://smartfactory.de/submodels/skills/b3c073b1-5864-44b9-bc8f-d66d7c292e69",
       "administration": null,
       "idShort": "Skills",
       "category": null,
@@ -2051,7 +2060,7 @@
                                     "keys": [
                                       {
                                         "type": "Submodel",
-                                        "value": "https://smartfactory.de/submodels/capability/a98d0eeb-df7b-4a3c-9186-965bedc74c0b"
+                                        "value": "https://smartfactory.de/submodels/capability/455aba77-d1b4-4e80-87f0-08327b7cdd07"
                                       },
                                       {
                                         "type": "SubmodelElementCollection",
@@ -2084,7 +2093,7 @@
                                     "keys": [
                                       {
                                         "type": "Submodel",
-                                        "value": "https://smartfactory.de/submodels/capability/a98d0eeb-df7b-4a3c-9186-965bedc74c0b"
+                                        "value": "https://smartfactory.de/submodels/capability/455aba77-d1b4-4e80-87f0-08327b7cdd07"
                                       },
                                       {
                                         "type": "SubmodelElementCollection",
@@ -2203,8 +2212,104 @@
         }
       ],
       "modelType": "Submodel",
-      "id": "https://smartfactory.de/submodels/capability/a98d0eeb-df7b-4a3c-9186-965bedc74c0b",
+      "id": "https://smartfactory.de/submodels/capability/455aba77-d1b4-4e80-87f0-08327b7cdd07",
       "idShort": "OfferedCapabilitiyDescription"
+    },
+    {
+      "kind": "Instance",
+      "semanticId": null,
+      "supplementalSemanticIds": [],
+      "submodelElements": [
+        {
+          "idShort": "Address",
+          "kind": "Instance",
+          "modelType": "Property",
+          "semanticId": {
+            "type": "ExternalReference",
+            "referredSemanticId": null,
+            "keys": []
+          },
+          "valueType": "string",
+          "value": "Trippstadter Str. 122, 67663 Kaiserslautern"
+        },
+        {
+          "idShort": "CurrentArea",
+          "kind": "Instance",
+          "modelType": "Property",
+          "semanticId": {
+            "type": "ExternalReference",
+            "referredSemanticId": null,
+            "keys": []
+          },
+          "valueType": "string",
+          "value": "Halle1"
+        },
+        {
+          "idShort": "Position",
+          "kind": "Instance",
+          "modelType": "SubmodelElementCollection",
+          "value": [
+            {
+              "idShort": "X",
+              "kind": "Instance",
+              "modelType": "Property",
+              "semanticId": {
+                "type": "ExternalReference",
+                "referredSemanticId": null,
+                "keys": []
+              },
+              "valueType": "double",
+              "value": "20"
+            },
+            {
+              "idShort": "Y",
+              "kind": "Instance",
+              "modelType": "Property",
+              "semanticId": {
+                "type": "ExternalReference",
+                "referredSemanticId": null,
+                "keys": []
+              },
+              "valueType": "double",
+              "value": "50"
+            },
+            {
+              "idShort": "Theta",
+              "kind": "Instance",
+              "modelType": "Property",
+              "semanticId": {
+                "type": "ExternalReference",
+                "referredSemanticId": null,
+                "keys": []
+              },
+              "valueType": "double",
+              "value": "0"
+            },
+            {
+              "idShort": "Floor",
+              "kind": "Instance",
+              "modelType": "Property",
+              "semanticId": {
+                "type": "ExternalReference",
+                "referredSemanticId": null,
+                "keys": []
+              },
+              "valueType": "integer",
+              "value": "0"
+            }
+          ]
+        }
+      ],
+      "modelType": "Submodel",
+      "embeddedDataSpecifications": [],
+      "conceptDescription": null,
+      "qualifiers": [],
+      "id": "https://smartfactory.de/submodels/assetlocation/dca80994-ea4b-4b3d-9c6b-251c520fa3d9",
+      "administration": null,
+      "idShort": "AssetLocation",
+      "category": null,
+      "description": [],
+      "displayName": []
     }
   ]
 }

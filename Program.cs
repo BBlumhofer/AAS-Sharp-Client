@@ -27,12 +27,12 @@ namespace AasSharpClient
             var logger = serviceProvider.GetRequiredService<ILogger<Program>>();
             
             logger.LogInformation("=== AAS Sharp Client Demo - Alle Submodelle ===");
-            logger.LogInformation("BaSyx Server: http://localhost:8080");
+            logger.LogInformation("BaSyx Server: http://192.168.178.30:8080");
 
             try
             {
-                var aasRepoUri = new Uri("http://localhost:8080");
-                var submodelRepoUri = new Uri("http://localhost:8080");
+                var aasRepoUri = new Uri("http://192.168.178.30:8080");
+                var submodelRepoUri = new Uri("http://192.168.178.30:8080");
 
                 var aasRepoClient = new AssetAdministrationShellRepositoryHttpClient(aasRepoUri);
                 var submodelRepoClient = new SubmodelRepositoryHttpClient(submodelRepoUri);

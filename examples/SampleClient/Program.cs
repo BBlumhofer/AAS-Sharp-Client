@@ -9,7 +9,7 @@ using AasSharpClient.Models;
 using BaSyx.Models.AdminShell;
 using BaSyx.Clients.AdminShell.Http;
 
-Console.WriteLine("=== AAS-Sharp-Client Server-Anbindung Test (Testserver: localhost:8080) ===");
+Console.WriteLine("=== AAS-Sharp-Client Server-Anbindung Test (Testserver: 192.168.178.30:8080) ===");
 Console.WriteLine();
 
 var services = new ServiceCollection();
@@ -19,7 +19,7 @@ services.AddLogging(cfg => cfg.AddConsole().SetMinimumLevel(LogLevel.Information
 services.AddHttpClient("basyx", (sp, client) =>
 {
     client.Timeout = TimeSpan.FromSeconds(30);
-    client.BaseAddress = new Uri("http://localhost:8080/");
+    client.BaseAddress = new Uri("http://192.168.178.30:8080/");
 })
 .ConfigurePrimaryHttpMessageHandler(() => new HttpClientHandler
 {
@@ -34,9 +34,9 @@ var logger = provider.GetRequiredService<ILogger<Program>>();
 
 try
 {
-    logger.LogInformation("Starte Test-Ablauf mit Server auf localhost:8080...");
+    logger.LogInformation("Starte Test-Ablauf mit Server auf 192.168.178.30:8080...");
 
-    string basyxHost = "http://localhost:8080";
+    string basyxHost = "http://192.168.178.30:8080";
     
     // Clients initialisieren
     var aasRepoClient = new AssetAdministrationShellRepositoryHttpClient(new Uri($"{basyxHost}/shells"));

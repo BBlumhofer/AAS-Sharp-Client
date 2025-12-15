@@ -59,6 +59,10 @@ namespace AasSharpClient.Models
 
         public IEnumerable<RelationshipElement> RealizedBy => Relations?.RealizedBy ?? Enumerable.Empty<RelationshipElement>();
 
+        public RelationshipElement? SkillRelation =>
+            Relations?.Relationships?
+                .FirstOrDefault(rel => CapabilityDescriptionReferenceComparer.Equals(rel.SemanticId, CapabilityDescriptionSemantics.CapabilityRelationsRealizedBy));
+
         public IEnumerable<CapabilityPropertyContainerSection> PropertyContainers =>
             PropertySet?.Containers ?? Enumerable.Empty<CapabilityPropertyContainerSection>();
 
@@ -388,7 +392,7 @@ namespace AasSharpClient.Models
 
     internal static class CapabilityDescriptionReferenceComparer
     {
-        public static bool Equals(Reference? left, Reference? right)
+        public static bool Equals(IReference? left, IReference? right)
         {
             if (left == null || right == null)
             {

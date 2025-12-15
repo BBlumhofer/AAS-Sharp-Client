@@ -11,13 +11,13 @@ using Xunit.Sdk;
 namespace AasSharpClient.Tests;
 
 /// <summary>
-/// Integration tests that talk to a locally running BaSyx server (http://localhost:8080).
+/// Integration tests that talk to a locally running BaSyx server (http://192.168.178.30:8080).
 /// These tests are skipped automatically when the server is unavailable.
 /// </summary>
 public class RemoteShellIntegrationTests
 {
-    private static readonly Uri ShellRepositoryUri = new("http://localhost:8080/shells", UriKind.Absolute);
-    private static readonly Uri SubmodelRepositoryUri = new("http://localhost:8080/submodels", UriKind.Absolute);
+    private static readonly Uri ShellRepositoryUri = new("http://192.168.178.30:8080/shells", UriKind.Absolute);
+    private static readonly Uri SubmodelRepositoryUri = new("http://192.168.178.30:8080/submodels", UriKind.Absolute);
     private static readonly Identifier ShellIdentifier = new("https://smartfactory.de/shells/mio_fDp69z");
     private const string ProductIdentificationSubmodelId = "https://smartfactory.de/submodels/Q_nJW61FiN";
 

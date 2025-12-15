@@ -72,6 +72,11 @@ public class InventoryMessage : SubmodelElementCollection
 
         foreach (var storage in storageUnits.OfType<SubmodelElementCollection>())
         {
+            if (string.Equals(storage.IdShort, "InventorySummary", StringComparison.OrdinalIgnoreCase))
+            {
+                continue;
+            }
+
             var storageUnit = new StorageUnit
             {
                 Name = storage.IdShort ?? "Storage",
