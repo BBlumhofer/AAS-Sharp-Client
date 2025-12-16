@@ -17,7 +17,6 @@ public class OfferedCapability : SubmodelElementCollection
     public const string EarliestSchedulingInformationIdShort = "EarliestSchedulingInformation";
     public const string ActionsIdShort = "Actions";
     public const string CostIdShort = "Cost";
-    public const string CapabilitySequenceIdShort = "CapabilitySequence";
     public const string SequencePlacementIdShort = "SequencePlacement";
 
     public ReferenceElement OfferedCapabilityReference { get; }
@@ -27,7 +26,6 @@ public class OfferedCapability : SubmodelElementCollection
     public SchedulingContainer EarliestSchedulingInformation { get; }
     public SubmodelElementList Actions { get; }
     public Property<double> Cost { get; }
-    public SubmodelElementList CapabilitySequence { get; }
     public Property<string> SequencePlacement { get; }
 
     public OfferedCapability(string idShort) : base(idShort)
@@ -45,10 +43,6 @@ public class OfferedCapability : SubmodelElementCollection
         {
             Value = new PropertyValue<double>(0.0)
         };
-        CapabilitySequence = new SubmodelElementList(CapabilitySequenceIdShort)
-        {
-            OrderRelevant = false
-        };
         SequencePlacement = new Property<string>(SequencePlacementIdShort)
         {
             Value = new PropertyValue<string>(string.Empty)
@@ -61,7 +55,6 @@ public class OfferedCapability : SubmodelElementCollection
         Add(EarliestSchedulingInformation);
         Add(Actions);
         Add(Cost);
-        Add(CapabilitySequence);
         Add(SequencePlacement);
     }
 
@@ -88,38 +81,6 @@ public class OfferedCapability : SubmodelElementCollection
     public void SetCost(double amount)
     {
         Cost.Value = new PropertyValue<double>(amount);
-    }
-
-    public void AddCapabilityToSequence(OfferedCapability capability)
-    {
-        if (capability == null)
-        {
-            return;
-        }
-
-        var newId = capability.InstanceIdentifier.Value?.Value?.ToString();
-        if (!string.IsNullOrWhiteSpace(newId))
-        {
-            foreach (var element in CapabilitySequence)
-            {
-                if (element is OfferedCapability existing)
-                {
-                    var existingId = existing.InstanceIdentifier.Value?.Value?.ToString();
-                    if (!string.IsNullOrWhiteSpace(existingId) &&
-                        string.Equals(existingId, newId, StringComparison.OrdinalIgnoreCase))
-                    {
-                        return;
-                    }
-                }
-            }
-        }
-
-        if (!string.IsNullOrEmpty(capability.IdShort))
-        {
-            capability.IdShort = string.Empty;
-        }
-
-        CapabilitySequence.Add(capability);
     }
 
     public void SetSequencePlacement(string placement)

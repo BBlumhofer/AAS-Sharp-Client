@@ -1,0 +1,70 @@
+{
+  "idShort": "TransportRequest",
+  "kind": "Instance",
+  "modelType": "SubmodelElementCollection",
+  "value": [
+    {
+      "idShort": "InstanceIdentifier",
+      "kind": "Instance",
+      "modelType": "Property",
+      "valueType": "string",
+      "value": "dc05a527-7a63-499a-81ac-1fe49ac061c5:1"
+    },
+    {
+      "idShort": "OfferedCapabilityIdentifier",
+      "kind": "Instance",
+      "modelType": "Property",
+      "valueType": "string",
+      "value": "P100:dc05a527-7a63-499a-81ac-1fe49ac061c5:1"
+    },
+    {
+      "idShort": "TransportStartStation",
+      "kind": "Instance",
+      "modelType": "Property",
+      "valueType": "string",
+      "value": ""
+    },
+    {
+      "idShort": "TransportGoalStation",
+      "kind": "Instance",
+      "modelType": "Property",
+      "valueType": "string",
+      "value": "Screw"
+    },
+    {
+      "idShort": "IdentifierType",
+      "kind": "Instance",
+      "modelType": "Property",
+      "valueType": "string",
+      "value": "ProductId"
+    },
+    {
+      "idShort": "IdentifierValue",
+      "kind": "Instance",
+      "modelType": "Property",
+      "valueType": "string",
+      "value": "https://smartfactory.de/shells/LG3JsASu4_"
+    },
+    {
+      "idShort": "Amount",
+      "kind": "Instance",
+      "modelType": "Property",
+      "valueType": "int",
+      "value": "1"
+    },
+    {
+      "idShort": "EstimatedTransportTime",
+      "kind": "Instance",
+      "modelType": "Property",
+      "valueType": "double",
+      "value": "0"
+    },
+    {
+      "idShort": "CapabilitiesSequence",
+      "kind": "Instance",
+      "modelType": "SubmodelElementList",
+      "orderRelevant": false,
+      "value": []
+    }
+  ]
+}

@@ -7,16 +7,11 @@ namespace AasSharpClient.Models.ManufacturingSequence;
 /// <summary>
 /// Represents a candidate capability sequence (e.g., transports + main capability) for a required capability.
 /// </summary>
-public class ManufacturingOfferedCapabilitySequence : SubmodelElementCollection
+public class ManufacturingOfferedCapabilitySequence : SubmodelElementList
 {
-    public const string CapabilitySequenceIdShort = "CapabilitySequence";
-
-    public SubmodelElementList CapabilitySequence { get; }
-
     public ManufacturingOfferedCapabilitySequence(string idShort = "OfferedCapabilitySequence") : base(idShort)
     {
-        CapabilitySequence = new SubmodelElementList(CapabilitySequenceIdShort);
-        Add(CapabilitySequence);
+        OrderRelevant = false;
     }
 
     public void AddCapability(OfferedCapability capability)
@@ -27,12 +22,12 @@ public class ManufacturingOfferedCapabilitySequence : SubmodelElementCollection
         }
 
         capability.IdShort = string.Empty;
-        CapabilitySequence.Add(capability);
+        Add(capability);
     }
 
     public IEnumerable<OfferedCapability> GetCapabilities()
     {
-        foreach (var element in CapabilitySequence)
+        foreach (var element in this)
         {
             if (element is OfferedCapability capability)
             {
