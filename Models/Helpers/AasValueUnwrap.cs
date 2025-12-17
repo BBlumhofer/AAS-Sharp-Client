@@ -1,6 +1,7 @@
 using System;
 using System.Reflection;
 using BaSyx.Models.AdminShell;
+using System.Text.Json;
 
 namespace AasSharpClient.Models.Helpers;
 
@@ -16,6 +17,22 @@ public static class AasValueUnwrap
 
         for (var depth = 0; depth < maxDepth && current != null; depth++)
         {
+            if (current is JsonElement json)
+            {
+                current = json.ValueKind switch
+                {
+                    JsonValueKind.String => json.GetString(),
+                    JsonValueKind.Number => json.TryGetInt64(out var l) ? l : json.TryGetDouble(out var d) ? d : json.ToString(),
+                    JsonValueKind.True => true,
+                    JsonValueKind.False => false,
+                    JsonValueKind.Null => null,
+                    JsonValueKind.Undefined => null,
+                    _ => json.ToString()
+                };
+
+                continue;
+            }
+
             if (current is IValue iv)
             {
                 current = iv.Value;

@@ -207,12 +207,94 @@ public class Preconditions : SubmodelElementCollection
     }
 }
 
+public class Postconditions : SubmodelElementCollection
+{
+    public Postconditions(IEnumerable<PostconditionBase>? postconditions = null)
+        : base("Postconditions")
+    {
+        SemanticId = SemanticReferences.ActionPreconditions;
+
+        if (postconditions == null)
+        {
+            return;
+        }
+
+        foreach (var post in postconditions)
+        {
+            AddPostcondition(post);
+        }
+    }
+
+    public T AddPostcondition<T>(T postcondition) where T : PostconditionBase
+    {
+        ArgumentNullException.ThrowIfNull(postcondition);
+        Add(postcondition);
+        return postcondition;
+    }
+
+    public StoragePostcondition CreateStoragePostcondition(string idShort)
+    {
+        return AddPostcondition(new StoragePostcondition(idShort));
+    }
+}
+
 public abstract class PreconditionBase : SubmodelElementCollection
 {
     protected Property<string> ConditionType { get; }
     protected SubmodelElementCollection ConditionValue { get; }
 
     protected PreconditionBase(string idShort, string conditionType)
+        : base(NormalizeIdShort(idShort))
+    {
+        SemanticId = SemanticReferences.ActionPreconditions;
+
+        ConditionType = SubmodelElementFactory.CreateStringProperty(
+            "ConditionType",
+            conditionType,
+            SemanticReferences.ActionPreconditions);
+
+        ConditionValue = new SubmodelElementCollection("ConditionValue")
+        {
+            SemanticId = SemanticReferences.ActionPreconditions
+        };
+
+        Add(ConditionType);
+        Add(ConditionValue);
+    }
+
+    protected Property<string> AddConditionValueProperty(string idShort, string? value = null)
+    {
+        var property = SubmodelElementFactory.CreateStringProperty(
+            idShort,
+            value ?? string.Empty,
+            SemanticReferences.ActionPreconditions);
+        ConditionValue.Add(property);
+        return property;
+    }
+
+    private static string NormalizeIdShort(string? idShort)
+    {
+        if (string.IsNullOrWhiteSpace(idShort))
+        {
+            return "Condition_001";
+        }
+
+        var trimmed = idShort.Trim();
+        if (trimmed.StartsWith("Condition_", StringComparison.OrdinalIgnoreCase))
+        {
+            return trimmed;
+        }
+
+        return trimmed;
+    }
+}
+
+public abstract class PostconditionBase : SubmodelElementCollection
+{
+    protected Property<string> ConditionType { get; }
+    protected SubmodelElementCollection ConditionValue { get; }
+
+    protected PostconditionBase(string idShort, string conditionType)
         : base(NormalizeIdShort(idShort))
     {
         SemanticId = SemanticReferences.ActionPreconditions;
@@ -278,6 +360,41 @@ public sealed class StoragePrecondition : PreconditionBase
     }
 
     public StoragePrecondition(string idShort, StorageConditionContentType contentType, string? slotValue)
+        : base(idShort, "InStorage")
+    {
+        _slotContentType = AddConditionValueProperty("SlotContentType", contentType.ToString());
+        _slotValue = AddConditionValueProperty("SlotValue", slotValue ?? string.Empty);
+    }
+
+    public StorageConditionContentType ContentType
+    {
+        get => Enum.TryParse(
+                _slotContentType.Value.Value?.ToString(),
+                true,
+                out StorageConditionContentType result)
+            ? result
+            : StorageConditionContentType.ProductId;
+        set => _slotContentType.Value = new PropertyValue<string>(value.ToString());
+    }
+
+    public string SlotValue
+    {
+        get => _slotValue.Value.Value?.ToString() ?? string.Empty;
+        set => _slotValue.Value = new PropertyValue<string>(value ?? string.Empty);
+    }
+}
+
+public sealed class StoragePostcondition : PostconditionBase
+{
+    private readonly Property<string> _slotContentType;
+    private readonly Property<string> _slotValue;
+
+    public StoragePostcondition(string idShort)
+        : this(idShort, StorageConditionContentType.ProductId, string.Empty)
+    {
+    }
+
+    public StoragePostcondition(string idShort, StorageConditionContentType contentType, string? slotValue)
         : base(idShort, "InStorage")
     {
         _slotContentType = AddConditionValueProperty("SlotContentType", contentType.ToString());

@@ -10,7 +10,8 @@ public class Action : SubmodelElementCollection
     public Property<string> Status { get; }
     public InputParameters InputParameters { get; }
     public FinalResultData FinalResultData { get; }
-    public SubmodelElementCollection Preconditions { get; }
+    public Preconditions Preconditions { get; }
+    public Postconditions Postconditions { get; }
     public SkillReference SkillReference { get; }
     public SubmodelElementCollection Effects { get; }
     public Property<string> MachineName { get; }
@@ -26,7 +27,8 @@ public class Action : SubmodelElementCollection
         FinalResultData? finalResultData,
         Preconditions? preconditions,
         SkillReference? skillReference,
-        string machineName)
+        string machineName,
+        Postconditions? postconditions = null)
         : base(NormalizeIdShort(idShort))
     {
         SemanticId = SemanticReferences.StepAction;
@@ -36,6 +38,7 @@ public class Action : SubmodelElementCollection
         InputParameters = inputParameters ?? new InputParameters();
         FinalResultData = finalResultData ?? new FinalResultData();
         Preconditions = preconditions ?? new Preconditions();
+        Postconditions = postconditions ?? new Postconditions();
         SkillReference = skillReference ?? new SkillReference(Array.Empty<(object Key, string Value)>());
         Effects = CreateEmptyCollection("Effects", SemanticReferences.ActionEffects);
         MachineName = SubmodelElementFactory.CreateStringProperty("MachineName", machineName?.Trim() ?? string.Empty, SemanticReferences.ActionMachineName);
@@ -48,6 +51,7 @@ public class Action : SubmodelElementCollection
         Add(InputParameters);
         Add(FinalResultData);
         Add(Preconditions);
+        Add(Postconditions);
         Add(SkillReference);
         Add(Effects);
         Add(MachineName);
