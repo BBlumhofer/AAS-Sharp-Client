@@ -76,7 +76,7 @@
           "keys": [
             {
               "type": "Submodel",
-              "value": "https://smartfactory.de/submodels/skills/2270e1ba-9eb8-4032-8fc3-1c78babc4ec6"
+              "value": "https://smartfactory.de/submodels/skills/4aa56cc8-be8c-43ab-b5c2-1a308266bd7a"
             }
           ],
           "type": "ModelReference"
@@ -85,7 +85,7 @@
           "keys": [
             {
               "type": "Submodel",
-              "value": "https://smartfactory.de/submodels/capability/fa6fc70d-8a8f-4369-b4d4-2b0f849ed817"
+              "value": "https://smartfactory.de/submodels/capability/fd093b4f-c92e-4caf-8015-2cff423fa8ae"
             }
           ],
           "type": "ModelReference"
@@ -94,7 +94,7 @@
           "keys": [
             {
               "type": "Submodel",
-              "value": "https://smartfactory.de/submodels/assetlocation/1916db7e-8541-4e8f-b14d-bc4b49290813"
+              "value": "https://smartfactory.de/submodels/assetlocation/814017ce-77f1-40fc-a1f4-50feba8c5e76"
             }
           ],
           "type": "ModelReference"
@@ -1912,7 +1912,7 @@
       "embeddedDataSpecifications": [],
       "conceptDescription": null,
       "qualifiers": [],
-      "id": "https://smartfactory.de/submodels/skills/2270e1ba-9eb8-4032-8fc3-1c78babc4ec6",
+      "id": "https://smartfactory.de/submodels/skills/4aa56cc8-be8c-43ab-b5c2-1a308266bd7a",
       "administration": null,
       "idShort": "Skills",
       "category": null,
@@ -2060,7 +2060,7 @@
                                     "keys": [
                                       {
                                         "type": "Submodel",
-                                        "value": "https://smartfactory.de/submodels/capability/fa6fc70d-8a8f-4369-b4d4-2b0f849ed817"
+                                        "value": "https://smartfactory.de/submodels/capability/fd093b4f-c92e-4caf-8015-2cff423fa8ae"
                                       },
                                       {
                                         "type": "SubmodelElementCollection",
@@ -2093,7 +2093,7 @@
                                     "keys": [
                                       {
                                         "type": "Submodel",
-                                        "value": "https://smartfactory.de/submodels/capability/fa6fc70d-8a8f-4369-b4d4-2b0f849ed817"
+                                        "value": "https://smartfactory.de/submodels/capability/fd093b4f-c92e-4caf-8015-2cff423fa8ae"
                                       },
                                       {
                                         "type": "SubmodelElementCollection",
@@ -2212,7 +2212,7 @@
         }
       ],
       "modelType": "Submodel",
-      "id": "https://smartfactory.de/submodels/capability/fa6fc70d-8a8f-4369-b4d4-2b0f849ed817",
+      "id": "https://smartfactory.de/submodels/capability/fd093b4f-c92e-4caf-8015-2cff423fa8ae",
       "idShort": "OfferedCapabilitiyDescription"
     },
     {
@@ -2233,7 +2233,7 @@
           "value": "Trippstadter Str. 122, 67663 Kaiserslautern"
         },
         {
-          "idShort": "CurrentArea",
+          "idShort": "Parent",
           "kind": "Instance",
           "modelType": "Property",
           "semanticId": {
@@ -2284,18 +2284,6 @@
               },
               "valueType": "double",
               "value": "0"
-            },
-            {
-              "idShort": "Floor",
-              "kind": "Instance",
-              "modelType": "Property",
-              "semanticId": {
-                "type": "ExternalReference",
-                "referredSemanticId": null,
-                "keys": []
-              },
-              "valueType": "integer",
-              "value": "0"
             }
           ]
         }
@@ -2304,7 +2292,7 @@
       "embeddedDataSpecifications": [],
       "conceptDescription": null,
       "qualifiers": [],
-      "id": "https://smartfactory.de/submodels/assetlocation/1916db7e-8541-4e8f-b14d-bc4b49290813",
+      "id": "https://smartfactory.de/submodels/assetlocation/814017ce-77f1-40fc-a1f4-50feba8c5e76",
       "administration": null,
       "idShort": "AssetLocation",
       "category": null,

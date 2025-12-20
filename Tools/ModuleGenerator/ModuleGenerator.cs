@@ -200,11 +200,10 @@ namespace ModuleGenerator
             var addressDefault = "Trippstadter Str. 122, 67663 Kaiserslautern";
             var assetData = new AasSharpClient.Models.AssetLocationData(
                 Address: addressDefault,
-                CurrentArea: loc.CurrentArea ?? loc.Area ?? "ProductionHallA",
+                Parent: loc.Parent ?? loc.Area ?? "ProductionHallA",
                 X: loc.X ?? 0.0,
                 Y: loc.Y ?? 0.0,
-                Theta: loc.Theta ?? 0.0,
-                Floor: loc.Floor ?? loc.Level ?? 1);
+                Theta: loc.Theta ?? 0.0);
 
             assetLocation.Apply(assetData);
             shell.Submodels.Add(assetLocation);
@@ -457,14 +456,13 @@ namespace ModuleGenerator
     public class AssetLocationConfig
     {
         // support both possible JSON property names used in examples
-        public string? CurrentArea { get; set; }
+        public string? Parent { get; set; }
         public string? Area { get; set; }
 
         public double? X { get; set; }
         public double? Y { get; set; }
         public double? Theta { get; set; }
 
-        public int? Floor { get; set; }
         public int? Level { get; set; }
 }
 

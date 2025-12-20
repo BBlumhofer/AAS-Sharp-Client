@@ -2233,7 +2233,7 @@
           "value": "Trippstadter Str. 122, 67663 Kaiserslautern"
         },
         {
-          "idShort": "CurrentArea",
+          "idShort": "Parent",
           "kind": "Instance",
           "modelType": "Property",
           "semanticId": {
@@ -2283,18 +2283,6 @@
                 "keys": []
               },
               "valueType": "double",
-              "value": "0"
-            },
-            {
-              "idShort": "Floor",
-              "kind": "Instance",
-              "modelType": "Property",
-              "semanticId": {
-                "type": "ExternalReference",
-                "referredSemanticId": null,
-                "keys": []
-              },
-              "valueType": "integer",
               "value": "0"
             }
           ]

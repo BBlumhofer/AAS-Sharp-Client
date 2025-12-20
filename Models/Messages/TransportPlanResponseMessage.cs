@@ -8,50 +8,53 @@ using I40Sharp.Messaging.Models;
 
 namespace AasSharpClient.Models.Messages;
 
-public sealed class TransportPlanRequestMessage
+public sealed class TransportPlanResponseMessage
 {
-    public TransportPlanRequestMessage(
+    public TransportPlanResponseMessage(
         string senderId,
         string? senderRole,
         string receiverId,
-        string receiverRole,
+        string? receiverRole,
         string conversationId,
-        TransportRequestMessage request)
+        TransportRequestMessage response)
     {
         SenderId = senderId;
         SenderRole = senderRole;
         ReceiverId = receiverId;
         ReceiverRole = receiverRole;
         ConversationId = conversationId;
-        Request = request;
+        Response = response ?? throw new ArgumentNullException(nameof(response));
     }
 
     public string SenderId { get; }
     public string? SenderRole { get; }
     public string ReceiverId { get; }
-    public string ReceiverRole { get; }
+    public string? ReceiverRole { get; }
     public string ConversationId { get; }
-    public TransportRequestMessage Request { get; }
+    public TransportRequestMessage Response { get; }
+
+    public I40Message ToI40Message()
+    {
+        throw new InvalidOperationException("Use ToI40Message(senderId, senderRole, receiverId, receiverRole, conversationId)");
+    }
 
     public I40Message ToI40Message(
         string senderId,
         string? senderRole,
         string receiverId,
-        string receiverRole,
+        string? receiverRole,
         string conversationId)
     {
         if (string.IsNullOrWhiteSpace(senderId)) throw new ArgumentException("SenderId missing", nameof(senderId));
         if (string.IsNullOrWhiteSpace(receiverId)) throw new ArgumentException("ReceiverId missing", nameof(receiverId));
-        if (string.IsNullOrWhiteSpace(receiverRole)) throw new ArgumentException("ReceiverRole missing", nameof(receiverRole));
         if (string.IsNullOrWhiteSpace(conversationId)) throw new ArgumentException("ConversationId missing", nameof(conversationId));
-        if (Request == null) throw new ArgumentNullException(nameof(Request));
 
         return new I40MessageBuilder()
             .From(senderId, string.IsNullOrWhiteSpace(senderRole) ? null : senderRole)
-            .To(receiverId, receiverRole)
-            .WithType(I40MessageTypes.REQUIREMENT, I40MessageTypeSubtypes.TransportRequest)
+            .To(receiverId, string.IsNullOrWhiteSpace(receiverRole) ? null : receiverRole)
+            .WithType(I40MessageTypes.CONSENT, I40MessageTypeSubtypes.TransportRequest)
             .WithConversationId(conversationId)
-            .AddElement(Request)
+            .AddElement(Response)
             .Build();
     }
 
@@ -61,7 +64,7 @@ public sealed class TransportPlanRequestMessage
         string senderId,
         string? senderRole,
         string receiverId,
-        string receiverRole,
+        string? receiverRole,
         string conversationId)
     {
         if (client == null) throw new ArgumentNullException(nameof(client));

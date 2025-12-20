@@ -290,6 +290,22 @@
                   "value": []
                 },
                 {
+                  "idShort": "Postconditions",
+                  "kind": "Instance",
+                  "modelType": "SubmodelElementCollection",
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "referredSemanticId": null,
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://smartfactory.de/semantics/submodel-element/Step/Actions/Action/Preconditions"
+                      }
+                    ]
+                  },
+                  "value": []
+                },
+                {
                   "idShort": "SkillReference",
                   "kind": "Instance",
                   "modelType": "ReferenceElement",
@@ -489,6 +505,22 @@
                   "value": []
                 },
                 {
+                  "idShort": "Postconditions",
+                  "kind": "Instance",
+                  "modelType": "SubmodelElementCollection",
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "referredSemanticId": null,
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://smartfactory.de/semantics/submodel-element/Step/Actions/Action/Preconditions"
+                      }
+                    ]
+                  },
+                  "value": []
+                },
+                {
                   "idShort": "SkillReference",
                   "kind": "Instance",
                   "modelType": "ReferenceElement",
@@ -673,6 +705,22 @@
                 },
                 {
                   "idShort": "Preconditions",
+                  "kind": "Instance",
+                  "modelType": "SubmodelElementCollection",
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "referredSemanticId": null,
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://smartfactory.de/semantics/submodel-element/Step/Actions/Action/Preconditions"
+                      }
+                    ]
+                  },
+                  "value": []
+                },
+                {
+                  "idShort": "Postconditions",
                   "kind": "Instance",
                   "modelType": "SubmodelElementCollection",
                   "semanticId": {
@@ -1280,6 +1328,22 @@
                 },
                 {
                   "idShort": "Preconditions",
+                  "kind": "Instance",
+                  "modelType": "SubmodelElementCollection",
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "referredSemanticId": null,
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://smartfactory.de/semantics/submodel-element/Step/Actions/Action/Preconditions"
+                      }
+                    ]
+                  },
+                  "value": []
+                },
+                {
+                  "idShort": "Postconditions",
                   "kind": "Instance",
                   "modelType": "SubmodelElementCollection",
                   "semanticId": {
@@ -1925,6 +1989,22 @@
                   "value": []
                 },
                 {
+                  "idShort": "Postconditions",
+                  "kind": "Instance",
+                  "modelType": "SubmodelElementCollection",
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "referredSemanticId": null,
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://smartfactory.de/semantics/submodel-element/Step/Actions/Action/Preconditions"
+                      }
+                    ]
+                  },
+                  "value": []
+                },
+                {
                   "idShort": "SkillReference",
                   "kind": "Instance",
                   "modelType": "ReferenceElement",
@@ -2338,7 +2418,7 @@
   "embeddedDataSpecifications": [],
   "conceptDescription": null,
   "qualifiers": [],
-  "id": "https://smartfactory.de/submodels/f4ce487a-a8f1-40cf-b91a-34c0a53a36e9",
+  "id": "https://smartfactory.de/submodels/40a7d1ee-c4f3-4d2e-b3e1-d2293990702b",
   "administration": null,
   "idShort": "ProductionPlan",
   "category": null,

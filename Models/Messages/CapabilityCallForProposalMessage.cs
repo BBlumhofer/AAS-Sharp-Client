@@ -20,7 +20,8 @@ public sealed class CapabilityCallForProposalMessage
         string requirementId,
         string? productId = null,
         string? capabilityDescription = null,
-        SubmodelElementCollection? capabilityContainer = null)
+        SubmodelElementCollection? capabilityContainer = null,
+        SubmodelElementCollection? assetLocation = null)
     {
         SenderId = senderId;
         SenderRole = senderRole;
@@ -33,6 +34,7 @@ public sealed class CapabilityCallForProposalMessage
         ProductId = productId;
         CapabilityDescription = capabilityDescription;
         CapabilityContainer = capabilityContainer;
+        AssetLocation = assetLocation;
     }
 
     public string SenderId { get; }
@@ -46,6 +48,7 @@ public sealed class CapabilityCallForProposalMessage
     public string? ProductId { get; }
     public string? CapabilityDescription { get; }
     public SubmodelElementCollection? CapabilityContainer { get; }
+    public SubmodelElementCollection? AssetLocation { get; }
 
     public I40Message ToI40Message()
     {
@@ -77,6 +80,10 @@ public sealed class CapabilityCallForProposalMessage
         if (CapabilityContainer != null)
         {
             builder.AddElement(CapabilityContainer);
+        }
+        if (AssetLocation != null)
+        {
+            builder.AddElement(AssetLocation);
         }
 
         return builder.Build();

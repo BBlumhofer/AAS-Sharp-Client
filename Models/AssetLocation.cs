@@ -7,11 +7,10 @@ namespace AasSharpClient.Models;
 
 public sealed record AssetLocationData(
     string Address,
-    string CurrentArea,
+    string Parent,
     double X,
     double Y,
-    double Theta,
-    int Floor);
+    double Theta);
 
 public sealed class AssetLocationSubmodel : Submodel
 {
@@ -43,12 +42,12 @@ public sealed class AssetLocationSubmodel : Submodel
         WithoutKind(addr);
         SubmodelElements.Add(addr);
 
-        // Current area
-        var area = SubmodelElementFactory.CreateProperty("CurrentArea", data.CurrentArea, null, "xs:string");
-        WithoutKind(area);
-        SubmodelElements.Add(area);
+        // Parent
+        var parent = SubmodelElementFactory.CreateProperty("Parent", data.Parent, null, "xs:string");
+        WithoutKind(parent);
+        SubmodelElements.Add(parent);
 
-        // Position as a SubmodelElementCollection with X,Y,Theta and Floor
+        // Position as a SubmodelElementCollection with X,Y,Theta
         var pos = new SubmodelElementCollection("Position");
         WithoutKind(pos);
 
@@ -63,10 +62,6 @@ public sealed class AssetLocationSubmodel : Submodel
         var pth = SubmodelElementFactory.CreateProperty("Theta", data.Theta.ToString(System.Globalization.CultureInfo.InvariantCulture), null, "xs:double");
         WithoutKind(pth);
         pos.Add(pth);
-
-        var floor = SubmodelElementFactory.CreateProperty("Floor", data.Floor.ToString(), null, "xs:integer");
-        WithoutKind(floor);
-        pos.Add(floor);
 
         SubmodelElements.Add(pos);
     }

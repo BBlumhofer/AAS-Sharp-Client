@@ -87,8 +87,17 @@ namespace AAS_Sharp_Client.Models.Messages
                     case "timestamp":
                         if (element is Property timestampProp)
                         {
-                            var raw = timestampProp.Value?.Value?.ToObject<string>()
-                                      ?? timestampProp.Value?.ToString();
+                            var rawObj = timestampProp.Value?.Value;
+                            string? raw = null;
+                            if (rawObj is BaSyx.Models.AdminShell.IValue inner)
+                            {
+                                raw = inner.Value?.ToString();
+                            }
+                            else
+                            {
+                                raw = rawObj?.ToString() ?? timestampProp.Value?.ToString();
+                            }
+
                             if (!string.IsNullOrWhiteSpace(raw) && DateTime.TryParse(raw, out var timestamp))
                             {
                                 message.Timestamp = timestamp;
@@ -99,8 +108,16 @@ namespace AAS_Sharp_Client.Models.Messages
                     case "agentid":
                         if (element is Property agentIdProp)
                         {
-                            var raw = agentIdProp.Value?.Value?.ToObject<string>()
-                                      ?? agentIdProp.Value?.ToString();
+                            var rawObj = agentIdProp.Value?.Value;
+                            string? raw = null;
+                            if (rawObj is BaSyx.Models.AdminShell.IValue inner)
+                            {
+                                raw = inner.Value?.ToString();
+                            }
+                            else
+                            {
+                                raw = rawObj?.ToString() ?? agentIdProp.Value?.ToString();
+                            }
                             message.AgentId = raw ?? string.Empty;
                         }
                         break;
@@ -176,8 +193,17 @@ namespace AAS_Sharp_Client.Models.Messages
             {
                 if (element is Property property)
                 {
-                    var value = property.Value?.Value?.ToObject<string>()
-                                ?? property.Value?.ToString();
+                    var rawObj = property.Value?.Value;
+                    string? value = null;
+                    if (rawObj is BaSyx.Models.AdminShell.IValue inner)
+                    {
+                        value = inner.Value?.ToString();
+                    }
+                    else
+                    {
+                        value = rawObj?.ToString() ?? property.Value?.ToString();
+                    }
+
                     if (!string.IsNullOrWhiteSpace(value))
                     {
                         list.Add(value);
