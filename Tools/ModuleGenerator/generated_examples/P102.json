@@ -2217,7 +2217,15 @@
     },
     {
       "kind": "Instance",
-      "semanticId": null,
+      "semanticId": {
+        "keys": [
+          {
+            "type": "GlobalReference",
+            "value": "https://smartfactory.de/submodels/AssetLocation1#0"
+          }
+        ],
+        "type": "ExternalReference"
+      },
       "supplementalSemanticIds": [],
       "submodelElements": [
         {

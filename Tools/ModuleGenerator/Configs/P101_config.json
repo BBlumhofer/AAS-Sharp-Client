@@ -10,7 +10,7 @@
       "Diameter":{ "min": 2, "max": 12 },
       "ProductId":{ "value": "*" }
     },
-        "Constraints": [ 
+        "PropertyConstraints": [ 
         { 
             "ConstraintType": "CustomConstraint", 
             "ConditionalType": "Pre", 

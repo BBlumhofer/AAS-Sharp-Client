@@ -165,6 +165,8 @@ namespace AasSharpClient.Models
     public sealed class CapabilityRelationsSection
     {
         private CapabilityConstraintSetSection? _constraintSet;
+        private CapabilityRelationSetSection? _generalizedBySet;
+        private CapabilityRelationSetSection? _composedOfSet;
 
         internal CapabilityRelationsSection(SubmodelElementCollection source)
         {
@@ -176,11 +178,26 @@ namespace AasSharpClient.Models
         public IEnumerable<RelationshipElement> Relationships =>
             Source.Values?.OfType<RelationshipElement>() ?? Enumerable.Empty<RelationshipElement>();
 
-        public IEnumerable<RelationshipElement> RealizedBy => RelationshipsById("RealizedBy");
+        public IEnumerable<RelationshipElement> RealizedBy =>
+            Relationships.Where(rel =>
+                string.Equals(rel.IdShort, "RealizedBy", StringComparison.OrdinalIgnoreCase) ||
+                (rel.IdShort?.StartsWith("CapabilityRealizedBy", StringComparison.OrdinalIgnoreCase) ?? false));
 
         public IEnumerable<RelationshipElement> Requires => RelationshipsById("Requires");
 
         public IEnumerable<RelationshipElement> Provides => RelationshipsById("Provides");
+
+        public CapabilityRelationSetSection? GeneralizedBySet =>
+            _generalizedBySet ??= CapabilityRelationSetSection.TryCreate(FindCollectionById("GeneralizedBySet"));
+
+        public CapabilityRelationSetSection? ComposedOfSet =>
+            _composedOfSet ??= CapabilityRelationSetSection.TryCreate(FindCollectionById("ComposedOfSet"));
+
+        public IEnumerable<RelationshipElement> GeneralizedBy =>
+            GeneralizedBySet?.Relationships ?? Enumerable.Empty<RelationshipElement>();
+
+        public IEnumerable<RelationshipElement> ComposedOf =>
+            ComposedOfSet?.Relationships ?? Enumerable.Empty<RelationshipElement>();
 
         public CapabilityConstraintSetSection? ConstraintSet =>
             _constraintSet ??= CapabilityConstraintSetSection.TryCreate(
@@ -196,9 +213,39 @@ namespace AasSharpClient.Models
             return Relationships.Where(rel => string.Equals(rel.IdShort, idShort, StringComparison.OrdinalIgnoreCase));
         }
 
+        private SubmodelElementCollection? FindCollectionById(string idShort)
+        {
+            if (string.IsNullOrWhiteSpace(idShort))
+            {
+                return null;
+            }
+
+            return Source.Values?
+                .OfType<SubmodelElementCollection>()
+                .FirstOrDefault(collection => string.Equals(collection.IdShort, idShort, StringComparison.OrdinalIgnoreCase));
+        }
+
         internal static CapabilityRelationsSection? TryCreate(SubmodelElementCollection? collection)
         {
             return collection == null ? null : new CapabilityRelationsSection(collection);
+        }
+    }
+
+    public sealed class CapabilityRelationSetSection
+    {
+        internal CapabilityRelationSetSection(SubmodelElementCollection source)
+        {
+            Source = source ?? throw new ArgumentNullException(nameof(source));
+        }
+
+        public SubmodelElementCollection Source { get; }
+
+        public IEnumerable<RelationshipElement> Relationships =>
+            Source.Values?.OfType<RelationshipElement>() ?? Enumerable.Empty<RelationshipElement>();
+
+        internal static CapabilityRelationSetSection? TryCreate(SubmodelElementCollection? collection)
+        {
+            return collection == null ? null : new CapabilityRelationSetSection(collection);
         }
     }
 

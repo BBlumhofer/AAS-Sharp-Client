@@ -1,0 +1,242 @@
+{
+    "Id": "P400",
+    "Skill": "Transport",
+    "Capabilities": [
+        {
+            "Name": "Transport",
+            "SkillReference": "Transport",
+            "PropertyContainers": {
+                "transferRole": {
+                    "value": "initiator"
+                },
+                "allowedTopologyTypes": {
+                    "value": [
+                        "Neighbor",
+                        "Dock"
+                    ]
+                },
+                "loadCarrierTypes": {
+                    "value": [
+                        "WST_A",
+                        "WST_B",
+                        "WST_C"
+                    ]
+                },
+                "maxPayloadKg": {
+                    "value": 50
+                },
+                "maxSpeedMps": {
+                    "value": 1.5
+                },
+                "requiredPartnerRole": {
+                    "value": [
+                        "acceptor"
+                    ]
+                }
+            },
+            "PropertyConstraints": [
+                {
+                    "ConstraintType": "CustomConstraint",
+                    "ConditionalType": "Pre",
+                    "ConstraintName": "PayloadWithinLimit",
+                    "RelatedProperty": "maxPayloadKg"
+                }
+            ]
+        },
+        {
+            "Name": "Store",
+            "SkillReference": "Store",
+            "PropertyContainers": {
+                "direction": {
+                    "value": "Inbound"
+                },
+                "allowedTopologyTypes": {
+                    "value": [
+                        "Neighbor",
+                        "Dock"
+                    ]
+                },
+                "requiredPartnerRole": {
+                    "value": [
+                        "acceptor"
+                    ]
+                },
+                "loadCarrierTypes": {
+                    "value": [
+                        "WST_A",
+                        "WST_B",
+                        "WST_C"
+                    ]
+                }
+            },
+            "PropertyConstraints": [
+                {
+                    "ConstraintType": "CustomConstraint",
+                    "ConditionalType": "Pre",
+                    "ConstraintName": "StorageCapacityAvailable"
+                }
+            ],
+            "TransitionConstraints": [
+                {
+                    "ConstraintType": "TransitionConstraint",
+                    "ConditionalType": "Pre",
+                    "ConstraintName": "TopologyPrecondition"
+                }
+            ]
+        },
+        {
+            "Name": "Retrieve",
+            "SkillReference": "Retrieve",
+            "PropertyContainers": {
+                "direction": {
+                    "value": "Outbound"
+                },
+                "allowedTopologyTypes": {
+                    "value": [
+                        "Neighbor",
+                        "Dock"
+                    ]
+                },
+                "requiredPartnerRole": {
+                    "value": [
+                        "acceptor"
+                    ]
+                },
+                "loadCarrierTypes": {
+                    "value": [
+                        "WST_A",
+                        "WST_B",
+                        "WST_C"
+                    ]
+                }
+            },
+            "PropertyConstraints": [
+                {
+                    "ConstraintType": "CustomConstraint",
+                    "ConditionalType": "Pre",
+                    "ConstraintName": "WorkpieceAvailable"
+                }
+            ],
+            "TransitionConstraints": [
+                {
+                    "ConstraintType": "TransitionConstraint",
+                    "ConditionalType": "Pre",
+                    "ConstraintName": "TopologyPrecondition"
+                }
+            ]
+        },
+        {
+            "Name": "Docking",
+            "SkillReference": "Docking",
+            "PropertyContainers": {
+                "dockRole": {
+                    "value": "dockClient"
+                },
+                "capacity": {
+                    "value": 1
+                },
+                "loadCarrierTypes": {
+                    "value": [
+                        "WST_A",
+                        "WST_B",
+                        "WST_C"
+                    ]
+                }
+            },
+            "PropertyConstraints": [
+                {
+                    "ConstraintType": "CustomConstraint",
+                    "ConditionalType": "Pre",
+                    "ConstraintName": "CapacityConstraint",
+                    "RelatedProperty": "capacity"
+                }
+            ],
+            "TransitionConstraints": [
+                {
+                    "ConstraintType": "TransitionConstraint",
+                    "ConditionalType": "Pre",
+                    "ConstraintName": "DockPrecondition"
+                },
+                {
+                    "ConstraintType": "TransitionConstraint",
+                    "ConditionalType": "Post",
+                    "ConstraintName": "UndockPostcondition"
+                }
+            ]
+        },
+        {
+            "Name": "DockStoreHandoverCapability",
+            "PropertyContainers": {
+                "transferRole": {
+                    "value": "initiator"
+                },
+                "topologyType": {
+                    "value": "Dock"
+                },
+                "requiredPartnerRole": {
+                    "value": [
+                        "acceptor"
+                    ]
+                },
+                "loadCarrierTypes": {
+                    "value": [
+                        "WST_A",
+                        "WST_B",
+                        "WST_C"
+                    ]
+                }
+            },
+            "ComposedOf": [
+                "Docking",
+                "Store"
+            ],
+            "TransitionConstraints": [
+                {
+                    "ConstraintType": "TransitionConstraint",
+                    "ConditionalType": "Pre",
+                    "ConstraintName": "PartnerHasDockReceiveHandover"
+                }
+            ]
+        },
+        {
+            "Name": "DockRetrieveHandoverCapability",
+            "PropertyContainers": {
+                "transferRole": {
+                    "value": "initiator"
+                },
+                "topologyType": {
+                    "value": "Dock"
+                },
+                "requiredPartnerRole": {
+                    "value": [
+                        "acceptor"
+                    ]
+                },
+                "loadCarrierTypes": {
+                    "value": [
+                        "WST_A",
+                        "WST_B",
+                        "WST_C"
+                    ]
+                }
+            },
+            "ComposedOf": [
+                "Docking",
+                "Retrieve"
+            ],
+            "TransitionConstraints": [
+                {
+                    "ConstraintType": "TransitionConstraint",
+                    "ConditionalType": "Pre",
+                    "ConstraintName": "PartnerHasDockReceiveHandover"
+                }
+            ]
+        }
+    ],
+    "AssetLocation": {
+        "Area": "Halle2",
+        "X": 40.0,
+        "Y": 50.0,
+        "Level": 0
+    }
+}

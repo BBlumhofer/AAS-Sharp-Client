@@ -12,6 +12,21 @@ namespace ModuleGenerator
 {
     public static class ModuleGenerator
     {
+        private const string SmartFactoryCapabilityBase = "https://smartfactory.de/aas/submodel/CapabilityDescription";
+        private const string SmartFactoryCapabilitySubmodelSemantic = SmartFactoryCapabilityBase + "#1/0";
+        private const string SmartFactoryCapabilitySetSemantic = SmartFactoryCapabilityBase + "/CapabilitySet#1/0";
+        private const string SmartFactoryCapabilityContainerSemantic = SmartFactoryCapabilityBase + "/CapabilitySet/CapabilityContainer#1/0";
+        private const string SmartFactoryCapabilitySemantic = SmartFactoryCapabilityBase + "/Capability#1/0";
+        private const string SmartFactoryCapabilityRelationsSemantic = SmartFactoryCapabilityBase + "/CapabilitySet/CapabilityContainer/CapabilityRelations#1/0";
+        private const string SmartFactoryPropertySetSemantic = SmartFactoryCapabilityBase + "/CapabilitySet/CapabilityContainer/PropertySet#1/0";
+        private const string SmartFactoryConstraintSetSemantic = SmartFactoryCapabilityRelationsSemantic + "/ConstraintSet#1/0";
+        private const string SmartFactoryPropertyConstraintContainerSemantic = SmartFactoryConstraintSetSemantic + "/PropertyConstraintContainer#1/0";
+        private const string SmartFactoryTransitionConstraintContainerSemantic = SmartFactoryConstraintSetSemantic + "/TransitionConstraintContainer#1/0";
+        private const string SmartFactoryTransitionConditionTypeSemantic = SmartFactoryTransitionConstraintContainerSemantic + "/TransitionConditionType#1/0";
+        private const string SmartFactoryCustomConstraintSemantic = SmartFactoryPropertyConstraintContainerSemantic + "/CustomConstraint#1/0";
+        private const string SmartFactoryCapabilityRelationsRealizedBySemantic =
+            "https://admin-shell.io/idta/CapabilityDescription/CapabilityRelations/RealizedBy/1/0";
+
         public static async Task<string> GenerateAsync(string configPath, string outputFolder)
         {
             var json = await File.ReadAllTextAsync(configPath);
@@ -29,27 +44,59 @@ namespace ModuleGenerator
                 }
             };
 
+            var capabilityConfigs = config.Capabilities;
+            if (capabilityConfigs == null || capabilityConfigs.Length == 0)
+            {
+                capabilityConfigs = config.Capability == null ? Array.Empty<CapabilityConfig>() : new[] { config.Capability };
+            }
+
             // Skills submodel: use domain Models API to populate
             var smSkillsId = $"https://smartfactory.de/submodels/skills/{Guid.NewGuid()}";
             var skills = new SkillsSubmodel(smSkillsId);
 
-            // Build SkillsData from config and apply
-            var skillDef = new SkillDefinition(
-                IdShort: "Skill_0001",
-                Name: config.Skill ?? "UnnamedSkill",
-                Endpoint: string.Empty,
-                RequiredParameters: new List<SkillParameterDefinition>
+            var skillNames = new List<string>();
+            foreach (var capability in capabilityConfigs)
+            {
+                if (!string.IsNullOrWhiteSpace(capability.SkillReference))
                 {
-                    new SkillParameterDefinition("ProductId", "xs:string", "*")
-                },
-                Triggers: Array.Empty<SkillTriggerDefinition>());
+                    skillNames.Add(capability.SkillReference!);
+                }
+            }
+
+            if (skillNames.Count == 0)
+            {
+                skillNames.Add(config.Skill ?? "UnnamedSkill");
+            }
+
+            var uniqueSkills = skillNames
+                .Where(name => !string.IsNullOrWhiteSpace(name))
+                .Distinct(StringComparer.OrdinalIgnoreCase)
+                .ToList();
+
+            var skillDefinitions = new List<SkillDefinition>();
+            var skillNameToIdShort = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase);
+            for (var i = 0; i < uniqueSkills.Count; i++)
+            {
+                var idShort = $"Skill_{i + 1:0000}";
+                var name = uniqueSkills[i];
+                skillDefinitions.Add(new SkillDefinition(
+                    IdShort: idShort,
+                    Name: name,
+                    Endpoint: string.Empty,
+                    RequiredParameters: new List<SkillParameterDefinition>
+                    {
+                        new SkillParameterDefinition("ProductId", "xs:string", "*")
+                    },
+                    Triggers: Array.Empty<SkillTriggerDefinition>()));
+                skillNameToIdShort[name] = idShort;
+            }
 
             var skillsData = new SkillsData(
                 SubmodelIdentifier: smSkillsId,
-                Skills: new[] { skillDef },
+                Skills: skillDefinitions,
                 SecurityRequirementsReference: new Reference(new Key(KeyType.GlobalReference, "https://example.org/security")) { Type = ReferenceType.ExternalReference },
                 EndpointMetadata: new EndpointMetadataData(Array.Empty<EndpointMetadataPropertyDefinition>(), new Reference(new Key(KeyType.GlobalReference, "https://example.org/securityList")) { Type = ReferenceType.ExternalReference }, Array.Empty<SecuritySchemeDefinition>()),
-                SkillMetadata: new SkillMetadataData("","", "", Array.Empty<StateDefinition>(), Array.Empty<SkillMetadataTriggerDefinition>()));
+                SkillMetadata: new SkillMetadataData("", "", "", Array.Empty<StateDefinition>(), Array.Empty<SkillMetadataTriggerDefinition>()));
 
             skills.Apply(skillsData);
 
@@ -59,141 +106,287 @@ namespace ModuleGenerator
             var smCapabilityId = $"https://smartfactory.de/submodels/capability/{Guid.NewGuid()}";
             var capabilitySubmodel = new CapabilityDescriptionSubmodel(smCapabilityId);
 
-            var propertyContainers = new List<CapabilityPropertyContainerDefinition>();
-            // keep a map from property name -> created container idShort so constraints can reference them
-            var propertyNameToContainerIdShort = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase);
-            if (config.Capability?.PropertyContainers != null)
+            var capabilityContainers = new List<CapabilityContainerDefinition>();
+
+            foreach (var capability in capabilityConfigs)
             {
-                foreach (var kv in config.Capability.PropertyContainers)
+                var capabilityName = capability.Name ?? "Capability";
+                var capabilityContainerIdShort = capabilityName + "Container";
+                const string relationsIdShort = "CapabilityRelations";
+
+                var propertyContainers = new List<CapabilityPropertyContainerDefinition>();
+                // keep a map from property name -> container idShort and element key type for constraint references
+                var propertyReferenceInfo = new Dictionary<string, PropertyReferenceInfo>(StringComparer.OrdinalIgnoreCase);
+                if (capability.PropertyContainers != null)
                 {
-                    var name = kv.Key;
-                    var entry = kv.Value;
-                    if (entry.Min != null && entry.Max != null)
+                    foreach (var kv in capability.PropertyContainers)
                     {
-                        var idShort = name + "Range";
-                        propertyContainers.Add(new RangePropertyContainerDefinition(
-                            IdShort: idShort,
-                            PropertyIdShort: name,
-                            MinValue: entry.Min.ToString() ?? string.Empty,
-                            MaxValue: entry.Max.ToString() ?? string.Empty,
-                            ValueType: "xs:double"));
-                        propertyNameToContainerIdShort[name] = idShort;
-                    }
-                    else if (entry.Value != null)
-                    {
-                        var idShort = name + "Fixed";
-                        propertyContainers.Add(new PropertyValueContainerDefinition(
-                            IdShort: idShort,
-                            PropertyIdShort: name,
-                            Value: entry.Value.ToString() ?? string.Empty,
-                            ValueType: "xs:string"));
-                        propertyNameToContainerIdShort[name] = idShort;
-                    }
-                }
-            }
-
-            var propertySet = new CapabilityPropertySetDefinition("PropertySet", propertyContainers);
-
-            // Map capability constraints from config into PropertyConstraintContainerDefinition items
-            var constraintContainers = new List<PropertyConstraintContainerDefinition>();
-            if (config.Capability?.Constraints != null)
-            {
-                var idx = 0;
-                foreach (var c in config.Capability.Constraints)
-                {
-                    idx++;
-                    var idShort = string.IsNullOrWhiteSpace(c.ConstraintName) ? $"Constraint_{idx}" : c.ConstraintName!;
-
-                    var conditional = new PropertyValueDefinition("ConditionalType", c.ConditionalType ?? string.Empty, "xs:string");
-                    var constraintType = new PropertyValueDefinition("ConstraintType", c.ConstraintType ?? string.Empty, "xs:string");
-                    // populate custom constraint properties (include constraint name and optional related property value)
-                    var customProps = new List<PropertyValueDefinition>
-                    {
-                        new PropertyValueDefinition("ConstraintName", c.ConstraintName ?? idShort, "xs:string")
-                    };
-
-                    if (!string.IsNullOrWhiteSpace(c.RelatedProperty))
-                    {
-                        // try to include the actual configured value from PropertyContainers if available
-                        if (config.Capability.PropertyContainers != null && config.Capability.PropertyContainers.TryGetValue(c.RelatedProperty, out var relatedEntry) && relatedEntry.Value != null)
+                        var name = kv.Key;
+                        var entry = kv.Value;
+                        var propertyContainerSemantic = CreateExternalReference(
+                            $"{SmartFactoryCapabilityBase}/CapabilitySet/CapabilityContainer/PropertySet/PropertyContainer/{name}#1/0");
+                        if (entry.Min != null && entry.Max != null)
                         {
-                            customProps.Add(new PropertyValueDefinition(c.RelatedProperty, relatedEntry.Value.ToString() ?? string.Empty, "xs:string"));
+                            var idShort = name + "Range";
+                            propertyContainers.Add(new RangePropertyContainerDefinition(
+                                IdShort: idShort,
+                                PropertyIdShort: name,
+                                MinValue: entry.Min.ToString() ?? string.Empty,
+                                MaxValue: entry.Max.ToString() ?? string.Empty,
+                                ValueType: "xs:double",
+                                SemanticId: propertyContainerSemantic));
+                            propertyReferenceInfo[name] = new PropertyReferenceInfo(idShort, KeyType.Range, name);
                         }
-                        else
+                        else if (TryGetListValues(entry.Value, out var listValues, out var listValueType))
                         {
-                            customProps.Add(new PropertyValueDefinition(c.RelatedProperty, string.Empty, "xs:string"));
+                            var idShort = name + "List";
+                            var entries = listValues
+                                .Select(value => new PropertyValueDefinition(null, value, listValueType))
+                                .ToList();
+                            propertyContainers.Add(new PropertyListContainerDefinition(
+                                IdShort: idShort,
+                                ListIdShort: name,
+                                Entries: entries,
+                                ValueTypeListElement: listValueType,
+                                SemanticId: propertyContainerSemantic));
+                            propertyReferenceInfo[name] = new PropertyReferenceInfo(idShort, KeyType.SubmodelElementList, name);
+                        }
+                        else if (entry.Value != null)
+                        {
+                            var idShort = name;
+                            propertyContainers.Add(new PropertyValueContainerDefinition(
+                                IdShort: idShort,
+                                PropertyIdShort: name,
+                                Value: ConvertValueToString(entry.Value),
+                                ValueType: GetValueType(entry.Value),
+                                SemanticId: propertyContainerSemantic));
+                            propertyReferenceInfo[name] = new PropertyReferenceInfo(idShort, KeyType.Property, name);
                         }
                     }
+                }
 
-                    var custom = new CustomConstraintDefinition("CustomConstraint", customProps);
+                var propertySet = new CapabilityPropertySetDefinition(
+                    "PropertySet",
+                    propertyContainers,
+                    SemanticId: CreateExternalReference(SmartFactoryPropertySetSemantic));
 
-                    var propConstraint = new PropertyConstraintContainerDefinition(
-                        IdShort: idShort,
-                        ConditionalType: conditional,
-                        ConstraintType: constraintType,
-                        CustomConstraint: custom);
-
-                    // Optionally add a relation to a related property if provided
-                    if (!string.IsNullOrWhiteSpace(c.RelatedProperty))
+                // Map capability constraints from config into PropertyConstraintContainerDefinition items
+                var constraintContainers = new List<PropertyConstraintContainerDefinition>();
+                var propertyConstraints = capability.PropertyConstraints ?? capability.Constraints;
+                if (propertyConstraints != null)
+                {
+                    var idx = 0;
+                    foreach (var c in propertyConstraints)
                     {
-                        // Build a model reference path to the CustomConstraint inside this capability container
-                        var capabilityContainerIdShort = (config.Capability?.Name ?? "Capability") + "Container";
-                        var firstKeys = new List<IKey>
-                        {
-                            new Key(KeyType.Submodel, smCapabilityId),
-                            new Key(KeyType.SubmodelElementCollection, "CapabilitySet"),
-                            new Key(KeyType.SubmodelElementCollection, capabilityContainerIdShort),
-                            new Key(KeyType.SubmodelElementCollection, "CapabilityRelations"),
-                            new Key(KeyType.SubmodelElementCollection, "ConstraintSet"),
-                            new Key(KeyType.SubmodelElementCollection, idShort),
-                            new Key(KeyType.SubmodelElementCollection, "CustomConstraint")
-                        };
-                        var firstRef = new Reference(firstKeys) { Type = ReferenceType.ModelReference };
+                        idx++;
+                        var idShort = string.IsNullOrWhiteSpace(c.ConstraintName) ? $"Constraint_{idx}" : c.ConstraintName!;
 
-                        // Build a model reference path to the related property inside the PropertySet
-                        var relatedContainerId = propertyNameToContainerIdShort.TryGetValue(c.RelatedProperty!, out var containerId) ? containerId : (c.RelatedProperty! + "Fixed");
-                        var secondKeys = new List<IKey>
+                        var conditional = new PropertyValueDefinition("ConditionalType", c.ConditionalType ?? string.Empty, "xs:string");
+                        var constraintType = new PropertyValueDefinition("ConstraintType", c.ConstraintType ?? string.Empty, "xs:string");
+                        // populate custom constraint properties (include constraint name and optional related property value)
+                        var customProps = new List<PropertyValueDefinition>
                         {
-                            new Key(KeyType.Submodel, smCapabilityId),
-                            new Key(KeyType.SubmodelElementCollection, "CapabilitySet"),
-                            new Key(KeyType.SubmodelElementCollection, capabilityContainerIdShort),
-                            new Key(KeyType.SubmodelElementCollection, "PropertySet"),
-                            new Key(KeyType.SubmodelElementCollection, relatedContainerId),
-                            new Key(KeyType.Property, c.RelatedProperty!)
+                            new PropertyValueDefinition("ConstraintName", c.ConstraintName ?? idShort, "xs:string")
                         };
-                        var secondRef = new Reference(secondKeys) { Type = ReferenceType.ModelReference };
 
-                        var rel = new RelationshipElementDefinition("RelatedProperty", firstRef, secondRef);
-                        propConstraint = propConstraint with { PropertyRelations = new[] { rel } };
+                        if (!string.IsNullOrWhiteSpace(c.RelatedProperty))
+                        {
+                            // try to include the actual configured value from PropertyContainers if available
+                            if (capability.PropertyContainers != null && capability.PropertyContainers.TryGetValue(c.RelatedProperty, out var relatedEntry) && relatedEntry.Value != null)
+                            {
+                                customProps.Add(new PropertyValueDefinition(c.RelatedProperty, relatedEntry.Value.ToString() ?? string.Empty, "xs:string"));
+                            }
+                            else
+                            {
+                                customProps.Add(new PropertyValueDefinition(c.RelatedProperty, string.Empty, "xs:string"));
+                            }
+                        }
+
+                        var custom = new CustomConstraintDefinition(
+                            "CustomConstraint",
+                            customProps,
+                            SemanticId: CreateExternalReference(SmartFactoryCustomConstraintSemantic));
+
+                        var propConstraint = new PropertyConstraintContainerDefinition(
+                            IdShort: idShort,
+                            ConditionalType: conditional,
+                            ConstraintType: constraintType,
+                            CustomConstraint: custom,
+                            SemanticId: CreateExternalReference(SmartFactoryPropertyConstraintContainerSemantic),
+                            PropertyRelationsSemanticId: CreateExternalReference(SmartFactoryPropertyConstraintContainerSemantic));
+
+                        // Optionally add a relation to a related property if provided
+                        if (!string.IsNullOrWhiteSpace(c.RelatedProperty))
+                        {
+                            // Build a model reference path to the CustomConstraint inside this capability container
+                            var firstKeys = new List<IKey>
+                            {
+                                new Key(KeyType.Submodel, smCapabilityId),
+                                new Key(KeyType.SubmodelElementCollection, "CapabilitySet"),
+                                new Key(KeyType.SubmodelElementCollection, capabilityContainerIdShort),
+                                new Key(KeyType.SubmodelElementCollection, relationsIdShort),
+                                new Key(KeyType.SubmodelElementCollection, "ConstraintSet"),
+                                new Key(KeyType.SubmodelElementCollection, idShort),
+                                new Key(KeyType.SubmodelElementCollection, "CustomConstraint")
+                            };
+                            var firstRef = new Reference(firstKeys) { Type = ReferenceType.ModelReference };
+
+                            // Build a model reference path to the related property inside the PropertySet
+                            var relatedInfo = propertyReferenceInfo.TryGetValue(c.RelatedProperty!, out var info)
+                                ? info
+                                : new PropertyReferenceInfo(c.RelatedProperty!, KeyType.Property, c.RelatedProperty!);
+                            var secondKeys = new List<IKey>
+                            {
+                                new Key(KeyType.Submodel, smCapabilityId),
+                                new Key(KeyType.SubmodelElementCollection, "CapabilitySet"),
+                                new Key(KeyType.SubmodelElementCollection, capabilityContainerIdShort),
+                                new Key(KeyType.SubmodelElementCollection, "PropertySet"),
+                                new Key(KeyType.SubmodelElementCollection, relatedInfo.ContainerIdShort),
+                                new Key(relatedInfo.ElementKeyType, relatedInfo.ElementIdShort)
+                            };
+                            var secondRef = new Reference(secondKeys) { Type = ReferenceType.ModelReference };
+
+                            var rel = new RelationshipElementDefinition("RelatedProperty", firstRef, secondRef);
+                            propConstraint = propConstraint with { PropertyRelations = new[] { rel } };
+                        }
+
+                        constraintContainers.Add(propConstraint);
+                    }
+                }
+
+                var transitionConstraintContainers = new List<TransitionConstraintContainerDefinition>();
+                if (capability.TransitionConstraints != null)
+                {
+                    var idx = 0;
+                    foreach (var c in capability.TransitionConstraints)
+                    {
+                        idx++;
+                        var idShort = $"TransitionConstraintContainer{idx:000}";
+                        var condition = new PropertyValueDefinition(
+                            "TransitionConditionType",
+                            c.ConditionalType ?? string.Empty,
+                            "xs:string",
+                            SemanticId: CreateExternalReference(SmartFactoryTransitionConditionTypeSemantic));
+                        var constraintName = new PropertyValueDefinition(
+                            "ConstraintName",
+                            c.ConstraintName ?? string.Empty,
+                            "xs:string");
+                        transitionConstraintContainers.Add(new TransitionConstraintContainerDefinition(
+                            idShort,
+                            condition,
+                            constraintName,
+                            SemanticId: CreateExternalReference(SmartFactoryTransitionConstraintContainerSemantic)));
+                    }
+                }
+
+                CapabilityConstraintSetDefinition? constraintSet = null;
+                if (constraintContainers.Count > 0 || transitionConstraintContainers.Count > 0)
+                {
+                    constraintSet = new CapabilityConstraintSetDefinition(
+                        "ConstraintSet",
+                        constraintContainers,
+                        transitionConstraintContainers,
+                        SemanticId: CreateExternalReference(SmartFactoryConstraintSetSemantic));
+                }
+
+                var relationships = new List<RelationshipElementDefinition>();
+                var capabilityReference = CreateCapabilityReference(smCapabilityId, capabilityName);
+
+                var skillName = capability.SkillReference;
+                if (string.IsNullOrWhiteSpace(skillName) && uniqueSkills.Count == 1)
+                {
+                    skillName = uniqueSkills[0];
+                }
+
+                if (!string.IsNullOrWhiteSpace(skillName) && skillNameToIdShort.TryGetValue(skillName, out var skillIdShort))
+                {
+                    var skillReference = CreateSkillReference(smSkillsId, skillIdShort);
+                    relationships.Add(new RelationshipElementDefinition(
+                        "CapabilityRealizedBy_001",
+                        capabilityReference,
+                        skillReference,
+                        SemanticId: CreateExternalReference(SmartFactoryCapabilityRelationsRealizedBySemantic)));
+                }
+
+                CapabilityGeneralizedBySetDefinition? generalizedBySet = null;
+                if (capability.GeneralizedBy != null && capability.GeneralizedBy.Length > 0)
+                {
+                    var generalizedRelations = new List<RelationshipElementDefinition>();
+                    for (var i = 0; i < capability.GeneralizedBy.Length; i++)
+                    {
+                        var target = capability.GeneralizedBy[i];
+                        if (string.IsNullOrWhiteSpace(target))
+                        {
+                            continue;
+                        }
+
+                        var targetRef = CreateCapabilityReference(smCapabilityId, target);
+                        generalizedRelations.Add(new RelationshipElementDefinition($"CapabilityGeneralizedBy_{i + 1:000}", capabilityReference, targetRef));
                     }
 
-                    constraintContainers.Add(propConstraint);
+                    if (generalizedRelations.Count > 0)
+                    {
+                        generalizedBySet = new CapabilityGeneralizedBySetDefinition("GeneralizedBySet", generalizedRelations);
+                    }
                 }
+
+                CapabilityComposedOfSetDefinition? composedOfSet = null;
+                if (capability.ComposedOf != null && capability.ComposedOf.Length > 0)
+                {
+                    var composedRelations = new List<RelationshipElementDefinition>();
+                    for (var i = 0; i < capability.ComposedOf.Length; i++)
+                    {
+                        var target = capability.ComposedOf[i];
+                        if (string.IsNullOrWhiteSpace(target))
+                        {
+                            continue;
+                        }
+
+                        var targetRef = CreateCapabilityReference(smCapabilityId, target);
+                        composedRelations.Add(new RelationshipElementDefinition($"CapabilityComposedOf_{i + 1:000}", capabilityReference, targetRef));
+                    }
+
+                    if (composedRelations.Count > 0)
+                    {
+                        composedOfSet = new CapabilityComposedOfSetDefinition("ComposedOfSet", composedRelations);
+                    }
+                }
+
+                var relationsDef = new CapabilityRelationsDefinition(
+                    IdShort: relationsIdShort,
+                    Relationships: relationships,
+                    ConstraintSet: constraintSet,
+                    GeneralizedBySet: generalizedBySet,
+                    ComposedOfSet: composedOfSet,
+                    SemanticId: CreateExternalReference(SmartFactoryCapabilityRelationsSemantic));
+
+                var capabilityContainer = new CapabilityContainerDefinition(
+                    IdShort: capabilityContainerIdShort,
+                    Capability: new CapabilityElementDefinition(
+                        capabilityName,
+                        SemanticId: CreateExternalReference(SmartFactoryCapabilitySemantic)),
+                    Relations: relationsDef,
+                    PropertySet: propertySet,
+                    SemanticId: CreateExternalReference(SmartFactoryCapabilityContainerSemantic));
+
+                capabilityContainers.Add(capabilityContainer);
             }
 
-            CapabilityConstraintSetDefinition? constraintSet = null;
-            if (constraintContainers.Count > 0)
-            {
-                constraintSet = new CapabilityConstraintSetDefinition("ConstraintSet", constraintContainers);
-            }
-
-            var relationsDef = new CapabilityRelationsDefinition("Relations", Array.Empty<RelationshipElementDefinition>(), constraintSet);
-
-            var capabilityContainer = new CapabilityContainerDefinition(
-                IdShort: (config.Capability?.Name ?? "Capability") + "Container",
-                Capability: new CapabilityElementDefinition(config.Capability?.Name ?? "Capability"),
-                Relations: relationsDef,
-                PropertySet: propertySet);
-
-            var capabilitySet = new CapabilitySetDefinition("CapabilitySet", new[] { capabilityContainer });
-            var template = new CapabilityDescriptionTemplate(smCapabilityId, capabilitySet);
+            var capabilitySet = new CapabilitySetDefinition(
+                "CapabilitySet",
+                capabilityContainers,
+                SemanticId: CreateExternalReference(SmartFactoryCapabilitySetSemantic));
+            var template = new CapabilityDescriptionTemplate(
+                smCapabilityId,
+                capabilitySet,
+                SemanticId: CreateExternalReference(SmartFactoryCapabilitySubmodelSemantic));
             capabilitySubmodel.Apply(template);
 
             shell.Submodels.Add(capabilitySubmodel);
 
             // AssetLocation submodel: address shared across modules, position may come from config or use defaults
             var smAssetId = $"https://smartfactory.de/submodels/assetlocation/{Guid.NewGuid()}";
-            var assetLocation = new AasSharpClient.Models.AssetLocationSubmodel(smAssetId);
+            var assetSubmodel = new AasSharpClient.Models.AssetLocationSubmodel(smAssetId);
 
             // config may optionally contain location info
             var loc = config.AssetLocation ?? new AssetLocationConfig();
@@ -205,13 +398,13 @@ namespace ModuleGenerator
                 Y: loc.Y ?? 0.0,
                 Theta: loc.Theta ?? 0.0);
 
-            assetLocation.Apply(assetData);
-            shell.Submodels.Add(assetLocation);
+            assetSubmodel.Apply(assetData);
+            shell.Submodels.Add(assetSubmodel);
 
             // Serialize individual generated submodels to JSON strings (these will be parsed fresh when inserting into template)
             var skillsJson = await skills.ToJsonAsync();
             var capJson = await capabilitySubmodel.ToJsonAsync();
-            var assetJson = await assetLocation.ToJsonAsync();
+            var assetJson = await assetSubmodel.ToJsonAsync();
 
             // Always use template.json (next to config) as basis and merge generated Skills/Capability
             var configDir = Path.GetDirectoryName(configPath) ?? Directory.GetCurrentDirectory();
@@ -274,7 +467,8 @@ namespace ModuleGenerator
                                     {
                                         var sval = val?.ToString() ?? string.Empty;
                                         if (string.Equals(sval, "https://smartfactory.de/semantics/submodel/Skills#1/0", StringComparison.OrdinalIgnoreCase)
-                                            || string.Equals(sval, "https://admin-shell.io/idta/CapabilityDescription/1/0/Submodel", StringComparison.OrdinalIgnoreCase))
+                                            || string.Equals(sval, "https://admin-shell.io/idta/CapabilityDescription/1/0/Submodel", StringComparison.OrdinalIgnoreCase)
+                                            || string.Equals(sval, SmartFactoryCapabilitySubmodelSemantic, StringComparison.OrdinalIgnoreCase))
                                         {
                                             if (obj.TryGetPropertyValue("id", out var idNode) && idNode != null)
                                             {
@@ -307,13 +501,21 @@ namespace ModuleGenerator
                         {
                             // clone the preserved template item to avoid parent conflict
                             var clone = JsonNode.Parse(obj.ToJsonString() ?? string.Empty);
-                            if (clone != null) filtered.Add(clone);
+                            if (clone != null)
+                            {
+                                RemoveReferredSemanticId(clone);
+                                filtered.Add(clone);
+                            }
                         }
                     }
                     else
                     {
                         var cloneItem = JsonNode.Parse(item?.ToJsonString() ?? string.Empty);
-                        if (cloneItem != null) filtered.Add(cloneItem);
+                        if (cloneItem != null)
+                        {
+                            RemoveReferredSemanticId(cloneItem);
+                            filtered.Add(cloneItem);
+                        }
                     }
                 }
 
@@ -333,9 +535,17 @@ namespace ModuleGenerator
                         }
                     }
 
-                    filtered.Add(JsonNode.Parse(skillsJson)!);
-                    filtered.Add(JsonNode.Parse(capJson)!);
-                    filtered.Add(JsonNode.Parse(assetJson)!);
+                    var skillsNode = JsonNode.Parse(skillsJson)!;
+                    RemoveReferredSemanticId(skillsNode);
+                    filtered.Add(skillsNode);
+
+                    var capNode = JsonNode.Parse(capJson)!;
+                    RemoveReferredSemanticId(capNode);
+                    filtered.Add(capNode);
+
+                    var assetNode = JsonNode.Parse(assetJson)!;
+                    RemoveReferredSemanticId(assetNode);
+                    filtered.Add(assetNode);
                     root["submodels"] = filtered;
                 }
                 catch (Exception ex)
@@ -419,6 +629,139 @@ namespace ModuleGenerator
 
             return outPath;
         }
+
+        private static Reference CreateCapabilityReference(string submodelId, string capabilityName)
+        {
+            var keys = new List<IKey>
+            {
+                new Key(KeyType.Submodel, submodelId),
+                new Key(KeyType.SubmodelElementCollection, "CapabilitySet"),
+                new Key(KeyType.SubmodelElementCollection, capabilityName + "Container"),
+                new Key(KeyType.Capability, capabilityName)
+            };
+            return new Reference(keys) { Type = ReferenceType.ModelReference };
+        }
+
+        private static Reference CreateSkillReference(string skillsSubmodelId, string skillIdShort)
+        {
+            var keys = new List<IKey>
+            {
+                new Key(KeyType.Submodel, skillsSubmodelId),
+                new Key(KeyType.SubmodelElementCollection, "SkillSet"),
+                new Key(KeyType.SubmodelElementCollection, skillIdShort)
+            };
+            return new Reference(keys) { Type = ReferenceType.ModelReference };
+        }
+
+        private static Reference CreateExternalReference(string globalReference)
+        {
+            var keys = new List<IKey>
+            {
+                new Key(KeyType.GlobalReference, globalReference)
+            };
+            return new Reference(keys) { Type = ReferenceType.ExternalReference };
+        }
+
+        private static void RemoveReferredSemanticId(JsonNode? node)
+        {
+            if (node == null) return;
+
+            if (node is JsonObject obj)
+            {
+                if (obj.ContainsKey("referredSemanticId"))
+                {
+                    obj.Remove("referredSemanticId");
+                }
+
+                foreach (var kvp in obj)
+                {
+                    RemoveReferredSemanticId(kvp.Value);
+                }
+            }
+            else if (node is JsonArray arr)
+            {
+                foreach (var item in arr)
+                {
+                    RemoveReferredSemanticId(item);
+                }
+            }
+        }
+
+        private static bool TryGetListValues(object? value, out List<string> values, out string valueType)
+        {
+            values = new List<string>();
+            valueType = "xs:string";
+            if (value is null)
+            {
+                return false;
+            }
+
+            if (value is JsonElement element && element.ValueKind == JsonValueKind.Array)
+            {
+                foreach (var entry in element.EnumerateArray())
+                {
+                    values.Add(ConvertJsonElementToString(entry));
+                }
+
+                if (element.GetArrayLength() > 0)
+                {
+                    valueType = GetValueType(element.EnumerateArray().First());
+                }
+
+                return true;
+            }
+
+            return false;
+        }
+
+        private static string ConvertValueToString(object value)
+        {
+            if (value is JsonElement element)
+            {
+                return ConvertJsonElementToString(element);
+            }
+
+            return value.ToString() ?? string.Empty;
+        }
+
+        private static string ConvertJsonElementToString(JsonElement element)
+        {
+            return element.ValueKind switch
+            {
+                JsonValueKind.String => element.GetString() ?? string.Empty,
+                JsonValueKind.Number => element.ToString(),
+                JsonValueKind.True => "true",
+                JsonValueKind.False => "false",
+                JsonValueKind.Null => string.Empty,
+                _ => element.ToString()
+            };
+        }
+
+        private static string GetValueType(object value)
+        {
+            if (value is JsonElement element)
+            {
+                return GetValueType(element);
+            }
+
+            return value switch
+            {
+                bool => "xs:boolean",
+                sbyte or byte or short or ushort or int or uint or long or ulong or float or double or decimal => "xs:double",
+                _ => "xs:string"
+            };
+        }
+
+        private static string GetValueType(JsonElement element)
+        {
+            return element.ValueKind switch
+            {
+                JsonValueKind.True => "xs:boolean",
+                JsonValueKind.False => "xs:boolean",
+                JsonValueKind.Number => "xs:double",
+                _ => "xs:string"
+            };
+        }
     }
 
     // Config types (minimal)
@@ -427,6 +770,7 @@ namespace ModuleGenerator
         public string? Id { get; set; }
         public string? Skill { get; set; }
         public CapabilityConfig? Capability { get; set; }
+        public CapabilityConfig[]? Capabilities { get; set; }
         public AssetLocationConfig? AssetLocation { get; set; }
     }
 
@@ -436,6 +780,10 @@ namespace ModuleGenerator
         public string? SkillReference { get; set; }
         public Dictionary<string, PropertyContainerConfig>? PropertyContainers { get; set; }
         public ConstraintConfig[]? Constraints { get; set; }
+        public ConstraintConfig[]? PropertyConstraints { get; set; }
+        public ConstraintConfig[]? TransitionConstraints { get; set; }
+        public string[]? ComposedOf { get; set; }
+        public string[]? GeneralizedBy { get; set; }
     }
 
     public class PropertyContainerConfig
@@ -464,6 +812,8 @@ namespace ModuleGenerator
         public double? Theta { get; set; }
 
         public int? Level { get; set; }
-}
+    }
+
+    internal sealed record PropertyReferenceInfo(string ContainerIdShort, KeyType ElementKeyType, string ElementIdShort);
 
     }

@@ -230,17 +230,43 @@ internal static class CapabilityDescriptionElementFactory
 
         ApplyQualifiers(definition.Qualifiers, qualifiers => relations.Qualifiers = qualifiers);
 
+        var addedCollections = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
+        void TrackCollection(SubmodelElementCollection collection)
+        {
+            if (!string.IsNullOrWhiteSpace(collection.IdShort))
+            {
+                addedCollections.Add(collection.IdShort);
+            }
+        }
+
         var relationships = definition.Relationships ?? Array.Empty<RelationshipElementDefinition>();
         foreach (var relationship in relationships)
         {
             relations.Add(CreateRelationshipElement(relationship));
         }
 
+        if (definition.GeneralizedBySet is not null)
+        {
+            var generalizedBy = CreateGeneralizedBySet(definition.GeneralizedBySet);
+            relations.Add(generalizedBy);
+            TrackCollection(generalizedBy);
+        }
+
+        if (definition.ComposedOfSet is not null)
+        {
+            var composedOf = CreateComposedOfSet(definition.ComposedOfSet);
+            relations.Add(composedOf);
+            TrackCollection(composedOf);
+        }
+
         if (definition.AdditionalCollections != null)
         {
             foreach (var extra in definition.AdditionalCollections)
             {
-                relations.Add(CreateSimpleCollection(extra));
+                if (!addedCollections.Contains(extra.IdShort))
+                {
+                    relations.Add(CreateSimpleCollection(extra));
+                }
             }
         }
 
@@ -250,6 +276,56 @@ internal static class CapabilityDescriptionElementFactory
         }
 
         return relations;
+    }
+
+    private static SubmodelElementCollection CreateGeneralizedBySet(CapabilityGeneralizedBySetDefinition definition)
+    {
+        var set = new SubmodelElementCollection(definition.IdShort)
+        {
+            SemanticId = definition.SemanticId,
+            Description = CloneLangStrings(definition.Description)
+        };
+        WithoutKind(set);
+
+        ApplyQualifiers(definition.Qualifiers, qualifiers => set.Qualifiers = qualifiers);
+
+        var relationships = definition.Relationships ?? Array.Empty<RelationshipElementDefinition>();
+        foreach (var relationship in relationships)
+        {
+            set.Add(CreateRelationshipElement(relationship));
+        }
+
+        if (definition.Comment is not null)
+        {
+            set.Add(CreateMultiLanguageProperty(definition.Comment));
+        }
+
+        return set;
+    }
+
+    private static SubmodelElementCollection CreateComposedOfSet(CapabilityComposedOfSetDefinition definition)
+    {
+        var set = new SubmodelElementCollection(definition.IdShort)
+        {
+            SemanticId = definition.SemanticId,
+            Description = CloneLangStrings(definition.Description)
+        };
+        WithoutKind(set);
+
+        ApplyQualifiers(definition.Qualifiers, qualifiers => set.Qualifiers = qualifiers);
+
+        var relationships = definition.Relationships ?? Array.Empty<RelationshipElementDefinition>();
+        foreach (var relationship in relationships)
+        {
+            set.Add(CreateRelationshipElement(relationship));
+        }
+
+        if (definition.Comment is not null)
+        {
+            set.Add(CreateMultiLanguageProperty(definition.Comment));
+        }
+
+        return set;
     }
 
     private static SubmodelElementCollection CreateConstraintSet(CapabilityConstraintSetDefinition definition)
@@ -264,6 +340,12 @@ internal static class CapabilityDescriptionElementFactory
         foreach (var container in containers)
         {
             constraintSet.Add(CreatePropertyConstraintContainer(container));
+        }
+
+        var transitionContainers = definition.TransitionConstraintContainers ?? Array.Empty<TransitionConstraintContainerDefinition>();
+        foreach (var container in transitionContainers)
+        {
+            constraintSet.Add(CreateTransitionConstraintContainer(container));
         }
 
         return constraintSet;
@@ -318,6 +400,20 @@ internal static class CapabilityDescriptionElementFactory
         }
 
         return customConstraint;
+    }
+
+    private static SubmodelElementCollection CreateTransitionConstraintContainer(TransitionConstraintContainerDefinition definition)
+    {
+        var container = new SubmodelElementCollection(definition.IdShort)
+        {
+            SemanticId = definition.SemanticId
+        };
+        WithoutKind(container);
+
+        container.Add(CreateProperty(definition.ConditionType, true));
+        container.Add(CreateProperty(definition.ConstraintName, true));
+
+        return container;
     }
 
     private static SubmodelElementCollection CreatePropertySet(CapabilityPropertySetDefinition definition)
@@ -768,11 +864,30 @@ public sealed record CapabilityRelationsDefinition(
     IReadOnlyList<SimpleSubmodelElementCollectionDefinition>? AdditionalCollections = null,
     Reference? SemanticId = null,
     LangStringSet? Description = null,
+    IReadOnlyList<IQualifier>? Qualifiers = null,
+    CapabilityGeneralizedBySetDefinition? GeneralizedBySet = null,
+    CapabilityComposedOfSetDefinition? ComposedOfSet = null);
+
+public sealed record CapabilityGeneralizedBySetDefinition(
+    string IdShort,
+    IReadOnlyList<RelationshipElementDefinition> Relationships,
+    MultiLanguagePropertyDefinition? Comment = null,
+    Reference? SemanticId = null,
+    LangStringSet? Description = null,
+    IReadOnlyList<IQualifier>? Qualifiers = null);
+
+public sealed record CapabilityComposedOfSetDefinition(
+    string IdShort,
+    IReadOnlyList<RelationshipElementDefinition> Relationships,
+    MultiLanguagePropertyDefinition? Comment = null,
+    Reference? SemanticId = null,
+    LangStringSet? Description = null,
     IReadOnlyList<IQualifier>? Qualifiers = null);
 
 public sealed record CapabilityConstraintSetDefinition(
     string IdShort,
     IReadOnlyList<PropertyConstraintContainerDefinition> ConstraintContainers,
+    IReadOnlyList<TransitionConstraintContainerDefinition>? TransitionConstraintContainers = null,
     Reference? SemanticId = null);
 
 public sealed record PropertyConstraintContainerDefinition(
@@ -788,6 +903,12 @@ public sealed record PropertyConstraintContainerDefinition(
 public sealed record CustomConstraintDefinition(
     string IdShort,
     IReadOnlyList<PropertyValueDefinition> Properties,
+    Reference? SemanticId = null);
+
+public sealed record TransitionConstraintContainerDefinition(
+    string IdShort,
+    PropertyValueDefinition ConditionType,
+    PropertyValueDefinition ConstraintName,
     Reference? SemanticId = null);
 
 public sealed record CapabilityPropertySetDefinition(

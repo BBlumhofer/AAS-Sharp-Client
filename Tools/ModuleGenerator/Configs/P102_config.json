@@ -10,7 +10,7 @@
       "ProductWeight":{ "min": 0.5, "max": 5.0 },
       "ProductId":{ "value": "*" }
     },
-        "Constraints": [ 
+        "PropertyConstraints": [ 
         { 
             "ConstraintType": "CustomConstraint", 
             "ConditionalType": "Pre", 

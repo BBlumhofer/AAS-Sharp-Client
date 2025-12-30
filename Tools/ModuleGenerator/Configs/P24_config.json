@@ -1,0 +1,163 @@
+{
+    "Id": "P24",
+    "Skill": "Screw",
+    "Capabilities": [
+        {
+            "Name": "Store",
+            "SkillReference": "Store",
+            "PropertyContainers": {
+                "direction": {
+                    "value": "Inbound"
+                },
+                "allowedTopologyTypes": {
+                    "value": ["Neighbor", "Dock"]
+                },
+                "supportedLoadCarrierClasses": {
+                    "value": ["*"]
+                }
+            },
+            "PropertyConstraints": [
+                {
+                    "ConstraintType": "CustomConstraint",
+                    "ConditionalType": "Pre",
+                    "ConstraintName": "StorageCapacityAvailable"
+                }
+            ],
+            "TransitionConstraints": [
+                {
+                    "ConstraintType": "TransitionConstraint",
+                    "ConditionalType": "Pre",
+                    "ConstraintName": "TopologyPrecondition"
+                }
+            ]
+        },
+        {
+            "Name": "Retrieve",
+            "SkillReference": "Retrieve",
+            "PropertyContainers": {
+                "direction": {
+                    "value": "Outbound"
+                },
+                "allowedTopologyTypes": {
+                    "value": ["Neighbor", "Dock"]
+                },
+                "supportedLoadCarrierClasses": {
+                    "value": ["*"]
+                }
+            },
+            "PropertyConstraints": [
+                {
+                    "ConstraintType": "CustomConstraint",
+                    "ConditionalType": "Pre",
+                    "ConstraintName": "WorkpieceAvailable"
+                }
+            ],
+            "TransitionConstraints": [
+                {
+                    "ConstraintType": "TransitionConstraint",
+                    "ConditionalType": "Pre",
+                    "ConstraintName": "TopologyPrecondition"
+                }
+            ]
+        },
+        {
+            "Name": "Docking",
+            "SkillReference": "Docking",
+            "PropertyContainers": {
+                "dockRole": {
+                    "value": "Host"
+                },
+                "capacity": {
+                    "value": 1
+                },
+                "supportedLoadCarrierClasses": {
+                    "value": ["*"]
+                }
+            },
+            "PropertyConstraints": [
+                {
+                    "ConstraintType": "CustomConstraint",
+                    "ConditionalType": "Pre",
+                    "ConstraintName": "CapacityConstraint",
+                    "RelatedProperty": "capacity"
+                }
+            ],
+        "TransitionConstraints": [
+            {
+                "ConstraintType": "TransitionConstraint",
+                "ConditionalType": "Pre",
+                "ConstraintName": "DockPrecondition"
+            },
+            {
+                "ConstraintType": "TransitionConstraint",
+                "ConditionalType": "Post",
+                "ConstraintName": "UndockPostcondition"
+            }
+        ]
+    },
+        {
+            "Name": "DockStoreHandoverCapability",
+            "PropertyContainers": {
+                "transferRole": {
+                    "value": "acceptor"
+                },
+                "topologyType": {
+                    "value": "Dock"
+                },
+                "requiredPartnerRole": {
+                    "value": ["initiator"]
+                },
+
+                "supportedLoadCarrierClasses": {
+                    "value": ["*"]
+                }
+            },
+            "ComposedOf": [
+                "Docking",
+                "Store"
+            ],
+            "TransitionConstraints": [
+                {
+                    "ConstraintType": "TransitionConstraint",
+                    "ConditionalType": "Pre",
+                    "ConstraintName": "PartnerHasDockSendHandover"
+                }
+            ]
+        },
+        {
+            "Name": "DockRetrieveHandoverCapability",
+            "PropertyContainers": {
+                "transferRole": {
+                    "value": "acceptor"
+                },
+                "topologyType": {
+                    "value": "Dock"
+                },
+                "requiredPartnerRole": {
+                    "value": ["initiator"]
+                },
+
+                "supportedLoadCarrierClasses": {
+                    "value": ["*"]
+                }
+            },
+            "ComposedOf": [
+                "Docking",
+                "Retrieve"
+            ],
+            "TransitionConstraints": [
+                {
+                    "ConstraintType": "TransitionConstraint",
+                    "ConditionalType": "Pre",
+                    "ConstraintName": "PartnerHasDockSendHandover"
+                }
+            ]
+        }
+    ],
+    "AssetLocation": {
+        "Area": "Halle1",
+        "X": 30.0,
+        "Y": 50.0,
+        "Level": 0
+    }
+}

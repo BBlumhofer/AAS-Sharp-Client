@@ -80,6 +80,7 @@ public sealed class CapabilityOfferProposalMessage
             builder.AddElement(CreateStringProperty("ProductId", ProductId!));
         }
 
+        // Add OfferedCapabilitySequence directly as SubmodelElementList
         builder.AddElement(OfferedCapabilitySequence);
         return builder.Build();
     }

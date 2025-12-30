@@ -19,7 +19,7 @@ public class TransportRequestMessage : SubmodelElementCollection
     public const string IdentifierValueIdShort = "IdentifierValue";
     public const string AmountIdShort = "Amount";
     public const string EstimatedTransportTimeIdShort = "EstimatedTransportTime";
-    public const string CapabilitiesSequenceIdShort = "CapabilitiesSequence";
+    public const string CapabilitiesSequenceIdShort = "CapabilitySequence";
 
     public enum IdentifierTypeEnum
     {

@@ -76,7 +76,7 @@
           "keys": [
             {
               "type": "Submodel",
-              "value": "https://smartfactory.de/submodels/skills/4aa56cc8-be8c-43ab-b5c2-1a308266bd7a"
+              "value": "https://smartfactory.de/submodels/skills/0b34d369-57af-4777-b9d3-cf123801a545"
             }
           ],
           "type": "ModelReference"
@@ -85,7 +85,7 @@
           "keys": [
             {
               "type": "Submodel",
-              "value": "https://smartfactory.de/submodels/capability/fd093b4f-c92e-4caf-8015-2cff423fa8ae"
+              "value": "https://smartfactory.de/submodels/capability/7442030e-a899-4447-813d-eb5f9a774f70"
             }
           ],
           "type": "ModelReference"
@@ -94,7 +94,7 @@
           "keys": [
             {
               "type": "Submodel",
-              "value": "https://smartfactory.de/submodels/assetlocation/814017ce-77f1-40fc-a1f4-50feba8c5e76"
+              "value": "https://smartfactory.de/submodels/assetlocation/6bdc9a64-7295-4d80-a1b3-fefb2062b0de"
             }
           ],
           "type": "ModelReference"
@@ -1613,7 +1613,6 @@
       "kind": "Instance",
       "semanticId": {
         "type": "ModelReference",
-        "referredSemanticId": null,
         "keys": [
           {
             "type": "Submodel",
@@ -1639,7 +1638,6 @@
                   "modelType": "Property",
                   "semanticId": {
                     "type": "ExternalReference",
-                    "referredSemanticId": null,
                     "keys": []
                   },
                   "valueType": "string",
@@ -1656,7 +1654,6 @@
                       "modelType": "Property",
                       "semanticId": {
                         "type": "ExternalReference",
-                        "referredSemanticId": null,
                         "keys": []
                       },
                       "valueType": "integer",
@@ -1668,7 +1665,6 @@
                       "modelType": "Property",
                       "semanticId": {
                         "type": "ExternalReference",
-                        "referredSemanticId": null,
                         "keys": []
                       },
                       "valueType": "anyURI",
@@ -1685,7 +1681,261 @@
                           "modelType": "Property",
                           "semanticId": {
                             "type": "ExternalReference",
-                            "referredSemanticId": null,
+                            "keys": []
+                          },
+                          "valueType": "string",
+                          "value": "*"
+                        }
+                      ]
+                    },
+                    {
+                      "idShort": "Trigger",
+                      "kind": "Instance",
+                      "modelType": "SubmodelElementCollection",
+                      "value": []
+                    },
+                    {
+                      "idShort": "SecurityRequirements",
+                      "kind": "Instance",
+                      "modelType": "ReferenceElement",
+                      "value": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://example.org/security"
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "idShort": "Skill_0002",
+              "kind": "Instance",
+              "modelType": "SubmodelElementCollection",
+              "value": [
+                {
+                  "idShort": "Name",
+                  "kind": "Instance",
+                  "modelType": "Property",
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": []
+                  },
+                  "valueType": "string",
+                  "value": "Store"
+                },
+                {
+                  "idShort": "SkillInterfaceDescription",
+                  "kind": "Instance",
+                  "modelType": "SubmodelElementCollection",
+                  "value": [
+                    {
+                      "idShort": "RequiredAccessLevel",
+                      "kind": "Instance",
+                      "modelType": "Property",
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": []
+                      },
+                      "valueType": "integer",
+                      "value": "2"
+                    },
+                    {
+                      "idShort": "SkillEndpoint",
+                      "kind": "Instance",
+                      "modelType": "Property",
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": []
+                      },
+                      "valueType": "anyURI",
+                      "value": null
+                    },
+                    {
+                      "idShort": "RequiredInputParameters",
+                      "kind": "Instance",
+                      "modelType": "SubmodelElementCollection",
+                      "value": [
+                        {
+                          "idShort": "ProductId",
+                          "kind": "Instance",
+                          "modelType": "Property",
+                          "semanticId": {
+                            "type": "ExternalReference",
+                            "keys": []
+                          },
+                          "valueType": "string",
+                          "value": "*"
+                        }
+                      ]
+                    },
+                    {
+                      "idShort": "Trigger",
+                      "kind": "Instance",
+                      "modelType": "SubmodelElementCollection",
+                      "value": []
+                    },
+                    {
+                      "idShort": "SecurityRequirements",
+                      "kind": "Instance",
+                      "modelType": "ReferenceElement",
+                      "value": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://example.org/security"
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "idShort": "Skill_0003",
+              "kind": "Instance",
+              "modelType": "SubmodelElementCollection",
+              "value": [
+                {
+                  "idShort": "Name",
+                  "kind": "Instance",
+                  "modelType": "Property",
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": []
+                  },
+                  "valueType": "string",
+                  "value": "Retrieve"
+                },
+                {
+                  "idShort": "SkillInterfaceDescription",
+                  "kind": "Instance",
+                  "modelType": "SubmodelElementCollection",
+                  "value": [
+                    {
+                      "idShort": "RequiredAccessLevel",
+                      "kind": "Instance",
+                      "modelType": "Property",
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": []
+                      },
+                      "valueType": "integer",
+                      "value": "2"
+                    },
+                    {
+                      "idShort": "SkillEndpoint",
+                      "kind": "Instance",
+                      "modelType": "Property",
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": []
+                      },
+                      "valueType": "anyURI",
+                      "value": null
+                    },
+                    {
+                      "idShort": "RequiredInputParameters",
+                      "kind": "Instance",
+                      "modelType": "SubmodelElementCollection",
+                      "value": [
+                        {
+                          "idShort": "ProductId",
+                          "kind": "Instance",
+                          "modelType": "Property",
+                          "semanticId": {
+                            "type": "ExternalReference",
+                            "keys": []
+                          },
+                          "valueType": "string",
+                          "value": "*"
+                        }
+                      ]
+                    },
+                    {
+                      "idShort": "Trigger",
+                      "kind": "Instance",
+                      "modelType": "SubmodelElementCollection",
+                      "value": []
+                    },
+                    {
+                      "idShort": "SecurityRequirements",
+                      "kind": "Instance",
+                      "modelType": "ReferenceElement",
+                      "value": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://example.org/security"
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "idShort": "Skill_0004",
+              "kind": "Instance",
+              "modelType": "SubmodelElementCollection",
+              "value": [
+                {
+                  "idShort": "Name",
+                  "kind": "Instance",
+                  "modelType": "Property",
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": []
+                  },
+                  "valueType": "string",
+                  "value": "Docking"
+                },
+                {
+                  "idShort": "SkillInterfaceDescription",
+                  "kind": "Instance",
+                  "modelType": "SubmodelElementCollection",
+                  "value": [
+                    {
+                      "idShort": "RequiredAccessLevel",
+                      "kind": "Instance",
+                      "modelType": "Property",
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": []
+                      },
+                      "valueType": "integer",
+                      "value": "2"
+                    },
+                    {
+                      "idShort": "SkillEndpoint",
+                      "kind": "Instance",
+                      "modelType": "Property",
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": []
+                      },
+                      "valueType": "anyURI",
+                      "value": null
+                    },
+                    {
+                      "idShort": "RequiredInputParameters",
+                      "kind": "Instance",
+                      "modelType": "SubmodelElementCollection",
+                      "value": [
+                        {
+                          "idShort": "ProductId",
+                          "kind": "Instance",
+                          "modelType": "Property",
+                          "semanticId": {
+                            "type": "ExternalReference",
                             "keys": []
                           },
                           "valueType": "string",
@@ -1725,7 +1975,6 @@
           "modelType": "SubmodelElementCollection",
           "semanticId": {
             "type": "ExternalReference",
-            "referredSemanticId": null,
             "keys": [
               {
                 "type": "GlobalReference",
@@ -1751,7 +2000,6 @@
               "modelType": "SubmodelElementList",
               "semanticId": {
                 "type": "ExternalReference",
-                "referredSemanticId": null,
                 "keys": [
                   {
                     "type": "GlobalReference",
@@ -1795,7 +2043,6 @@
               "modelType": "SubmodelElementCollection",
               "semanticId": {
                 "type": "ExternalReference",
-                "referredSemanticId": null,
                 "keys": [
                   {
                     "type": "GlobalReference",
@@ -1824,7 +2071,6 @@
           "modelType": "SubmodelElementCollection",
           "semanticId": {
             "type": "ExternalReference",
-            "referredSemanticId": null,
             "keys": [
               {
                 "type": "GlobalReference",
@@ -1855,7 +2101,6 @@
                   "modelType": "Property",
                   "semanticId": {
                     "type": "ExternalReference",
-                    "referredSemanticId": null,
                     "keys": []
                   },
                   "valueType": "string",
@@ -1887,7 +2132,6 @@
               "modelType": "Property",
               "semanticId": {
                 "type": "ExternalReference",
-                "referredSemanticId": null,
                 "keys": []
               },
               "valueType": "string",
@@ -1899,7 +2143,6 @@
               "modelType": "Property",
               "semanticId": {
                 "type": "ExternalReference",
-                "referredSemanticId": null,
                 "keys": []
               },
               "valueType": "string",
@@ -1912,7 +2155,7 @@
       "embeddedDataSpecifications": [],
       "conceptDescription": null,
       "qualifiers": [],
-      "id": "https://smartfactory.de/submodels/skills/4aa56cc8-be8c-43ab-b5c2-1a308266bd7a",
+      "id": "https://smartfactory.de/submodels/skills/0b34d369-57af-4777-b9d3-cf123801a545",
       "administration": null,
       "idShort": "Skills",
       "category": null,
@@ -1926,7 +2169,7 @@
         "keys": [
           {
             "type": "GlobalReference",
-            "value": "https://admin-shell.io/idta/CapabilityDescription/1/0/Submodel"
+            "value": "https://smartfactory.de/aas/submodel/CapabilityDescription#1/0"
           }
         ]
       },
@@ -1939,7 +2182,7 @@
             "keys": [
               {
                 "type": "GlobalReference",
-                "value": "https://admin-shell.io/idta/CapabilityDescription/CapabilitySet/1/0"
+                "value": "https://smartfactory.de/aas/submodel/CapabilityDescription/CapabilitySet#1/0"
               }
             ]
           },
@@ -1952,7 +2195,7 @@
                 "keys": [
                   {
                     "type": "GlobalReference",
-                    "value": "https://admin-shell.io/idta/CapabilityDescription/CapabilityContainer/1/0"
+                    "value": "https://smartfactory.de/aas/submodel/CapabilityDescription/CapabilitySet/CapabilityContainer#1/0"
                   }
                 ]
               },
@@ -1965,24 +2208,75 @@
                     "keys": [
                       {
                         "type": "GlobalReference",
-                        "value": "https://wiki.eclipse.org/BaSyx_/_Documentation_/_Submodels_/_Capability#Capability"
+                        "value": "https://smartfactory.de/aas/submodel/CapabilityDescription/Capability#1/0"
                       }
                     ]
                   }
                 },
                 {
-                  "idShort": "Relations",
+                  "idShort": "CapabilityRelations",
                   "modelType": "SubmodelElementCollection",
                   "semanticId": {
                     "type": "ExternalReference",
                     "keys": [
                       {
                         "type": "GlobalReference",
-                        "value": "https://admin-shell.io/idta/CapabilityDescription/CapabilityRelations/1/0"
+                        "value": "https://smartfactory.de/aas/submodel/CapabilityDescription/CapabilitySet/CapabilityContainer/CapabilityRelations#1/0"
                       }
                     ]
                   },
                   "value": [
+                    {
+                      "idShort": "CapabilityRealizedBy_001",
+                      "modelType": "RelationshipElement",
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/idta/CapabilityDescription/CapabilityRelations/RealizedBy/1/0"
+                          }
+                        ]
+                      },
+                      "first": {
+                        "type": "ModelReference",
+                        "keys": [
+                          {
+                            "type": "Submodel",
+                            "value": "https://smartfactory.de/submodels/capability/7442030e-a899-4447-813d-eb5f9a774f70"
+                          },
+                          {
+                            "type": "SubmodelElementCollection",
+                            "value": "CapabilitySet"
+                          },
+                          {
+                            "type": "SubmodelElementCollection",
+                            "value": "ScrewContainer"
+                          },
+                          {
+                            "type": "Capability",
+                            "value": "Screw"
+                          }
+                        ]
+                      },
+                      "second": {
+                        "type": "ModelReference",
+                        "keys": [
+                          {
+                            "type": "Submodel",
+                            "value": "https://smartfactory.de/submodels/skills/0b34d369-57af-4777-b9d3-cf123801a545"
+                          },
+                          {
+                            "type": "SubmodelElementCollection",
+                            "value": "SkillSet"
+                          },
+                          {
+                            "type": "SubmodelElementCollection",
+                            "value": "Skill_0001"
+                          }
+                        ]
+                      }
+                    },
                     {
                       "idShort": "ConstraintSet",
                       "modelType": "SubmodelElementCollection",
@@ -1991,7 +2285,7 @@
                         "keys": [
                           {
                             "type": "GlobalReference",
-                            "value": "https://admin-shell.io/idta/CapabilityDescription/ConstraintSet/1/0"
+                            "value": "https://smartfactory.de/aas/submodel/CapabilityDescription/CapabilitySet/CapabilityContainer/CapabilityRelations#1/0/ConstraintSet#1/0"
                           }
                         ]
                       },
@@ -2004,7 +2298,7 @@
                             "keys": [
                               {
                                 "type": "GlobalReference",
-                                "value": "https://admin-shell.io/idta/CapabilityDescription/PropertyConstraintContainer/1/0"
+                                "value": "https://smartfactory.de/aas/submodel/CapabilityDescription/CapabilitySet/CapabilityContainer/CapabilityRelations#1/0/ConstraintSet#1/0/PropertyConstraintContainer#1/0"
                               }
                             ]
                           },
@@ -2029,7 +2323,7 @@
                                 "keys": [
                                   {
                                     "type": "GlobalReference",
-                                    "value": "https://admin-shell.io/idta/CapabilityDescription/CustomConstraint/1/0"
+                                    "value": "https://smartfactory.de/aas/submodel/CapabilityDescription/CapabilitySet/CapabilityContainer/CapabilityRelations#1/0/ConstraintSet#1/0/PropertyConstraintContainer#1/0/CustomConstraint#1/0"
                                   }
                                 ]
                               },
@@ -2051,6 +2345,15 @@
                             {
                               "idShort": "ConstraintPropertyRelations",
                               "modelType": "SubmodelElementCollection",
+                              "semanticId": {
+                                "type": "ExternalReference",
+                                "keys": [
+                                  {
+                                    "type": "GlobalReference",
+                                    "value": "https://smartfactory.de/aas/submodel/CapabilityDescription/CapabilitySet/CapabilityContainer/CapabilityRelations#1/0/ConstraintSet#1/0/PropertyConstraintContainer#1/0"
+                                  }
+                                ]
+                              },
                               "value": [
                                 {
                                   "idShort": "RelatedProperty",
@@ -2060,7 +2363,7 @@
                                     "keys": [
                                       {
                                         "type": "Submodel",
-                                        "value": "https://smartfactory.de/submodels/capability/fd093b4f-c92e-4caf-8015-2cff423fa8ae"
+                                        "value": "https://smartfactory.de/submodels/capability/7442030e-a899-4447-813d-eb5f9a774f70"
                                       },
                                       {
                                         "type": "SubmodelElementCollection",
@@ -2093,7 +2396,7 @@
                                     "keys": [
                                       {
                                         "type": "Submodel",
-                                        "value": "https://smartfactory.de/submodels/capability/fd093b4f-c92e-4caf-8015-2cff423fa8ae"
+                                        "value": "https://smartfactory.de/submodels/capability/7442030e-a899-4447-813d-eb5f9a774f70"
                                       },
                                       {
                                         "type": "SubmodelElementCollection",
@@ -2109,7 +2412,7 @@
                                       },
                                       {
                                         "type": "SubmodelElementCollection",
-                                        "value": "ProductIdFixed"
+                                        "value": "ProductId"
                                       },
                                       {
                                         "type": "Property",
@@ -2134,7 +2437,7 @@
                     "keys": [
                       {
                         "type": "GlobalReference",
-                        "value": "https://admin-shell.io/idta/CapabilityDescription/PropertySet/1/0"
+                        "value": "https://smartfactory.de/aas/submodel/CapabilityDescription/CapabilitySet/CapabilityContainer/PropertySet#1/0"
                       }
                     ]
                   },
@@ -2147,7 +2450,7 @@
                         "keys": [
                           {
                             "type": "GlobalReference",
-                            "value": "https://admin-shell.io/idta/CapabilityDescription/PropertyContainer/1/0"
+                            "value": "https://smartfactory.de/aas/submodel/CapabilityDescription/CapabilitySet/CapabilityContainer/PropertySet/PropertyContainer/Torque#1/0"
                           }
                         ]
                       },
@@ -2169,7 +2472,7 @@
                         "keys": [
                           {
                             "type": "GlobalReference",
-                            "value": "https://admin-shell.io/idta/CapabilityDescription/PropertyContainer/1/0"
+                            "value": "https://smartfactory.de/aas/submodel/CapabilityDescription/CapabilitySet/CapabilityContainer/PropertySet/PropertyContainer/Diameter#1/0"
                           }
                         ]
                       },
@@ -2184,14 +2487,14 @@
                       ]
                     },
                     {
-                      "idShort": "ProductIdFixed",
+                      "idShort": "ProductId",
                       "modelType": "SubmodelElementCollection",
                       "semanticId": {
                         "type": "ExternalReference",
                         "keys": [
                           {
                             "type": "GlobalReference",
-                            "value": "https://admin-shell.io/idta/CapabilityDescription/PropertyContainer/1/0"
+                            "value": "https://smartfactory.de/aas/submodel/CapabilityDescription/CapabilitySet/CapabilityContainer/PropertySet/PropertyContainer/ProductId#1/0"
                           }
                         ]
                       },
@@ -2207,17 +2510,1683 @@
                   ]
                 }
               ]
+            },
+            {
+              "idShort": "StoreContainer",
+              "modelType": "SubmodelElementCollection",
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://smartfactory.de/aas/submodel/CapabilityDescription/CapabilitySet/CapabilityContainer#1/0"
+                  }
+                ]
+              },
+              "value": [
+                {
+                  "idShort": "Store",
+                  "modelType": "Capability",
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://smartfactory.de/aas/submodel/CapabilityDescription/Capability#1/0"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "idShort": "CapabilityRelations",
+                  "modelType": "SubmodelElementCollection",
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://smartfactory.de/aas/submodel/CapabilityDescription/CapabilitySet/CapabilityContainer/CapabilityRelations#1/0"
+                      }
+                    ]
+                  },
+                  "value": [
+                    {
+                      "idShort": "CapabilityRealizedBy_001",
+                      "modelType": "RelationshipElement",
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/idta/CapabilityDescription/CapabilityRelations/RealizedBy/1/0"
+                          }
+                        ]
+                      },
+                      "first": {
+                        "type": "ModelReference",
+                        "keys": [
+                          {
+                            "type": "Submodel",
+                            "value": "https://smartfactory.de/submodels/capability/7442030e-a899-4447-813d-eb5f9a774f70"
+                          },
+                          {
+                            "type": "SubmodelElementCollection",
+                            "value": "CapabilitySet"
+                          },
+                          {
+                            "type": "SubmodelElementCollection",
+                            "value": "StoreContainer"
+                          },
+                          {
+                            "type": "Capability",
+                            "value": "Store"
+                          }
+                        ]
+                      },
+                      "second": {
+                        "type": "ModelReference",
+                        "keys": [
+                          {
+                            "type": "Submodel",
+                            "value": "https://smartfactory.de/submodels/skills/0b34d369-57af-4777-b9d3-cf123801a545"
+                          },
+                          {
+                            "type": "SubmodelElementCollection",
+                            "value": "SkillSet"
+                          },
+                          {
+                            "type": "SubmodelElementCollection",
+                            "value": "Skill_0002"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "idShort": "ConstraintSet",
+                      "modelType": "SubmodelElementCollection",
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://smartfactory.de/aas/submodel/CapabilityDescription/CapabilitySet/CapabilityContainer/CapabilityRelations#1/0/ConstraintSet#1/0"
+                          }
+                        ]
+                      },
+                      "value": [
+                        {
+                          "idShort": "StorageCapacityAvailable",
+                          "modelType": "SubmodelElementCollection",
+                          "semanticId": {
+                            "type": "ExternalReference",
+                            "keys": [
+                              {
+                                "type": "GlobalReference",
+                                "value": "https://smartfactory.de/aas/submodel/CapabilityDescription/CapabilitySet/CapabilityContainer/CapabilityRelations#1/0/ConstraintSet#1/0/PropertyConstraintContainer#1/0"
+                              }
+                            ]
+                          },
+                          "value": [
+                            {
+                              "idShort": "ConditionalType",
+                              "modelType": "Property",
+                              "valueType": "string",
+                              "value": "Pre"
+                            },
+                            {
+                              "idShort": "ConstraintType",
+                              "modelType": "Property",
+                              "valueType": "string",
+                              "value": "CustomConstraint"
+                            },
+                            {
+                              "idShort": "CustomConstraint",
+                              "modelType": "SubmodelElementCollection",
+                              "semanticId": {
+                                "type": "ExternalReference",
+                                "keys": [
+                                  {
+                                    "type": "GlobalReference",
+                                    "value": "https://smartfactory.de/aas/submodel/CapabilityDescription/CapabilitySet/CapabilityContainer/CapabilityRelations#1/0/ConstraintSet#1/0/PropertyConstraintContainer#1/0/CustomConstraint#1/0"
+                                  }
+                                ]
+                              },
+                              "value": [
+                                {
+                                  "idShort": "ConstraintName",
+                                  "modelType": "Property",
+                                  "valueType": "string",
+                                  "value": "StorageCapacityAvailable"
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "idShort": "TransitionConstraintContainer001",
+                          "modelType": "SubmodelElementCollection",
+                          "semanticId": {
+                            "type": "ExternalReference",
+                            "keys": [
+                              {
+                                "type": "GlobalReference",
+                                "value": "https://smartfactory.de/aas/submodel/CapabilityDescription/CapabilitySet/CapabilityContainer/CapabilityRelations#1/0/ConstraintSet#1/0/TransitionConstraintContainer#1/0"
+                              }
+                            ]
+                          },
+                          "value": [
+                            {
+                              "idShort": "TransitionConditionType",
+                              "modelType": "Property",
+                              "semanticId": {
+                                "type": "ExternalReference",
+                                "keys": [
+                                  {
+                                    "type": "GlobalReference",
+                                    "value": "https://smartfactory.de/aas/submodel/CapabilityDescription/CapabilitySet/CapabilityContainer/CapabilityRelations#1/0/ConstraintSet#1/0/TransitionConstraintContainer#1/0/TransitionConditionType#1/0"
+                                  }
+                                ]
+                              },
+                              "valueType": "string",
+                              "value": "Pre"
+                            },
+                            {
+                              "idShort": "ConstraintName",
+                              "modelType": "Property",
+                              "valueType": "string",
+                              "value": "TopologyPrecondition"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "idShort": "PropertySet",
+                  "modelType": "SubmodelElementCollection",
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://smartfactory.de/aas/submodel/CapabilityDescription/CapabilitySet/CapabilityContainer/PropertySet#1/0"
+                      }
+                    ]
+                  },
+                  "value": [
+                    {
+                      "idShort": "direction",
+                      "modelType": "SubmodelElementCollection",
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://smartfactory.de/aas/submodel/CapabilityDescription/CapabilitySet/CapabilityContainer/PropertySet/PropertyContainer/direction#1/0"
+                          }
+                        ]
+                      },
+                      "value": [
+                        {
+                          "idShort": "direction",
+                          "modelType": "Property",
+                          "valueType": "string",
+                          "value": "Inbound"
+                        }
+                      ]
+                    },
+                    {
+                      "idShort": "allowedTopologyTypesList",
+                      "modelType": "SubmodelElementCollection",
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://smartfactory.de/aas/submodel/CapabilityDescription/CapabilitySet/CapabilityContainer/PropertySet/PropertyContainer/allowedTopologyTypes#1/0"
+                          }
+                        ]
+                      },
+                      "value": [
+                        {
+                          "idShort": "allowedTopologyTypes",
+                          "modelType": "SubmodelElementList",
+                          "orderRelevant": true,
+                          "typeValueListElement": "Property",
+                          "valueTypeListElement": "xs:string",
+                          "value": [
+                            {
+                              "modelType": "Property",
+                              "valueType": "string",
+                              "value": "Neighbor"
+                            },
+                            {
+                              "modelType": "Property",
+                              "valueType": "string",
+                              "value": "Dock"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "idShort": "allowedPartnerClassesList",
+                      "modelType": "SubmodelElementCollection",
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://smartfactory.de/aas/submodel/CapabilityDescription/CapabilitySet/CapabilityContainer/PropertySet/PropertyContainer/allowedPartnerClasses#1/0"
+                          }
+                        ]
+                      },
+                      "value": [
+                        {
+                          "idShort": "allowedPartnerClasses",
+                          "modelType": "SubmodelElementList",
+                          "orderRelevant": true,
+                          "typeValueListElement": "Property",
+                          "valueTypeListElement": "xs:string",
+                          "value": [
+                            {
+                              "modelType": "Property",
+                              "valueType": "string",
+                              "value": "*"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "idShort": "supportedLoadCarrierClassesList",
+                      "modelType": "SubmodelElementCollection",
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://smartfactory.de/aas/submodel/CapabilityDescription/CapabilitySet/CapabilityContainer/PropertySet/PropertyContainer/supportedLoadCarrierClasses#1/0"
+                          }
+                        ]
+                      },
+                      "value": [
+                        {
+                          "idShort": "supportedLoadCarrierClasses",
+                          "modelType": "SubmodelElementList",
+                          "orderRelevant": true,
+                          "typeValueListElement": "Property",
+                          "valueTypeListElement": "xs:string",
+                          "value": [
+                            {
+                              "modelType": "Property",
+                              "valueType": "string",
+                              "value": "*"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "idShort": "RetrieveContainer",
+              "modelType": "SubmodelElementCollection",
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://smartfactory.de/aas/submodel/CapabilityDescription/CapabilitySet/CapabilityContainer#1/0"
+                  }
+                ]
+              },
+              "value": [
+                {
+                  "idShort": "Retrieve",
+                  "modelType": "Capability",
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://smartfactory.de/aas/submodel/CapabilityDescription/Capability#1/0"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "idShort": "CapabilityRelations",
+                  "modelType": "SubmodelElementCollection",
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://smartfactory.de/aas/submodel/CapabilityDescription/CapabilitySet/CapabilityContainer/CapabilityRelations#1/0"
+                      }
+                    ]
+                  },
+                  "value": [
+                    {
+                      "idShort": "CapabilityRealizedBy_001",
+                      "modelType": "RelationshipElement",
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/idta/CapabilityDescription/CapabilityRelations/RealizedBy/1/0"
+                          }
+                        ]
+                      },
+                      "first": {
+                        "type": "ModelReference",
+                        "keys": [
+                          {
+                            "type": "Submodel",
+                            "value": "https://smartfactory.de/submodels/capability/7442030e-a899-4447-813d-eb5f9a774f70"
+                          },
+                          {
+                            "type": "SubmodelElementCollection",
+                            "value": "CapabilitySet"
+                          },
+                          {
+                            "type": "SubmodelElementCollection",
+                            "value": "RetrieveContainer"
+                          },
+                          {
+                            "type": "Capability",
+                            "value": "Retrieve"
+                          }
+                        ]
+                      },
+                      "second": {
+                        "type": "ModelReference",
+                        "keys": [
+                          {
+                            "type": "Submodel",
+                            "value": "https://smartfactory.de/submodels/skills/0b34d369-57af-4777-b9d3-cf123801a545"
+                          },
+                          {
+                            "type": "SubmodelElementCollection",
+                            "value": "SkillSet"
+                          },
+                          {
+                            "type": "SubmodelElementCollection",
+                            "value": "Skill_0003"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "idShort": "ConstraintSet",
+                      "modelType": "SubmodelElementCollection",
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://smartfactory.de/aas/submodel/CapabilityDescription/CapabilitySet/CapabilityContainer/CapabilityRelations#1/0/ConstraintSet#1/0"
+                          }
+                        ]
+                      },
+                      "value": [
+                        {
+                          "idShort": "WorkpieceAvailable",
+                          "modelType": "SubmodelElementCollection",
+                          "semanticId": {
+                            "type": "ExternalReference",
+                            "keys": [
+                              {
+                                "type": "GlobalReference",
+                                "value": "https://smartfactory.de/aas/submodel/CapabilityDescription/CapabilitySet/CapabilityContainer/CapabilityRelations#1/0/ConstraintSet#1/0/PropertyConstraintContainer#1/0"
+                              }
+                            ]
+                          },
+                          "value": [
+                            {
+                              "idShort": "ConditionalType",
+                              "modelType": "Property",
+                              "valueType": "string",
+                              "value": "Pre"
+                            },
+                            {
+                              "idShort": "ConstraintType",
+                              "modelType": "Property",
+                              "valueType": "string",
+                              "value": "CustomConstraint"
+                            },
+                            {
+                              "idShort": "CustomConstraint",
+                              "modelType": "SubmodelElementCollection",
+                              "semanticId": {
+                                "type": "ExternalReference",
+                                "keys": [
+                                  {
+                                    "type": "GlobalReference",
+                                    "value": "https://smartfactory.de/aas/submodel/CapabilityDescription/CapabilitySet/CapabilityContainer/CapabilityRelations#1/0/ConstraintSet#1/0/PropertyConstraintContainer#1/0/CustomConstraint#1/0"
+                                  }
+                                ]
+                              },
+                              "value": [
+                                {
+                                  "idShort": "ConstraintName",
+                                  "modelType": "Property",
+                                  "valueType": "string",
+                                  "value": "WorkpieceAvailable"
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "idShort": "TransitionConstraintContainer001",
+                          "modelType": "SubmodelElementCollection",
+                          "semanticId": {
+                            "type": "ExternalReference",
+                            "keys": [
+                              {
+                                "type": "GlobalReference",
+                                "value": "https://smartfactory.de/aas/submodel/CapabilityDescription/CapabilitySet/CapabilityContainer/CapabilityRelations#1/0/ConstraintSet#1/0/TransitionConstraintContainer#1/0"
+                              }
+                            ]
+                          },
+                          "value": [
+                            {
+                              "idShort": "TransitionConditionType",
+                              "modelType": "Property",
+                              "semanticId": {
+                                "type": "ExternalReference",
+                                "keys": [
+                                  {
+                                    "type": "GlobalReference",
+                                    "value": "https://smartfactory.de/aas/submodel/CapabilityDescription/CapabilitySet/CapabilityContainer/CapabilityRelations#1/0/ConstraintSet#1/0/TransitionConstraintContainer#1/0/TransitionConditionType#1/0"
+                                  }
+                                ]
+                              },
+                              "valueType": "string",
+                              "value": "Pre"
+                            },
+                            {
+                              "idShort": "ConstraintName",
+                              "modelType": "Property",
+                              "valueType": "string",
+                              "value": "TopologyPrecondition"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "idShort": "PropertySet",
+                  "modelType": "SubmodelElementCollection",
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://smartfactory.de/aas/submodel/CapabilityDescription/CapabilitySet/CapabilityContainer/PropertySet#1/0"
+                      }
+                    ]
+                  },
+                  "value": [
+                    {
+                      "idShort": "direction",
+                      "modelType": "SubmodelElementCollection",
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://smartfactory.de/aas/submodel/CapabilityDescription/CapabilitySet/CapabilityContainer/PropertySet/PropertyContainer/direction#1/0"
+                          }
+                        ]
+                      },
+                      "value": [
+                        {
+                          "idShort": "direction",
+                          "modelType": "Property",
+                          "valueType": "string",
+                          "value": "Outbound"
+                        }
+                      ]
+                    },
+                    {
+                      "idShort": "allowedTopologyTypesList",
+                      "modelType": "SubmodelElementCollection",
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://smartfactory.de/aas/submodel/CapabilityDescription/CapabilitySet/CapabilityContainer/PropertySet/PropertyContainer/allowedTopologyTypes#1/0"
+                          }
+                        ]
+                      },
+                      "value": [
+                        {
+                          "idShort": "allowedTopologyTypes",
+                          "modelType": "SubmodelElementList",
+                          "orderRelevant": true,
+                          "typeValueListElement": "Property",
+                          "valueTypeListElement": "xs:string",
+                          "value": [
+                            {
+                              "modelType": "Property",
+                              "valueType": "string",
+                              "value": "Neighbor"
+                            },
+                            {
+                              "modelType": "Property",
+                              "valueType": "string",
+                              "value": "Dock"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "idShort": "allowedPartnerClassesList",
+                      "modelType": "SubmodelElementCollection",
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://smartfactory.de/aas/submodel/CapabilityDescription/CapabilitySet/CapabilityContainer/PropertySet/PropertyContainer/allowedPartnerClasses#1/0"
+                          }
+                        ]
+                      },
+                      "value": [
+                        {
+                          "idShort": "allowedPartnerClasses",
+                          "modelType": "SubmodelElementList",
+                          "orderRelevant": true,
+                          "typeValueListElement": "Property",
+                          "valueTypeListElement": "xs:string",
+                          "value": [
+                            {
+                              "modelType": "Property",
+                              "valueType": "string",
+                              "value": "*"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "idShort": "supportedLoadCarrierClassesList",
+                      "modelType": "SubmodelElementCollection",
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://smartfactory.de/aas/submodel/CapabilityDescription/CapabilitySet/CapabilityContainer/PropertySet/PropertyContainer/supportedLoadCarrierClasses#1/0"
+                          }
+                        ]
+                      },
+                      "value": [
+                        {
+                          "idShort": "supportedLoadCarrierClasses",
+                          "modelType": "SubmodelElementList",
+                          "orderRelevant": true,
+                          "typeValueListElement": "Property",
+                          "valueTypeListElement": "xs:string",
+                          "value": [
+                            {
+                              "modelType": "Property",
+                              "valueType": "string",
+                              "value": "*"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "idShort": "DockingContainer",
+              "modelType": "SubmodelElementCollection",
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://smartfactory.de/aas/submodel/CapabilityDescription/CapabilitySet/CapabilityContainer#1/0"
+                  }
+                ]
+              },
+              "value": [
+                {
+                  "idShort": "Docking",
+                  "modelType": "Capability",
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://smartfactory.de/aas/submodel/CapabilityDescription/Capability#1/0"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "idShort": "CapabilityRelations",
+                  "modelType": "SubmodelElementCollection",
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://smartfactory.de/aas/submodel/CapabilityDescription/CapabilitySet/CapabilityContainer/CapabilityRelations#1/0"
+                      }
+                    ]
+                  },
+                  "value": [
+                    {
+                      "idShort": "CapabilityRealizedBy_001",
+                      "modelType": "RelationshipElement",
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/idta/CapabilityDescription/CapabilityRelations/RealizedBy/1/0"
+                          }
+                        ]
+                      },
+                      "first": {
+                        "type": "ModelReference",
+                        "keys": [
+                          {
+                            "type": "Submodel",
+                            "value": "https://smartfactory.de/submodels/capability/7442030e-a899-4447-813d-eb5f9a774f70"
+                          },
+                          {
+                            "type": "SubmodelElementCollection",
+                            "value": "CapabilitySet"
+                          },
+                          {
+                            "type": "SubmodelElementCollection",
+                            "value": "DockingContainer"
+                          },
+                          {
+                            "type": "Capability",
+                            "value": "Docking"
+                          }
+                        ]
+                      },
+                      "second": {
+                        "type": "ModelReference",
+                        "keys": [
+                          {
+                            "type": "Submodel",
+                            "value": "https://smartfactory.de/submodels/skills/0b34d369-57af-4777-b9d3-cf123801a545"
+                          },
+                          {
+                            "type": "SubmodelElementCollection",
+                            "value": "SkillSet"
+                          },
+                          {
+                            "type": "SubmodelElementCollection",
+                            "value": "Skill_0004"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "idShort": "ConstraintSet",
+                      "modelType": "SubmodelElementCollection",
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://smartfactory.de/aas/submodel/CapabilityDescription/CapabilitySet/CapabilityContainer/CapabilityRelations#1/0/ConstraintSet#1/0"
+                          }
+                        ]
+                      },
+                      "value": [
+                        {
+                          "idShort": "CapacityConstraint",
+                          "modelType": "SubmodelElementCollection",
+                          "semanticId": {
+                            "type": "ExternalReference",
+                            "keys": [
+                              {
+                                "type": "GlobalReference",
+                                "value": "https://smartfactory.de/aas/submodel/CapabilityDescription/CapabilitySet/CapabilityContainer/CapabilityRelations#1/0/ConstraintSet#1/0/PropertyConstraintContainer#1/0"
+                              }
+                            ]
+                          },
+                          "value": [
+                            {
+                              "idShort": "ConditionalType",
+                              "modelType": "Property",
+                              "valueType": "string",
+                              "value": "Pre"
+                            },
+                            {
+                              "idShort": "ConstraintType",
+                              "modelType": "Property",
+                              "valueType": "string",
+                              "value": "CustomConstraint"
+                            },
+                            {
+                              "idShort": "CustomConstraint",
+                              "modelType": "SubmodelElementCollection",
+                              "semanticId": {
+                                "type": "ExternalReference",
+                                "keys": [
+                                  {
+                                    "type": "GlobalReference",
+                                    "value": "https://smartfactory.de/aas/submodel/CapabilityDescription/CapabilitySet/CapabilityContainer/CapabilityRelations#1/0/ConstraintSet#1/0/PropertyConstraintContainer#1/0/CustomConstraint#1/0"
+                                  }
+                                ]
+                              },
+                              "value": [
+                                {
+                                  "idShort": "ConstraintName",
+                                  "modelType": "Property",
+                                  "valueType": "string",
+                                  "value": "CapacityConstraint"
+                                },
+                                {
+                                  "idShort": "capacity",
+                                  "modelType": "Property",
+                                  "valueType": "string",
+                                  "value": "1"
+                                }
+                              ]
+                            },
+                            {
+                              "idShort": "ConstraintPropertyRelations",
+                              "modelType": "SubmodelElementCollection",
+                              "semanticId": {
+                                "type": "ExternalReference",
+                                "keys": [
+                                  {
+                                    "type": "GlobalReference",
+                                    "value": "https://smartfactory.de/aas/submodel/CapabilityDescription/CapabilitySet/CapabilityContainer/CapabilityRelations#1/0/ConstraintSet#1/0/PropertyConstraintContainer#1/0"
+                                  }
+                                ]
+                              },
+                              "value": [
+                                {
+                                  "idShort": "RelatedProperty",
+                                  "modelType": "RelationshipElement",
+                                  "first": {
+                                    "type": "ModelReference",
+                                    "keys": [
+                                      {
+                                        "type": "Submodel",
+                                        "value": "https://smartfactory.de/submodels/capability/7442030e-a899-4447-813d-eb5f9a774f70"
+                                      },
+                                      {
+                                        "type": "SubmodelElementCollection",
+                                        "value": "CapabilitySet"
+                                      },
+                                      {
+                                        "type": "SubmodelElementCollection",
+                                        "value": "DockingContainer"
+                                      },
+                                      {
+                                        "type": "SubmodelElementCollection",
+                                        "value": "CapabilityRelations"
+                                      },
+                                      {
+                                        "type": "SubmodelElementCollection",
+                                        "value": "ConstraintSet"
+                                      },
+                                      {
+                                        "type": "SubmodelElementCollection",
+                                        "value": "CapacityConstraint"
+                                      },
+                                      {
+                                        "type": "SubmodelElementCollection",
+                                        "value": "CustomConstraint"
+                                      }
+                                    ]
+                                  },
+                                  "second": {
+                                    "type": "ModelReference",
+                                    "keys": [
+                                      {
+                                        "type": "Submodel",
+                                        "value": "https://smartfactory.de/submodels/capability/7442030e-a899-4447-813d-eb5f9a774f70"
+                                      },
+                                      {
+                                        "type": "SubmodelElementCollection",
+                                        "value": "CapabilitySet"
+                                      },
+                                      {
+                                        "type": "SubmodelElementCollection",
+                                        "value": "DockingContainer"
+                                      },
+                                      {
+                                        "type": "SubmodelElementCollection",
+                                        "value": "PropertySet"
+                                      },
+                                      {
+                                        "type": "SubmodelElementCollection",
+                                        "value": "capacity"
+                                      },
+                                      {
+                                        "type": "Property",
+                                        "value": "capacity"
+                                      }
+                                    ]
+                                  }
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "idShort": "TransitionConstraintContainer001",
+                          "modelType": "SubmodelElementCollection",
+                          "semanticId": {
+                            "type": "ExternalReference",
+                            "keys": [
+                              {
+                                "type": "GlobalReference",
+                                "value": "https://smartfactory.de/aas/submodel/CapabilityDescription/CapabilitySet/CapabilityContainer/CapabilityRelations#1/0/ConstraintSet#1/0/TransitionConstraintContainer#1/0"
+                              }
+                            ]
+                          },
+                          "value": [
+                            {
+                              "idShort": "TransitionConditionType",
+                              "modelType": "Property",
+                              "semanticId": {
+                                "type": "ExternalReference",
+                                "keys": [
+                                  {
+                                    "type": "GlobalReference",
+                                    "value": "https://smartfactory.de/aas/submodel/CapabilityDescription/CapabilitySet/CapabilityContainer/CapabilityRelations#1/0/ConstraintSet#1/0/TransitionConstraintContainer#1/0/TransitionConditionType#1/0"
+                                  }
+                                ]
+                              },
+                              "valueType": "string",
+                              "value": "Pre"
+                            },
+                            {
+                              "idShort": "ConstraintName",
+                              "modelType": "Property",
+                              "valueType": "string",
+                              "value": "DockPrecondition"
+                            }
+                          ]
+                        },
+                        {
+                          "idShort": "TransitionConstraintContainer002",
+                          "modelType": "SubmodelElementCollection",
+                          "semanticId": {
+                            "type": "ExternalReference",
+                            "keys": [
+                              {
+                                "type": "GlobalReference",
+                                "value": "https://smartfactory.de/aas/submodel/CapabilityDescription/CapabilitySet/CapabilityContainer/CapabilityRelations#1/0/ConstraintSet#1/0/TransitionConstraintContainer#1/0"
+                              }
+                            ]
+                          },
+                          "value": [
+                            {
+                              "idShort": "TransitionConditionType",
+                              "modelType": "Property",
+                              "semanticId": {
+                                "type": "ExternalReference",
+                                "keys": [
+                                  {
+                                    "type": "GlobalReference",
+                                    "value": "https://smartfactory.de/aas/submodel/CapabilityDescription/CapabilitySet/CapabilityContainer/CapabilityRelations#1/0/ConstraintSet#1/0/TransitionConstraintContainer#1/0/TransitionConditionType#1/0"
+                                  }
+                                ]
+                              },
+                              "valueType": "string",
+                              "value": "Post"
+                            },
+                            {
+                              "idShort": "ConstraintName",
+                              "modelType": "Property",
+                              "valueType": "string",
+                              "value": "UndockPostcondition"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "idShort": "PropertySet",
+                  "modelType": "SubmodelElementCollection",
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://smartfactory.de/aas/submodel/CapabilityDescription/CapabilitySet/CapabilityContainer/PropertySet#1/0"
+                      }
+                    ]
+                  },
+                  "value": [
+                    {
+                      "idShort": "dockRole",
+                      "modelType": "SubmodelElementCollection",
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://smartfactory.de/aas/submodel/CapabilityDescription/CapabilitySet/CapabilityContainer/PropertySet/PropertyContainer/dockRole#1/0"
+                          }
+                        ]
+                      },
+                      "value": [
+                        {
+                          "idShort": "dockRole",
+                          "modelType": "Property",
+                          "valueType": "string",
+                          "value": "dockClient"
+                        }
+                      ]
+                    },
+                    {
+                      "idShort": "capacity",
+                      "modelType": "SubmodelElementCollection",
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://smartfactory.de/aas/submodel/CapabilityDescription/CapabilitySet/CapabilityContainer/PropertySet/PropertyContainer/capacity#1/0"
+                          }
+                        ]
+                      },
+                      "value": [
+                        {
+                          "idShort": "capacity",
+                          "modelType": "Property",
+                          "valueType": "double",
+                          "value": "1"
+                        }
+                      ]
+                    },
+                    {
+                      "idShort": "supportedLoadCarrierClassesList",
+                      "modelType": "SubmodelElementCollection",
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://smartfactory.de/aas/submodel/CapabilityDescription/CapabilitySet/CapabilityContainer/PropertySet/PropertyContainer/supportedLoadCarrierClasses#1/0"
+                          }
+                        ]
+                      },
+                      "value": [
+                        {
+                          "idShort": "supportedLoadCarrierClasses",
+                          "modelType": "SubmodelElementList",
+                          "orderRelevant": true,
+                          "typeValueListElement": "Property",
+                          "valueTypeListElement": "xs:string",
+                          "value": [
+                            {
+                              "modelType": "Property",
+                              "valueType": "string",
+                              "value": "*"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "idShort": "DockStoreHandoverCapabilityContainer",
+              "modelType": "SubmodelElementCollection",
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://smartfactory.de/aas/submodel/CapabilityDescription/CapabilitySet/CapabilityContainer#1/0"
+                  }
+                ]
+              },
+              "value": [
+                {
+                  "idShort": "DockStoreHandoverCapability",
+                  "modelType": "Capability",
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://smartfactory.de/aas/submodel/CapabilityDescription/Capability#1/0"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "idShort": "CapabilityRelations",
+                  "modelType": "SubmodelElementCollection",
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://smartfactory.de/aas/submodel/CapabilityDescription/CapabilitySet/CapabilityContainer/CapabilityRelations#1/0"
+                      }
+                    ]
+                  },
+                  "value": [
+                    {
+                      "idShort": "ComposedOfSet",
+                      "modelType": "SubmodelElementCollection",
+                      "value": [
+                        {
+                          "idShort": "CapabilityComposedOf_001",
+                          "modelType": "RelationshipElement",
+                          "first": {
+                            "type": "ModelReference",
+                            "keys": [
+                              {
+                                "type": "Submodel",
+                                "value": "https://smartfactory.de/submodels/capability/7442030e-a899-4447-813d-eb5f9a774f70"
+                              },
+                              {
+                                "type": "SubmodelElementCollection",
+                                "value": "CapabilitySet"
+                              },
+                              {
+                                "type": "SubmodelElementCollection",
+                                "value": "DockStoreHandoverCapabilityContainer"
+                              },
+                              {
+                                "type": "Capability",
+                                "value": "DockStoreHandoverCapability"
+                              }
+                            ]
+                          },
+                          "second": {
+                            "type": "ModelReference",
+                            "keys": [
+                              {
+                                "type": "Submodel",
+                                "value": "https://smartfactory.de/submodels/capability/7442030e-a899-4447-813d-eb5f9a774f70"
+                              },
+                              {
+                                "type": "SubmodelElementCollection",
+                                "value": "CapabilitySet"
+                              },
+                              {
+                                "type": "SubmodelElementCollection",
+                                "value": "DockingContainer"
+                              },
+                              {
+                                "type": "Capability",
+                                "value": "Docking"
+                              }
+                            ]
+                          }
+                        },
+                        {
+                          "idShort": "CapabilityComposedOf_002",
+                          "modelType": "RelationshipElement",
+                          "first": {
+                            "type": "ModelReference",
+                            "keys": [
+                              {
+                                "type": "Submodel",
+                                "value": "https://smartfactory.de/submodels/capability/7442030e-a899-4447-813d-eb5f9a774f70"
+                              },
+                              {
+                                "type": "SubmodelElementCollection",
+                                "value": "CapabilitySet"
+                              },
+                              {
+                                "type": "SubmodelElementCollection",
+                                "value": "DockStoreHandoverCapabilityContainer"
+                              },
+                              {
+                                "type": "Capability",
+                                "value": "DockStoreHandoverCapability"
+                              }
+                            ]
+                          },
+                          "second": {
+                            "type": "ModelReference",
+                            "keys": [
+                              {
+                                "type": "Submodel",
+                                "value": "https://smartfactory.de/submodels/capability/7442030e-a899-4447-813d-eb5f9a774f70"
+                              },
+                              {
+                                "type": "SubmodelElementCollection",
+                                "value": "CapabilitySet"
+                              },
+                              {
+                                "type": "SubmodelElementCollection",
+                                "value": "StoreContainer"
+                              },
+                              {
+                                "type": "Capability",
+                                "value": "Store"
+                              }
+                            ]
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "idShort": "ConstraintSet",
+                      "modelType": "SubmodelElementCollection",
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://smartfactory.de/aas/submodel/CapabilityDescription/CapabilitySet/CapabilityContainer/CapabilityRelations#1/0/ConstraintSet#1/0"
+                          }
+                        ]
+                      },
+                      "value": [
+                        {
+                          "idShort": "TransitionConstraintContainer001",
+                          "modelType": "SubmodelElementCollection",
+                          "semanticId": {
+                            "type": "ExternalReference",
+                            "keys": [
+                              {
+                                "type": "GlobalReference",
+                                "value": "https://smartfactory.de/aas/submodel/CapabilityDescription/CapabilitySet/CapabilityContainer/CapabilityRelations#1/0/ConstraintSet#1/0/TransitionConstraintContainer#1/0"
+                              }
+                            ]
+                          },
+                          "value": [
+                            {
+                              "idShort": "TransitionConditionType",
+                              "modelType": "Property",
+                              "semanticId": {
+                                "type": "ExternalReference",
+                                "keys": [
+                                  {
+                                    "type": "GlobalReference",
+                                    "value": "https://smartfactory.de/aas/submodel/CapabilityDescription/CapabilitySet/CapabilityContainer/CapabilityRelations#1/0/ConstraintSet#1/0/TransitionConstraintContainer#1/0/TransitionConditionType#1/0"
+                                  }
+                                ]
+                              },
+                              "valueType": "string",
+                              "value": "Pre"
+                            },
+                            {
+                              "idShort": "ConstraintName",
+                              "modelType": "Property",
+                              "valueType": "string",
+                              "value": "PartnerHasDockReceiveHandover"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "idShort": "PropertySet",
+                  "modelType": "SubmodelElementCollection",
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://smartfactory.de/aas/submodel/CapabilityDescription/CapabilitySet/CapabilityContainer/PropertySet#1/0"
+                      }
+                    ]
+                  },
+                  "value": [
+                    {
+                      "idShort": "transferRole",
+                      "modelType": "SubmodelElementCollection",
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://smartfactory.de/aas/submodel/CapabilityDescription/CapabilitySet/CapabilityContainer/PropertySet/PropertyContainer/transferRole#1/0"
+                          }
+                        ]
+                      },
+                      "value": [
+                        {
+                          "idShort": "transferRole",
+                          "modelType": "Property",
+                          "valueType": "string",
+                          "value": "initiator"
+                        }
+                      ]
+                    },
+                    {
+                      "idShort": "topologyType",
+                      "modelType": "SubmodelElementCollection",
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://smartfactory.de/aas/submodel/CapabilityDescription/CapabilitySet/CapabilityContainer/PropertySet/PropertyContainer/topologyType#1/0"
+                          }
+                        ]
+                      },
+                      "value": [
+                        {
+                          "idShort": "topologyType",
+                          "modelType": "Property",
+                          "valueType": "string",
+                          "value": "Dock"
+                        }
+                      ]
+                    },
+                    {
+                      "idShort": "requiredPartnerRoleList",
+                      "modelType": "SubmodelElementCollection",
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://smartfactory.de/aas/submodel/CapabilityDescription/CapabilitySet/CapabilityContainer/PropertySet/PropertyContainer/requiredPartnerRole#1/0"
+                          }
+                        ]
+                      },
+                      "value": [
+                        {
+                          "idShort": "requiredPartnerRole",
+                          "modelType": "SubmodelElementList",
+                          "orderRelevant": true,
+                          "typeValueListElement": "Property",
+                          "valueTypeListElement": "xs:string",
+                          "value": [
+                            {
+                              "modelType": "Property",
+                              "valueType": "string",
+                              "value": "acceptor"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "idShort": "supportedLoadCarrierClassesList",
+                      "modelType": "SubmodelElementCollection",
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://smartfactory.de/aas/submodel/CapabilityDescription/CapabilitySet/CapabilityContainer/PropertySet/PropertyContainer/supportedLoadCarrierClasses#1/0"
+                          }
+                        ]
+                      },
+                      "value": [
+                        {
+                          "idShort": "supportedLoadCarrierClasses",
+                          "modelType": "SubmodelElementList",
+                          "orderRelevant": true,
+                          "typeValueListElement": "Property",
+                          "valueTypeListElement": "xs:string",
+                          "value": [
+                            {
+                              "modelType": "Property",
+                              "valueType": "string",
+                              "value": "*"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "idShort": "DockRetrieveHandoverCapabilityContainer",
+              "modelType": "SubmodelElementCollection",
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://smartfactory.de/aas/submodel/CapabilityDescription/CapabilitySet/CapabilityContainer#1/0"
+                  }
+                ]
+              },
+              "value": [
+                {
+                  "idShort": "DockRetrieveHandoverCapability",
+                  "modelType": "Capability",
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://smartfactory.de/aas/submodel/CapabilityDescription/Capability#1/0"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "idShort": "CapabilityRelations",
+                  "modelType": "SubmodelElementCollection",
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://smartfactory.de/aas/submodel/CapabilityDescription/CapabilitySet/CapabilityContainer/CapabilityRelations#1/0"
+                      }
+                    ]
+                  },
+                  "value": [
+                    {
+                      "idShort": "ComposedOfSet",
+                      "modelType": "SubmodelElementCollection",
+                      "value": [
+                        {
+                          "idShort": "CapabilityComposedOf_001",
+                          "modelType": "RelationshipElement",
+                          "first": {
+                            "type": "ModelReference",
+                            "keys": [
+                              {
+                                "type": "Submodel",
+                                "value": "https://smartfactory.de/submodels/capability/7442030e-a899-4447-813d-eb5f9a774f70"
+                              },
+                              {
+                                "type": "SubmodelElementCollection",
+                                "value": "CapabilitySet"
+                              },
+                              {
+                                "type": "SubmodelElementCollection",
+                                "value": "DockRetrieveHandoverCapabilityContainer"
+                              },
+                              {
+                                "type": "Capability",
+                                "value": "DockRetrieveHandoverCapability"
+                              }
+                            ]
+                          },
+                          "second": {
+                            "type": "ModelReference",
+                            "keys": [
+                              {
+                                "type": "Submodel",
+                                "value": "https://smartfactory.de/submodels/capability/7442030e-a899-4447-813d-eb5f9a774f70"
+                              },
+                              {
+                                "type": "SubmodelElementCollection",
+                                "value": "CapabilitySet"
+                              },
+                              {
+                                "type": "SubmodelElementCollection",
+                                "value": "DockingContainer"
+                              },
+                              {
+                                "type": "Capability",
+                                "value": "Docking"
+                              }
+                            ]
+                          }
+                        },
+                        {
+                          "idShort": "CapabilityComposedOf_002",
+                          "modelType": "RelationshipElement",
+                          "first": {
+                            "type": "ModelReference",
+                            "keys": [
+                              {
+                                "type": "Submodel",
+                                "value": "https://smartfactory.de/submodels/capability/7442030e-a899-4447-813d-eb5f9a774f70"
+                              },
+                              {
+                                "type": "SubmodelElementCollection",
+                                "value": "CapabilitySet"
+                              },
+                              {
+                                "type": "SubmodelElementCollection",
+                                "value": "DockRetrieveHandoverCapabilityContainer"
+                              },
+                              {
+                                "type": "Capability",
+                                "value": "DockRetrieveHandoverCapability"
+                              }
+                            ]
+                          },
+                          "second": {
+                            "type": "ModelReference",
+                            "keys": [
+                              {
+                                "type": "Submodel",
+                                "value": "https://smartfactory.de/submodels/capability/7442030e-a899-4447-813d-eb5f9a774f70"
+                              },
+                              {
+                                "type": "SubmodelElementCollection",
+                                "value": "CapabilitySet"
+                              },
+                              {
+                                "type": "SubmodelElementCollection",
+                                "value": "RetrieveContainer"
+                              },
+                              {
+                                "type": "Capability",
+                                "value": "Retrieve"
+                              }
+                            ]
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "idShort": "ConstraintSet",
+                      "modelType": "SubmodelElementCollection",
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://smartfactory.de/aas/submodel/CapabilityDescription/CapabilitySet/CapabilityContainer/CapabilityRelations#1/0/ConstraintSet#1/0"
+                          }
+                        ]
+                      },
+                      "value": [
+                        {
+                          "idShort": "TransitionConstraintContainer001",
+                          "modelType": "SubmodelElementCollection",
+                          "semanticId": {
+                            "type": "ExternalReference",
+                            "keys": [
+                              {
+                                "type": "GlobalReference",
+                                "value": "https://smartfactory.de/aas/submodel/CapabilityDescription/CapabilitySet/CapabilityContainer/CapabilityRelations#1/0/ConstraintSet#1/0/TransitionConstraintContainer#1/0"
+                              }
+                            ]
+                          },
+                          "value": [
+                            {
+                              "idShort": "TransitionConditionType",
+                              "modelType": "Property",
+                              "semanticId": {
+                                "type": "ExternalReference",
+                                "keys": [
+                                  {
+                                    "type": "GlobalReference",
+                                    "value": "https://smartfactory.de/aas/submodel/CapabilityDescription/CapabilitySet/CapabilityContainer/CapabilityRelations#1/0/ConstraintSet#1/0/TransitionConstraintContainer#1/0/TransitionConditionType#1/0"
+                                  }
+                                ]
+                              },
+                              "valueType": "string",
+                              "value": "Pre"
+                            },
+                            {
+                              "idShort": "ConstraintName",
+                              "modelType": "Property",
+                              "valueType": "string",
+                              "value": "PartnerHasDockReceiveHandover"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "idShort": "PropertySet",
+                  "modelType": "SubmodelElementCollection",
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://smartfactory.de/aas/submodel/CapabilityDescription/CapabilitySet/CapabilityContainer/PropertySet#1/0"
+                      }
+                    ]
+                  },
+                  "value": [
+                    {
+                      "idShort": "transferRole",
+                      "modelType": "SubmodelElementCollection",
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://smartfactory.de/aas/submodel/CapabilityDescription/CapabilitySet/CapabilityContainer/PropertySet/PropertyContainer/transferRole#1/0"
+                          }
+                        ]
+                      },
+                      "value": [
+                        {
+                          "idShort": "transferRole",
+                          "modelType": "Property",
+                          "valueType": "string",
+                          "value": "initiator"
+                        }
+                      ]
+                    },
+                    {
+                      "idShort": "topologyType",
+                      "modelType": "SubmodelElementCollection",
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://smartfactory.de/aas/submodel/CapabilityDescription/CapabilitySet/CapabilityContainer/PropertySet/PropertyContainer/topologyType#1/0"
+                          }
+                        ]
+                      },
+                      "value": [
+                        {
+                          "idShort": "topologyType",
+                          "modelType": "Property",
+                          "valueType": "string",
+                          "value": "Dock"
+                        }
+                      ]
+                    },
+                    {
+                      "idShort": "requiredPartnerRoleList",
+                      "modelType": "SubmodelElementCollection",
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://smartfactory.de/aas/submodel/CapabilityDescription/CapabilitySet/CapabilityContainer/PropertySet/PropertyContainer/requiredPartnerRole#1/0"
+                          }
+                        ]
+                      },
+                      "value": [
+                        {
+                          "idShort": "requiredPartnerRole",
+                          "modelType": "SubmodelElementList",
+                          "orderRelevant": true,
+                          "typeValueListElement": "Property",
+                          "valueTypeListElement": "xs:string",
+                          "value": [
+                            {
+                              "modelType": "Property",
+                              "valueType": "string",
+                              "value": "acceptor"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "idShort": "supportedLoadCarrierClassesList",
+                      "modelType": "SubmodelElementCollection",
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://smartfactory.de/aas/submodel/CapabilityDescription/CapabilitySet/CapabilityContainer/PropertySet/PropertyContainer/supportedLoadCarrierClasses#1/0"
+                          }
+                        ]
+                      },
+                      "value": [
+                        {
+                          "idShort": "supportedLoadCarrierClasses",
+                          "modelType": "SubmodelElementList",
+                          "orderRelevant": true,
+                          "typeValueListElement": "Property",
+                          "valueTypeListElement": "xs:string",
+                          "value": [
+                            {
+                              "modelType": "Property",
+                              "valueType": "string",
+                              "value": "*"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
             }
           ]
         }
       ],
       "modelType": "Submodel",
-      "id": "https://smartfactory.de/submodels/capability/fd093b4f-c92e-4caf-8015-2cff423fa8ae",
+      "id": "https://smartfactory.de/submodels/capability/7442030e-a899-4447-813d-eb5f9a774f70",
       "idShort": "OfferedCapabilitiyDescription"
     },
     {
       "kind": "Instance",
-      "semanticId": null,
+      "semanticId": {
+        "type": "ExternalReference",
+        "keys": [
+          {
+            "type": "GlobalReference",
+            "value": "https://smartfactory.de/submodels/AssetLocation1#0"
+          }
+        ]
+      },
       "supplementalSemanticIds": [],
       "submodelElements": [
         {
@@ -2226,7 +4195,6 @@
           "modelType": "Property",
           "semanticId": {
             "type": "ExternalReference",
-            "referredSemanticId": null,
             "keys": []
           },
           "valueType": "string",
@@ -2238,7 +4206,6 @@
           "modelType": "Property",
           "semanticId": {
             "type": "ExternalReference",
-            "referredSemanticId": null,
             "keys": []
           },
           "valueType": "string",
@@ -2255,10 +4222,9 @@
               "modelType": "Property",
               "semanticId": {
                 "type": "ExternalReference",
-                "referredSemanticId": null,
                 "keys": []
               },
-              "valueType": "double",
+              "valueType": "string",
               "value": "20"
             },
             {
@@ -2267,10 +4233,9 @@
               "modelType": "Property",
               "semanticId": {
                 "type": "ExternalReference",
-                "referredSemanticId": null,
                 "keys": []
               },
-              "valueType": "double",
+              "valueType": "string",
               "value": "50"
             },
             {
@@ -2279,10 +4244,9 @@
               "modelType": "Property",
               "semanticId": {
                 "type": "ExternalReference",
-                "referredSemanticId": null,
                 "keys": []
               },
-              "valueType": "double",
+              "valueType": "string",
               "value": "0"
             }
           ]
@@ -2292,7 +4256,7 @@
       "embeddedDataSpecifications": [],
       "conceptDescription": null,
       "qualifiers": [],
-      "id": "https://smartfactory.de/submodels/assetlocation/814017ce-77f1-40fc-a1f4-50feba8c5e76",
+      "id": "https://smartfactory.de/submodels/assetlocation/6bdc9a64-7295-4d80-a1b3-fefb2062b0de",
       "administration": null,
       "idShort": "AssetLocation",
       "category": null,

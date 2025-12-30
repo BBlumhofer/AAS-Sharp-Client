@@ -1,6 +1,15 @@
 {
   "kind": "Instance",
-  "semanticId": null,
+  "semanticId": {
+    "type": "ExternalReference",
+    "referredSemanticId": null,
+    "keys": [
+      {
+        "type": "GlobalReference",
+        "value": "https://smartfactory.de/submodels/AssetLocation1#0"
+      }
+    ]
+  },
   "supplementalSemanticIds": [],
   "submodelElements": [
     {
@@ -25,7 +34,7 @@
         "keys": []
       },
       "valueType": "string",
-      "value": "Halle1"
+      "value": "Halle2"
     },
     {
       "idShort": "Position",
@@ -41,8 +50,8 @@
             "referredSemanticId": null,
             "keys": []
           },
-          "valueType": "double",
-          "value": "8"
+          "valueType": "string",
+          "value": "45"
         },
         {
           "idShort": "Y",
@@ -53,8 +62,8 @@
             "referredSemanticId": null,
             "keys": []
           },
-          "valueType": "double",
-          "value": "30"
+          "valueType": "string",
+          "value": "50"
         },
         {
           "idShort": "Theta",
@@ -65,7 +74,7 @@
             "referredSemanticId": null,
             "keys": []
           },
-          "valueType": "double",
+          "valueType": "string",
           "value": "0"
         }
       ]
@@ -75,7 +84,7 @@
   "embeddedDataSpecifications": [],
   "conceptDescription": null,
   "qualifiers": [],
-  "id": "https://smartfactory.de/submodels/assetlocation/24fabb9e-c830-4f26-aa1e-cecbd7d7275f",
+  "id": "https://smartfactory.de/submodels/assetlocation/d0a27dc6-4570-45de-88e0-94da754e4984",
   "administration": null,
   "idShort": "AssetLocation",
   "category": null,

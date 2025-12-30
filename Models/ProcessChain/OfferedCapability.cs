@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using AasSharpClient.Models;
 using BaSyx.Models.AdminShell;
 
@@ -25,6 +26,10 @@ public class OfferedCapability : SubmodelElementCollection
     public Property<string> Station { get; }
     public SchedulingContainer EarliestSchedulingInformation { get; }
     public SubmodelElementList Actions { get; }
+    public SubmodelElementCollection Preconditions { get; }
+    public SubmodelElementCollection FinalResultData { get; }
+    public SubmodelElementCollection Effects { get; }
+    public SubmodelElementCollection Postconditions { get; }
     public Property<double> Cost { get; }
     public Property<string> SequencePlacement { get; }
 
@@ -54,6 +59,14 @@ public class OfferedCapability : SubmodelElementCollection
         Add(Station);
         Add(EarliestSchedulingInformation);
         Add(Actions);
+        Preconditions = new SubmodelElementCollection("Preconditions");
+        FinalResultData = new SubmodelElementCollection("FinalResultData");
+        Effects = new SubmodelElementCollection("Effects");
+        Postconditions = new SubmodelElementCollection("Postconditions");
+        Add(Preconditions);
+        Add(FinalResultData);
+        Add(Effects);
+        Add(Postconditions);
         Add(Cost);
         Add(SequencePlacement);
     }
@@ -70,13 +83,42 @@ public class OfferedCapability : SubmodelElementCollection
     {
         if (action != null)
         {
-            if (!string.IsNullOrEmpty(action.IdShort))
-            {
-                action.IdShort = string.Empty;
-            }
+            // ensure anonymous entries (no meaningful IdShort)
+            try { action.IdShort = string.Empty; } catch { }
             Actions.Add(action);
         }
     }
+
+    /// <summary>
+    /// Typed view of the contained actions as a list of <see cref="AasSharpClient.Models.Action"/>.
+    /// This materializes a snapshot from the underlying SubmodelElementList.
+    /// </summary>
+    public List<AasSharpClient.Models.Action> ActionsList
+    {
+        get
+        {
+            return Actions.OfType<AasSharpClient.Models.Action>().ToList();
+        }
+    }
+    /// <summary>
+    /// Typed view of contained preconditions as elements.
+    /// </summary>
+    public IEnumerable<ISubmodelElement> PreconditionsList => Preconditions;
+
+    /// <summary>
+    /// Typed view of contained final result data as elements.
+    /// </summary>
+    public IEnumerable<ISubmodelElement> FinalResultDataList => FinalResultData;
+
+    /// <summary>
+    /// Typed view of contained effects as elements.
+    /// </summary>
+    public IEnumerable<ISubmodelElement> EffectsList => Effects;
+
+    /// <summary>
+    /// Typed view of contained postconditions as elements.
+    /// </summary>
+    public IEnumerable<ISubmodelElement> PostconditionsList => Postconditions;
 
     public void SetCost(double amount)
     {
