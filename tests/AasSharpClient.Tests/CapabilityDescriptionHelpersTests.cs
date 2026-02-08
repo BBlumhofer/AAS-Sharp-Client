@@ -1,6 +1,8 @@
 using System.Linq;
 using System.Threading.Tasks;
+using System.Collections.Generic;
 using AasSharpClient.Models;
+using BaSyx.Models.AdminShell;
 using Xunit;
 
 namespace AasSharpClient.Tests;

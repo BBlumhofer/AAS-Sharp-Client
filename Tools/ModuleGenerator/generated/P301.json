@@ -76,7 +76,7 @@
           "keys": [
             {
               "type": "Submodel",
-              "value": "https://smartfactory.de/submodels/skills/e8c5d0d5-9a84-4fd7-bd36-d8f36796c2e1"
+              "value": "https://smartfactory.de/submodels/skills/dae93b66-e86b-4593-b2a2-0ea97e963b41"
             }
           ],
           "type": "ModelReference"
@@ -85,7 +85,7 @@
           "keys": [
             {
               "type": "Submodel",
-              "value": "https://smartfactory.de/submodels/capability/b884c303-48da-48c8-93a8-f7d790cfdd25"
+              "value": "https://smartfactory.de/submodels/capability/fd02a051-ee80-4e3e-9c5a-d4d9a836bd7a"
             }
           ],
           "type": "ModelReference"
@@ -94,7 +94,7 @@
           "keys": [
             {
               "type": "Submodel",
-              "value": "https://smartfactory.de/submodels/assetlocation/edb9fb9a-0bc3-4ff8-bda2-6773dbbf1a41"
+              "value": "https://smartfactory.de/submodels/assetlocation/e8a798de-e96e-4b71-9276-e44b288e7cf1"
             }
           ],
           "type": "ModelReference"
@@ -1900,7 +1900,7 @@
       "embeddedDataSpecifications": [],
       "conceptDescription": null,
       "qualifiers": [],
-      "id": "https://smartfactory.de/submodels/skills/e8c5d0d5-9a84-4fd7-bd36-d8f36796c2e1",
+      "id": "https://smartfactory.de/submodels/skills/dae93b66-e86b-4593-b2a2-0ea97e963b41",
       "administration": null,
       "idShort": "Skills",
       "category": null,
@@ -1988,7 +1988,7 @@
                         "keys": [
                           {
                             "type": "Submodel",
-                            "value": "https://smartfactory.de/submodels/capability/b884c303-48da-48c8-93a8-f7d790cfdd25"
+                            "value": "https://smartfactory.de/submodels/capability/fd02a051-ee80-4e3e-9c5a-d4d9a836bd7a"
                           },
                           {
                             "type": "SubmodelElementCollection",
@@ -2009,7 +2009,7 @@
                         "keys": [
                           {
                             "type": "Submodel",
-                            "value": "https://smartfactory.de/submodels/skills/e8c5d0d5-9a84-4fd7-bd36-d8f36796c2e1"
+                            "value": "https://smartfactory.de/submodels/skills/dae93b66-e86b-4593-b2a2-0ea97e963b41"
                           },
                           {
                             "type": "SubmodelElementCollection",
@@ -2108,7 +2108,7 @@
                                     "keys": [
                                       {
                                         "type": "Submodel",
-                                        "value": "https://smartfactory.de/submodels/capability/b884c303-48da-48c8-93a8-f7d790cfdd25"
+                                        "value": "https://smartfactory.de/submodels/capability/fd02a051-ee80-4e3e-9c5a-d4d9a836bd7a"
                                       },
                                       {
                                         "type": "SubmodelElementCollection",
@@ -2141,7 +2141,7 @@
                                     "keys": [
                                       {
                                         "type": "Submodel",
-                                        "value": "https://smartfactory.de/submodels/capability/b884c303-48da-48c8-93a8-f7d790cfdd25"
+                                        "value": "https://smartfactory.de/submodels/capability/fd02a051-ee80-4e3e-9c5a-d4d9a836bd7a"
                                       },
                                       {
                                         "type": "SubmodelElementCollection",
@@ -2260,7 +2260,7 @@
         }
       ],
       "modelType": "Submodel",
-      "id": "https://smartfactory.de/submodels/capability/b884c303-48da-48c8-93a8-f7d790cfdd25",
+      "id": "https://smartfactory.de/submodels/capability/fd02a051-ee80-4e3e-9c5a-d4d9a836bd7a",
       "idShort": "OfferedCapabilitiyDescription"
     },
     {
@@ -2343,7 +2343,7 @@
       "embeddedDataSpecifications": [],
       "conceptDescription": null,
       "qualifiers": [],
-      "id": "https://smartfactory.de/submodels/assetlocation/edb9fb9a-0bc3-4ff8-bda2-6773dbbf1a41",
+      "id": "https://smartfactory.de/submodels/assetlocation/e8a798de-e96e-4b71-9276-e44b288e7cf1",
       "administration": null,
       "idShort": "AssetLocation",
       "category": null,

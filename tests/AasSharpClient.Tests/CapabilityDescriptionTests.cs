@@ -261,7 +261,8 @@ public class CapabilityDescriptionTests
             new CapabilityConstraintSetDefinition(
                 "ConstraintSet",
                 new List<PropertyConstraintContainerDefinition> { constraintContainer },
-                constraintSetSemantic),
+                TransitionConstraintContainers: null,
+                SemanticId: constraintSetSemantic),
             new List<SimpleSubmodelElementCollectionDefinition>
             {
                 new("GeneralizedBySet"),
