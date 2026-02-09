@@ -17,13 +17,15 @@ Kurzbeschreibung: Dieses kleine .NET-Konsolen-Tool erzeugt vollständige Asset-A
     Du kannst einen alternativen Ausgabepfad als zweites Argument angeben.
 
 **Design-Entscheidungen / Verhalten**
-- Basis: Immer `template.json` verwenden; nur die relevanten Submodelle (Skills, Capability, AssetLocation) werden ersetzt bzw. ergänzt.
+- Basis: Immer `template.json` verwenden; nur die relevanten Submodelle (Skills, Capability, AssetLocation, StorageConfiguration) werden ersetzt bzw. ergänzt.
 - ID-Kollisionsschutz: Template-Submodel-IDs werden pro erzeugter Verwaltungsschale eindeutig gemacht — das Tool hängt `-<ShellId>` an die originalen Template-Submodel-IDs. Dadurch entstehen keine doppelten Submodel-IDs beim Laden mehrerer generierter Verwaltungsschalen.
 - JsonNode-Sicherheit: Submodel-JSONs werden serialisiert und erneut geparst, bevor sie ins Template eingefügt werden, um System.Text.Json "already has a parent"-Fehler zu vermeiden.
 - Reference-Enum-Korrektheit: `Reference.type` wird bewusst auf `ModelReference` (für modelinterne Pfade) oder `ExternalReference` (für GlobalReference-basierte Pfade) gesetzt, um inkompatible Enum-Werte wie `Undefined` zu vermeiden (AAS4J-kompatibel).
 
 **Konfigurationsformat (Kurz)**
 Die Eingabe ist eine kleine JSON-Datei (Beispiel: `P100_config.json`) mit Angaben wie Shell-Id, Skill-Definitionen, Capability-Constraints und optionalen AssetLocation-Feldern. Die genauen Felder sind projektintern und im `ModuleGenerator.cs` definiert.
+
+Neu: Optional kann ein `StorageConfiguration`-Block angegeben werden. Falls vorhanden, wird zusaetzlich ein StorageConfiguration-Submodel erzeugt.
 
 **Ausführen / Beispiele**
 - Verarbeite das gesamte Config-Ordner (Bulk-Modus, Standard, wenn keine Argumente):
@@ -74,6 +76,7 @@ Konkretes Ziel (erste Minimalversion):
 - Erzeuge ein `Skills`-Submodel mit einem einfachen `Skill` (Name, RequiredInputParameters -> `ProductId`).
 - Erzeuge ein `OfferedCapabilityDescription`-Submodel mit einem Capability-Container und Property-Containern
     (Range oder FixedValue) basierend auf `Capability.PropertyContainers` in der Config.
+- Optional: Erzeuge ein `StorageConfiguration`-Submodel aus `StorageConfiguration` in der Config.
 - Exportiere ein kombiniertes JSON mit `assetAdministrationShells` und `submodels` nach
     `Tools/ModuleGenerator/generated/{Id}.json`.
 
@@ -86,6 +89,16 @@ Konfigurationsschema (vereinfachte Form - siehe `Examples/P18_config.json`):
     - `SkillReference` (string)
     - `PropertyContainers` (object): Schlüssel -> Objekt mit entweder `min`+`max` oder `value`.
     - `Constraints` (array): optionale Constraint-Objekte (erste Minimalausprägung unterstützt)
+}
+- `StorageConfiguration` (object, optional): {
+    - `Storages` (array): Liste von Storages inkl. Slots und Kostenparametern
+    - `DemandConfig` (object): Demand-Parameter
+    - `ProjectionConfig` (object): Projektions-Parameter
+}
+- `StorageConfiguration` (object, optional): {
+    - `Storages` (array): Liste von Storages inkl. Slots und Kostenparametern
+    - `DemandConfig` (object): Demand-Parameter
+    - `ProjectionConfig` (object): Projektion-Parameter
 }
 
 Beispiel-Input: `Tools/ModuleGenerator/Examples/P18_config.json` (bereits im Repo).
@@ -117,6 +130,6 @@ Entwicklerhinweise / Patterns:
 - Ziel-Framework: `net10.0` (Tests und bestehender Code verwenden `net10.0`).
 - Generated files: `Tools/ModuleGenerator/generated/{Id}.json`.
 
-Nächste Schritte / Erweiterungen:
+Naechste Schritte / Erweiterungen:
 - Bessere Unterstützung für Constraints (vollständige Abbildung auf `PropertyConstraintContainerDefinition`).
 - CLI-Flags (z.B. output path, namespace, thumbnail) und Integration in CI.

@@ -14,6 +14,8 @@ namespace ModuleGenerator
     {
         private const string SmartFactoryCapabilityBase = "https://smartfactory.de/aas/submodel/CapabilityDescription";
         private const string SmartFactoryCapabilitySubmodelSemantic = SmartFactoryCapabilityBase + "#1/0";
+        private const string SmartFactoryStorageConfigurationSemantic =
+            "https://smartfactory.de/semantics/submodel/CarrierManagement/StorageConfiguration#1/0";
         private const string SmartFactoryCapabilitySetSemantic = SmartFactoryCapabilityBase + "/CapabilitySet#1/0";
         private const string SmartFactoryCapabilityContainerSemantic = SmartFactoryCapabilityBase + "/CapabilitySet/CapabilityContainer#1/0";
         private const string SmartFactoryCapabilitySemantic = SmartFactoryCapabilityBase + "/Capability#1/0";
@@ -401,10 +403,22 @@ namespace ModuleGenerator
             assetSubmodel.Apply(assetData);
             shell.Submodels.Add(assetSubmodel);
 
+            StorageConfigurationSubmodel? storageSubmodel = null;
+            string? smStorageId = null;
+            if (config.StorageConfiguration != null)
+            {
+                smStorageId = $"https://smartfactory.de/submodels/storageconfiguration/{Guid.NewGuid()}";
+                storageSubmodel = new StorageConfigurationSubmodel(smStorageId);
+                var storageData = BuildStorageConfigurationData(config.StorageConfiguration, smStorageId);
+                storageSubmodel.Apply(storageData);
+                shell.Submodels.Add(storageSubmodel);
+            }
+
             // Serialize individual generated submodels to JSON strings (these will be parsed fresh when inserting into template)
             var skillsJson = await skills.ToJsonAsync();
             var capJson = await capabilitySubmodel.ToJsonAsync();
             var assetJson = await assetSubmodel.ToJsonAsync();
+            var storageJson = storageSubmodel != null ? await storageSubmodel.ToJsonAsync() : null;
 
             // Always use template.json (next to config) as basis and merge generated Skills/Capability
             var configDir = Path.GetDirectoryName(configPath) ?? Directory.GetCurrentDirectory();
@@ -468,7 +482,8 @@ namespace ModuleGenerator
                                         var sval = val?.ToString() ?? string.Empty;
                                         if (string.Equals(sval, "https://smartfactory.de/semantics/submodel/Skills#1/0", StringComparison.OrdinalIgnoreCase)
                                             || string.Equals(sval, "https://admin-shell.io/idta/CapabilityDescription/1/0/Submodel", StringComparison.OrdinalIgnoreCase)
-                                            || string.Equals(sval, SmartFactoryCapabilitySubmodelSemantic, StringComparison.OrdinalIgnoreCase))
+                                            || string.Equals(sval, SmartFactoryCapabilitySubmodelSemantic, StringComparison.OrdinalIgnoreCase)
+                                            || string.Equals(sval, SmartFactoryStorageConfigurationSemantic, StringComparison.OrdinalIgnoreCase))
                                         {
                                             if (obj.TryGetPropertyValue("id", out var idNode) && idNode != null)
                                             {
@@ -546,6 +561,13 @@ namespace ModuleGenerator
                     var assetNode = JsonNode.Parse(assetJson)!;
                     RemoveReferredSemanticId(assetNode);
                     filtered.Add(assetNode);
+
+                    if (!string.IsNullOrWhiteSpace(storageJson))
+                    {
+                        var storageNode = JsonNode.Parse(storageJson)!;
+                        RemoveReferredSemanticId(storageNode);
+                        filtered.Add(storageNode);
+                    }
                     root["submodels"] = filtered;
                 }
                 catch (Exception ex)
@@ -604,7 +626,13 @@ namespace ModuleGenerator
                         }
 
                         // append references for generated submodels
-                        foreach (var smId in new[] { smSkillsId, smCapabilityId, smAssetId })
+                        var generatedIds = new List<string> { smSkillsId, smCapabilityId, smAssetId };
+                        if (!string.IsNullOrWhiteSpace(smStorageId))
+                        {
+                            generatedIds.Add(smStorageId);
+                        }
+
+                        foreach (var smId in generatedIds)
                         {
                             var refObj = new JsonObject
                             {
@@ -628,6 +656,100 @@ namespace ModuleGenerator
             await File.WriteAllTextAsync(outPath, root.ToJsonString(new JsonSerializerOptions { WriteIndented = true }));
 
             return outPath;
+        }
+
+        private static StorageConfigurationData BuildStorageConfigurationData(StorageConfigurationConfig config, string submodelId)
+        {
+            var storages = new List<StorageConfigurationStorageData>();
+            var storageConfigs = config.Storages ?? Array.Empty<StorageConfig>();
+            var storageIndex = 0;
+
+            foreach (var storage in storageConfigs)
+            {
+                storageIndex++;
+                var idShort = string.IsNullOrWhiteSpace(storage.IdShort)
+                    ? $"Storage_{storageIndex:000}"
+                    : storage.IdShort!;
+                var storageId = string.IsNullOrWhiteSpace(storage.StorageId)
+                    ? $"storage-{storageIndex:000}"
+                    : storage.StorageId!;
+                var name = string.IsNullOrWhiteSpace(storage.Name) ? storageId : storage.Name!;
+                var totalSlots = storage.TotalSlots ?? Math.Max(storage.Slots?.Length ?? 1, 1);
+                var costFunction = string.IsNullOrWhiteSpace(storage.CostFunctionType)
+                    ? "exponential"
+                    : storage.CostFunctionType!.Trim();
+
+                var baseCost = storage.BaseCost ?? 1.0;
+                var maxCost = storage.MaxCost ?? Math.Max(baseCost, 100.0);
+                var alpha = storage.Alpha ?? (string.Equals(costFunction, "exponential", StringComparison.OrdinalIgnoreCase) ? 1.0 : null);
+                var lowCost = storage.LowCost ?? (string.Equals(costFunction, "step", StringComparison.OrdinalIgnoreCase) ? 1.0 : null);
+                var highCost = storage.HighCost ?? (string.Equals(costFunction, "step", StringComparison.OrdinalIgnoreCase) ? 2.0 : null);
+                var stepThreshold = storage.StepThreshold ?? (string.Equals(costFunction, "step", StringComparison.OrdinalIgnoreCase) ? 0.5 : null);
+
+                var slots = new List<StorageConfigurationSlotData>();
+                if (storage.Slots != null)
+                {
+                    var slotIndex = 0;
+                    foreach (var slot in storage.Slots)
+                    {
+                        slotIndex++;
+                        var slotIdShort = string.IsNullOrWhiteSpace(slot.IdShort)
+                            ? $"Slot_{slotIndex:00}"
+                            : slot.IdShort!;
+                        var slotId = string.IsNullOrWhiteSpace(slot.SlotId)
+                            ? $"slot-{storageIndex:000}-{slotIndex:00}"
+                            : slot.SlotId!;
+                        var reward = slot.AffinityReward ?? 1.0;
+                        var penalty = slot.AffinityPenalty ?? 0.5;
+
+                        slots.Add(new StorageConfigurationSlotData(
+                            slotIdShort,
+                            slotId,
+                            slot.PreferredType,
+                            reward,
+                            penalty));
+                    }
+                }
+
+                storages.Add(new StorageConfigurationStorageData(
+                    idShort,
+                    storageId,
+                    name,
+                    totalSlots,
+                    costFunction,
+                    baseCost,
+                    maxCost,
+                    alpha,
+                    lowCost,
+                    highCost,
+                    stepThreshold,
+                    slots));
+            }
+
+            var demandConfig = config.DemandConfig ?? new DemandConfigConfig();
+            var projectionConfig = config.ProjectionConfig ?? new ProjectionConfigConfig();
+
+            var demandData = new StorageConfigurationDemandConfigData(
+                demandConfig.DemandBonusBase ?? 4.0,
+                demandConfig.DemandBonusMax ?? 5.0,
+                demandConfig.DemandWeightPotential ?? 0.0,
+                demandConfig.DemandWeightPlanned ?? 0.3,
+                demandConfig.DemandWeightImminent ?? 0.7,
+                demandConfig.DemandWeightExecuting ?? 1.0,
+                demandConfig.UrgencyEnabled ?? false);
+
+            var projectionData = new StorageConfigurationProjectionConfigData(
+                projectionConfig.WeightNoAgent ?? 0.0,
+                projectionConfig.WeightStepOpen ?? 0.3,
+                projectionConfig.WeightStepPlanned ?? 0.7,
+                projectionConfig.WeightStepExecuting ?? 1.0,
+                projectionConfig.MaxStepsAhead ?? 3);
+
+            return new StorageConfigurationData(
+                submodelId,
+                storages,
+                demandData,
+                projectionData);
         }
 
         private static Reference CreateCapabilityReference(string submodelId, string capabilityName)
@@ -772,6 +894,7 @@ namespace ModuleGenerator
         public CapabilityConfig? Capability { get; set; }
         public CapabilityConfig[]? Capabilities { get; set; }
         public AssetLocationConfig? AssetLocation { get; set; }
+        public StorageConfigurationConfig? StorageConfiguration { get; set; }
     }
 
     public class CapabilityConfig
@@ -812,6 +935,58 @@ namespace ModuleGenerator
         public double? Theta { get; set; }
 
         public int? Level { get; set; }
+    }
+
+    public class StorageConfigurationConfig
+    {
+        public StorageConfig[]? Storages { get; set; }
+        public DemandConfigConfig? DemandConfig { get; set; }
+        public ProjectionConfigConfig? ProjectionConfig { get; set; }
+    }
+
+    public class StorageConfig
+    {
+        public string? IdShort { get; set; }
+        public string? StorageId { get; set; }
+        public string? Name { get; set; }
+        public int? TotalSlots { get; set; }
+        public string? CostFunctionType { get; set; }
+        public double? BaseCost { get; set; }
+        public double? Alpha { get; set; }
+        public double? LowCost { get; set; }
+        public double? HighCost { get; set; }
+        public double? StepThreshold { get; set; }
+        public double? MaxCost { get; set; }
+        public SlotConfig[]? Slots { get; set; }
+    }
+
+    public class SlotConfig
+    {
+        public string? IdShort { get; set; }
+        public string? SlotId { get; set; }
+        public string? PreferredType { get; set; }
+        public double? AffinityReward { get; set; }
+        public double? AffinityPenalty { get; set; }
+    }
+
+    public class DemandConfigConfig
+    {
+        public double? DemandBonusBase { get; set; }
+        public double? DemandBonusMax { get; set; }
+        public double? DemandWeightPotential { get; set; }
+        public double? DemandWeightPlanned { get; set; }
+        public double? DemandWeightImminent { get; set; }
+        public double? DemandWeightExecuting { get; set; }
+        public bool? UrgencyEnabled { get; set; }
+    }
+
+    public class ProjectionConfigConfig
+    {
+        public double? WeightNoAgent { get; set; }
+        public double? WeightStepOpen { get; set; }
+        public double? WeightStepPlanned { get; set; }
+        public double? WeightStepExecuting { get; set; }
+        public int? MaxStepsAhead { get; set; }
     }
 
     internal sealed record PropertyReferenceInfo(string ContainerIdShort, KeyType ElementKeyType, string ElementIdShort);

@@ -22,7 +22,7 @@ public sealed class AssetLocation : SubmodelElementCollection
     public const string DefaultIdShort = "AssetLocation";
 
     public Property<string> Address { get; }
-    public Property<string> Parent { get; }
+    public new Property<string> Parent { get; }
     public SubmodelElementCollection Position { get; }
     public Property<string> X { get; }
     public Property<string> Y { get; }

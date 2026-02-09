@@ -94,7 +94,7 @@ public sealed class QualifierJsonConverter : JsonConverter<IQualifier>
     {
         writer.WriteStartObject();
 
-        if (value.Kind != null)
+        if (value.Kind != default)
         {
             writer.WriteString("kind", value.Kind.ToString());
         }

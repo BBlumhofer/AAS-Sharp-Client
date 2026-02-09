@@ -1,0 +1,66 @@
+{
+  "Id": "PStorage",
+  "Skill": "Store",
+  "Capability": {
+    "Name": "Store",
+    "SkillReference": "Store",
+    "PropertyContainers": {
+      "TargetSlot": {
+        "value": "slot-zl-01"
+      }
+    }
+  },
+  "StorageConfiguration": {
+    "Storages": [
+      {
+        "IdShort": "PufferlagerP14",
+        "StorageId": "63000581-7cc2-4be5-97b7-f0a8a4effe18",
+        "Name": "Storage",
+        "TotalSlots": 4,
+        "CostFunctionType": "exponential",
+        "BaseCost": 1.5,
+        "Alpha": 3.0,
+        "MaxCost": 10000.0,
+        "Slots": [
+          {
+            "IdShort": "AssemblySlot",
+            "SlotId": "d0204150-e58a-423e-94a2-e24706f31098",
+            "PreferredType": "WST_C",
+            "AffinityReward": 1.0,
+            "AffinityPenalty": 0.5
+          },
+          {
+            "IdShort": "Slot_01",
+            "SlotId": "37273985e-fddb-47eb-bb60-85ace4ed46a0",
+            "PreferredType": "",
+            "AffinityReward": 1.0,
+            "AffinityPenalty": 0.5
+          },
+          {
+            "IdShort": "Slot_02",
+            "SlotId": "773a3177-94a8-49d8-8625-8dbe78040bbb",
+            "PreferredType": "",
+            "AffinityReward": 1.0,
+            "AffinityPenalty": 0.5
+          }
+        ]
+      }
+    ],
+    "DemandConfig": {
+      "DemandBonusBase": 4.0,
+      "DemandBonusMax": 5.0,
+      "DemandWeightPotential": 0.0,
+      "DemandWeightPlanned": 0.3,
+      "DemandWeightImminent": 0.7,
+      "DemandWeightExecuting": 1.0,
+      "UrgencyEnabled": false
+    },
+    "ProjectionConfig": {
+      "WeightNoAgent": 0.0,
+      "WeightStepOpen": 0.3,
+      "WeightStepPlanned": 0.7,
+      "WeightStepExecuting": 1.0,
+      "MaxStepsAhead": 3
+    }
+  }
+}
