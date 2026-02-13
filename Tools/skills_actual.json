@@ -1,0 +1,1794 @@
+{
+  "kind": "Instance",
+  "semanticId": {
+    "type": "ExternalReference",
+    "referredSemanticId": null,
+    "keys": [
+      {
+        "type": "GlobalReference",
+        "value": "https://smartfactory.de/semantics/submodel/CarrierManagement/StorageConfiguration#1/0"
+      }
+    ]
+  },
+  "supplementalSemanticIds": [],
+  "submodelElements": [
+    {
+      "idShort": "Storages",
+      "kind": "Instance",
+      "modelType": "SubmodelElementCollection",
+      "value": [
+        {
+          "idShort": "Zentrallager",
+          "kind": "Instance",
+          "modelType": "SubmodelElementCollection",
+          "value": [
+            {
+              "idShort": "StorageId",
+              "kind": "Instance",
+              "modelType": "Property",
+              "semanticId": {
+                "type": "ExternalReference",
+                "referredSemanticId": null,
+                "keys": []
+              },
+              "valueType": "string",
+              "value": "storage-001"
+            },
+            {
+              "idShort": "Name",
+              "kind": "Instance",
+              "modelType": "Property",
+              "semanticId": {
+                "type": "ExternalReference",
+                "referredSemanticId": null,
+                "keys": []
+              },
+              "valueType": "string",
+              "value": "Storage"
+            },
+            {
+              "idShort": "TotalSlots",
+              "kind": "Instance",
+              "modelType": "Property",
+              "semanticId": {
+                "type": "ExternalReference",
+                "referredSemanticId": null,
+                "keys": []
+              },
+              "valueType": "int",
+              "value": "35"
+            },
+            {
+              "idShort": "CostFunctionType",
+              "kind": "Instance",
+              "modelType": "Property",
+              "semanticId": {
+                "type": "ExternalReference",
+                "referredSemanticId": null,
+                "keys": []
+              },
+              "valueType": "string",
+              "value": "exponential"
+            },
+            {
+              "idShort": "BaseCost",
+              "kind": "Instance",
+              "modelType": "Property",
+              "semanticId": {
+                "type": "ExternalReference",
+                "referredSemanticId": null,
+                "keys": []
+              },
+              "valueType": "double",
+              "value": "0.5"
+            },
+            {
+              "idShort": "Alpha",
+              "kind": "Instance",
+              "modelType": "Property",
+              "semanticId": {
+                "type": "ExternalReference",
+                "referredSemanticId": null,
+                "keys": []
+              },
+              "valueType": "double",
+              "value": "2"
+            },
+            {
+              "idShort": "MaxCost",
+              "kind": "Instance",
+              "modelType": "Property",
+              "semanticId": {
+                "type": "ExternalReference",
+                "referredSemanticId": null,
+                "keys": []
+              },
+              "valueType": "double",
+              "value": "10000"
+            },
+            {
+              "idShort": "Slots",
+              "kind": "Instance",
+              "modelType": "SubmodelElementCollection",
+              "value": [
+                {
+                  "idShort": "Slot_01",
+                  "kind": "Instance",
+                  "modelType": "SubmodelElementCollection",
+                  "value": [
+                    {
+                      "idShort": "SlotId",
+                      "kind": "Instance",
+                      "modelType": "Property",
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "referredSemanticId": null,
+                        "keys": []
+                      },
+                      "valueType": "string",
+                      "value": "Slot_01-01"
+                    },
+                    {
+                      "idShort": "AffinityReward",
+                      "kind": "Instance",
+                      "modelType": "Property",
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "referredSemanticId": null,
+                        "keys": []
+                      },
+                      "valueType": "double",
+                      "value": "1"
+                    },
+                    {
+                      "idShort": "AffinityPenalty",
+                      "kind": "Instance",
+                      "modelType": "Property",
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "referredSemanticId": null,
+                        "keys": []
+                      },
+                      "valueType": "double",
+                      "value": "0.5"
+                    }
+                  ]
+                },
+                {
+                  "idShort": "Slot_02",
+                  "kind": "Instance",
+                  "modelType": "SubmodelElementCollection",
+                  "value": [
+                    {
+                      "idShort": "SlotId",
+                      "kind": "Instance",
+                      "modelType": "Property",
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "referredSemanticId": null,
+                        "keys": []
+                      },
+                      "valueType": "string",
+                      "value": "Slot_01-02"
+                    },
+                    {
+                      "idShort": "AffinityReward",
+                      "kind": "Instance",
+                      "modelType": "Property",
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "referredSemanticId": null,
+                        "keys": []
+                      },
+                      "valueType": "double",
+                      "value": "1"
+                    },
+                    {
+                      "idShort": "AffinityPenalty",
+                      "kind": "Instance",
+                      "modelType": "Property",
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "referredSemanticId": null,
+                        "keys": []
+                      },
+                      "valueType": "double",
+                      "value": "0.5"
+                    }
+                  ]
+                },
+                {
+                  "idShort": "Slot_03",
+                  "kind": "Instance",
+                  "modelType": "SubmodelElementCollection",
+                  "value": [
+                    {
+                      "idShort": "SlotId",
+                      "kind": "Instance",
+                      "modelType": "Property",
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "referredSemanticId": null,
+                        "keys": []
+                      },
+                      "valueType": "string",
+                      "value": "Slot_01-03"
+                    },
+                    {
+                      "idShort": "AffinityReward",
+                      "kind": "Instance",
+                      "modelType": "Property",
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "referredSemanticId": null,
+                        "keys": []
+                      },
+                      "valueType": "double",
+                      "value": "1"
+                    },
+                    {
+                      "idShort": "AffinityPenalty",
+                      "kind": "Instance",
+                      "modelType": "Property",
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "referredSemanticId": null,
+                        "keys": []
+                      },
+                      "valueType": "double",
+                      "value": "0.5"
+                    }
+                  ]
+                },
+                {
+                  "idShort": "Slot_04",
+                  "kind": "Instance",
+                  "modelType": "SubmodelElementCollection",
+                  "value": [
+                    {
+                      "idShort": "SlotId",
+                      "kind": "Instance",
+                      "modelType": "Property",
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "referredSemanticId": null,
+                        "keys": []
+                      },
+                      "valueType": "string",
+                      "value": "Slot_01-04"
+                    },
+                    {
+                      "idShort": "AffinityReward",
+                      "kind": "Instance",
+                      "modelType": "Property",
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "referredSemanticId": null,
+                        "keys": []
+                      },
+                      "valueType": "double",
+                      "value": "1"
+                    },
+                    {
+                      "idShort": "AffinityPenalty",
+                      "kind": "Instance",
+                      "modelType": "Property",
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "referredSemanticId": null,
+                        "keys": []
+                      },
+                      "valueType": "double",
+                      "value": "0.5"
+                    }
+                  ]
+                },
+                {
+                  "idShort": "Slot_05",
+                  "kind": "Instance",
+                  "modelType": "SubmodelElementCollection",
+                  "value": [
+                    {
+                      "idShort": "SlotId",
+                      "kind": "Instance",
+                      "modelType": "Property",
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "referredSemanticId": null,
+                        "keys": []
+                      },
+                      "valueType": "string",
+                      "value": "Slot_01-05"
+                    },
+                    {
+                      "idShort": "AffinityReward",
+                      "kind": "Instance",
+                      "modelType": "Property",
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "referredSemanticId": null,
+                        "keys": []
+                      },
+                      "valueType": "double",
+                      "value": "1"
+                    },
+                    {
+                      "idShort": "AffinityPenalty",
+                      "kind": "Instance",
+                      "modelType": "Property",
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "referredSemanticId": null,
+                        "keys": []
+                      },
+                      "valueType": "double",
+                      "value": "0.5"
+                    }
+                  ]
+                },
+                {
+                  "idShort": "Slot_06",
+                  "kind": "Instance",
+                  "modelType": "SubmodelElementCollection",
+                  "value": [
+                    {
+                      "idShort": "SlotId",
+                      "kind": "Instance",
+                      "modelType": "Property",
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "referredSemanticId": null,
+                        "keys": []
+                      },
+                      "valueType": "string",
+                      "value": "Slot_01-06"
+                    },
+                    {
+                      "idShort": "AffinityReward",
+                      "kind": "Instance",
+                      "modelType": "Property",
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "referredSemanticId": null,
+                        "keys": []
+                      },
+                      "valueType": "double",
+                      "value": "1"
+                    },
+                    {
+                      "idShort": "AffinityPenalty",
+                      "kind": "Instance",
+                      "modelType": "Property",
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "referredSemanticId": null,
+                        "keys": []
+                      },
+                      "valueType": "double",
+                      "value": "0.5"
+                    }
+                  ]
+                },
+                {
+                  "idShort": "Slot_07",
+                  "kind": "Instance",
+                  "modelType": "SubmodelElementCollection",
+                  "value": [
+                    {
+                      "idShort": "SlotId",
+                      "kind": "Instance",
+                      "modelType": "Property",
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "referredSemanticId": null,
+                        "keys": []
+                      },
+                      "valueType": "string",
+                      "value": "Slot_01-07"
+                    },
+                    {
+                      "idShort": "AffinityReward",
+                      "kind": "Instance",
+                      "modelType": "Property",
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "referredSemanticId": null,
+                        "keys": []
+                      },
+                      "valueType": "double",
+                      "value": "1"
+                    },
+                    {
+                      "idShort": "AffinityPenalty",
+                      "kind": "Instance",
+                      "modelType": "Property",
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "referredSemanticId": null,
+                        "keys": []
+                      },
+                      "valueType": "double",
+                      "value": "0.5"
+                    }
+                  ]
+                },
+                {
+                  "idShort": "Slot_08",
+                  "kind": "Instance",
+                  "modelType": "SubmodelElementCollection",
+                  "value": [
+                    {
+                      "idShort": "SlotId",
+                      "kind": "Instance",
+                      "modelType": "Property",
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "referredSemanticId": null,
+                        "keys": []
+                      },
+                      "valueType": "string",
+                      "value": "Slot_01-08"
+                    },
+                    {
+                      "idShort": "AffinityReward",
+                      "kind": "Instance",
+                      "modelType": "Property",
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "referredSemanticId": null,
+                        "keys": []
+                      },
+                      "valueType": "double",
+                      "value": "1"
+                    },
+                    {
+                      "idShort": "AffinityPenalty",
+                      "kind": "Instance",
+                      "modelType": "Property",
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "referredSemanticId": null,
+                        "keys": []
+                      },
+                      "valueType": "double",
+                      "value": "0.5"
+                    }
+                  ]
+                },
+                {
+                  "idShort": "Slot_09",
+                  "kind": "Instance",
+                  "modelType": "SubmodelElementCollection",
+                  "value": [
+                    {
+                      "idShort": "SlotId",
+                      "kind": "Instance",
+                      "modelType": "Property",
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "referredSemanticId": null,
+                        "keys": []
+                      },
+                      "valueType": "string",
+                      "value": "Slot_01-09"
+                    },
+                    {
+                      "idShort": "AffinityReward",
+                      "kind": "Instance",
+                      "modelType": "Property",
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "referredSemanticId": null,
+                        "keys": []
+                      },
+                      "valueType": "double",
+                      "value": "1"
+                    },
+                    {
+                      "idShort": "AffinityPenalty",
+                      "kind": "Instance",
+                      "modelType": "Property",
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "referredSemanticId": null,
+                        "keys": []
+                      },
+                      "valueType": "double",
+                      "value": "0.5"
+                    }
+                  ]
+                },
+                {
+                  "idShort": "Slot_10",
+                  "kind": "Instance",
+                  "modelType": "SubmodelElementCollection",
+                  "value": [
+                    {
+                      "idShort": "SlotId",
+                      "kind": "Instance",
+                      "modelType": "Property",
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "referredSemanticId": null,
+                        "keys": []
+                      },
+                      "valueType": "string",
+                      "value": "Slot_01-10"
+                    },
+                    {
+                      "idShort": "AffinityReward",
+                      "kind": "Instance",
+                      "modelType": "Property",
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "referredSemanticId": null,
+                        "keys": []
+                      },
+                      "valueType": "double",
+                      "value": "1"
+                    },
+                    {
+                      "idShort": "AffinityPenalty",
+                      "kind": "Instance",
+                      "modelType": "Property",
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "referredSemanticId": null,
+                        "keys": []
+                      },
+                      "valueType": "double",
+                      "value": "0.5"
+                    }
+                  ]
+                },
+                {
+                  "idShort": "Slot_11",
+                  "kind": "Instance",
+                  "modelType": "SubmodelElementCollection",
+                  "value": [
+                    {
+                      "idShort": "SlotId",
+                      "kind": "Instance",
+                      "modelType": "Property",
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "referredSemanticId": null,
+                        "keys": []
+                      },
+                      "valueType": "string",
+                      "value": "Slot_01-11"
+                    },
+                    {
+                      "idShort": "AffinityReward",
+                      "kind": "Instance",
+                      "modelType": "Property",
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "referredSemanticId": null,
+                        "keys": []
+                      },
+                      "valueType": "double",
+                      "value": "1"
+                    },
+                    {
+                      "idShort": "AffinityPenalty",
+                      "kind": "Instance",
+                      "modelType": "Property",
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "referredSemanticId": null,
+                        "keys": []
+                      },
+                      "valueType": "double",
+                      "value": "0.5"
+                    }
+                  ]
+                },
+                {
+                  "idShort": "Slot_12",
+                  "kind": "Instance",
+                  "modelType": "SubmodelElementCollection",
+                  "value": [
+                    {
+                      "idShort": "SlotId",
+                      "kind": "Instance",
+                      "modelType": "Property",
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "referredSemanticId": null,
+                        "keys": []
+                      },
+                      "valueType": "string",
+                      "value": "Slot_01-12"
+                    },
+                    {
+                      "idShort": "AffinityReward",
+                      "kind": "Instance",
+                      "modelType": "Property",
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "referredSemanticId": null,
+                        "keys": []
+                      },
+                      "valueType": "double",
+                      "value": "1"
+                    },
+                    {
+                      "idShort": "AffinityPenalty",
+                      "kind": "Instance",
+                      "modelType": "Property",
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "referredSemanticId": null,
+                        "keys": []
+                      },
+                      "valueType": "double",
+                      "value": "0.5"
+                    }
+                  ]
+                },
+                {
+                  "idShort": "Slot_13",
+                  "kind": "Instance",
+                  "modelType": "SubmodelElementCollection",
+                  "value": [
+                    {
+                      "idShort": "SlotId",
+                      "kind": "Instance",
+                      "modelType": "Property",
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "referredSemanticId": null,
+                        "keys": []
+                      },
+                      "valueType": "string",
+                      "value": "Slot_01-13"
+                    },
+                    {
+                      "idShort": "AffinityReward",
+                      "kind": "Instance",
+                      "modelType": "Property",
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "referredSemanticId": null,
+                        "keys": []
+                      },
+                      "valueType": "double",
+                      "value": "1"
+                    },
+                    {
+                      "idShort": "AffinityPenalty",
+                      "kind": "Instance",
+                      "modelType": "Property",
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "referredSemanticId": null,
+                        "keys": []
+                      },
+                      "valueType": "double",
+                      "value": "0.5"
+                    }
+                  ]
+                },
+                {
+                  "idShort": "Slot_14",
+                  "kind": "Instance",
+                  "modelType": "SubmodelElementCollection",
+                  "value": [
+                    {
+                      "idShort": "SlotId",
+                      "kind": "Instance",
+                      "modelType": "Property",
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "referredSemanticId": null,
+                        "keys": []
+                      },
+                      "valueType": "string",
+                      "value": "Slot_01-14"
+                    },
+                    {
+                      "idShort": "AffinityReward",
+                      "kind": "Instance",
+                      "modelType": "Property",
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "referredSemanticId": null,
+                        "keys": []
+                      },
+                      "valueType": "double",
+                      "value": "1"
+                    },
+                    {
+                      "idShort": "AffinityPenalty",
+                      "kind": "Instance",
+                      "modelType": "Property",
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "referredSemanticId": null,
+                        "keys": []
+                      },
+                      "valueType": "double",
+                      "value": "0.5"
+                    }
+                  ]
+                },
+                {
+                  "idShort": "Slot_15",
+                  "kind": "Instance",
+                  "modelType": "SubmodelElementCollection",
+                  "value": [
+                    {
+                      "idShort": "SlotId",
+                      "kind": "Instance",
+                      "modelType": "Property",
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "referredSemanticId": null,
+                        "keys": []
+                      },
+                      "valueType": "string",
+                      "value": "Slot_01-15"
+                    },
+                    {
+                      "idShort": "AffinityReward",
+                      "kind": "Instance",
+                      "modelType": "Property",
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "referredSemanticId": null,
+                        "keys": []
+                      },
+                      "valueType": "double",
+                      "value": "1"
+                    },
+                    {
+                      "idShort": "AffinityPenalty",
+                      "kind": "Instance",
+                      "modelType": "Property",
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "referredSemanticId": null,
+                        "keys": []
+                      },
+                      "valueType": "double",
+                      "value": "0.5"
+                    }
+                  ]
+                },
+                {
+                  "idShort": "Slot_16",
+                  "kind": "Instance",
+                  "modelType": "SubmodelElementCollection",
+                  "value": [
+                    {
+                      "idShort": "SlotId",
+                      "kind": "Instance",
+                      "modelType": "Property",
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "referredSemanticId": null,
+                        "keys": []
+                      },
+                      "valueType": "string",
+                      "value": "Slot_01-16"
+                    },
+                    {
+                      "idShort": "AffinityReward",
+                      "kind": "Instance",
+                      "modelType": "Property",
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "referredSemanticId": null,
+                        "keys": []
+                      },
+                      "valueType": "double",
+                      "value": "1"
+                    },
+                    {
+                      "idShort": "AffinityPenalty",
+                      "kind": "Instance",
+                      "modelType": "Property",
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "referredSemanticId": null,
+                        "keys": []
+                      },
+                      "valueType": "double",
+                      "value": "0.5"
+                    }
+                  ]
+                },
+                {
+                  "idShort": "Slot_17",
+                  "kind": "Instance",
+                  "modelType": "SubmodelElementCollection",
+                  "value": [
+                    {
+                      "idShort": "SlotId",
+                      "kind": "Instance",
+                      "modelType": "Property",
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "referredSemanticId": null,
+                        "keys": []
+                      },
+                      "valueType": "string",
+                      "value": "Slot_01-17"
+                    },
+                    {
+                      "idShort": "AffinityReward",
+                      "kind": "Instance",
+                      "modelType": "Property",
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "referredSemanticId": null,
+                        "keys": []
+                      },
+                      "valueType": "double",
+                      "value": "1"
+                    },
+                    {
+                      "idShort": "AffinityPenalty",
+                      "kind": "Instance",
+                      "modelType": "Property",
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "referredSemanticId": null,
+                        "keys": []
+                      },
+                      "valueType": "double",
+                      "value": "0.5"
+                    }
+                  ]
+                },
+                {
+                  "idShort": "Slot_18",
+                  "kind": "Instance",
+                  "modelType": "SubmodelElementCollection",
+                  "value": [
+                    {
+                      "idShort": "SlotId",
+                      "kind": "Instance",
+                      "modelType": "Property",
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "referredSemanticId": null,
+                        "keys": []
+                      },
+                      "valueType": "string",
+                      "value": "Slot_01-18"
+                    },
+                    {
+                      "idShort": "AffinityReward",
+                      "kind": "Instance",
+                      "modelType": "Property",
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "referredSemanticId": null,
+                        "keys": []
+                      },
+                      "valueType": "double",
+                      "value": "1"
+                    },
+                    {
+                      "idShort": "AffinityPenalty",
+                      "kind": "Instance",
+                      "modelType": "Property",
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "referredSemanticId": null,
+                        "keys": []
+                      },
+                      "valueType": "double",
+                      "value": "0.5"
+                    }
+                  ]
+                },
+                {
+                  "idShort": "Slot_19",
+                  "kind": "Instance",
+                  "modelType": "SubmodelElementCollection",
+                  "value": [
+                    {
+                      "idShort": "SlotId",
+                      "kind": "Instance",
+                      "modelType": "Property",
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "referredSemanticId": null,
+                        "keys": []
+                      },
+                      "valueType": "string",
+                      "value": "Slot_01-19"
+                    },
+                    {
+                      "idShort": "AffinityReward",
+                      "kind": "Instance",
+                      "modelType": "Property",
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "referredSemanticId": null,
+                        "keys": []
+                      },
+                      "valueType": "double",
+                      "value": "1"
+                    },
+                    {
+                      "idShort": "AffinityPenalty",
+                      "kind": "Instance",
+                      "modelType": "Property",
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "referredSemanticId": null,
+                        "keys": []
+                      },
+                      "valueType": "double",
+                      "value": "0.5"
+                    }
+                  ]
+                },
+                {
+                  "idShort": "Slot_20",
+                  "kind": "Instance",
+                  "modelType": "SubmodelElementCollection",
+                  "value": [
+                    {
+                      "idShort": "SlotId",
+                      "kind": "Instance",
+                      "modelType": "Property",
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "referredSemanticId": null,
+                        "keys": []
+                      },
+                      "valueType": "string",
+                      "value": "Slot_01-20"
+                    },
+                    {
+                      "idShort": "AffinityReward",
+                      "kind": "Instance",
+                      "modelType": "Property",
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "referredSemanticId": null,
+                        "keys": []
+                      },
+                      "valueType": "double",
+                      "value": "1"
+                    },
+                    {
+                      "idShort": "AffinityPenalty",
+                      "kind": "Instance",
+                      "modelType": "Property",
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "referredSemanticId": null,
+                        "keys": []
+                      },
+                      "valueType": "double",
+                      "value": "0.5"
+                    }
+                  ]
+                },
+                {
+                  "idShort": "Slot_21",
+                  "kind": "Instance",
+                  "modelType": "SubmodelElementCollection",
+                  "value": [
+                    {
+                      "idShort": "SlotId",
+                      "kind": "Instance",
+                      "modelType": "Property",
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "referredSemanticId": null,
+                        "keys": []
+                      },
+                      "valueType": "string",
+                      "value": "Slot_01-21"
+                    },
+                    {
+                      "idShort": "AffinityReward",
+                      "kind": "Instance",
+                      "modelType": "Property",
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "referredSemanticId": null,
+                        "keys": []
+                      },
+                      "valueType": "double",
+                      "value": "1"
+                    },
+                    {
+                      "idShort": "AffinityPenalty",
+                      "kind": "Instance",
+                      "modelType": "Property",
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "referredSemanticId": null,
+                        "keys": []
+                      },
+                      "valueType": "double",
+                      "value": "0.5"
+                    }
+                  ]
+                },
+                {
+                  "idShort": "Slot_22",
+                  "kind": "Instance",
+                  "modelType": "SubmodelElementCollection",
+                  "value": [
+                    {
+                      "idShort": "SlotId",
+                      "kind": "Instance",
+                      "modelType": "Property",
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "referredSemanticId": null,
+                        "keys": []
+                      },
+                      "valueType": "string",
+                      "value": "Slot_01-22"
+                    },
+                    {
+                      "idShort": "AffinityReward",
+                      "kind": "Instance",
+                      "modelType": "Property",
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "referredSemanticId": null,
+                        "keys": []
+                      },
+                      "valueType": "double",
+                      "value": "1"
+                    },
+                    {
+                      "idShort": "AffinityPenalty",
+                      "kind": "Instance",
+                      "modelType": "Property",
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "referredSemanticId": null,
+                        "keys": []
+                      },
+                      "valueType": "double",
+                      "value": "0.5"
+                    }
+                  ]
+                },
+                {
+                  "idShort": "Slot_23",
+                  "kind": "Instance",
+                  "modelType": "SubmodelElementCollection",
+                  "value": [
+                    {
+                      "idShort": "SlotId",
+                      "kind": "Instance",
+                      "modelType": "Property",
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "referredSemanticId": null,
+                        "keys": []
+                      },
+                      "valueType": "string",
+                      "value": "Slot_01-23"
+                    },
+                    {
+                      "idShort": "AffinityReward",
+                      "kind": "Instance",
+                      "modelType": "Property",
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "referredSemanticId": null,
+                        "keys": []
+                      },
+                      "valueType": "double",
+                      "value": "1"
+                    },
+                    {
+                      "idShort": "AffinityPenalty",
+                      "kind": "Instance",
+                      "modelType": "Property",
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "referredSemanticId": null,
+                        "keys": []
+                      },
+                      "valueType": "double",
+                      "value": "0.5"
+                    }
+                  ]
+                },
+                {
+                  "idShort": "Slot_24",
+                  "kind": "Instance",
+                  "modelType": "SubmodelElementCollection",
+                  "value": [
+                    {
+                      "idShort": "SlotId",
+                      "kind": "Instance",
+                      "modelType": "Property",
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "referredSemanticId": null,
+                        "keys": []
+                      },
+                      "valueType": "string",
+                      "value": "Slot_01-24"
+                    },
+                    {
+                      "idShort": "AffinityReward",
+                      "kind": "Instance",
+                      "modelType": "Property",
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "referredSemanticId": null,
+                        "keys": []
+                      },
+                      "valueType": "double",
+                      "value": "1"
+                    },
+                    {
+                      "idShort": "AffinityPenalty",
+                      "kind": "Instance",
+                      "modelType": "Property",
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "referredSemanticId": null,
+                        "keys": []
+                      },
+                      "valueType": "double",
+                      "value": "0.5"
+                    }
+                  ]
+                },
+                {
+                  "idShort": "Slot_25",
+                  "kind": "Instance",
+                  "modelType": "SubmodelElementCollection",
+                  "value": [
+                    {
+                      "idShort": "SlotId",
+                      "kind": "Instance",
+                      "modelType": "Property",
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "referredSemanticId": null,
+                        "keys": []
+                      },
+                      "valueType": "string",
+                      "value": "Slot_01-25"
+                    },
+                    {
+                      "idShort": "AffinityReward",
+                      "kind": "Instance",
+                      "modelType": "Property",
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "referredSemanticId": null,
+                        "keys": []
+                      },
+                      "valueType": "double",
+                      "value": "1"
+                    },
+                    {
+                      "idShort": "AffinityPenalty",
+                      "kind": "Instance",
+                      "modelType": "Property",
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "referredSemanticId": null,
+                        "keys": []
+                      },
+                      "valueType": "double",
+                      "value": "0.5"
+                    }
+                  ]
+                },
+                {
+                  "idShort": "Slot_26",
+                  "kind": "Instance",
+                  "modelType": "SubmodelElementCollection",
+                  "value": [
+                    {
+                      "idShort": "SlotId",
+                      "kind": "Instance",
+                      "modelType": "Property",
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "referredSemanticId": null,
+                        "keys": []
+                      },
+                      "valueType": "string",
+                      "value": "Slot_01-26"
+                    },
+                    {
+                      "idShort": "AffinityReward",
+                      "kind": "Instance",
+                      "modelType": "Property",
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "referredSemanticId": null,
+                        "keys": []
+                      },
+                      "valueType": "double",
+                      "value": "1"
+                    },
+                    {
+                      "idShort": "AffinityPenalty",
+                      "kind": "Instance",
+                      "modelType": "Property",
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "referredSemanticId": null,
+                        "keys": []
+                      },
+                      "valueType": "double",
+                      "value": "0.5"
+                    }
+                  ]
+                },
+                {
+                  "idShort": "Slot_27",
+                  "kind": "Instance",
+                  "modelType": "SubmodelElementCollection",
+                  "value": [
+                    {
+                      "idShort": "SlotId",
+                      "kind": "Instance",
+                      "modelType": "Property",
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "referredSemanticId": null,
+                        "keys": []
+                      },
+                      "valueType": "string",
+                      "value": "Slot_01-27"
+                    },
+                    {
+                      "idShort": "AffinityReward",
+                      "kind": "Instance",
+                      "modelType": "Property",
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "referredSemanticId": null,
+                        "keys": []
+                      },
+                      "valueType": "double",
+                      "value": "1"
+                    },
+                    {
+                      "idShort": "AffinityPenalty",
+                      "kind": "Instance",
+                      "modelType": "Property",
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "referredSemanticId": null,
+                        "keys": []
+                      },
+                      "valueType": "double",
+                      "value": "0.5"
+                    }
+                  ]
+                },
+                {
+                  "idShort": "Slot_28",
+                  "kind": "Instance",
+                  "modelType": "SubmodelElementCollection",
+                  "value": [
+                    {
+                      "idShort": "SlotId",
+                      "kind": "Instance",
+                      "modelType": "Property",
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "referredSemanticId": null,
+                        "keys": []
+                      },
+                      "valueType": "string",
+                      "value": "Slot_01-28"
+                    },
+                    {
+                      "idShort": "AffinityReward",
+                      "kind": "Instance",
+                      "modelType": "Property",
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "referredSemanticId": null,
+                        "keys": []
+                      },
+                      "valueType": "double",
+                      "value": "1"
+                    },
+                    {
+                      "idShort": "AffinityPenalty",
+                      "kind": "Instance",
+                      "modelType": "Property",
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "referredSemanticId": null,
+                        "keys": []
+                      },
+                      "valueType": "double",
+                      "value": "0.5"
+                    }
+                  ]
+                },
+                {
+                  "idShort": "Slot_29",
+                  "kind": "Instance",
+                  "modelType": "SubmodelElementCollection",
+                  "value": [
+                    {
+                      "idShort": "SlotId",
+                      "kind": "Instance",
+                      "modelType": "Property",
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "referredSemanticId": null,
+                        "keys": []
+                      },
+                      "valueType": "string",
+                      "value": "Slot_01-29"
+                    },
+                    {
+                      "idShort": "AffinityReward",
+                      "kind": "Instance",
+                      "modelType": "Property",
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "referredSemanticId": null,
+                        "keys": []
+                      },
+                      "valueType": "double",
+                      "value": "1"
+                    },
+                    {
+                      "idShort": "AffinityPenalty",
+                      "kind": "Instance",
+                      "modelType": "Property",
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "referredSemanticId": null,
+                        "keys": []
+                      },
+                      "valueType": "double",
+                      "value": "0.5"
+                    }
+                  ]
+                },
+                {
+                  "idShort": "Slot_30",
+                  "kind": "Instance",
+                  "modelType": "SubmodelElementCollection",
+                  "value": [
+                    {
+                      "idShort": "SlotId",
+                      "kind": "Instance",
+                      "modelType": "Property",
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "referredSemanticId": null,
+                        "keys": []
+                      },
+                      "valueType": "string",
+                      "value": "Slot_01-30"
+                    },
+                    {
+                      "idShort": "AffinityReward",
+                      "kind": "Instance",
+                      "modelType": "Property",
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "referredSemanticId": null,
+                        "keys": []
+                      },
+                      "valueType": "double",
+                      "value": "1"
+                    },
+                    {
+                      "idShort": "AffinityPenalty",
+                      "kind": "Instance",
+                      "modelType": "Property",
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "referredSemanticId": null,
+                        "keys": []
+                      },
+                      "valueType": "double",
+                      "value": "0.5"
+                    }
+                  ]
+                },
+                {
+                  "idShort": "Slot_31",
+                  "kind": "Instance",
+                  "modelType": "SubmodelElementCollection",
+                  "value": [
+                    {
+                      "idShort": "SlotId",
+                      "kind": "Instance",
+                      "modelType": "Property",
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "referredSemanticId": null,
+                        "keys": []
+                      },
+                      "valueType": "string",
+                      "value": "Slot_01-31"
+                    },
+                    {
+                      "idShort": "AffinityReward",
+                      "kind": "Instance",
+                      "modelType": "Property",
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "referredSemanticId": null,
+                        "keys": []
+                      },
+                      "valueType": "double",
+                      "value": "1"
+                    },
+                    {
+                      "idShort": "AffinityPenalty",
+                      "kind": "Instance",
+                      "modelType": "Property",
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "referredSemanticId": null,
+                        "keys": []
+                      },
+                      "valueType": "double",
+                      "value": "0.5"
+                    }
+                  ]
+                },
+                {
+                  "idShort": "Slot_32",
+                  "kind": "Instance",
+                  "modelType": "SubmodelElementCollection",
+                  "value": [
+                    {
+                      "idShort": "SlotId",
+                      "kind": "Instance",
+                      "modelType": "Property",
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "referredSemanticId": null,
+                        "keys": []
+                      },
+                      "valueType": "string",
+                      "value": "Slot_01-32"
+                    },
+                    {
+                      "idShort": "AffinityReward",
+                      "kind": "Instance",
+                      "modelType": "Property",
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "referredSemanticId": null,
+                        "keys": []
+                      },
+                      "valueType": "double",
+                      "value": "1"
+                    },
+                    {
+                      "idShort": "AffinityPenalty",
+                      "kind": "Instance",
+                      "modelType": "Property",
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "referredSemanticId": null,
+                        "keys": []
+                      },
+                      "valueType": "double",
+                      "value": "0.5"
+                    }
+                  ]
+                },
+                {
+                  "idShort": "Slot_33",
+                  "kind": "Instance",
+                  "modelType": "SubmodelElementCollection",
+                  "value": [
+                    {
+                      "idShort": "SlotId",
+                      "kind": "Instance",
+                      "modelType": "Property",
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "referredSemanticId": null,
+                        "keys": []
+                      },
+                      "valueType": "string",
+                      "value": "Slot_01-33"
+                    },
+                    {
+                      "idShort": "AffinityReward",
+                      "kind": "Instance",
+                      "modelType": "Property",
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "referredSemanticId": null,
+                        "keys": []
+                      },
+                      "valueType": "double",
+                      "value": "1"
+                    },
+                    {
+                      "idShort": "AffinityPenalty",
+                      "kind": "Instance",
+                      "modelType": "Property",
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "referredSemanticId": null,
+                        "keys": []
+                      },
+                      "valueType": "double",
+                      "value": "0.5"
+                    }
+                  ]
+                },
+                {
+                  "idShort": "Slot_34",
+                  "kind": "Instance",
+                  "modelType": "SubmodelElementCollection",
+                  "value": [
+                    {
+                      "idShort": "SlotId",
+                      "kind": "Instance",
+                      "modelType": "Property",
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "referredSemanticId": null,
+                        "keys": []
+                      },
+                      "valueType": "string",
+                      "value": "Slot_01-34"
+                    },
+                    {
+                      "idShort": "AffinityReward",
+                      "kind": "Instance",
+                      "modelType": "Property",
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "referredSemanticId": null,
+                        "keys": []
+                      },
+                      "valueType": "double",
+                      "value": "1"
+                    },
+                    {
+                      "idShort": "AffinityPenalty",
+                      "kind": "Instance",
+                      "modelType": "Property",
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "referredSemanticId": null,
+                        "keys": []
+                      },
+                      "valueType": "double",
+                      "value": "0.5"
+                    }
+                  ]
+                },
+                {
+                  "idShort": "Slot_35",
+                  "kind": "Instance",
+                  "modelType": "SubmodelElementCollection",
+                  "value": [
+                    {
+                      "idShort": "SlotId",
+                      "kind": "Instance",
+                      "modelType": "Property",
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "referredSemanticId": null,
+                        "keys": []
+                      },
+                      "valueType": "string",
+                      "value": "Slot_01-35"
+                    },
+                    {
+                      "idShort": "AffinityReward",
+                      "kind": "Instance",
+                      "modelType": "Property",
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "referredSemanticId": null,
+                        "keys": []
+                      },
+                      "valueType": "double",
+                      "value": "1"
+                    },
+                    {
+                      "idShort": "AffinityPenalty",
+                      "kind": "Instance",
+                      "modelType": "Property",
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "referredSemanticId": null,
+                        "keys": []
+                      },
+                      "valueType": "double",
+                      "value": "0.5"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "idShort": "DemandConfig",
+      "kind": "Instance",
+      "modelType": "SubmodelElementCollection",
+      "value": [
+        {
+          "idShort": "DemandBonusBase",
+          "kind": "Instance",
+          "modelType": "Property",
+          "semanticId": {
+            "type": "ExternalReference",
+            "referredSemanticId": null,
+            "keys": []
+          },
+          "valueType": "double",
+          "value": "4"
+        },
+        {
+          "idShort": "DemandBonusMax",
+          "kind": "Instance",
+          "modelType": "Property",
+          "semanticId": {
+            "type": "ExternalReference",
+            "referredSemanticId": null,
+            "keys": []
+          },
+          "valueType": "double",
+          "value": "5"
+        },
+        {
+          "idShort": "DemandWeightPotential",
+          "kind": "Instance",
+          "modelType": "Property",
+          "semanticId": {
+            "type": "ExternalReference",
+            "referredSemanticId": null,
+            "keys": []
+          },
+          "valueType": "double",
+          "value": "0"
+        },
+        {
+          "idShort": "DemandWeightPlanned",
+          "kind": "Instance",
+          "modelType": "Property",
+          "semanticId": {
+            "type": "ExternalReference",
+            "referredSemanticId": null,
+            "keys": []
+          },
+          "valueType": "double",
+          "value": "0.3"
+        },
+        {
+          "idShort": "DemandWeightImminent",
+          "kind": "Instance",
+          "modelType": "Property",
+          "semanticId": {
+            "type": "ExternalReference",
+            "referredSemanticId": null,
+            "keys": []
+          },
+          "valueType": "double",
+          "value": "0.7"
+        },
+        {
+          "idShort": "DemandWeightExecuting",
+          "kind": "Instance",
+          "modelType": "Property",
+          "semanticId": {
+            "type": "ExternalReference",
+            "referredSemanticId": null,
+            "keys": []
+          },
+          "valueType": "double",
+          "value": "1"
+        },
+        {
+          "idShort": "UrgencyEnabled",
+          "kind": "Instance",
+          "modelType": "Property",
+          "semanticId": {
+            "type": "ExternalReference",
+            "referredSemanticId": null,
+            "keys": []
+          },
+          "valueType": "boolean",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "idShort": "ProjectionConfig",
+      "kind": "Instance",
+      "modelType": "SubmodelElementCollection",
+      "value": [
+        {
+          "idShort": "WeightNoAgent",
+          "kind": "Instance",
+          "modelType": "Property",
+          "semanticId": {
+            "type": "ExternalReference",
+            "referredSemanticId": null,
+            "keys": []
+          },
+          "valueType": "double",
+          "value": "0"
+        },
+        {
+          "idShort": "WeightStepOpen",
+          "kind": "Instance",
+          "modelType": "Property",
+          "semanticId": {
+            "type": "ExternalReference",
+            "referredSemanticId": null,
+            "keys": []
+          },
+          "valueType": "double",
+          "value": "0.3"
+        },
+        {
+          "idShort": "WeightStepPlanned",
+          "kind": "Instance",
+          "modelType": "Property",
+          "semanticId": {
+            "type": "ExternalReference",
+            "referredSemanticId": null,
+            "keys": []
+          },
+          "valueType": "double",
+          "value": "0.7"
+        },
+        {
+          "idShort": "WeightStepExecuting",
+          "kind": "Instance",
+          "modelType": "Property",
+          "semanticId": {
+            "type": "ExternalReference",
+            "referredSemanticId": null,
+            "keys": []
+          },
+          "valueType": "double",
+          "value": "1"
+        },
+        {
+          "idShort": "MaxStepsAhead",
+          "kind": "Instance",
+          "modelType": "Property",
+          "semanticId": {
+            "type": "ExternalReference",
+            "referredSemanticId": null,
+            "keys": []
+          },
+          "valueType": "int",
+          "value": "3"
+        }
+      ]
+    }
+  ],
+  "modelType": "Submodel",
+  "embeddedDataSpecifications": [],
+  "conceptDescription": null,
+  "qualifiers": [],
+  "id": "https://smartfactory.de/submodels/storageconfiguration/c92ce2b0-102a-41ba-95c6-cc528254b9c5",
+  "administration": null,
+  "idShort": "StorageConfiguration",
+  "category": null,
+  "description": [],
+  "displayName": []
+}

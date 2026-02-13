@@ -661,53 +661,78 @@ namespace ModuleGenerator
         private static StorageConfigurationData BuildStorageConfigurationData(StorageConfigurationConfig config, string submodelId)
         {
             var storages = new List<StorageConfigurationStorageData>();
-            var storageConfigs = config.Storages ?? Array.Empty<StorageConfig>();
+            var storageConfigs = ExpandStorageConfigs(config);
             var storageIndex = 0;
 
             foreach (var storage in storageConfigs)
             {
                 storageIndex++;
-                var idShort = string.IsNullOrWhiteSpace(storage.IdShort)
+                var effectiveStorage = MergeStorageWithDefaults(storage, config.StorageDefaults);
+                var idShort = string.IsNullOrWhiteSpace(effectiveStorage.IdShort)
                     ? $"Storage_{storageIndex:000}"
-                    : storage.IdShort!;
-                var storageId = string.IsNullOrWhiteSpace(storage.StorageId)
+                    : effectiveStorage.IdShort!;
+                var storageId = string.IsNullOrWhiteSpace(effectiveStorage.StorageId)
                     ? $"storage-{storageIndex:000}"
-                    : storage.StorageId!;
-                var name = string.IsNullOrWhiteSpace(storage.Name) ? storageId : storage.Name!;
-                var totalSlots = storage.TotalSlots ?? Math.Max(storage.Slots?.Length ?? 1, 1);
-                var costFunction = string.IsNullOrWhiteSpace(storage.CostFunctionType)
+                    : effectiveStorage.StorageId!;
+                var name = string.IsNullOrWhiteSpace(effectiveStorage.Name) ? storageId : effectiveStorage.Name!;
+                var totalSlots = effectiveStorage.TotalSlots ?? Math.Max(effectiveStorage.Slots?.Length ?? 1, 1);
+                var costFunction = string.IsNullOrWhiteSpace(effectiveStorage.CostFunctionType)
                     ? "exponential"
-                    : storage.CostFunctionType!.Trim();
+                    : effectiveStorage.CostFunctionType!.Trim();
 
-                var baseCost = storage.BaseCost ?? 1.0;
-                var maxCost = storage.MaxCost ?? Math.Max(baseCost, 100.0);
-                var alpha = storage.Alpha ?? (string.Equals(costFunction, "exponential", StringComparison.OrdinalIgnoreCase) ? 1.0 : null);
-                var lowCost = storage.LowCost ?? (string.Equals(costFunction, "step", StringComparison.OrdinalIgnoreCase) ? 1.0 : null);
-                var highCost = storage.HighCost ?? (string.Equals(costFunction, "step", StringComparison.OrdinalIgnoreCase) ? 2.0 : null);
-                var stepThreshold = storage.StepThreshold ?? (string.Equals(costFunction, "step", StringComparison.OrdinalIgnoreCase) ? 0.5 : null);
+                var baseCost = effectiveStorage.BaseCost ?? 1.0;
+                var maxCost = effectiveStorage.MaxCost ?? Math.Max(baseCost, 100.0);
+                var alpha = effectiveStorage.Alpha ?? (string.Equals(costFunction, "exponential", StringComparison.OrdinalIgnoreCase) ? 1.0 : null);
+                var lowCost = effectiveStorage.LowCost ?? (string.Equals(costFunction, "step", StringComparison.OrdinalIgnoreCase) ? 1.0 : null);
+                var highCost = effectiveStorage.HighCost ?? (string.Equals(costFunction, "step", StringComparison.OrdinalIgnoreCase) ? 2.0 : null);
+                var stepThreshold = effectiveStorage.StepThreshold ?? (string.Equals(costFunction, "step", StringComparison.OrdinalIgnoreCase) ? 0.5 : null);
 
                 var slots = new List<StorageConfigurationSlotData>();
-                if (storage.Slots != null)
+                var slotConfigs = effectiveStorage.Slots;
+                if (slotConfigs != null && slotConfigs.Length > 0)
                 {
-                    var slotIndex = 0;
-                    foreach (var slot in storage.Slots)
+                    if (slotConfigs.Length == 1 && totalSlots > 1)
                     {
-                        slotIndex++;
-                        var slotIdShort = string.IsNullOrWhiteSpace(slot.IdShort)
-                            ? $"Slot_{slotIndex:00}"
-                            : slot.IdShort!;
-                        var slotId = string.IsNullOrWhiteSpace(slot.SlotId)
-                            ? $"slot-{storageIndex:000}-{slotIndex:00}"
-                            : slot.SlotId!;
-                        var reward = slot.AffinityReward ?? 1.0;
-                        var penalty = slot.AffinityPenalty ?? 0.5;
+                        var templateSlot = slotConfigs[0];
+                        for (var slotIndex = 1; slotIndex <= totalSlots; slotIndex++)
+                        {
+                            var slotIdShort = $"Slot_{slotIndex:00}";
+                            var slotId = string.IsNullOrWhiteSpace(templateSlot.SlotId)
+                                ? $"slot-{storageIndex:000}-{slotIndex:00}"
+                                : $"{templateSlot.SlotId}-{slotIndex:00}";
+                            var reward = templateSlot.AffinityReward ?? 1.0;
+                            var penalty = templateSlot.AffinityPenalty ?? 0.5;
 
-                        slots.Add(new StorageConfigurationSlotData(
-                            slotIdShort,
-                            slotId,
-                            slot.PreferredType,
-                            reward,
-                            penalty));
+                            slots.Add(new StorageConfigurationSlotData(
+                                slotIdShort,
+                                slotId,
+                                templateSlot.PreferredType,
+                                reward,
+                                penalty));
+                        }
+                    }
+                    else
+                    {
+                        var slotIndex = 0;
+                        foreach (var slot in slotConfigs)
+                        {
+                            slotIndex++;
+                            var slotIdShort = string.IsNullOrWhiteSpace(slot.IdShort)
+                                ? $"Slot_{slotIndex:00}"
+                                : slot.IdShort!;
+                            var slotId = string.IsNullOrWhiteSpace(slot.SlotId)
+                                ? $"slot-{storageIndex:000}-{slotIndex:00}"
+                                : slot.SlotId!;
+                            var reward = slot.AffinityReward ?? 1.0;
+                            var penalty = slot.AffinityPenalty ?? 0.5;
+
+                            slots.Add(new StorageConfigurationSlotData(
+                                slotIdShort,
+                                slotId,
+                                slot.PreferredType,
+                                reward,
+                                penalty));
+                        }
                     }
                 }
 
@@ -750,6 +775,55 @@ namespace ModuleGenerator
                 storages,
                 demandData,
                 projectionData);
+        }
+
+        private static IReadOnlyList<StorageConfig> ExpandStorageConfigs(StorageConfigurationConfig config)
+        {
+            var storageConfigs = config.Storages ?? Array.Empty<StorageConfig>();
+            if (storageConfigs.Length > 0)
+            {
+                return storageConfigs;
+            }
+
+            var count = config.StorageCount ?? 0;
+            if (count <= 0)
+            {
+                return Array.Empty<StorageConfig>();
+            }
+
+            var list = new List<StorageConfig>(count);
+            for (var i = 0; i < count; i++)
+            {
+                list.Add(config.StorageDefaults ?? new StorageConfig());
+            }
+
+            return list;
+        }
+
+        private static StorageConfig MergeStorageWithDefaults(StorageConfig storage, StorageConfig? defaults)
+        {
+            if (defaults == null)
+            {
+                return storage;
+            }
+
+            var slots = storage.Slots != null && storage.Slots.Length > 0 ? storage.Slots : defaults.Slots;
+
+            return new StorageConfig
+            {
+                IdShort = storage.IdShort ?? defaults.IdShort,
+                StorageId = storage.StorageId ?? defaults.StorageId,
+                Name = storage.Name ?? defaults.Name,
+                TotalSlots = storage.TotalSlots ?? defaults.TotalSlots,
+                CostFunctionType = storage.CostFunctionType ?? defaults.CostFunctionType,
+                BaseCost = storage.BaseCost ?? defaults.BaseCost,
+                Alpha = storage.Alpha ?? defaults.Alpha,
+                LowCost = storage.LowCost ?? defaults.LowCost,
+                HighCost = storage.HighCost ?? defaults.HighCost,
+                StepThreshold = storage.StepThreshold ?? defaults.StepThreshold,
+                MaxCost = storage.MaxCost ?? defaults.MaxCost,
+                Slots = slots
+            };
         }
 
         private static Reference CreateCapabilityReference(string submodelId, string capabilityName)
@@ -939,6 +1013,8 @@ namespace ModuleGenerator
 
     public class StorageConfigurationConfig
     {
+        public int? StorageCount { get; set; }
+        public StorageConfig? StorageDefaults { get; set; }
         public StorageConfig[]? Storages { get; set; }
         public DemandConfigConfig? DemandConfig { get; set; }
         public ProjectionConfigConfig? ProjectionConfig { get; set; }
